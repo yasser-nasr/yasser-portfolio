@@ -5,6 +5,7 @@ import Positioning from "@/components/Positioning";
 import Capabilities from "@/components/Capabilities";
 import MarketsIndustries from "@/components/MarketsIndustries";
 import AboutPreview from "@/components/AboutPreview";
+import PixelPhilosophy from "@/components/PixelPhilosophy";
 
 export default function Home() {
   return (
@@ -16,6 +17,7 @@ export default function Home() {
       <Capabilities />
       <MarketsIndustries />
       <AboutPreview />
+      <PixelPhilosophy />
     </main>
   );
 }
