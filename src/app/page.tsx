@@ -6,6 +6,7 @@ import Capabilities from "@/components/Capabilities";
 import MarketsIndustries from "@/components/MarketsIndustries";
 import AboutPreview from "@/components/AboutPreview";
 import PixelPhilosophy from "@/components/PixelPhilosophy";
+import FinalCta from "@/components/FinalCta";
 
 export default function Home() {
   return (
@@ -18,6 +19,7 @@ export default function Home() {
       <MarketsIndustries />
       <AboutPreview />
       <PixelPhilosophy />
+      <FinalCta />
     </main>
   );
 }
