@@ -60,7 +60,7 @@ export default function Navbar() {
           />
         </Link>
 
-        <nav aria-label="Primary" className="hidden items-center gap-8 md:flex">
+        <nav aria-label="Primary" className="hidden items-center gap-6 lg:flex lg:gap-8">
           {navLinks.map((link) => (
             <Link
               key={link.href}
@@ -86,7 +86,7 @@ export default function Navbar() {
         <button
           ref={menuButtonRef}
           type="button"
-          className="inline-flex items-center justify-center rounded-full border border-edge p-2 text-ink md:hidden"
+          className="inline-flex items-center justify-center rounded-full border border-edge p-2 text-ink lg:hidden"
           aria-expanded={isMenuOpen}
           aria-controls="mobile-menu"
           aria-label={isMenuOpen ? "Close menu" : "Open menu"}
@@ -121,7 +121,7 @@ export default function Navbar() {
             animate={{ opacity: 1, y: 0 }}
             exit={prefersReducedMotion ? { opacity: 1 } : { opacity: 0, y: -8 }}
             transition={{ duration: prefersReducedMotion ? 0 : 0.2 }}
-            className="border-t border-edge bg-surface/95 px-6 py-6 backdrop-blur-md md:hidden"
+            className="border-t border-edge bg-surface/95 px-6 py-6 backdrop-blur-md lg:hidden"
           >
             <ul className="flex flex-col gap-5">
               {navLinks.map((link) => (

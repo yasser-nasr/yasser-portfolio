@@ -46,7 +46,7 @@ export default function Hero() {
             {heroContent.tagline}
           </motion.p>
 
-          <motion.div variants={line} className="mt-6 max-w-md">
+          <motion.h1 variants={line} className="mt-6 max-w-md">
             <Image
               src="/brand/wordmark.svg"
               alt={heroContent.name}
@@ -55,7 +55,7 @@ export default function Hero() {
               priority
               className="h-auto w-full"
             />
-          </motion.div>
+          </motion.h1>
 
           <motion.p variants={line} className="mt-6 text-base text-ink-soft md:text-lg">
             {heroContent.titles.join(" / ")}
@@ -82,7 +82,7 @@ export default function Hero() {
 
           <motion.div
             variants={line}
-            className="mt-8 inline-flex items-center gap-2 rounded-full border border-dashed border-edge px-4 py-2 text-xs text-ink-faint"
+            className="mt-8 inline-flex items-center gap-2 rounded-full border border-dashed border-edge px-4 py-2 text-xs text-ink-soft"
           >
             <span aria-hidden="true" className="h-1.5 w-1.5 rounded-full bg-ink-faint" />
             [Location] — open to GCC &amp; international remote opportunities

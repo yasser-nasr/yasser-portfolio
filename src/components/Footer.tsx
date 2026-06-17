@@ -31,7 +31,7 @@ export default function Footer() {
             height={29}
             className="opacity-70"
           />
-          <p className="text-xs text-ink-faint">© {new Date().getFullYear()} Yasser Nasr</p>
+          <p className="text-xs text-ink-soft">© {new Date().getFullYear()} Yasser Nasr</p>
         </div>
       </div>
     </footer>

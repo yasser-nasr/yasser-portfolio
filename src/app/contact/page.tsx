@@ -27,7 +27,7 @@ export default function ContactPage() {
           <ContactForm />
         </Reveal>
 
-        <Reveal className="mt-12 border-t border-edge pt-8 text-sm text-ink-faint">
+        <Reveal className="mt-12 border-t border-edge pt-8 text-sm text-ink-soft">
           Prefer email or LinkedIn? [Email address] · [LinkedIn URL] — not yet
           published here.
         </Reveal>

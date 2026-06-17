@@ -18,7 +18,7 @@ const pill: Variants = {
 function TagGroup({ label, items }: { label: string; items: string[] }) {
   return (
     <div>
-      <p className="font-display text-xs uppercase tracking-[0.25em] text-ink-faint">{label}</p>
+      <p className="font-display text-xs uppercase tracking-[0.25em] text-ink-soft">{label}</p>
       <Reveal variants={container} className="mt-4 flex flex-wrap gap-3">
         {items.map((tagItem) => (
           <motion.span

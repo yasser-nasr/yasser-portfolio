@@ -24,7 +24,7 @@ export default function CapabilitiesPage() {
           </p>
         </Reveal>
 
-        <CapabilitiesList className="mt-16" />
+        <CapabilitiesList className="mt-16" headingLevel="h2" />
       </div>
     </main>
   );

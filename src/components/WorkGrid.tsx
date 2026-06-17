@@ -15,7 +15,13 @@ const item: Variants = {
   visible: { opacity: 1, y: 0, transition: { duration: 0.6, ease: "easeOut" } },
 };
 
-export default function WorkGrid({ className = "" }: { className?: string }) {
+export default function WorkGrid({
+  className = "",
+  cardHeadingLevel = "h3",
+}: {
+  className?: string;
+  cardHeadingLevel?: "h2" | "h3";
+}) {
   return (
     <Reveal
       variants={container}
@@ -23,7 +29,7 @@ export default function WorkGrid({ className = "" }: { className?: string }) {
     >
       {workProjects.map((project) => (
         <motion.div key={project.slug} variants={item}>
-          <WorkCard project={project} />
+          <WorkCard project={project} headingLevel={cardHeadingLevel} />
         </motion.div>
       ))}
     </Reveal>

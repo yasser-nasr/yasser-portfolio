@@ -3,6 +3,7 @@ import { Poppins } from "next/font/google";
 import localFont from "next/font/local";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
+import { siteUrl } from "@/lib/site";
 import "./globals.css";
 
 const poppins = Poppins({
@@ -17,10 +18,27 @@ const alpharush = localFont({
   display: "swap",
 });
 
+const title = "Yasser Nasr — Senior Graphic Designer, Brand & Digital Designer";
+const description =
+  "I turn ideas into visual systems, digital experiences, and communication that people can understand, feel, and remember.";
+
 export const metadata: Metadata = {
-  title: "Yasser Nasr — Senior Graphic Designer, Brand & Digital Designer",
-  description:
-    "I turn ideas into visual systems, digital experiences, and communication that people can understand, feel, and remember.",
+  metadataBase: new URL(siteUrl),
+  title,
+  description,
+  openGraph: {
+    title,
+    description,
+    url: siteUrl,
+    siteName: "Yasser Nasr",
+    locale: "en_US",
+    type: "website",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title,
+    description,
+  },
 };
 
 export default function RootLayout({

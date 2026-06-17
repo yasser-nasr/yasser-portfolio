@@ -1,7 +1,15 @@
 import Link from "next/link";
 import type { WorkProject } from "@/data/work";
 
-export default function WorkCard({ project }: { project: WorkProject }) {
+export default function WorkCard({
+  project,
+  headingLevel = "h3",
+}: {
+  project: WorkProject;
+  headingLevel?: "h2" | "h3";
+}) {
+  const Heading = headingLevel;
+
   return (
     <Link
       href={`/work/${project.slug}`}
@@ -17,14 +25,14 @@ export default function WorkCard({ project }: { project: WorkProject }) {
             <span key={i} className="border border-edge/40" />
           ))}
         </div>
-        <span className="absolute inset-0 flex items-center justify-center text-center text-xs uppercase tracking-[0.2em] text-ink-faint">
+        <span className="absolute inset-0 flex items-center justify-center text-center text-xs uppercase tracking-[0.2em] text-ink-soft">
           Case study placeholder
         </span>
       </div>
 
       <div className="mt-4 flex items-baseline justify-between gap-4">
-        <h3 className="text-lg text-ink">{project.name}</h3>
-        <span className="font-display text-sm text-ink-faint">{project.year}</span>
+        <Heading className="text-lg text-ink">{project.name}</Heading>
+        <span className="font-display text-sm text-ink-soft">{project.year}</span>
       </div>
       <p className="mt-1 text-sm text-ink-soft">
         {project.category} · {project.industry}

@@ -36,7 +36,7 @@ export default function ContactForm() {
           required
           autoComplete="name"
           placeholder="Your name"
-          className="mt-2 w-full rounded-md border border-edge bg-surface-deep px-4 py-3 text-ink placeholder:text-ink-faint"
+          className="mt-2 w-full rounded-md border border-edge bg-surface-deep px-4 py-3 text-ink placeholder:text-ink-soft"
         />
       </div>
 
@@ -51,7 +51,7 @@ export default function ContactForm() {
           required
           autoComplete="email"
           placeholder="you@example.com"
-          className="mt-2 w-full rounded-md border border-edge bg-surface-deep px-4 py-3 text-ink placeholder:text-ink-faint"
+          className="mt-2 w-full rounded-md border border-edge bg-surface-deep px-4 py-3 text-ink placeholder:text-ink-soft"
         />
       </div>
 
@@ -65,7 +65,7 @@ export default function ContactForm() {
           required
           rows={5}
           placeholder="Tell me about the role, project, or idea you have in mind."
-          className="mt-2 w-full rounded-md border border-edge bg-surface-deep px-4 py-3 text-ink placeholder:text-ink-faint"
+          className="mt-2 w-full rounded-md border border-edge bg-surface-deep px-4 py-3 text-ink placeholder:text-ink-soft"
         />
       </div>
 

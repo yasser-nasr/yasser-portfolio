@@ -24,7 +24,7 @@ export default function WorkPage() {
           </p>
         </Reveal>
 
-        <WorkGrid className="mt-16" />
+        <WorkGrid className="mt-16" cardHeadingLevel="h2" />
       </div>
     </main>
   );

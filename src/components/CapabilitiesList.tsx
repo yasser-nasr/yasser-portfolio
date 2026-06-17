@@ -14,7 +14,15 @@ const row: Variants = {
   visible: { opacity: 1, y: 0, transition: { duration: 0.5, ease: "easeOut" } },
 };
 
-export default function CapabilitiesList({ className = "" }: { className?: string }) {
+export default function CapabilitiesList({
+  className = "",
+  headingLevel = "h3",
+}: {
+  className?: string;
+  headingLevel?: "h2" | "h3";
+}) {
+  const Heading = headingLevel;
+
   return (
     <Reveal variants={container} className={`border-t border-edge ${className}`}>
       {capabilities.map((capability) => (
@@ -27,7 +35,7 @@ export default function CapabilitiesList({ className = "" }: { className?: strin
             {capability.number}
           </span>
           <div>
-            <h3 className="text-xl text-ink md:text-2xl">{capability.title}</h3>
+            <Heading className="text-xl text-ink md:text-2xl">{capability.title}</Heading>
             <p className="mt-2 max-w-xl text-sm text-ink-soft md:text-base">
               {capability.description}
             </p>

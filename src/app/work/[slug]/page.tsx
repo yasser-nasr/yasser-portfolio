@@ -81,7 +81,7 @@ export default async function WorkCaseStudyPage({ params }: Props) {
         </HeadingReveal>
 
         <Reveal>
-          <p className="mt-4 text-sm uppercase tracking-[0.15em] text-ink-faint">
+          <p className="mt-4 text-sm uppercase tracking-[0.15em] text-ink-soft">
             {project.category} · {project.industry} · {project.year}
           </p>
           <p className="mt-6 text-lg text-ink-soft">{project.statement}</p>
@@ -95,7 +95,7 @@ export default async function WorkCaseStudyPage({ params }: Props) {
         <div className="mt-16 space-y-12 border-t border-edge pt-12">
           {caseStudySections.map((section) => (
             <Reveal key={section.label}>
-              <h2 className="font-display text-sm uppercase tracking-[0.2em] text-ink-faint">
+              <h2 className="font-display text-sm uppercase tracking-[0.2em] text-ink-soft">
                 {section.label}
               </h2>
               <p className="mt-3 max-w-xl text-base text-ink-soft">{section.placeholder}</p>
