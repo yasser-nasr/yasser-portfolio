@@ -3,6 +3,7 @@ import ProofStrip from "@/components/ProofStrip";
 import SelectedWork from "@/components/SelectedWork";
 import Positioning from "@/components/Positioning";
 import Capabilities from "@/components/Capabilities";
+import MarketsIndustries from "@/components/MarketsIndustries";
 
 export default function Home() {
   return (
@@ -12,6 +13,7 @@ export default function Home() {
       <SelectedWork />
       <Positioning />
       <Capabilities />
+      <MarketsIndustries />
     </main>
   );
 }
