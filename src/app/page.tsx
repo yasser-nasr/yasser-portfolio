@@ -2,6 +2,7 @@ import Hero from "@/components/Hero";
 import ProofStrip from "@/components/ProofStrip";
 import SelectedWork from "@/components/SelectedWork";
 import Positioning from "@/components/Positioning";
+import Capabilities from "@/components/Capabilities";
 
 export default function Home() {
   return (
@@ -10,6 +11,7 @@ export default function Home() {
       <ProofStrip />
       <SelectedWork />
       <Positioning />
+      <Capabilities />
     </main>
   );
 }
