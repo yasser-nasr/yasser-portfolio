@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg id="Layer_2" data-name="Layer 2" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 120 175">
+  <defs>
+    <style>
+      .cls-1 {
+        fill: #F2F0EA;
+      }
+
+      .cls-2 {
+        fill: #B8B8B2;
+      }
+
+      .cls-3 {
+        fill: #7A7A76;
+      }
+    </style>
+  </defs>
+  <g id="Layer_15" data-name="Layer 15">
+    <g>
+      <g>
+        <polygon class="cls-1" points="115 75 110 75 110 80 115 80 115 85 115 90 120 90 120 85 120 80 120 75 115 75"/>
+        <polygon class="cls-1" points="110 95 110 100 110 105 110 110 115 110 115 105 115 100 115 95 115 90 110 90 110 95"/>
+        <rect class="cls-1" x="105" y="110" width="5" height="5"/>
+      </g>
+      <g>
+        <rect class="cls-2" x="100" y="100" width="5" height="5"/>
+        <rect class="cls-2" x="95" y="110" width="5" height="5"/>
+        <rect class="cls-2" x="90" y="115" width="5" height="5"/>
+        <rect class="cls-2" x="85" y="120" width="5" height="5"/>
+        <rect class="cls-2" x="80" y="125" width="5" height="5"/>
+      </g>
+      <polygon class="cls-1" points="100 75 100 80 100 85 95 85 95 90 95 95 90 95 85 95 80 95 75 95 70 95 70 100 70 105 70 110 75 110 75 115 75 120 70 120 70 125 75 125 75 130 80 130 80 125 85 125 85 120 90 120 90 115 95 115 95 110 100 110 100 105 100 100 105 100 105 95 105 90 105 85 105 80 105 75 100 75"/>
+      <polygon class="cls-2" points="80 75 75 75 70 75 70 80 75 80 80 80 85 80 85 75 80 75"/>
+      <g>
+        <polygon class="cls-3" points="110 80 110 85 110 90 115 90 115 85 115 80 110 80"/>
+        <polygon class="cls-3" points="5 85 5 90 10 90 10 85 10 80 5 80 5 85"/>
+      </g>
+      <g>
+        <polygon class="cls-1" points="5 80 10 80 10 75 5 75 0 75 0 80 0 85 0 90 5 90 5 85 5 80"/>
+        <polygon class="cls-1" points="10 100 10 95 10 90 5 90 5 95 5 100 5 105 5 110 10 110 10 105 10 100"/>
+        <rect class="cls-1" x="10" y="110" width="5" height="5"/>
+      </g>
+      <polygon class="cls-2" points="30 75 25 75 25 80 30 80 35 80 35 75 30 75"/>
+      <g>
+        <rect class="cls-2" x="15" y="100" width="5" height="5"/>
+        <rect class="cls-2" x="20" y="110" width="5" height="5"/>
+        <rect class="cls-2" x="25" y="115" width="5" height="5"/>
+        <rect class="cls-2" x="30" y="120" width="5" height="5"/>
+        <rect class="cls-2" x="35" y="125" width="5" height="5"/>
+      </g>
+      <polygon class="cls-1" points="45 95 40 95 35 95 30 95 25 95 25 90 25 85 20 85 20 80 20 75 15 75 15 80 15 85 15 90 15 95 15 100 20 100 20 105 20 110 25 110 25 115 30 115 30 120 35 120 35 125 40 125 40 130 45 130 45 125 50 125 50 120 45 120 45 115 45 110 50 110 50 105 50 100 50 95 45 95"/>
+      <g>
+        <polygon class="cls-3" points="70 110 70 115 70 120 75 120 75 115 75 110 70 110"/>
+        <rect class="cls-3" x="65" y="120" width="5" height="5"/>
+        <polygon class="cls-3" points="70 100 70 95 70 90 65 90 65 95 65 100 65 105 65 110 70 110 70 105 70 100"/>
+        <polygon class="cls-3" points="45 115 45 120 50 120 50 115 50 110 45 110 45 115"/>
+        <rect class="cls-3" x="50" y="120" width="5" height="5"/>
+        <polygon class="cls-3" points="50 95 50 100 50 105 50 110 55 110 55 105 55 100 55 95 55 90 50 90 50 95"/>
+      </g>
+      <g>
+        <polygon class="cls-2" points="100 45 100 50 100 55 105 55 105 50 105 45 100 45"/>
+        <rect class="cls-2" x="95" y="40" width="5" height="5"/>
+        <polygon class="cls-2" points="90 35 85 35 80 35 75 35 70 35 65 35 65 40 70 40 75 40 80 40 85 40 90 40 95 40 95 35 90 35"/>
+        <polygon class="cls-2" points="15 45 15 50 15 55 20 55 20 50 25 50 25 45 20 45 15 45"/>
+        <rect class="cls-2" x="25" y="40" width="5" height="5"/>
+        <polygon class="cls-2" points="45 35 40 35 35 35 30 35 30 40 35 40 40 40 45 40 50 40 55 40 55 35 50 35 45 35"/>
+      </g>
+      <polygon class="cls-2" points="70 135 65 135 60 135 59.99 135 55 135 50 135 45 135 45 140 50 140 50 145 55 145 60 145 60 145 65 145 65 145 70 145 70 140 74.99 140 74.99 135 70 135"/>
+      <g>
+        <rect class="cls-2" x="40" y="150" width="5" height="5"/>
+        <rect class="cls-2" x="45" y="155" width="5" height="5"/>
+        <polygon class="cls-2" points="54.99 155 54.99 160 59.99 160 64.99 160 64.99 155 59.99 155 54.99 155"/>
+        <rect class="cls-2" x="74.99" y="150" width="5" height="5"/>
+        <rect class="cls-2" x="69.99" y="155" width="5" height="5"/>
+      </g>
+      <g>
+        <polygon class="cls-1" points="50 145 50 140 45.01 140 40.01 140 40.01 145 40.01 150.01 45.01 150.01 45.01 155.01 50 155.01 50 160 55.01 160 55.01 155.01 55.01 150.01 50 150.01 50 145"/>
+        <polygon class="cls-1" points="75 140 70 140 70 145 70 150.01 65 150.01 65 155.01 65 160 70 160 70 155.01 75 155.01 75 150.01 80 150.01 80 145 80 140 75 140"/>
+      </g>
+      <polygon class="cls-3" points="55 155 55 150 50 150 50 145 70 145 70 150 65 150 65 155 55 155"/>
+      <polygon class="cls-1" points="65 110 65 105 65 100 65 95 65 90 65 85 65 80 60 80 59.99 80 55 80 55 85 55 90 55 95 55 100 55 105 55 110 54.99 110 50 110 50 115 50 120 54.99 120 54.99 125 59.99 125 59.99 125 64.99 125 64.99 120 69.99 120 69.99 115 69.99 110 65 110"/>
+      <polygon class="cls-1" points="100 55 100 50 100 45 95 45 95 40 90 40 85 40 80 40 75 40 70 40 65 40 60 40 60 40 55 40 50 40 45 40 40 40 35 40 30 40 30 45 25 45 25 50 20 50 20 55 15 55 15 60 15 65 15 70 20 70 25 70 30 70 35 70 40 70 45 70 50 70 55 70 60 70 60 70 65 70 70 70 75 70 80 70 85 70 90 70 95 70 100 70 105 70 105 65 105 60 105 55 100 55"/>
+      <g>
+        <rect class="cls-2" x="85" y="30" width="5" height="5"/>
+        <polygon class="cls-2" points="80 25 75 25 75 30 80 30 85 30 85 25 80 25"/>
+        <rect class="cls-2" x="70" y="20" width="5" height="5"/>
+        <rect class="cls-2" x="30" y="20" width="5" height="5"/>
+        <polygon class="cls-2" points="50 25 45 25 40 25 35 25 35 30 40 30 45 30 50 30 55 30 55 25 50 25"/>
+        <rect class="cls-2" x="55" y="30" width="5" height="5"/>
+      </g>
+      <path class="cls-3" d="M110,25v-5h-5v-5h-5v-5h-10v-5h-5V0h-50v5h-10v5h-5v5h-5v5h-5v5h-5v50h5v35h5v20h5v5h0v5h5v-5h0v10h5s-5,0-5,0v5h5v5h5s-5,0-5,0v5h5v5h5v5h5v5h30v-5h5v-5h5v-5h5v-5h0v-5h5v-10h5v-5h0v-5h5v-10h0v-10h5v-35h5V25h-5ZM105,50v20H15v-25h10v-5h5v-5h25v-5h-20v-5h-5v-5h5v5h20v5h5v5h-5v5h10v-5h20v-5h-10v-5h-5v-5h5v5h10v5h5v5h5v5h5v5h5v5ZM25,75h10v5h-10v-5ZM70,75h15v5h-15v-5ZM40,150v-10h5v-5h30v5h5v15h-5v5h-30v-5h-5v-5ZM105,80v25h-5v10h-5v5h-5v5h-5v5h-10v-5h-30v5h-10v-5h-5v-5h-5v-5h-5v-10h-5v-30h5v10h5v10h25v-5h5v-10h10v10h5v5h25v-10h5v-10h5v5Z"/>
+    </g>
+  </g>
+</svg>
