@@ -1,26 +1,87 @@
 @import "tailwindcss";
 
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  --bg-main: #1D1D1B;
+  --bg-deep: #242424;
+  --bg-card: #2F2F2D;
+  --border: #3A3A38;
+  --text-main: #F2F0EA;
+  --text-secondary: #B8B8B2;
+  --text-muted: #7A7A76;
+  --bg-light: #E8E5DD;
+  --text-dark: #151515;
 }
 
 @theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
+  --color-surface: var(--bg-main);
+  --color-surface-deep: var(--bg-deep);
+  --color-surface-card: var(--bg-card);
+  --color-edge: var(--border);
+  --color-ink: var(--text-main);
+  --color-ink-soft: var(--text-secondary);
+  --color-ink-faint: var(--text-muted);
+  --color-paper: var(--bg-light);
+  --color-ink-on-paper: var(--text-dark);
+  --font-sans: var(--font-poppins);
+  --font-display: var(--font-alpharush);
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+html {
+  color-scheme: dark;
+  scroll-behavior: smooth;
 }
 
 body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  min-height: 100%;
+  background: var(--bg-main);
+  color: var(--text-main);
+  font-family: var(--font-sans), system-ui, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+}
+
+::selection {
+  background: color-mix(in srgb, var(--text-main) 25%, transparent);
+  color: var(--text-main);
+}
+
+:focus-visible {
+  outline: 2px solid var(--text-main);
+  outline-offset: 3px;
+  border-radius: 2px;
+}
+
+/* Shared depth layer: one layered surface + soft radial light field + faint grain,
+   rendered once behind every page instead of per-section. */
+.background-field {
+  position: fixed;
+  inset: 0;
+  z-index: -1;
+  pointer-events: none;
+  background-color: var(--bg-main);
+  background-image:
+    radial-gradient(60% 50% at 80% 0%, color-mix(in srgb, var(--bg-card) 70%, transparent) 0%, transparent 70%),
+    radial-gradient(45% 40% at 10% 100%, color-mix(in srgb, var(--bg-deep) 80%, transparent) 0%, transparent 70%);
+}
+
+.background-field::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  opacity: 0.05;
+  background-repeat: repeat;
+  background-size: 160px 160px;
+  background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='160' height='160'><filter id='n'><feTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='2' stitchTiles='stitch'/></filter><rect width='100%25' height='100%25' filter='url(%23n)'/></svg>");
+  mix-blend-mode: overlay;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
 }
