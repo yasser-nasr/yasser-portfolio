@@ -72,11 +72,18 @@ export default function Navbar() {
               {link.label}
             </Link>
           ))}
-          <span aria-disabled="true" className="text-sm text-ink-faint">
-            Resume <span className="text-[10px] uppercase tracking-wide">(soon)</span>
-          </span>
+          <Link
+            href="/resume"
+            className={`text-sm transition-colors hover:text-ink ${
+              pathname === "/resume" ? "text-ink" : "text-ink-soft"
+            }`}
+          >
+            Resume
+          </Link>
           <Link
             href={connectLink.href}
+            target="_blank"
+            rel="noopener noreferrer"
             className="rounded-full border border-edge px-4 py-2 text-sm text-ink transition-colors hover:bg-surface-card"
           >
             {connectLink.label}
@@ -135,13 +142,18 @@ export default function Navbar() {
                 </li>
               ))}
               <li>
-                <span aria-disabled="true" className="text-lg text-ink-faint">
-                  Resume <span className="text-xs uppercase tracking-wide">(soon)</span>
-                </span>
+                <Link
+                  href="/resume"
+                  className={`text-lg ${pathname === "/resume" ? "text-ink" : "text-ink-soft"}`}
+                >
+                  Resume
+                </Link>
               </li>
               <li>
                 <Link
                   href={connectLink.href}
+                  target="_blank"
+                  rel="noopener noreferrer"
                   className="inline-flex rounded-full border border-edge px-4 py-2 text-base text-ink"
                 >
                   {connectLink.label}

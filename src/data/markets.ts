@@ -1,11 +1,21 @@
-export const markets = ["Egypt", "UAE", "Saudi Arabia", "GCC"];
+export const markets = ["Egypt", "UAE", "Saudi Arabia", "Wider GCC"];
 
-export const industries = [
-  "Real Estate",
-  "Finance",
-  "Legal",
-  "Technology",
-  "Education",
-  "Home Services",
-  "Development",
+export type IndustryGroup = {
+  category: string;
+  items: string[];
+};
+
+export const industryGroups: IndustryGroup[] = [
+  {
+    category: "Property & Built Environment",
+    items: ["Real Estate", "Home Services", "Development"],
+  },
+  {
+    category: "Professional & Business Services",
+    items: ["Finance", "Legal", "Technology"],
+  },
+  {
+    category: "Knowledge & Education",
+    items: ["Education"],
+  },
 ];

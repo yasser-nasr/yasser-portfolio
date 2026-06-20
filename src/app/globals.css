@@ -75,6 +75,17 @@ body {
   mix-blend-mode: overlay;
 }
 
+/* Floating glass dock for the proof strip: restrained translucent charcoal,
+   a thin light rim, a soft diffused shadow for lift, and a faint inset top
+   highlight to read as a glass edge rather than a flat card. */
+.proof-dock {
+  background: color-mix(in srgb, var(--bg-card) 75%, transparent);
+  border: 1px solid color-mix(in srgb, var(--text-main) 14%, transparent);
+  box-shadow:
+    0 24px 48px -16px rgba(0, 0, 0, 0.45),
+    inset 0 1px 0 0 color-mix(in srgb, var(--text-main) 10%, transparent);
+}
+
 @media (prefers-reduced-motion: reduce) {
   *,
   *::before,

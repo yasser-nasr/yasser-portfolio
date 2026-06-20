@@ -1,12 +1,9 @@
 "use client";
 
 import Image from "next/image";
-import Link from "next/link";
 import { motion, type Variants } from "motion/react";
 import PixelReveal from "@/components/PixelReveal";
 import { useSafeReducedMotion } from "@/lib/useSafeReducedMotion";
-
-const ATTRIBUTES = ["Independent Ownership", "Multidisciplinary Thinking", "GCC Experience"];
 
 const container: Variants = {
   hidden: {},
@@ -27,13 +24,13 @@ const PIXEL_FRAGMENTS = [
   { top: "94%", left: "92%", size: 9 },
 ];
 
-export default function AboutPreview() {
+export default function AboutHero() {
   const prefersReducedMotion = useSafeReducedMotion();
   const reduceMotion = prefersReducedMotion === true;
 
   return (
-    <section className="py-20 md:py-28">
-      <div className="mx-auto grid max-w-6xl items-center gap-12 px-6 md:grid-cols-[3fr_2fr] md:gap-16">
+    <div>
+      <div className="grid items-center gap-12 md:grid-cols-[3fr_2fr] md:gap-16">
         <motion.div
           key={reduceMotion ? "static" : "animated"}
           initial={reduceMotion ? "visible" : "hidden"}
@@ -44,53 +41,28 @@ export default function AboutPreview() {
             variants={line}
             className="font-display text-base uppercase tracking-[0.25em] text-ink-soft md:text-lg"
           >
-            About / 06
+            About / 01
           </motion.p>
 
-          <motion.h2
+          <motion.h1
             variants={line}
-            className="mt-6 text-3xl font-semibold leading-tight text-ink md:text-4xl"
+            className="mt-6 text-4xl font-semibold leading-tight text-ink md:text-5xl"
           >
-            Beyond the Pixels
-          </motion.h2>
+            The Designer Behind the Pixels
+          </motion.h1>
 
-          <motion.div variants={line} className="mt-6 max-w-xl space-y-4">
+          <motion.div variants={line} className="mt-8 max-w-xl space-y-5">
             <p className="text-lg leading-relaxed text-ink-soft">
               I&rsquo;m Yasser Nasr, a Senior Graphic Designer and Brand
-              &amp; Digital Designer focused on turning ideas into clear
-              visual systems and digital experiences.
+              &amp; Digital Designer with 6+ years of experience building
+              brand systems, digital experiences, and visual communication
+              across Egypt and GCC markets.
             </p>
             <p className="text-lg leading-relaxed text-ink-soft">
               I combine creative craft, business understanding, and
-              multidisciplinary execution to build work that communicates
-              clearly, feels consistent, and connects with its audience.
+              multidisciplinary execution to turn ideas into clear,
+              consistent, and memorable visual experiences.
             </p>
-          </motion.div>
-
-          <motion.div variants={line} className="mt-6 flex flex-wrap items-center gap-x-3 gap-y-2">
-            {ATTRIBUTES.map((attribute, index) => (
-              <span key={attribute} className="flex items-center gap-3">
-                {index > 0 && (
-                  <span aria-hidden="true" className="h-1 w-1 rounded-sm bg-ink-soft/40" />
-                )}
-                <span className="text-sm text-ink-soft md:text-base">{attribute}</span>
-              </span>
-            ))}
-          </motion.div>
-
-          <motion.div variants={line} className="mt-8">
-            <Link
-              href="/about"
-              className="group inline-flex items-center gap-1.5 text-sm text-ink underline-offset-4 hover:underline"
-            >
-              More About Me
-              <span
-                aria-hidden="true"
-                className="inline-block transition-transform duration-200 group-hover:translate-x-1"
-              >
-                →
-              </span>
-            </Link>
           </motion.div>
         </motion.div>
 
@@ -146,6 +118,8 @@ export default function AboutPreview() {
           </div>
         </div>
       </div>
-    </section>
+
+      <div aria-hidden="true" className="mt-20 border-t border-edge md:mt-28" />
+    </div>
   );
 }

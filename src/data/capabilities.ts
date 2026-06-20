@@ -8,25 +8,22 @@ export const capabilities: Capability[] = [
   {
     number: "01",
     title: "Brand Identity & Visual Systems",
-    description:
-      "Identity design, brand look and feel, visual language, brand consistency, guidelines, and applications.",
+    description: "Building clear and consistent visual languages across every touchpoint.",
   },
   {
     number: "02",
     title: "Digital Design & Websites",
-    description:
-      "Websites, landing pages, UI direction, digital experiences, online presence, and visual interface systems.",
+    description: "Creating responsive digital experiences built around clarity and usability.",
   },
   {
     number: "03",
     title: "Campaigns & Social Content",
-    description:
-      "Social media systems, campaign visuals, marketing content, creative assets, and audience-facing communication.",
+    description: "Turning messages into adaptable visual communication for real audiences.",
   },
   {
     number: "04",
     title: "Motion, Presentations & Multimedia",
     description:
-      "Pitch decks, corporate presentations, motion graphics, video content, and multimedia storytelling.",
+      "Bringing ideas to life through movement, storytelling, and structured communication.",
   },
 ];

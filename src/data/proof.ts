@@ -6,6 +6,6 @@ export type ProofItem = {
 export const proofItems: ProofItem[] = [
   { lead: "6+", label: "Years of Experience" },
   { lead: "GCC", label: "Market Experience" },
-  { lead: "Cross-Industry", label: "Design Experience" },
+  { lead: "Multi-Sector", label: "Design Experience" },
   { lead: "150+", label: "Designers Mentored" },
 ];

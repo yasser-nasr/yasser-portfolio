@@ -12,5 +12,5 @@ export const navLinks: NavLink[] = [
 
 export const connectLink: NavLink = {
   label: "Let’s Connect",
-  href: "/contact",
+  href: "https://wa.me/201000470165",
 };
