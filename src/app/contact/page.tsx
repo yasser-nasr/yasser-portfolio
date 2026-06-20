@@ -83,15 +83,15 @@ export default function ContactPage() {
                       className="group flex items-center justify-between gap-3 rounded-lg border border-edge px-5 py-4 text-ink transition-colors hover:border-ink/30 hover:bg-surface-card/60"
                     >
                       <span className="text-sm text-ink-soft">{method.label}</span>
-                      <span className="flex items-center gap-2 font-medium">
-                        {method.value}
+                      <span className="flex min-w-0 items-center gap-2 font-medium">
+                        <span className="break-words">{method.value}</span>
                         <span
                           aria-hidden="true"
-                          className="h-1.5 w-1.5 scale-0 rounded-sm bg-ink-soft transition-transform duration-200 group-hover:scale-100"
+                          className="h-1.5 w-1.5 shrink-0 scale-0 rounded-sm bg-ink-soft transition-transform duration-200 group-hover:scale-100"
                         />
                         <span
                           aria-hidden="true"
-                          className="inline-block transition-transform duration-200 group-hover:translate-x-1"
+                          className="inline-block shrink-0 transition-transform duration-200 group-hover:translate-x-1"
                         >
                           →
                         </span>
