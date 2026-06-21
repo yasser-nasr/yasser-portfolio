@@ -17,7 +17,7 @@ export const metadata: Metadata = {
 
 export default function ResumePage() {
   return (
-    <main className="flex-1 pt-36 pb-24 md:pt-44">
+    <main className="flex-1 pt-36 pb-12 md:pt-44 md:pb-16">
       <div className="mx-auto max-w-6xl px-6">
         <ResumeHero />
         <ResumeSnapshot />

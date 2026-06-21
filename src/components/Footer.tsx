@@ -7,7 +7,13 @@ export default function Footer() {
     <footer className="border-t border-edge py-12">
       <div className="mx-auto flex max-w-6xl flex-col items-center gap-8 px-6 text-center md:flex-row md:justify-between md:text-left">
         <Link href="/" aria-label="Yasser Nasr — home">
-          <Image src="/brand/wordmark.svg" alt="Yasser Nasr" width={132} height={11} />
+          <Image
+            src="/brand/wordmark.svg"
+            alt="Yasser Nasr"
+            width={132}
+            height={11}
+            className="brand-mark"
+          />
         </Link>
 
         <nav aria-label="Footer" className="flex flex-wrap items-center justify-center gap-6">

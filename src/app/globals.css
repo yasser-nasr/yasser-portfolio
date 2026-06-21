@@ -1,6 +1,10 @@
 @import "tailwindcss";
 
-:root {
+/* Dark is the default brand identity (also the no-JS / pre-hydration
+   fallback). Light is an optional, equally refined alternate — never pure
+   white, never pure black. */
+:root,
+html[data-theme="dark"] {
   --bg-main: #1D1D1B;
   --bg-deep: #242424;
   --bg-card: #2F2F2D;
@@ -8,8 +12,18 @@
   --text-main: #F2F0EA;
   --text-secondary: #B8B8B2;
   --text-muted: #7A7A76;
-  --bg-light: #E8E5DD;
-  --text-dark: #151515;
+  color-scheme: dark;
+}
+
+html[data-theme="light"] {
+  --bg-main: #E8E5DD;
+  --bg-deep: #DEDAD0;
+  --bg-card: #F2F0EA;
+  --border: #C8C3B8;
+  --text-main: #151515;
+  --text-secondary: #4A4A46;
+  --text-muted: #77736B;
+  color-scheme: light;
 }
 
 @theme inline {
@@ -20,14 +34,11 @@
   --color-ink: var(--text-main);
   --color-ink-soft: var(--text-secondary);
   --color-ink-faint: var(--text-muted);
-  --color-paper: var(--bg-light);
-  --color-ink-on-paper: var(--text-dark);
   --font-sans: var(--font-poppins);
   --font-display: var(--font-alpharush);
 }
 
 html {
-  color-scheme: dark;
   scroll-behavior: smooth;
   overflow-x: hidden;
 }
@@ -40,6 +51,20 @@ body {
   font-family: var(--font-sans), system-ui, sans-serif;
   -webkit-font-smoothing: antialiased;
   text-rendering: optimizeLegibility;
+  transition: background-color 0.25s ease, color 0.25s ease;
+}
+
+/* The wordmark SVG is a static light-on-transparent asset. Inverting maps
+   its fill to the near-exact light-theme ink value without duplicating
+   artwork or baking theme colors into the file. The pixel mascot is exempt
+   on purpose — it keeps its original dark-mode colors in both themes as a
+   fixed brand signature. */
+.brand-mark {
+  transition: filter 0.25s ease;
+}
+
+html[data-theme="light"] .brand-mark {
+  filter: invert(1);
 }
 
 ::selection {

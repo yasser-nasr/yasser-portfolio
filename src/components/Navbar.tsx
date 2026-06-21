@@ -6,6 +6,7 @@ import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { AnimatePresence, motion, useReducedMotion } from "motion/react";
 import { connectLink, navLinks } from "@/data/navigation";
+import ThemeToggle from "@/components/ThemeToggle";
 
 export default function Navbar() {
   const [isScrolled, setIsScrolled] = useState(false);
@@ -57,66 +58,71 @@ export default function Navbar() {
             width={132}
             height={11}
             priority
+            className="brand-mark"
           />
         </Link>
 
-        <nav aria-label="Primary" className="hidden items-center gap-6 lg:flex lg:gap-8">
-          {navLinks.map((link) => (
+        <div className="flex items-center gap-3 lg:gap-6">
+          <nav aria-label="Primary" className="hidden items-center gap-6 lg:flex lg:gap-8">
+            {navLinks.map((link) => (
+              <Link
+                key={link.href}
+                href={link.href}
+                className={`text-sm transition-colors hover:text-ink ${
+                  pathname === link.href ? "text-ink" : "text-ink-soft"
+                }`}
+              >
+                {link.label}
+              </Link>
+            ))}
             <Link
-              key={link.href}
-              href={link.href}
+              href="/resume"
               className={`text-sm transition-colors hover:text-ink ${
-                pathname === link.href ? "text-ink" : "text-ink-soft"
+                pathname === "/resume" ? "text-ink" : "text-ink-soft"
               }`}
             >
-              {link.label}
+              Resume
             </Link>
-          ))}
-          <Link
-            href="/resume"
-            className={`text-sm transition-colors hover:text-ink ${
-              pathname === "/resume" ? "text-ink" : "text-ink-soft"
-            }`}
-          >
-            Resume
-          </Link>
-          <Link
-            href={connectLink.href}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="rounded-full border border-edge px-4 py-2 text-sm text-ink transition-colors hover:bg-surface-card"
-          >
-            {connectLink.label}
-          </Link>
-        </nav>
+            <Link
+              href={connectLink.href}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="rounded-full border border-edge px-4 py-2 text-sm text-ink transition-colors hover:bg-surface-card"
+            >
+              {connectLink.label}
+            </Link>
+          </nav>
 
-        <button
-          ref={menuButtonRef}
-          type="button"
-          className="inline-flex items-center justify-center rounded-full border border-edge p-2 text-ink lg:hidden"
-          aria-expanded={isMenuOpen}
-          aria-controls="mobile-menu"
-          aria-label={isMenuOpen ? "Close menu" : "Open menu"}
-          onClick={() => setIsMenuOpen((open) => !open)}
-        >
-          <svg width="20" height="20" viewBox="0 0 20 20" fill="none" aria-hidden="true">
-            {isMenuOpen ? (
-              <path
-                d="M5 5L15 15M15 5L5 15"
-                stroke="currentColor"
-                strokeWidth="1.5"
-                strokeLinecap="round"
-              />
-            ) : (
-              <path
-                d="M3 6H17M3 10H17M3 14H17"
-                stroke="currentColor"
-                strokeWidth="1.5"
-                strokeLinecap="round"
-              />
-            )}
-          </svg>
-        </button>
+          <ThemeToggle />
+
+          <button
+            ref={menuButtonRef}
+            type="button"
+            className="inline-flex items-center justify-center rounded-full border border-edge p-2 text-ink lg:hidden"
+            aria-expanded={isMenuOpen}
+            aria-controls="mobile-menu"
+            aria-label={isMenuOpen ? "Close menu" : "Open menu"}
+            onClick={() => setIsMenuOpen((open) => !open)}
+          >
+            <svg width="20" height="20" viewBox="0 0 20 20" fill="none" aria-hidden="true">
+              {isMenuOpen ? (
+                <path
+                  d="M5 5L15 15M15 5L5 15"
+                  stroke="currentColor"
+                  strokeWidth="1.5"
+                  strokeLinecap="round"
+                />
+              ) : (
+                <path
+                  d="M3 6H17M3 10H17M3 14H17"
+                  stroke="currentColor"
+                  strokeWidth="1.5"
+                  strokeLinecap="round"
+                />
+              )}
+            </svg>
+          </button>
+        </div>
       </div>
 
       <AnimatePresence>
@@ -130,12 +136,12 @@ export default function Navbar() {
             transition={{ duration: prefersReducedMotion ? 0 : 0.2 }}
             className="border-t border-edge bg-surface/95 px-6 py-6 backdrop-blur-md lg:hidden"
           >
-            <ul className="flex flex-col gap-5">
+            <ul className="flex flex-col gap-1">
               {navLinks.map((link) => (
                 <li key={link.href}>
                   <Link
                     href={link.href}
-                    className={`text-lg ${pathname === link.href ? "text-ink" : "text-ink-soft"}`}
+                    className={`block py-2.5 text-lg ${pathname === link.href ? "text-ink" : "text-ink-soft"}`}
                   >
                     {link.label}
                   </Link>
@@ -144,12 +150,12 @@ export default function Navbar() {
               <li>
                 <Link
                   href="/resume"
-                  className={`text-lg ${pathname === "/resume" ? "text-ink" : "text-ink-soft"}`}
+                  className={`block py-2.5 text-lg ${pathname === "/resume" ? "text-ink" : "text-ink-soft"}`}
                 >
                   Resume
                 </Link>
               </li>
-              <li>
+              <li className="pt-3">
                 <Link
                   href={connectLink.href}
                   target="_blank"

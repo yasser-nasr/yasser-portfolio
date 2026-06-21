@@ -4,7 +4,7 @@ export const resumeHero = {
     "Senior Graphic Designer building brand, digital, and multimedia experiences across GCC markets.",
   supportingText:
     "6+ years of experience across brand identity, digital design, social media, websites, presentations, motion graphics, and visual communication for businesses across Egypt and the Gulf.",
-  primaryCta: { label: "Download CV", href: "/Yasser-Nasr-CV-2026.pdf" },
+  primaryCta: { label: "Download CV", href: "/brand/Yasser-Nasr-CV-2026.pdf" },
   secondaryCtas: [
     { label: "View Work", href: "/work" },
     { label: "Contact Me", href: "/contact" },

@@ -5,7 +5,7 @@ import Reveal from "@/components/Reveal";
 
 export default function FinalCta() {
   return (
-    <section className="relative overflow-hidden pt-12 pb-20 md:pt-16 md:pb-28">
+    <section className="relative overflow-hidden pt-12 pb-28 md:pt-16 md:pb-36">
       <div aria-hidden="true" className="absolute inset-0 -z-10 flex items-center justify-center">
         <div className="h-72 w-72 rounded-full bg-surface-card opacity-50 blur-3xl md:h-96 md:w-96" />
       </div>
