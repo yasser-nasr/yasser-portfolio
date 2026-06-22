@@ -12,7 +12,7 @@ export const metadata: Metadata = {
 
 const contactMethods = [
   { label: "WhatsApp", value: "+20 100 047 0165", href: "https://wa.me/201000470165" },
-  { label: "Email", value: "yasser.nasr9999@gmail.com", href: "mailto:yasser.nasr9999@gmail.com" },
+  { label: "Email", value: "contact@yassernasr.com", href: "mailto:contact@yassernasr.com" },
   { label: "LinkedIn", value: "linkedin.com/in/yasser-nasr", href: "https://www.linkedin.com/in/yasser-nasr/" },
 ];
 
