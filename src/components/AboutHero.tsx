@@ -4,6 +4,8 @@ import Image from "next/image";
 import { motion, type Variants } from "motion/react";
 import PixelReveal from "@/components/PixelReveal";
 import { useSafeReducedMotion } from "@/lib/useSafeReducedMotion";
+import { profile } from "@/data/profile";
+import { heroContent } from "@/data/hero";
 
 const container: Variants = {
   hidden: {},
@@ -53,10 +55,7 @@ export default function AboutHero() {
 
           <motion.div variants={line} className="mt-8 max-w-xl space-y-5">
             <p className="text-lg leading-relaxed text-ink-soft">
-              I&rsquo;m Yasser Nasr, a Senior Graphic Designer and Brand
-              &amp; Digital Designer with 6+ years of experience building
-              brand systems, digital experiences, and visual communication
-              across Egypt and GCC markets.
+              I&rsquo;m {profile.name}, a {profile.primaryTitle}. {heroContent.statement}
             </p>
             <p className="text-lg leading-relaxed text-ink-soft">
               I combine creative craft, business understanding, and
@@ -109,7 +108,7 @@ export default function AboutHero() {
             <PixelReveal className="p-5 md:p-7">
               <Image
                 src="/brand/mascot.svg"
-                alt="Yasser Nasr"
+                alt={profile.name}
                 width={160}
                 height={233}
                 className="h-auto w-full"

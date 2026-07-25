@@ -2,11 +2,11 @@ import type { Metadata } from "next";
 import HeadingReveal from "@/components/HeadingReveal";
 import Reveal from "@/components/Reveal";
 import WorkGrid from "@/components/WorkGrid";
+import { profile } from "@/data/profile";
 
 export const metadata: Metadata = {
-  title: "Work | Yasser Nasr",
-  description:
-    "Selected brand identity, digital design, campaign, and motion projects by Yasser Nasr, Senior Graphic Designer and Brand & Digital Designer.",
+  title: `Work | ${profile.name}`,
+  description: `Selected brand identity, digital design, campaign, and motion projects by ${profile.name}, ${profile.primaryTitle}.`,
 };
 
 export default function WorkPage() {

@@ -6,6 +6,7 @@ import { motion, useMotionValue, useSpring, type Variants } from "motion/react";
 import PixelReveal from "@/components/PixelReveal";
 import { heroContent } from "@/data/hero";
 import { useSafeReducedMotion } from "@/lib/useSafeReducedMotion";
+import { profile } from "@/data/profile";
 
 const container: Variants = {
   hidden: {},
@@ -22,7 +23,7 @@ const line: Variants = {
   visible: { opacity: 1, y: 0, transition: { duration: 0.5, ease: "easeOut" } },
 };
 
-// Minimal, subtle pixel fragments scattered around the mascot — decorative
+// Minimal, subtle pixel fragments scattered around the portrait — decorative
 // only, hidden below md to keep mobile simple/performant.
 const PIXEL_FRAGMENTS = [
   { top: "2%", left: "-8%", size: 10 },
@@ -105,7 +106,7 @@ export default function Hero() {
           </motion.h1>
 
           <motion.p variants={line} className="mt-6 text-base text-ink-soft md:text-lg">
-            {heroContent.titles.join(" / ")}
+            {heroContent.title}
           </motion.p>
 
           <motion.p variants={line} className="mt-6 max-w-lg text-lg text-ink md:text-xl">
@@ -153,7 +154,7 @@ export default function Hero() {
           onPointerMove={handlePointerMove}
           onPointerLeave={handlePointerLeave}
         >
-          {/* Restrained radial light field behind the mascot */}
+          {/* Restrained radial light field behind the portrait */}
           <div
             aria-hidden="true"
             className="absolute inset-0 -z-10 scale-150 rounded-full bg-surface-card opacity-60 blur-3xl"
@@ -171,19 +172,20 @@ export default function Hero() {
           </div>
 
           <motion.div className="relative" style={{ x: springX, y: springY }}>
-            {/* Restrained glass composition framing the mascot */}
+            {/* Restrained glass composition framing the portrait */}
             <div
               aria-hidden="true"
               className="absolute inset-[-12%] rounded-[2rem] border border-ink/10 bg-surface-card/30 shadow-2xl backdrop-blur-md"
             />
             <PixelReveal className="p-4 md:p-6">
               <Image
-                src="/brand/mascot.svg"
-                alt="Yasser Nasr pixel mascot"
-                width={120}
-                height={175}
+                src="/brand/yasser-nasr-portrait.jpg"
+                alt={`${profile.name}, Graphic and Multimedia Designer`}
+                width={1254}
+                height={1254}
                 priority
-                className="h-auto w-full"
+                sizes="(min-width: 1024px) 320px, (min-width: 768px) 224px, 176px"
+                className="h-auto w-full rounded-xl"
               />
             </PixelReveal>
           </motion.div>

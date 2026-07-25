@@ -3,17 +3,17 @@ import Image from "next/image";
 import HeadingReveal from "@/components/HeadingReveal";
 import Reveal from "@/components/Reveal";
 import ContactForm from "@/components/ContactForm";
+import { profile } from "@/data/profile";
 
 export const metadata: Metadata = {
-  title: "Contact | Yasser Nasr",
-  description:
-    "Have a role, project, or idea in mind? Get in touch with Yasser Nasr, Senior Graphic Designer and Brand & Digital Designer.",
+  title: `Contact | ${profile.name}`,
+  description: `Have a role, project, or idea in mind? Get in touch with ${profile.name}, ${profile.primaryTitle}.`,
 };
 
 const contactMethods = [
-  { label: "WhatsApp", value: "+20 100 047 0165", href: "https://wa.me/201000470165" },
-  { label: "Email", value: "contact@yassernasr.com", href: "mailto:contact@yassernasr.com" },
-  { label: "LinkedIn", value: "linkedin.com/in/yasser-nasr", href: "https://www.linkedin.com/in/yasser-nasr/" },
+  { label: "WhatsApp", value: profile.phone.display, href: profile.phone.whatsappUrl },
+  { label: "Email", value: profile.email, href: `mailto:${profile.email}` },
+  { label: "LinkedIn", value: profile.linkedIn.display, href: profile.linkedIn.url },
 ];
 
 export default function ContactPage() {

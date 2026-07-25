@@ -3,7 +3,11 @@
 import { motion, type Variants } from "motion/react";
 import HeadingReveal from "@/components/HeadingReveal";
 import Reveal from "@/components/Reveal";
-import { experienceEntries } from "@/data/resume";
+import {
+  experience as experienceEntries,
+  teachingExperience,
+  type ExperienceEntry,
+} from "@/data/profile";
 
 const container: Variants = {
   hidden: {},
@@ -19,7 +23,7 @@ export default function ResumeExperience() {
   return (
     <div className="mt-24">
       <p className="font-display text-base uppercase tracking-[0.25em] text-ink-soft md:text-lg">
-        Experience / 05
+        Experience / 04
       </p>
 
       <HeadingReveal
@@ -29,11 +33,27 @@ export default function ResumeExperience() {
         Professional Experience
       </HeadingReveal>
 
-      <Reveal
-        variants={container}
-        className="mt-12 space-y-12 border-l border-edge pl-6 md:space-y-14"
+      <ExperienceTimeline entries={experienceEntries} />
+
+      <HeadingReveal
+        as="h2"
+        className="mt-24 text-3xl font-semibold leading-tight text-ink md:text-4xl"
       >
-        {experienceEntries.map((entry) => (
+        Teaching Experience
+      </HeadingReveal>
+
+      <ExperienceTimeline entries={teachingExperience} />
+    </div>
+  );
+}
+
+function ExperienceTimeline({ entries }: { entries: readonly ExperienceEntry[] }) {
+  return (
+    <Reveal
+      variants={container}
+      className="mt-12 space-y-12 border-l border-edge pl-6 md:space-y-14"
+    >
+      {entries.map((entry) => (
           <motion.div key={entry.company} variants={item} className="group relative">
             <span
               aria-hidden="true"
@@ -57,8 +77,7 @@ export default function ResumeExperience() {
               ))}
             </ul>
           </motion.div>
-        ))}
-      </Reveal>
-    </div>
+      ))}
+    </Reveal>
   );
 }

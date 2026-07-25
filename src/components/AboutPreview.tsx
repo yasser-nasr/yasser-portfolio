@@ -5,6 +5,7 @@ import Link from "next/link";
 import { motion, type Variants } from "motion/react";
 import PixelReveal from "@/components/PixelReveal";
 import { useSafeReducedMotion } from "@/lib/useSafeReducedMotion";
+import { profile } from "@/data/profile";
 
 const ATTRIBUTES = ["Independent Ownership", "Multidisciplinary Thinking", "GCC Experience"];
 
@@ -56,8 +57,7 @@ export default function AboutPreview() {
 
           <motion.div variants={line} className="mt-6 max-w-xl space-y-4">
             <p className="text-lg leading-relaxed text-ink-soft">
-              I&rsquo;m Yasser Nasr, a Senior Graphic Designer and Brand
-              &amp; Digital Designer focused on turning ideas into clear
+              I&rsquo;m {profile.name}, a {profile.primaryTitle} focused on turning ideas into clear
               visual systems and digital experiences.
             </p>
             <p className="text-lg leading-relaxed text-ink-soft">
@@ -137,7 +137,7 @@ export default function AboutPreview() {
             <PixelReveal className="p-5 md:p-7">
               <Image
                 src="/brand/mascot.svg"
-                alt="Yasser Nasr"
+                alt={profile.name}
                 width={160}
                 height={233}
                 className="h-auto w-full"

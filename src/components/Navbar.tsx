@@ -7,6 +7,7 @@ import { usePathname } from "next/navigation";
 import { AnimatePresence, motion, useReducedMotion } from "motion/react";
 import { connectLink, navLinks } from "@/data/navigation";
 import ThemeToggle from "@/components/ThemeToggle";
+import { profile } from "@/data/profile";
 
 export default function Navbar() {
   const [isScrolled, setIsScrolled] = useState(false);
@@ -51,10 +52,10 @@ export default function Navbar() {
       }`}
     >
       <div className="mx-auto flex max-w-6xl items-center justify-between px-6 py-4">
-        <Link href="/" aria-label="Yasser Nasr — home" className="shrink-0">
+        <Link href="/" aria-label={`${profile.name} — home`} className="shrink-0">
           <Image
             src="/brand/wordmark.svg"
-            alt="Yasser Nasr"
+            alt={profile.name}
             width={132}
             height={11}
             priority
