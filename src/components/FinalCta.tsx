@@ -2,6 +2,7 @@ import Image from "next/image";
 import Link from "next/link";
 import HeadingReveal from "@/components/HeadingReveal";
 import Reveal from "@/components/Reveal";
+import { profile } from "@/data/profile";
 
 export default function FinalCta() {
   return (
@@ -39,7 +40,7 @@ export default function FinalCta() {
                 Start a Conversation
               </Link>
               <a
-                href="https://www.linkedin.com/in/yasser-nasr/"
+                href={profile.linkedIn.url}
                 target="_blank"
                 rel="noopener noreferrer"
                 className="inline-flex items-center gap-2 rounded-full border border-edge px-6 py-3 text-sm text-ink transition-colors hover:bg-surface-card"

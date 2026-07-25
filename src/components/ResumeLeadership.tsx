@@ -19,19 +19,19 @@ export default function ResumeLeadership() {
   return (
     <div className="mt-24">
       <p className="font-display text-base uppercase tracking-[0.25em] text-ink-soft md:text-lg">
-        Leadership / 06
+        Leadership / 05
       </p>
 
       <HeadingReveal
         as="h2"
         className="mt-6 text-3xl font-semibold leading-tight text-ink md:text-4xl"
       >
-        Leadership &amp; Community
+        Leadership &amp; Volunteer Experience
       </HeadingReveal>
 
-      <Reveal variants={container} className="mt-12 divide-y divide-edge border-t border-edge">
+      <Reveal variants={container} className="mt-12 space-y-12">
         {leadershipItems.map((entry) => (
-          <motion.div key={entry.role + entry.organization} variants={row} className="py-8 first:pt-0">
+          <motion.div key={entry.role + entry.organization} variants={row}>
             <h3 className="text-lg font-semibold text-ink">{entry.role}</h3>
             <p className="mt-1 text-sm text-ink-soft">{entry.organization}</p>
             <ul className="mt-4 max-w-2xl space-y-2">

@@ -4,6 +4,7 @@ import Link from "next/link";
 import HeadingReveal from "@/components/HeadingReveal";
 import Reveal from "@/components/Reveal";
 import { workProjects } from "@/data/work";
+import { profile } from "@/data/profile";
 
 export function generateStaticParams() {
   return workProjects.map((project) => ({ slug: project.slug }));
@@ -18,7 +19,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const project = workProjects.find((p) => p.slug === slug);
   if (!project) return {};
   return {
-    title: `${project.name} | Yasser Nasr`,
+    title: `${project.name} | ${profile.name}`,
     description: project.statement,
   };
 }

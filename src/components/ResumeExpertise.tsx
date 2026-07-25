@@ -3,7 +3,7 @@
 import { motion, type Variants } from "motion/react";
 import HeadingReveal from "@/components/HeadingReveal";
 import Reveal from "@/components/Reveal";
-import { expertiseGroups } from "@/data/resume";
+import { coreExpertise as expertiseGroups } from "@/data/profile";
 
 const container: Variants = {
   hidden: {},
@@ -19,7 +19,7 @@ export default function ResumeExpertise() {
   return (
     <div className="mt-24">
       <p className="font-display text-base uppercase tracking-[0.25em] text-ink-soft md:text-lg">
-        Expertise / 04
+        Expertise / 03
       </p>
 
       <HeadingReveal

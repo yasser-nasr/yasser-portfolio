@@ -1,15 +1,16 @@
 import Image from "next/image";
 import Link from "next/link";
 import { navLinks } from "@/data/navigation";
+import { profile } from "@/data/profile";
 
 export default function Footer() {
   return (
     <footer className="border-t border-edge py-12">
       <div className="mx-auto flex max-w-6xl flex-col items-center gap-8 px-6 text-center md:flex-row md:justify-between md:text-left">
-        <Link href="/" aria-label="Yasser Nasr — home">
+        <Link href="/" aria-label={`${profile.name} — home`}>
           <Image
             src="/brand/wordmark.svg"
-            alt="Yasser Nasr"
+            alt={profile.name}
             width={132}
             height={11}
             className="brand-mark"
@@ -29,10 +30,10 @@ export default function Footer() {
         </nav>
 
         <a
-          href="https://www.linkedin.com/in/yasser-nasr/"
+          href={profile.linkedIn.url}
           target="_blank"
           rel="noopener noreferrer"
-          aria-label="Yasser Nasr on LinkedIn"
+          aria-label={`${profile.name} on LinkedIn`}
           className="text-ink-soft transition-colors hover:text-ink"
         >
           <svg width="18" height="18" viewBox="0 0 448 512" fill="currentColor" aria-hidden="true">

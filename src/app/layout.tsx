@@ -5,6 +5,7 @@ import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import Analytics from "@/components/Analytics";
 import { siteUrl } from "@/lib/site";
+import { profile } from "@/data/profile";
 import "./globals.css";
 
 const poppins = Poppins({
@@ -19,9 +20,8 @@ const alpharush = localFont({
   display: "swap",
 });
 
-const title = "Yasser Nasr — Senior Graphic Designer, Brand & Digital Designer";
-const description =
-  "I turn ideas into visual systems, digital experiences, and communication that people can understand, feel, and remember.";
+const title = `${profile.name} — ${profile.primaryTitle}`;
+const description = profile.supportingExperience;
 
 export const metadata: Metadata = {
   metadataBase: new URL(siteUrl),
@@ -31,7 +31,7 @@ export const metadata: Metadata = {
     title,
     description,
     url: siteUrl,
-    siteName: "Yasser Nasr",
+    siteName: profile.name,
     locale: "en_US",
     type: "website",
   },

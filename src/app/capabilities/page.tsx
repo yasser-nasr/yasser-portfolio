@@ -5,11 +5,11 @@ import CapabilitiesDetailList from "@/components/CapabilitiesDetailList";
 import CapabilitiesSystem from "@/components/CapabilitiesSystem";
 import CapabilitiesContribution from "@/components/CapabilitiesContribution";
 import CapabilitiesFinalCta from "@/components/CapabilitiesFinalCta";
+import { profile } from "@/data/profile";
 
 export const metadata: Metadata = {
-  title: "Capabilities | Yasser Nasr",
-  description:
-    "Brand identity & visual systems, digital design & websites, campaigns & social content, and motion, presentations & multimedia — capabilities of Yasser Nasr, Senior Graphic Designer and Brand & Digital Designer.",
+  title: `Capabilities | ${profile.name}`,
+  description: `Brand identity & visual systems, digital design & websites, campaigns & social content, and motion, presentations & multimedia — capabilities of ${profile.name}, ${profile.primaryTitle}.`,
 };
 
 export default function CapabilitiesPage() {

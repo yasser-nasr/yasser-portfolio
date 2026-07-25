@@ -12,5 +12,6 @@ export const navLinks: NavLink[] = [
 
 export const connectLink: NavLink = {
   label: "Let’s Connect",
-  href: "https://wa.me/201000470165",
+  href: profile.phone.whatsappUrl,
 };
+import { profile } from "@/data/profile";

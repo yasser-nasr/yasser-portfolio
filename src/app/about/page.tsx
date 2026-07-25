@@ -6,11 +6,11 @@ import AboutCareerJourney from "@/components/AboutCareerJourney";
 import AboutApproach from "@/components/AboutApproach";
 import AboutMentoring from "@/components/AboutMentoring";
 import AboutFinalCta from "@/components/AboutFinalCta";
+import { profile } from "@/data/profile";
 
 export const metadata: Metadata = {
-  title: "About | Yasser Nasr",
-  description:
-    "Yasser Nasr is a Senior Graphic Designer and Brand & Digital Designer with 6+ years of experience across branding, multimedia, digital design, websites, campaigns, presentations, motion, and visual communication for businesses across Egypt and GCC markets.",
+  title: `About | ${profile.name}`,
+  description: `${profile.name} is a ${profile.primaryTitle}. ${profile.supportingExperience}`,
 };
 
 export default function AboutPage() {
