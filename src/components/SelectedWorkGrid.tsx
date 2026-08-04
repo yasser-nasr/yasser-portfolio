@@ -4,7 +4,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { motion, type Variants } from "motion/react";
 import Reveal from "@/components/Reveal";
-import { projects, type Project } from "@/data/projects";
+import { publishedProjects, type Project } from "@/data/projects";
 
 const container: Variants = {
   hidden: {},
@@ -22,7 +22,7 @@ export default function SelectedWorkGrid({ className = "" }: { className?: strin
       variants={container}
       className={`grid grid-cols-1 gap-10 md:grid-cols-2 md:gap-8 lg:grid-cols-5 lg:gap-10 ${className}`}
     >
-      {projects.map((project, index) => (
+      {publishedProjects.map((project, index) => (
         <motion.div
           key={project.slug}
           variants={item}

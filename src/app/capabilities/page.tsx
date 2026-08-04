@@ -5,17 +5,50 @@ import CapabilitiesDetailList from "@/components/CapabilitiesDetailList";
 import CapabilitiesSystem from "@/components/CapabilitiesSystem";
 import CapabilitiesContribution from "@/components/CapabilitiesContribution";
 import CapabilitiesFinalCta from "@/components/CapabilitiesFinalCta";
-import { profile } from "@/data/profile";
+import JsonLd from "@/components/JsonLd";
+import { productionSiteUrl, socialImageUrl } from "@/lib/site";
+import { breadcrumbStructuredData } from "@/lib/structuredData";
+
+const title = "Brand, Digital & Multimedia Design Services";
+const socialTitle = `${title} | Yasser Nasr`;
+const description =
+  "Explore Yasser Nasr’s capabilities across brand identity, visual systems, websites, campaign design, motion graphics, presentations, and multimedia.";
+const url = `${productionSiteUrl}/capabilities`;
 
 export const metadata: Metadata = {
-  title: `Capabilities | ${profile.name}`,
-  description: `Brand identity & visual systems, digital design & websites, campaigns & social content, and motion, presentations & multimedia — capabilities of ${profile.name}, ${profile.primaryTitle}.`,
+  title,
+  description,
+  alternates: { canonical: url },
+  openGraph: {
+    title: socialTitle,
+    description,
+    url,
+    siteName: "Yasser Nasr",
+    locale: "en_US",
+    type: "website",
+    images: [
+      {
+        url: socialImageUrl,
+        width: 1200,
+        height: 630,
+        alt: "Yasser Nasr — Graphic & Multimedia Designer | Brand & Digital Designer",
+      },
+    ],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: socialTitle,
+    description,
+    images: [socialImageUrl],
+  },
 };
 
 export default function CapabilitiesPage() {
   return (
-    <main className="flex-1 pt-36 pb-24 md:pt-44">
-      <div className="mx-auto max-w-6xl px-6">
+    <>
+      <JsonLd data={breadcrumbStructuredData("Capabilities", "/capabilities")} />
+      <main className="flex-1 pt-36 pb-24 md:pt-44">
+        <div className="mx-auto max-w-6xl px-6">
         <p className="font-display text-base uppercase tracking-[0.25em] text-ink-soft md:text-lg">
           Capabilities / 01
         </p>
@@ -30,11 +63,12 @@ export default function CapabilitiesPage() {
           </p>
         </Reveal>
 
-        <CapabilitiesDetailList className="mt-16" />
-        <CapabilitiesSystem />
-        <CapabilitiesContribution />
-        <CapabilitiesFinalCta />
-      </div>
-    </main>
+          <CapabilitiesDetailList className="mt-16" />
+          <CapabilitiesSystem />
+          <CapabilitiesContribution />
+          <CapabilitiesFinalCta />
+        </div>
+      </main>
+    </>
   );
 }

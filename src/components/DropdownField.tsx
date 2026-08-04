@@ -160,6 +160,7 @@ export default function DropdownField<T>({
         type="button"
         aria-haspopup="listbox"
         aria-expanded={open}
+        aria-describedby={invalid ? `${id}-error` : undefined}
         onClick={() => {
           if (open) {
             closeDropdown();

@@ -82,7 +82,7 @@ export default function Positioning() {
                   variants={chip}
                   className="rounded-lg border border-ink/10 bg-surface-card/40 px-3 py-3 text-center"
                 >
-                  <span className="font-display text-xs uppercase tracking-[0.15em] text-ink-soft md:text-sm">
+                  <span className="font-display text-base uppercase tracking-[0.15em] text-ink-soft md:text-lg">
                     {point}
                   </span>
                 </motion.div>

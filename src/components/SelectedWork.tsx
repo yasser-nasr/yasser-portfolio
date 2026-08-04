@@ -16,7 +16,7 @@ export default function SelectedWork() {
               as="h2"
               className="mt-4 text-3xl font-semibold leading-tight text-ink md:text-4xl"
             >
-              Selected Work
+              Selected Projects
             </HeadingReveal>
             <Reveal>
               <p className="mt-4 max-w-md text-lg text-ink-soft">

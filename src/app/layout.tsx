@@ -4,7 +4,7 @@ import localFont from "next/font/local";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import Analytics from "@/components/Analytics";
-import { siteUrl } from "@/lib/site";
+import { productionSiteUrl, socialImageUrl } from "@/lib/site";
 import { profile } from "@/data/profile";
 import "./globals.css";
 
@@ -20,25 +20,70 @@ const alpharush = localFont({
   display: "swap",
 });
 
-const title = `${profile.name} — ${profile.primaryTitle}`;
-const description = profile.supportingExperience;
+const title = `${profile.name} | Graphic & Multimedia Designer`;
+const description =
+  "Graphic & Multimedia Designer and Brand & Digital Designer creating identities, websites, campaigns, motion, and visual communication across Egypt and GCC markets.";
 
 export const metadata: Metadata = {
-  metadataBase: new URL(siteUrl),
-  title,
+  metadataBase: new URL(productionSiteUrl),
+  title: {
+    default: title,
+    template: `%s | ${profile.name}`,
+  },
   description,
+  manifest: `${productionSiteUrl}/manifest.webmanifest`,
+  icons: {
+    icon: [
+      {
+        url: `${productionSiteUrl}/icon.svg`,
+        type: "image/svg+xml",
+      },
+    ],
+    apple: [
+      {
+        url: `${productionSiteUrl}/icons/apple-touch-icon.png`,
+        sizes: "180x180",
+        type: "image/png",
+      },
+    ],
+  },
+  robots: {
+    index: true,
+    follow: true,
+    googleBot: {
+      index: true,
+      follow: true,
+      "max-image-preview": "large",
+      "max-snippet": -1,
+      "max-video-preview": -1,
+    },
+  },
   openGraph: {
     title,
     description,
-    url: siteUrl,
+    url: productionSiteUrl,
     siteName: profile.name,
     locale: "en_US",
     type: "website",
+    images: [
+      {
+        url: socialImageUrl,
+        width: 1200,
+        height: 630,
+        alt: "Yasser Nasr — Graphic & Multimedia Designer | Brand & Digital Designer",
+      },
+    ],
   },
   twitter: {
     card: "summary_large_image",
     title,
     description,
+    images: [
+      {
+        url: socialImageUrl,
+        alt: "Yasser Nasr — Graphic & Multimedia Designer | Brand & Digital Designer",
+      },
+    ],
   },
 };
 

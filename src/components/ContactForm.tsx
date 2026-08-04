@@ -177,7 +177,11 @@ export default function ContactForm() {
           invalid={opportunityInvalid}
           buttonRef={opportunityButtonRef}
         />
-        {opportunityInvalid && <p className="text-xs text-ink">Please select an option.</p>}
+        {opportunityInvalid && (
+          <p id="opportunity-error" className="text-xs text-ink">
+            Please select an option.
+          </p>
+        )}
 
         <div>
           <label htmlFor="message" className="block text-sm text-ink-soft">
@@ -249,12 +253,18 @@ const Field = forwardRef<HTMLInputElement, FieldProps>(function Field(
         type={type}
         required={required}
         autoComplete={autoComplete}
+        aria-invalid={invalid || undefined}
+        aria-describedby={invalid && errorMessage ? `${name}-error` : undefined}
         onChange={onChange}
         className={`mt-2 w-full rounded-md border bg-surface-deep px-4 py-3 text-ink focus:border-ink/30 ${
           invalid ? "border-ink/50" : "border-edge"
         }`}
       />
-      {invalid && errorMessage && <p className="mt-2 text-xs text-ink">{errorMessage}</p>}
+      {invalid && errorMessage && (
+        <p id={`${name}-error`} className="mt-2 text-xs text-ink">
+          {errorMessage}
+        </p>
+      )}
     </div>
   );
 });
