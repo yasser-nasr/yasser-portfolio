@@ -77,14 +77,6 @@ export default function Navbar() {
               </Link>
             ))}
             <Link
-              href="/resume"
-              className={`text-sm transition-colors hover:text-ink ${
-                pathname === "/resume" ? "text-ink" : "text-ink-soft"
-              }`}
-            >
-              Resume
-            </Link>
-            <Link
               href={connectLink.href}
               target="_blank"
               rel="noopener noreferrer"
@@ -148,14 +140,6 @@ export default function Navbar() {
                   </Link>
                 </li>
               ))}
-              <li>
-                <Link
-                  href="/resume"
-                  className={`block py-2.5 text-lg ${pathname === "/resume" ? "text-ink" : "text-ink-soft"}`}
-                >
-                  Resume
-                </Link>
-              </li>
               <li className="pt-3">
                 <Link
                   href={connectLink.href}

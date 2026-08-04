@@ -33,7 +33,7 @@ export default function AboutMentoring() {
             className="absolute inset-0 -z-10 scale-125 rounded-full bg-surface-card opacity-40 blur-3xl"
           />
           <p className="font-display text-6xl text-ink md:text-7xl">150+</p>
-          <p className="mt-3 text-sm uppercase tracking-[0.2em] text-ink-soft">
+          <p className="mt-3 text-base uppercase tracking-[0.2em] text-ink-soft md:text-lg">
             Students Mentored
           </p>
         </Reveal>

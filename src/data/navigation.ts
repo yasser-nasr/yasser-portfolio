@@ -8,6 +8,7 @@ export const navLinks: NavLink[] = [
   { label: "About", href: "/about" },
   { label: "Capabilities", href: "/capabilities" },
   { label: "Contact", href: "/contact" },
+  { label: "Resume", href: "/resume" },
 ];
 
 export const connectLink: NavLink = {

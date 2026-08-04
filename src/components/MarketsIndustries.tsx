@@ -57,7 +57,7 @@ export default function MarketsIndustries() {
 
         <div className="mt-14 grid gap-12 md:grid-cols-2 md:gap-16">
           <div>
-            <p className="font-display text-sm uppercase tracking-[0.2em] text-ink-soft md:text-base">
+            <p className="font-display text-base uppercase tracking-[0.2em] text-ink-soft md:text-lg">
               Markets
             </p>
 
@@ -87,7 +87,7 @@ export default function MarketsIndustries() {
           </div>
 
           <div>
-            <p className="font-display text-sm uppercase tracking-[0.2em] text-ink-soft md:text-base">
+            <p className="font-display text-base uppercase tracking-[0.2em] text-ink-soft md:text-lg">
               Industries
             </p>
 
@@ -98,7 +98,7 @@ export default function MarketsIndustries() {
                     aria-hidden="true"
                     className="absolute -left-[1.65rem] top-2 h-1.5 w-1.5 rounded-sm bg-ink-soft/50 transition-transform duration-300 group-hover:scale-150"
                   />
-                  <p className="font-display text-sm uppercase tracking-[0.2em] text-ink-soft transition-colors duration-300 group-hover:text-ink md:text-base">
+                  <p className="font-display text-base uppercase tracking-[0.2em] text-ink-soft transition-colors duration-300 group-hover:text-ink md:text-lg">
                     {industryGroup.category}
                   </p>
                   <p className="mt-2 text-base text-ink md:text-lg">

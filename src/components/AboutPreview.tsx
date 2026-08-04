@@ -137,7 +137,8 @@ export default function AboutPreview() {
             <PixelReveal className="p-5 md:p-7">
               <Image
                 src="/brand/mascot.svg"
-                alt={profile.name}
+                alt=""
+                aria-hidden="true"
                 width={160}
                 height={233}
                 className="h-auto w-full"

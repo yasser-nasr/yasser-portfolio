@@ -3,11 +3,42 @@ import Image from "next/image";
 import HeadingReveal from "@/components/HeadingReveal";
 import Reveal from "@/components/Reveal";
 import ContactForm from "@/components/ContactForm";
+import JsonLd from "@/components/JsonLd";
 import { profile } from "@/data/profile";
+import { productionSiteUrl, socialImageUrl } from "@/lib/site";
+import { contactPageStructuredData } from "@/lib/structuredData";
+
+const title = "Contact Yasser Nasr | Graphic & Multimedia Designer";
+const description =
+  "Contact Yasser Nasr about graphic, multimedia, brand, and digital design opportunities, projects, collaborations, or creative conversations.";
+const url = `${productionSiteUrl}/contact`;
 
 export const metadata: Metadata = {
-  title: `Contact | ${profile.name}`,
-  description: `Have a role, project, or idea in mind? Get in touch with ${profile.name}, ${profile.primaryTitle}.`,
+  title: { absolute: title },
+  description,
+  alternates: { canonical: url },
+  openGraph: {
+    title,
+    description,
+    url,
+    siteName: "Yasser Nasr",
+    locale: "en_US",
+    type: "website",
+    images: [
+      {
+        url: socialImageUrl,
+        width: 1200,
+        height: 630,
+        alt: "Yasser Nasr — Graphic & Multimedia Designer | Brand & Digital Designer",
+      },
+    ],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title,
+    description,
+    images: [socialImageUrl],
+  },
 };
 
 const contactMethods = [
@@ -18,7 +49,9 @@ const contactMethods = [
 
 export default function ContactPage() {
   return (
-    <main className="relative flex-1 overflow-hidden pt-36 pb-24 md:pt-44">
+    <>
+      <JsonLd data={contactPageStructuredData(description)} />
+      <main className="relative flex-1 overflow-hidden pt-36 pb-24 md:pt-44">
       {/* Local depth layer: faint radial light + pixel grid, distinct from the hero's */}
       <div aria-hidden="true" className="absolute inset-0 -z-20 overflow-hidden">
         <div
@@ -108,6 +141,7 @@ export default function ContactPage() {
           <ContactForm />
         </Reveal>
       </div>
-    </main>
+      </main>
+    </>
   );
 }
