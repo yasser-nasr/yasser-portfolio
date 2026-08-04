@@ -60,7 +60,7 @@ export default function Positioning() {
 
           <Reveal
             variants={container}
-            className="relative overflow-hidden rounded-2xl border border-ink/10 bg-surface-card/20 p-6 backdrop-blur-sm md:p-8"
+            className="@container relative overflow-hidden rounded-2xl border border-ink/10 bg-surface-card/20 p-6 backdrop-blur-sm md:p-8"
           >
             <div
               aria-hidden="true"
@@ -75,14 +75,14 @@ export default function Positioning() {
               <div className="h-48 w-48 rounded-full bg-surface-card opacity-40 blur-3xl" />
             </div>
 
-            <div className="grid grid-cols-2 gap-3 sm:grid-cols-3">
+            <div className="grid grid-cols-2 gap-3 @md:grid-cols-3">
               {TOUCHPOINTS.map((point) => (
                 <motion.div
                   key={point}
                   variants={chip}
-                  className="rounded-lg border border-ink/10 bg-surface-card/40 px-3 py-3 text-center"
+                  className="min-w-0 rounded-lg border border-ink/10 bg-surface-card/40 px-2 py-3 text-center sm:px-3"
                 >
-                  <span className="font-display text-base uppercase tracking-[0.15em] text-ink-soft md:text-lg">
+                  <span className="whitespace-nowrap font-display text-sm uppercase tracking-[0.08em] text-ink-soft">
                     {point}
                   </span>
                 </motion.div>
