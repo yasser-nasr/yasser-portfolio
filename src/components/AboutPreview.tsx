@@ -94,7 +94,7 @@ export default function AboutPreview() {
           </motion.div>
         </motion.div>
 
-        <div className="relative mx-auto w-48 sm:w-56 md:w-full md:max-w-sm">
+        <div className="relative mx-auto w-48 sm:w-56 md:w-full md:max-w-sm md:-translate-x-[10%]">
           {/* Restrained radial light field behind the mascot */}
           <div
             aria-hidden="true"
