@@ -47,7 +47,7 @@ export default function CapabilitiesPage() {
   return (
     <>
       <JsonLd data={breadcrumbStructuredData("Capabilities", "/capabilities")} />
-      <main className="flex-1 pt-36 pb-24 md:pt-44">
+      <main id="main-content" tabIndex={-1} className="flex-1 pt-36 pb-24 md:pt-44">
         <div className="mx-auto max-w-6xl px-6">
         <p className="font-display text-base uppercase tracking-[0.25em] text-ink-soft md:text-lg">
           Capabilities / 01

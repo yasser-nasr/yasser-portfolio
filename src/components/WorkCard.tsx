@@ -49,7 +49,7 @@ export default function WorkCard({
                 Preview visual
               </span>
               <p className="mt-3 max-w-xs text-sm leading-6 text-ink-soft">
-                Approved RenovoFix cover pending
+                {project.name} cover pending
               </p>
             </div>
           </div>
@@ -61,16 +61,11 @@ export default function WorkCard({
           imageFirst ? "md:order-2" : "md:order-1"
         }`}
       >
-        <div className="flex items-center gap-4">
-          <span className="font-display text-xs tracking-[0.18em] text-ink-faint">
-            {String(index + 1).padStart(2, "0")}
+        {!project.publishable && process.env.NODE_ENV === "development" ? (
+          <span className="text-xs uppercase tracking-[0.15em] text-ink-faint">
+            Preview
           </span>
-          {!project.publishable && process.env.NODE_ENV === "development" ? (
-            <span className="text-xs uppercase tracking-[0.15em] text-ink-faint">
-              Preview
-            </span>
-          ) : null}
-        </div>
+        ) : null}
 
         <h2 className="mt-5 text-3xl font-semibold leading-tight text-ink md:text-4xl lg:text-5xl">
           <Link href={href} className="transition-opacity hover:opacity-75">

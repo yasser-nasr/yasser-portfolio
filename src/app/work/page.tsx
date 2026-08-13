@@ -44,7 +44,7 @@ export default function WorkPage() {
   return (
     <>
       <JsonLd data={breadcrumbStructuredData("Work", "/work")} />
-      <main className="flex-1 pt-36 pb-24 md:pt-44 md:pb-32">
+      <main id="main-content" tabIndex={-1} className="flex-1 pt-36 pb-24 md:pt-44 md:pb-32">
         <div className="mx-auto max-w-6xl px-6">
           <p className="font-display text-base uppercase tracking-[0.22em] text-ink-soft md:text-lg">
             Selected Work

@@ -142,11 +142,11 @@ export default function ContactForm() {
             getKey={(c) => c.iso2}
             renderOption={(c) => `${c.flag} ${c.name} (${c.dial})`}
             renderValue={(c) => `${c.flag} ${c.dial}`}
-            getSearchText={(c) => c.name}
+            getSearchText={(c) => `${c.name} ${c.dial} ${c.dial.replace("+", "")} ${c.iso2}`}
             placeholder="Select a country"
             listClassName="max-h-64"
             searchable
-            searchPlaceholder="Search country..."
+            searchPlaceholder="Search country or code..."
           />
           <Field
             ref={phoneRef}

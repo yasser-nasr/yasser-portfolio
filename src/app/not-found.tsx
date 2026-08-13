@@ -10,7 +10,7 @@ const destinationLinks = [
 
 export default function NotFound() {
   return (
-    <main className="flex flex-1 items-center pt-36 pb-24 md:pt-44">
+    <main id="main-content" tabIndex={-1} className="flex flex-1 items-center pt-36 pb-24 md:pt-44">
       <div className="mx-auto w-full max-w-6xl px-6">
         <p className="font-display text-base uppercase tracking-[0.25em] text-ink-soft md:text-lg">
           Error / 404

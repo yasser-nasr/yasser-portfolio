@@ -29,7 +29,7 @@ export default function VideoPlayer({ src, poster, label }: { src: string; poste
         ref={videoRef}
         controls
         playsInline
-        preload="metadata"
+        preload="none"
         poster={poster}
         aria-label={label}
         onLoadedMetadata={prepareSound}

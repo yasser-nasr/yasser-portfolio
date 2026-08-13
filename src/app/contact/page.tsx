@@ -51,7 +51,7 @@ export default function ContactPage() {
   return (
     <>
       <JsonLd data={contactPageStructuredData(description)} />
-      <main className="relative flex-1 overflow-hidden pt-36 pb-24 md:pt-44">
+      <main id="main-content" tabIndex={-1} className="relative flex-1 overflow-hidden pt-36 pb-24 md:pt-44">
       {/* Local depth layer: faint radial light + pixel grid, distinct from the hero's */}
       <div aria-hidden="true" className="absolute inset-0 -z-20 overflow-hidden">
         <div

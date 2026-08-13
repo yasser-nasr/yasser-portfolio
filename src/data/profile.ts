@@ -133,5 +133,5 @@ export const profile = {
   portfolioUrl: siteUrl,
   experience,
   coreExpertise,
-  cvPath: "/brand/Yasser-Nasr-CV-2026.pdf",
+  cvPath: "/brand/yasser-nasr-graphic-multimedia-designer-cv-2026.pdf",
 } as const;

@@ -28,6 +28,50 @@ export type Project = {
 
 export const projects: Project[] = [
   {
+    title: "X Factor Interior Design",
+    slug: "x-factor-interior-design-branding-case-study",
+    subtitle: "Brand & Digital Design · Graphic & Multimedia Design",
+    category: "Brand & Digital Design · Graphic & Multimedia Design",
+    role: "Brand & Digital Designer / Graphic & Multimedia Designer",
+    location: "Dubai, UAE",
+    statement:
+      "A refined visual identity and communication system for a Dubai interior design studio, connecting quiet-luxury positioning with editorial collateral and social media.",
+    image:
+      "/projects/x-factor-interior-design/x-factor-interior-design-plain-brand-identity-cover.webp",
+    imageAlt:
+      "X Factor Interior Design vertical logo on a warm-stone brand identity cover.",
+    tags: [
+      "Branding",
+      "Logo Design",
+      "Visual Identity",
+      "Brand Guidelines",
+      "Editorial Design",
+      "Social Media Design",
+    ],
+    scope: [
+      "Branding",
+      "Logo",
+      "Color System",
+      "Typography System",
+      "Brand Guidelines",
+      "Company Profile",
+      "Stationery",
+      "Social Media Design",
+    ],
+    featured: true,
+    publishable: true,
+    seo: {
+      title: "X Factor Interior Design Branding Case Study | Yasser Nasr",
+      description:
+        "A branding case study for X Factor Interior Design, connecting a refined logo and visual identity with guidelines, editorial collateral, stationery, and social media design.",
+      canonical:
+        "https://yassernasr.com/work/x-factor-interior-design-branding-case-study",
+      openGraphTitle: "X Factor Interior Design: A Refined Brand Identity",
+      openGraphDescription:
+        "Explore the logo, identity system, guidelines, company profile, stationery, and social media design created for a Dubai interior design studio.",
+    },
+  },
+  {
     title: "RenovoFix",
     companyName: "RenovoFix Property Maintenance",
     slug: "renovofix-brand-digital-design",

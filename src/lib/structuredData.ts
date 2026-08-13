@@ -29,7 +29,7 @@ const personEntity = {
   url: productionSiteUrl,
   jobTitle: profile.primaryTitle,
   description: profile.supportingExperience,
-  image: `${productionSiteUrl}/brand/yasser-nasr-portrait.jpg`,
+  image: `${productionSiteUrl}/brand/yasser-nasr-portrait.webp`,
   sameAs: [profile.linkedIn.url],
   email: `mailto:${profile.email}`,
 };

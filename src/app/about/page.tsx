@@ -47,7 +47,7 @@ export default function AboutPage() {
   return (
     <>
       <JsonLd data={aboutPageStructuredData(description)} />
-      <main className="flex-1 pt-36 pb-12 md:pt-44 md:pb-16">
+      <main id="main-content" tabIndex={-1} className="flex-1 pt-36 pb-12 md:pt-44 md:pb-16">
         <div className="mx-auto max-w-6xl px-6">
           <AboutHero />
           <AboutPrinciples />
