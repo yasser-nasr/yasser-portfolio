@@ -122,6 +122,9 @@ export default function RootLayout({
         <script dangerouslySetInnerHTML={{ __html: themeInitScript }} />
       </head>
       <body className="min-h-full flex flex-col">
+        <a href="#main-content" className="sr-only z-[100] rounded-md bg-surface px-4 py-3 text-ink focus:not-sr-only focus:fixed focus:left-4 focus:top-4">
+          Skip to main content
+        </a>
         <div aria-hidden="true" className="background-field" />
         <Navbar />
         {children}

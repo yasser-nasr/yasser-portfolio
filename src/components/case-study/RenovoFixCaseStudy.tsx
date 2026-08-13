@@ -10,17 +10,17 @@ import type { Project } from "@/data/projects";
 const base = "/projects/renovofix";
 
 const transformationVideos = [
-  "freepik_use-img1-as-the-starting-state-use-img2-as-the-end_seedance_480p_16-9_24fps_33438.mp4",
-  "freepik_use-img1-as-the-starting-_2831907909.mp4",
-  "freepik_use-img1-as-the-starting-_2832748026.mp4",
-  "freepik_use-img2-as-the-starting-_2832970826.mp4",
+  "renovofix-ai-renovation-transformation-01.mp4",
+  "renovofix-ai-renovation-transformation-02.mp4",
+  "renovofix-ai-renovation-transformation-03.mp4",
+  "renovofix-ai-renovation-transformation-04.mp4",
 ];
 
 const episodes = [
-  ["Lighting", "Lighting Episode.jpg", "Lighting Episode.mp4"],
-  ["Bathroom", "Bathroom Episode_Cover.jpg", "Bathroom Episode.mp4"],
-  ["Ceiling", "Ceiling Episode.jpg", "Ceiling Episode.mp4"],
-  ["Flooring", "Flooring Episode.jpg", "Flooring Episode.mp4"],
+  ["Lighting", "renovofix-lighting-educational-reel-cover.webp", "renovofix-lighting-educational-reel.mp4"],
+  ["Bathroom", "renovofix-bathroom-educational-reel-cover.webp", "renovofix-bathroom-educational-reel.mp4"],
+  ["Ceiling", "renovofix-ceiling-educational-reel-cover.webp", "renovofix-ceiling-educational-reel.mp4"],
+  ["Flooring", "renovofix-flooring-educational-reel-cover.webp", "renovofix-flooring-educational-reel.mp4"],
 ] as const;
 
 const colors = [
@@ -112,7 +112,7 @@ function WebsiteScreenshot({
         )}
         <div className={`overflow-y-auto overscroll-contain bg-white ${mobile ? "h-[32rem]" : "h-[30rem] md:h-[38rem]"}`} tabIndex={0} aria-label={`Scrollable ${title} website screenshot`}>
           <Image
-            src={`${base}/04-website/${file}`}
+            src={`${base}/website/${file}`}
             alt={`RenovoFix ${title} website design.`}
             width={width}
             height={height}
@@ -128,7 +128,7 @@ function WebsiteScreenshot({
 
 export default function RenovoFixCaseStudy({ project }: { project: Project }) {
   return (
-    <main className="flex-1 pt-32 md:pt-40">
+    <main id="main-content" tabIndex={-1} className="flex-1 pt-32 md:pt-40">
       <article className="mx-auto max-w-6xl px-6">
         <Link href="/work" className="text-sm text-ink-soft transition-colors hover:text-ink">← Back to Work</Link>
 
@@ -147,7 +147,7 @@ export default function RenovoFixCaseStudy({ project }: { project: Project }) {
         <div className="relative aspect-[4/5] overflow-hidden rounded-xl bg-surface-card sm:aspect-[16/9]">
           <Image
             src={`${base}/renovofix-case-study-hero-mobile.webp`}
-            alt="RenovoFix property maintenance brand and digital system case study."
+            alt="RenovoFix property maintenance brand identity and digital design system displayed on a mobile case-study cover."
             fill
             priority
             sizes="100vw"
@@ -155,7 +155,7 @@ export default function RenovoFixCaseStudy({ project }: { project: Project }) {
           />
           <Image
             src={`${base}/renovofix-case-study-hero.webp`}
-            alt="RenovoFix property maintenance brand and digital system case study."
+            alt="RenovoFix property maintenance brand identity, website, and social media system presented across branded applications."
             fill
             priority
             sizes="(min-width: 1152px) 1152px, 100vw"
@@ -189,7 +189,7 @@ export default function RenovoFixCaseStudy({ project }: { project: Project }) {
           <p className="text-ink"><strong>Connected-system flow:</strong> Brand Strategy → Visual Identity → Content &amp; Campaigns → Website Experience → Motion &amp; Video</p>
           <p>This approach allowed RenovoFix to remain consistent across different services and platforms while building trust before the customer made contact.</p>
           <Image
-            src="/projects/renovofix/approach/renovofix-case-study-approach.png"
+            src="/projects/renovofix/approach/renovofix-case-study-approach.webp"
             alt="RenovoFix connected brand and digital system across brand strategy, visual identity, content and campaigns, website experience, and motion and video."
             width={1672}
             height={941}
@@ -210,7 +210,7 @@ export default function RenovoFixCaseStudy({ project }: { project: Project }) {
           <blockquote className="border-l-2 border-ink pl-6 text-xl leading-8 text-ink md:text-2xl">Peace of mind, not only maintenance.</blockquote>
           <p><strong className="text-ink">Positioning statement:</strong> Professional property maintenance that gives customers confidence, clarity, and peace of mind.</p>
           <Image
-            src={`${base}/renovofix-case-study-brand-positioning.png`}
+            src={`${base}/renovofix-case-study-brand-positioning.webp`}
             alt="RenovoFix brand positioning focused on professional property maintenance, confidence, clarity, and peace of mind."
             width={1672}
             height={941}
@@ -233,7 +233,7 @@ export default function RenovoFixCaseStudy({ project }: { project: Project }) {
           <div className="overflow-x-auto"><table className="w-full min-w-[36rem] text-left text-sm"><thead className="border-b border-edge text-ink"><tr><th className="py-3 font-medium">Color role</th><th className="py-3 font-medium">HEX</th><th className="py-3 font-medium">Usage</th></tr></thead><tbody>{colors.map(([role, hex, usage]) => <tr key={role} className="border-b border-edge/60"><td className="py-3"><span className="mr-3 inline-block h-3 w-3 rounded-full border border-black/10 align-middle" style={{ backgroundColor: hex }} />{role}</td><td className="py-3 font-mono text-xs">{hex}</td><td className="py-3">{usage}</td></tr>)}</tbody></table></div>
           <div className="mt-6 min-w-0 md:mt-8">
             <Image
-              src={`${base}/renovofix-color-system-mobile.png`}
+              src={`${base}/renovofix-color-system-mobile.webp`}
               alt="RenovoFix color system showing all eight brand colors and HEX values in a mobile layout."
               width={864}
               height={1821}
@@ -241,7 +241,7 @@ export default function RenovoFixCaseStudy({ project }: { project: Project }) {
               className="h-auto w-full rounded-lg object-contain md:hidden"
             />
             <Image
-              src={`${base}/renovofix-color-system.png`}
+              src={`${base}/renovofix-color-system.webp`}
               alt="RenovoFix color system showing Primary Blue, Dark Navy, Teal, Light Teal, White, Soft Grey, Medium Grey, and Dark Grey with their HEX values."
               width={1672}
               height={941}
@@ -284,7 +284,7 @@ export default function RenovoFixCaseStudy({ project }: { project: Project }) {
           <p>Motion and video extended the series through reel concepts, AI-assisted video production, visual transitions, editing and pacing, vertical formatting, cover design, and visual consistency across frames.</p>
           <p>Instead of depending only on music, each reel uses sound effects connected to visible actions, transitions, surfaces, movement, and room ambience.</p>
           <p className="text-sm text-ink-faint">The videos start with sound enabled. Use the Sound On control if your browser or device has muted playback.</p>
-          <div className="mt-8 grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-4">{episodes.map(([name, cover, video]) => <Video key={name} src={`${base}/05-Reels/${video}`} poster={`${base}/05-Reels/${cover}`} label={`RenovoFix ${name} educational reel.`} vertical />)}</div>
+          <div className="mt-8 grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-4">{episodes.map(([name, cover, video]) => <Video key={name} src={`${base}/reels/${video}`} poster={`${base}/reels/${cover}`} label={`RenovoFix ${name} educational reel.`} vertical />)}</div>
         </Section>
 
         <Section id="ai-visualization" title="Visualizing the outcome before completion">
@@ -293,7 +293,7 @@ export default function RenovoFixCaseStudy({ project }: { project: Project }) {
           <p>The generated visuals were refined to preserve the room layout, camera perspective, proportions, and material choices while presenting a believable view of the intended result.</p>
           <p className="text-ink"><strong>Process:</strong> Actual site → Work in progress → Selected materials → AI-assisted visualization → Video transformation</p>
           <div className="mt-8 flex items-center gap-3"><span className="h-px w-10 bg-ink-faint" /><span className="text-xs font-medium uppercase tracking-[0.16em] text-ink">AI-Assisted Proposed Visualization</span></div>
-          <div className="mt-8 grid gap-6 sm:grid-cols-2">{transformationVideos.map((file, index) => <Video key={file} src={`${base}/03-Before-After/${file}`} label={`AI-assisted proposed renovation transformation ${index + 1}.`} />)}</div>
+          <div className="mt-8 grid gap-6 sm:grid-cols-2">{transformationVideos.map((file, index) => <Video key={file} src={`${base}/before-after/${file}`} label={`RenovoFix AI-assisted proposed renovation transformation ${index + 1}.`} />)}</div>
         </Section>
 
         <Section id="website" title="Website strategy">
@@ -304,7 +304,7 @@ export default function RenovoFixCaseStudy({ project }: { project: Project }) {
           <p className="text-ink"><strong>Customer journey:</strong> Homepage → Service Selection → Service Information → Contact Form or WhatsApp → Enquiry</p>
           <div className="mt-8 overflow-hidden rounded-xl bg-[#F5F7F9]">
             <Image
-              src={`${base}/04-website/renovofix-customer-journey-mobile.png`}
+            src={`${base}/website/renovofix-customer-journey-mobile.webp`}
               alt="RenovoFix website customer journey: 01 Homepage, 02 Service Selection, 03 Service Information, 04 Contact Form or WhatsApp, and 05 Enquiry."
               width={864}
               height={1821}
@@ -312,7 +312,7 @@ export default function RenovoFixCaseStudy({ project }: { project: Project }) {
               className="h-auto w-full sm:hidden"
             />
             <Image
-              src={`${base}/04-website/renovofix-customer-journey-desktop.png`}
+            src={`${base}/website/renovofix-customer-journey-desktop.webp`}
               alt="RenovoFix website customer journey: 01 Homepage, 02 Service Selection, 03 Service Information, 04 Contact Form or WhatsApp, and 05 Enquiry."
               width={1774}
               height={887}
@@ -330,11 +330,11 @@ export default function RenovoFixCaseStudy({ project }: { project: Project }) {
           <p>I led the project from brand and content strategy through UI/UX design, copywriting, website implementation, deployment, domain setup, contact forms, WhatsApp integration, testing, and launch.</p>
           <a href="https://renovofix.ae" target="_blank" rel="noopener noreferrer" aria-label="Visit the live RenovoFix website (opens in a new tab)" className="inline-flex rounded-full border border-edge px-5 py-2.5 text-sm text-ink transition-colors hover:bg-surface-card">Visit renovofix.ae ↗</a>
           <div className="space-y-8 pt-5">
-            <WebsiteScreenshot file="renovofix-website-home-desktop.png" title="Home page · Desktop" width={1422} height={5554} />
-            <WebsiteScreenshot file="renovofix-website-services-desktop.png" title="Services page · Desktop" width={1422} height={6199} />
+            <WebsiteScreenshot file="renovofix-website-home-desktop.webp" title="Home page · Desktop" width={1422} height={5554} />
+            <WebsiteScreenshot file="renovofix-website-services-desktop.webp" title="Services page · Desktop" width={1422} height={6199} />
             <div className="grid gap-8 sm:grid-cols-2">
-              <WebsiteScreenshot file="renovofix-website-annual-contracts-mobile.png" title="Annual Contracts · Mobile" width={800} height={16384} mobile />
-              <WebsiteScreenshot file="renovofix-website-our-work-mobile.png" title="Our Work · Mobile" width={800} height={16384} mobile />
+              <WebsiteScreenshot file="renovofix-website-annual-contracts-mobile.webp" title="Annual Contracts · Mobile" width={800} height={16383} mobile />
+              <WebsiteScreenshot file="renovofix-website-our-work-mobile.webp" title="Our Work · Mobile" width={800} height={16383} mobile />
             </div>
           </div>
         </Section>

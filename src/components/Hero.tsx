@@ -179,7 +179,7 @@ export default function Hero() {
             />
             <PixelReveal className="p-4 md:p-6">
               <Image
-                src="/brand/yasser-nasr-portrait.jpg"
+                src="/brand/yasser-nasr-portrait.webp"
                 alt={`${profile.name}, Graphic and Multimedia Designer`}
                 width={1254}
                 height={1254}

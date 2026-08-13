@@ -65,7 +65,7 @@ export default function RenovoFixLogoBreakdown() {
         <div className="rounded-lg bg-white px-6 py-10 sm:px-10 sm:py-12">
           <p className="mb-8 text-center text-xs font-semibold uppercase tracking-[0.18em] text-[#4366B0]">Final horizontal logo</p>
           <Image
-            src="/projects/renovofix/01-Logo/Logo_H.svg"
+            src="/projects/renovofix/logo/renovofix-horizontal-logo.svg"
             alt="Final RenovoFix horizontal logo combining the home, hammer, and painted-frame ideas."
             width={720}
             height={215}

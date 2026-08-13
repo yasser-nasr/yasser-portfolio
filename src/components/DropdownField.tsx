@@ -48,6 +48,7 @@ export default function DropdownField<T>({
   const searchInputRef = useRef<HTMLInputElement>(null);
   const typeaheadRef = useRef("");
   const typeaheadTimer = useRef<ReturnType<typeof setTimeout> | null>(null);
+  const listboxId = `${id}-listbox`;
 
   // Options filtered by the typed query (case-insensitive, matches anywhere in the text).
   const visibleOptions = useMemo(() => {
@@ -55,6 +56,7 @@ export default function DropdownField<T>({
     const needle = query.trim().toLowerCase();
     return options.filter((option) => getSearchText(option).toLowerCase().includes(needle));
   }, [options, searchable, getSearchText, query]);
+  const activeOptionId = visibleOptions.length > 0 ? `${id}-option-${activeIndex}` : undefined;
 
   useEffect(() => {
     if (!open) return;
@@ -160,6 +162,7 @@ export default function DropdownField<T>({
         type="button"
         aria-haspopup="listbox"
         aria-expanded={open}
+        aria-controls={open ? listboxId : undefined}
         aria-describedby={invalid ? `${id}-error` : undefined}
         onClick={() => {
           if (open) {
@@ -193,6 +196,8 @@ export default function DropdownField<T>({
               type="text"
               role="searchbox"
               aria-label={`Search ${label.toLowerCase()}`}
+              aria-controls={listboxId}
+              aria-activedescendant={activeOptionId}
               value={query}
               onChange={(event) => {
                 setQuery(event.target.value);
@@ -204,10 +209,12 @@ export default function DropdownField<T>({
             />
           )}
           <ul
+            id={listboxId}
             ref={listRef}
             role="listbox"
             tabIndex={-1}
             aria-label={label}
+            aria-activedescendant={activeOptionId}
             onKeyDown={onListKeyDown}
             className={`overflow-y-auto focus:outline-none ${listClassName}`}
           >
@@ -218,6 +225,7 @@ export default function DropdownField<T>({
                 const selected = value ? getKey(value) === getKey(option) : false;
                 return (
                   <li
+                    id={`${id}-option-${index}`}
                     key={getKey(option)}
                     role="option"
                     aria-selected={selected}

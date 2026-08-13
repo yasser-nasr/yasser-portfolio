@@ -3,6 +3,30 @@ import { Resend } from "resend";
 
 // Good-enough email shape check for a contact form (not full RFC 5322 validation).
 const EMAIL_PATTERN = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+const MAX_BODY_BYTES = 20_000;
+const RATE_LIMIT_WINDOW_MS = 10 * 60 * 1000;
+const RATE_LIMIT_MAX_REQUESTS = 5;
+const fieldLimits = { name: 120, email: 254, phone: 40, company: 160, opportunityType: 120, message: 5_000 } as const;
+
+type RateLimitEntry = { count: number; resetAt: number };
+const rateLimitStore = new Map<string, RateLimitEntry>();
+
+function clientAddress(request: Request) {
+  return request.headers.get("x-forwarded-for")?.split(",")[0]?.trim()
+    || request.headers.get("x-real-ip")
+    || "unknown";
+}
+
+function isRateLimited(address: string) {
+  const now = Date.now();
+  const current = rateLimitStore.get(address);
+  if (!current || current.resetAt <= now) {
+    rateLimitStore.set(address, { count: 1, resetAt: now + RATE_LIMIT_WINDOW_MS });
+    return false;
+  }
+  current.count += 1;
+  return current.count > RATE_LIMIT_MAX_REQUESTS;
+}
 
 // Prevents visitor input from being interpreted as HTML when it lands in the email body.
 function escapeHtml(value: string) {
@@ -28,6 +52,18 @@ function asTrimmedString(value: unknown) {
 }
 
 export async function POST(request: Request) {
+  const contentLength = Number(request.headers.get("content-length") ?? 0);
+  if (contentLength > MAX_BODY_BYTES) {
+    return NextResponse.json({ error: "Request body is too large." }, { status: 413 });
+  }
+
+  if (isRateLimited(clientAddress(request))) {
+    return NextResponse.json(
+      { error: "Too many requests. Please try again in a few minutes." },
+      { status: 429, headers: { "Retry-After": String(RATE_LIMIT_WINDOW_MS / 1000) } },
+    );
+  }
+
   const body = (await request.json().catch(() => null)) as ContactPayload | null;
 
   if (!body) {
@@ -40,6 +76,12 @@ export async function POST(request: Request) {
   const message = asTrimmedString(body.message);
   const company = asTrimmedString(body.company);
   const opportunityType = asTrimmedString(body.opportunityType);
+
+  const fields = { name, email, phone, company, opportunityType, message };
+  const oversizedField = Object.entries(fields).find(([key, value]) => value.length > fieldLimits[key as keyof typeof fieldLimits]);
+  if (oversizedField) {
+    return NextResponse.json({ error: `${oversizedField[0]} is too long.` }, { status: 400 });
+  }
 
   // name, email, and phone are required. message is optional and never blocks submission.
   if (!name) {
