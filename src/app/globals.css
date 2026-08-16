@@ -68,8 +68,15 @@ html[data-theme="light"] .brand-mark {
 }
 
 ::selection {
-  background: color-mix(in srgb, var(--text-main) 25%, transparent);
-  color: var(--text-main);
+  background: #245fc7;
+  color: #ffffff;
+  text-shadow: none;
+}
+
+::-moz-selection {
+  background: #245fc7;
+  color: #ffffff;
+  text-shadow: none;
 }
 
 :focus-visible {

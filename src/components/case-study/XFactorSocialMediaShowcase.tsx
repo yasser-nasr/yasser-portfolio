@@ -1,11 +1,8 @@
 "use client";
 
 import Image from "next/image";
-import { AnimatePresence, motion } from "motion/react";
-import { useEffect, useState } from "react";
-import { createPortal } from "react-dom";
-import { useSafeReducedMotion } from "@/lib/useSafeReducedMotion";
-import { useDialogFocus } from "@/lib/useDialogFocus";
+import { useState } from "react";
+import SocialMediaGrid, { type SocialMediaGridItem } from "./SocialMediaGrid";
 import VideoPlayer from "./VideoPlayer";
 
 const base = "/projects/x-factor-interior-design/social-media";
@@ -132,6 +129,25 @@ const gridPosts: readonly GridPost[] = [
   ...carouselPosts,
 ];
 
+const socialGridItems: readonly SocialMediaGridItem[] = gridPosts.map((post) => {
+  if (post.type === "carousel") {
+    const slides = post.slides.map((slide) => ({
+      src: `${base}/${slide.filename}`,
+      alt: slide.alt,
+      caption: slide.caption,
+    }));
+    return { id: post.title, preview: slides[0], slides };
+  }
+
+  return {
+    id: post.filename,
+    preview: {
+      src: `${base}/${post.filename}`,
+      alt: post.alt,
+      caption: post.caption,
+    },
+  };
+});
 const beforeAfterEdits = [
   {
     title: "Walk-in wardrobe · Light and perspective",
@@ -167,72 +183,24 @@ const beforeAfterEdits = [
   },
 ] as const;
 
-const CarouselIcon = () => <svg viewBox="0 0 24 24" aria-hidden="true" className="h-5 w-5 fill-white drop-shadow"><path d="M7 3h11a3 3 0 0 1 3 3v11a3 3 0 0 1-3 3H7a3 3 0 0 1-3-3V6a3 3 0 0 1 3-3Zm0 2a1 1 0 0 0-1 1v11a1 1 0 0 0 1 1h11a1 1 0 0 0 1-1V6a1 1 0 0 0-1-1H7Zm-4 2h1v11a2 2 0 0 0 2 2h11v1H6a3 3 0 0 1-3-3V7Z" /></svg>;
-const Arrow = ({ direction }: { direction: "left" | "right" }) => <svg viewBox="0 0 24 24" aria-hidden="true" className="h-5 w-5" fill="none" stroke="currentColor" strokeWidth="2"><path strokeLinecap="round" strokeLinejoin="round" d={direction === "left" ? "m15 18-6-6 6-6" : "m9 18 6-6-6-6"} /></svg>;
-
 export default function XFactorSocialMediaShowcase() {
-  const [active, setActive] = useState<GridPost | null>(null);
-  const [activeSlideIndex, setActiveSlideIndex] = useState(0);
   const [activeEditIndex, setActiveEditIndex] = useState(0);
-  const dialogRef = useDialogFocus(Boolean(active));
-  const [slideDirection, setSlideDirection] = useState<1 | -1>(1);
-  const prefersReducedMotion = useSafeReducedMotion();
-
-  useEffect(() => {
-    if (!active) return;
-    const oldOverflow = document.body.style.overflow;
-    document.body.style.overflow = "hidden";
-    const onKeyDown = (event: KeyboardEvent) => event.key === "Escape" && setActive(null);
-    window.addEventListener("keydown", onKeyDown);
-    return () => {
-      document.body.style.overflow = oldOverflow;
-      window.removeEventListener("keydown", onKeyDown);
-    };
-  }, [active]);
-
-  const activeSlide = active?.type === "carousel" ? active.slides[activeSlideIndex] : active;
-
-  const open = (post: GridPost) => {
-    setActiveSlideIndex(0);
-    setSlideDirection(1);
-    setActive(post);
-  };
-
-  const previousSlide = () => {
-    if (!active || active.type !== "carousel") return;
-    setSlideDirection(-1);
-    setActiveSlideIndex((index) => (index - 1 + active.slides.length) % active.slides.length);
-  };
-
-  const nextSlide = () => {
-    if (!active || active.type !== "carousel") return;
-    setSlideDirection(1);
-    setActiveSlideIndex((index) => (index + 1) % active.slides.length);
-  };
 
   const activeEdit = beforeAfterEdits[activeEditIndex];
 
   return <>
-    <div className="mt-10 overflow-hidden border border-edge bg-surface-card/30 shadow-2xl shadow-black/10">
-      <div className="flex items-center gap-4 border-b border-edge px-5 py-5 sm:px-8">
-        <div className="rounded-full bg-gradient-to-tr from-[#A28D72] via-[#D8CDBE] to-[#F8F5EF] p-[2px]"><div className="relative h-16 w-16 overflow-hidden rounded-full border-2 border-surface bg-[#F3F1EC]"><Image src={logo} alt="X Factor Interior Design Dubai logo icon" fill sizes="64px" className="object-contain p-3" /></div></div>
-        <div className="min-w-0 flex-1"><h3 className="text-base font-semibold text-ink sm:text-lg">X Factor social system</h3><p className="text-sm leading-6 text-ink-soft">Luxury interiors · Dubai, UAE</p></div>
-        <span className="hidden text-xs uppercase tracking-[0.14em] text-ink-faint sm:inline">Select to inspect</span>
-      </div>
-      <div className="grid grid-cols-2 gap-[2px] bg-edge md:auto-rows-fr md:grid-cols-3">
-        {gridPosts.map((post, index) => {
-          const isCarousel = post.type === "carousel";
-          const preview = isCarousel ? post.slides[0] : post;
-          const key = isCarousel ? post.title : post.filename;
-          return <button key={key} type="button" onClick={() => open(post)} aria-label={`Open ${isCarousel ? "carousel" : "social media design"}: ${post.alt}`} className={`group relative cursor-zoom-in overflow-hidden bg-surface focus-visible:z-10 ${index === 0 ? "col-span-2 aspect-[3/4] md:row-span-2 md:aspect-auto" : "aspect-[3/4]"}`}>
-            <Image src={`${base}/${preview.filename}`} alt={post.alt} fill sizes="(min-width: 1280px) 220px, (min-width: 768px) 24vw, 50vw" className="object-cover transition duration-300 group-hover:scale-[1.03] group-hover:brightness-75" />
-            {isCarousel && <span className="absolute right-3 top-3"><CarouselIcon /></span>}
-            <span className="absolute inset-0 grid place-items-center bg-black/0 text-sm font-semibold text-white opacity-0 transition group-hover:bg-black/20 group-hover:opacity-100">{isCarousel ? "View carousel" : "View design"}</span>
-          </button>;
-        })}
-      </div>
-      <p className="border-t border-edge px-5 py-4 text-center text-sm text-ink-soft">Select a post to explore the visual, or browse each carousel slide by slide.</p>
-    </div>
+    <SocialMediaGrid
+      brandName="X Factor Interior Design"
+      username="xfactorinteriordesign"
+      subtitle="Luxury interiors · Dubai, UAE"
+      logo={logo}
+      logoAlt="X Factor Interior Design Dubai logo icon"
+      logoBackground="#F3F1EC"
+      logoRingClassName="from-[#A28D72] via-[#D8CDBE] to-[#F8F5EF]"
+      accentColor="#8A7A63"
+      stats={["13", "3.8K", "214"]}
+      items={socialGridItems}
+    />
 
     <section className="mt-6 overflow-hidden rounded-[1.5rem] border border-edge bg-surface-card/45 p-5 shadow-2xl shadow-black/10 sm:p-8" aria-labelledby="x-factor-editing-heading">
       <div className="flex flex-col gap-5 sm:flex-row sm:items-end sm:justify-between">
@@ -280,31 +248,5 @@ export default function XFactorSocialMediaShowcase() {
       </div>
     </section>
 
-    {active && activeSlide && createPortal(<div ref={dialogRef} tabIndex={-1} role="dialog" aria-modal="true" aria-label={active.type === "carousel" ? `${active.title} social media carousel` : "X Factor Interior Design social media design"} className="fixed inset-0 z-[100] grid place-items-center bg-black/80 p-3 backdrop-blur-sm sm:p-6" onMouseDown={(event) => event.target === event.currentTarget && setActive(null)}>
-      <div className="relative grid max-h-[92vh] w-full max-w-5xl overflow-y-auto rounded-xl bg-surface shadow-2xl md:grid-cols-[minmax(0,1.5fr)_minmax(18rem,0.8fr)]">
-        <button type="button" onClick={() => setActive(null)} aria-label="Close social media design" className="absolute right-3 top-3 z-20 grid h-10 w-10 place-items-center rounded-full bg-black/65 text-2xl text-white hover:bg-black/85">×</button>
-        <div className="relative min-h-[55vh] bg-black md:min-h-[82vh]">
-          <AnimatePresence initial={false} custom={slideDirection}>
-            <motion.div
-              key={activeSlide.filename}
-              custom={slideDirection}
-              initial={{ opacity: 0, x: prefersReducedMotion ? 0 : slideDirection * 72 }}
-              animate={{ opacity: 1, x: 0 }}
-              exit={{ opacity: 0, x: prefersReducedMotion ? 0 : slideDirection * -72 }}
-              transition={{ duration: prefersReducedMotion ? 0 : 0.32, ease: [0.22, 1, 0.36, 1] }}
-              className="absolute inset-0"
-            >
-              <Image src={`${base}/${activeSlide.filename}`} alt={activeSlide.alt} fill sizes="(min-width: 768px) 65vw, 100vw" priority className="object-contain" />
-            </motion.div>
-          </AnimatePresence>
-          {active.type === "carousel" && <div className="absolute inset-x-3 bottom-3 flex items-center justify-between gap-3"><button type="button" onClick={previousSlide} aria-label="Show previous carousel slide" className="grid h-10 w-10 place-items-center rounded-full bg-black/65 text-white hover:bg-black/85"><Arrow direction="left" /></button><span className="rounded-full bg-black/65 px-3 py-1.5 text-xs font-medium text-white">{activeSlideIndex + 1} / {active.slides.length}</span><button type="button" onClick={nextSlide} aria-label="Show next carousel slide" className="grid h-10 w-10 place-items-center rounded-full bg-black/65 text-white hover:bg-black/85"><Arrow direction="right" /></button></div>}
-        </div>
-        <div className="flex min-h-0 flex-col">
-          <div className="flex items-center gap-3 border-b border-edge p-4"><div className="relative h-11 w-11 overflow-hidden rounded-full border border-edge bg-[#F3F1EC]"><Image src={logo} alt="X Factor Interior Design Dubai logo icon" fill sizes="44px" className="object-contain p-2.5" /></div><div><p className="text-sm font-semibold text-ink">xfactorinteriordesign <span className="text-[#8A7A63]">●</span></p><p className="text-xs text-ink-soft">Dubai, United Arab Emirates</p></div></div>
-          <div className="flex-1 p-4"><p className="text-sm leading-6 text-ink-soft"><strong className="mr-2 text-ink">xfactorinteriordesign</strong>{activeSlide.caption}</p></div>
-          <div className="border-t border-edge p-4"><p className="text-[11px] uppercase tracking-wide text-ink-faint">{active.type === "carousel" ? `${active.title} · slide ${activeSlideIndex + 1} of ${active.slides.length}` : "Visual system detail"}</p></div>
-        </div>
-      </div>
-    </div>, document.body)}
   </>;
 }

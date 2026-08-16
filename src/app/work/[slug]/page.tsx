@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { notFound } from "next/navigation";
 import JsonLd from "@/components/JsonLd";
+import PillarsPrCaseStudy from "@/components/case-study/PillarsPrCaseStudy";
 import RenovoFixCaseStudy from "@/components/case-study/RenovoFixCaseStudy";
 import XFactorCaseStudy from "@/components/case-study/XFactorCaseStudy";
 import { getPreviewableProject, publishedProjects } from "@/data/projects";
@@ -50,7 +51,9 @@ export default async function WorkCaseStudyPage({ params }: Props) {
     ? <RenovoFixCaseStudy project={project} />
     : project.slug === "x-factor-interior-design-branding-case-study"
       ? <XFactorCaseStudy project={project} />
-      : null;
+      : project.slug === "pillars-pr-brand-communication-design"
+        ? <PillarsPrCaseStudy project={project} />
+        : null;
 
   if (!caseStudy) notFound();
 

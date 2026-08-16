@@ -28,6 +28,45 @@ export type Project = {
 
 export const projects: Project[] = [
   {
+    title: "Pillars PR",
+    companyName: "Pillars Public Relations",
+    slug: "pillars-pr-brand-communication-design",
+    subtitle: "Brand Identity & Communication System",
+    category: "Legal Marketing & Public Relations",
+    role: "Brand & Digital Designer / Graphic & Multimedia Designer",
+    location: "Abu Dhabi, UAE",
+    statement:
+      "A connected identity and communication system for a specialist legal-sector marketing and public relations company serving the UAE and wider MENA region.",
+    image: "/projects/pillars-pr/pillars-pr-og-preview.svg",
+    imageAlt:
+      "Pillars PR brand identity and communication system preview cover with a structured blue pillar motif.",
+    tags: [
+      "Brand Identity",
+      "Corporate Documents",
+      "Social Media",
+      "Motion & Video",
+    ],
+    scope: [
+      "Brand Identity",
+      "Visual Systems",
+      "Corporate Documents",
+      "Social Media",
+      "Motion & Video",
+    ],
+    featured: false,
+    publishable: false,
+    seo: {
+      title: "Pillars PR Brand Identity & Communication Case Study | Yasser Nasr",
+      description:
+        "A brand identity and visual communication case study for Pillars PR, covering corporate design, social media, commercial communication, logo motion, and multimedia for the legal sector.",
+      canonical:
+        "https://yassernasr.com/work/pillars-pr-brand-communication-design",
+      openGraphTitle: "Pillars PR: Brand Identity & Communication System",
+      openGraphDescription:
+        "Explore the identity, corporate communication, social media, and motion system created for an Abu Dhabi legal marketing and PR company.",
+    },
+  },
+  {
     title: "X Factor Interior Design",
     slug: "x-factor-interior-design-branding-case-study",
     subtitle: "Brand & Digital Design · Graphic & Multimedia Design",
@@ -78,7 +117,7 @@ export const projects: Project[] = [
     subtitle: "Brand, Digital & Content System",
     category: "Brand & Digital Design",
     role: "Brand & Digital Designer, UI/UX Designer",
-    location: "UAE",
+    location: "Dubai, UAE",
     website: "https://renovofix.ae",
     statement:
       "A connected brand, social content, website, and multimedia system created for a UAE property maintenance company.",
