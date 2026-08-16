@@ -167,9 +167,6 @@ const beforeAfterEdits = [
   },
 ] as const;
 
-const Heart = ({ filled = false }: { filled?: boolean }) => <svg viewBox="0 0 24 24" aria-hidden="true" className="h-6 w-6" fill={filled ? "currentColor" : "none"} stroke="currentColor" strokeWidth="1.8"><path strokeLinecap="round" strokeLinejoin="round" d="M20.8 4.6a5.5 5.5 0 0 0-7.8 0L12 5.7l-1.1-1.1a5.5 5.5 0 0 0-7.8 7.8l1.1 1.1L12 21l7.8-7.5 1.1-1.1a5.5 5.5 0 0 0-.1-7.8Z" /></svg>;
-const Comment = () => <svg viewBox="0 0 24 24" aria-hidden="true" className="h-6 w-6" fill="none" stroke="currentColor" strokeWidth="1.8"><path strokeLinecap="round" strokeLinejoin="round" d="M21 11.5a8.4 8.4 0 0 1-9 8.5 9.8 9.8 0 0 1-3.8-.8L3 21l1.7-5A8.7 8.7 0 1 1 21 11.5Z" /></svg>;
-const Send = () => <svg viewBox="0 0 24 24" aria-hidden="true" className="h-6 w-6" fill="none" stroke="currentColor" strokeWidth="1.8"><path strokeLinecap="round" strokeLinejoin="round" d="m22 2-7 20-4-9-9-4 20-7Z" /><path d="M22 2 11 13" /></svg>;
 const CarouselIcon = () => <svg viewBox="0 0 24 24" aria-hidden="true" className="h-5 w-5 fill-white drop-shadow"><path d="M7 3h11a3 3 0 0 1 3 3v11a3 3 0 0 1-3 3H7a3 3 0 0 1-3-3V6a3 3 0 0 1 3-3Zm0 2a1 1 0 0 0-1 1v11a1 1 0 0 0 1 1h11a1 1 0 0 0 1-1V6a1 1 0 0 0-1-1H7Zm-4 2h1v11a2 2 0 0 0 2 2h11v1H6a3 3 0 0 1-3-3V7Z" /></svg>;
 const Arrow = ({ direction }: { direction: "left" | "right" }) => <svg viewBox="0 0 24 24" aria-hidden="true" className="h-5 w-5" fill="none" stroke="currentColor" strokeWidth="2"><path strokeLinecap="round" strokeLinejoin="round" d={direction === "left" ? "m15 18-6-6 6-6" : "m9 18 6-6-6-6"} /></svg>;
 
@@ -179,7 +176,6 @@ export default function XFactorSocialMediaShowcase() {
   const [activeEditIndex, setActiveEditIndex] = useState(0);
   const dialogRef = useDialogFocus(Boolean(active));
   const [slideDirection, setSlideDirection] = useState<1 | -1>(1);
-  const [liked, setLiked] = useState(false);
   const prefersReducedMotion = useSafeReducedMotion();
 
   useEffect(() => {
@@ -199,7 +195,6 @@ export default function XFactorSocialMediaShowcase() {
   const open = (post: GridPost) => {
     setActiveSlideIndex(0);
     setSlideDirection(1);
-    setLiked(false);
     setActive(post);
   };
 
@@ -218,21 +213,18 @@ export default function XFactorSocialMediaShowcase() {
   const activeEdit = beforeAfterEdits[activeEditIndex];
 
   return <>
-    <div className="mt-10 overflow-hidden rounded-[1.5rem] border border-edge bg-surface-card/45 shadow-2xl shadow-black/10">
+    <div className="mt-10 overflow-hidden border border-edge bg-surface-card/30 shadow-2xl shadow-black/10">
       <div className="flex items-center gap-4 border-b border-edge px-5 py-5 sm:px-8">
         <div className="rounded-full bg-gradient-to-tr from-[#A28D72] via-[#D8CDBE] to-[#F8F5EF] p-[2px]"><div className="relative h-16 w-16 overflow-hidden rounded-full border-2 border-surface bg-[#F3F1EC]"><Image src={logo} alt="X Factor Interior Design Dubai logo icon" fill sizes="64px" className="object-contain p-3" /></div></div>
-        <div className="min-w-0 flex-1"><h3 className="text-base font-semibold text-ink sm:text-lg">xfactorinteriordesign <span className="text-[#8A7A63]">●</span></h3><p className="text-sm leading-6 text-ink-soft">Luxury interiors · Dubai, UAE</p></div>
-        <span className="hidden rounded-lg bg-ink px-5 py-2 text-sm font-semibold text-surface sm:inline-flex">Follow</span>
+        <div className="min-w-0 flex-1"><h3 className="text-base font-semibold text-ink sm:text-lg">X Factor social system</h3><p className="text-sm leading-6 text-ink-soft">Luxury interiors · Dubai, UAE</p></div>
+        <span className="hidden text-xs uppercase tracking-[0.14em] text-ink-faint sm:inline">Select to inspect</span>
       </div>
-      <div className="grid grid-cols-3 border-b border-edge bg-surface-deep/50 py-4 text-center text-sm text-ink-soft">
-        <p><strong className="block text-base text-ink">{gridPosts.length + 1}</strong> posts</p><p><strong className="block text-base text-ink">3.8K</strong> followers</p><p><strong className="block text-base text-ink">214</strong> following</p>
-      </div>
-      <div className="grid grid-cols-2 gap-[2px] bg-edge sm:grid-cols-3">
-        {gridPosts.map((post) => {
+      <div className="grid grid-cols-2 gap-[2px] bg-edge md:auto-rows-fr md:grid-cols-3">
+        {gridPosts.map((post, index) => {
           const isCarousel = post.type === "carousel";
           const preview = isCarousel ? post.slides[0] : post;
           const key = isCarousel ? post.title : post.filename;
-          return <button key={key} type="button" onClick={() => open(post)} aria-label={`Open ${isCarousel ? "carousel" : "social media design"}: ${post.alt}`} className="group relative aspect-[3/4] cursor-zoom-in overflow-hidden bg-surface focus-visible:z-10">
+          return <button key={key} type="button" onClick={() => open(post)} aria-label={`Open ${isCarousel ? "carousel" : "social media design"}: ${post.alt}`} className={`group relative cursor-zoom-in overflow-hidden bg-surface focus-visible:z-10 ${index === 0 ? "col-span-2 aspect-[3/4] md:row-span-2 md:aspect-auto" : "aspect-[3/4]"}`}>
             <Image src={`${base}/${preview.filename}`} alt={post.alt} fill sizes="(min-width: 1280px) 220px, (min-width: 768px) 24vw, 50vw" className="object-cover transition duration-300 group-hover:scale-[1.03] group-hover:brightness-75" />
             {isCarousel && <span className="absolute right-3 top-3"><CarouselIcon /></span>}
             <span className="absolute inset-0 grid place-items-center bg-black/0 text-sm font-semibold text-white opacity-0 transition group-hover:bg-black/20 group-hover:opacity-100">{isCarousel ? "View carousel" : "View design"}</span>
@@ -310,7 +302,7 @@ export default function XFactorSocialMediaShowcase() {
         <div className="flex min-h-0 flex-col">
           <div className="flex items-center gap-3 border-b border-edge p-4"><div className="relative h-11 w-11 overflow-hidden rounded-full border border-edge bg-[#F3F1EC]"><Image src={logo} alt="X Factor Interior Design Dubai logo icon" fill sizes="44px" className="object-contain p-2.5" /></div><div><p className="text-sm font-semibold text-ink">xfactorinteriordesign <span className="text-[#8A7A63]">●</span></p><p className="text-xs text-ink-soft">Dubai, United Arab Emirates</p></div></div>
           <div className="flex-1 p-4"><p className="text-sm leading-6 text-ink-soft"><strong className="mr-2 text-ink">xfactorinteriordesign</strong>{activeSlide.caption}</p></div>
-          <div className="border-t border-edge p-4"><div className="flex items-center gap-4 text-ink"><button type="button" onClick={() => setLiked(!liked)} aria-label={liked ? "Unlike social media design" : "Like social media design"} aria-pressed={liked} className={liked ? "text-red-500" : "hover:text-ink-soft"}><Heart filled={liked} /></button><span aria-hidden="true"><Comment /></span><span aria-hidden="true"><Send /></span></div><p className="mt-3 text-sm font-semibold text-ink">{liked ? "1,249" : "1,248"} likes</p><p className="mt-1 text-[11px] uppercase tracking-wide text-ink-faint">{active.type === "carousel" ? `${active.title} · slide ${activeSlideIndex + 1} of ${active.slides.length}` : "View the visual system"}</p></div>
+          <div className="border-t border-edge p-4"><p className="text-[11px] uppercase tracking-wide text-ink-faint">{active.type === "carousel" ? `${active.title} · slide ${activeSlideIndex + 1} of ${active.slides.length}` : "Visual system detail"}</p></div>
         </div>
       </div>
     </div>, document.body)}
