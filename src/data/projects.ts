@@ -37,9 +37,10 @@ export const projects: Project[] = [
     location: "Abu Dhabi, UAE",
     statement:
       "A connected identity and communication system for a specialist legal-sector marketing and public relations company serving the UAE and wider MENA region.",
-    image: "/projects/pillars-pr/pillars-pr-og-preview.svg",
+    image:
+      "/projects/pillars-pr/social-media/web/facebook/pillars-pr-ppr-monogram-logo.webp",
     imageAlt:
-      "Pillars PR brand identity and communication system preview cover with a structured blue pillar motif.",
+      "Pillars PR PPR monogram logo on the legal marketing and public relations brand cover.",
     tags: [
       "Brand Identity",
       "Corporate Documents",
@@ -53,8 +54,8 @@ export const projects: Project[] = [
       "Social Media",
       "Motion & Video",
     ],
-    featured: false,
-    publishable: false,
+    featured: true,
+    publishable: true,
     seo: {
       title: "Pillars PR Brand Identity & Communication Case Study | Yasser Nasr",
       description:

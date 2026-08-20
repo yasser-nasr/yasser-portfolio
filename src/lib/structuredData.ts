@@ -109,7 +109,7 @@ export function aboutPageStructuredData(description: string) {
         url,
         description,
         isPartOf: websiteReference,
-        mainEntity: personReference,
+        mainEntity: personEntity,
         breadcrumb: { "@id": breadcrumb["@id"] },
       },
       breadcrumb,
