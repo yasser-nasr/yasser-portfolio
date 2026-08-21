@@ -1,5 +1,6 @@
 "use client";
 
+import Image from "next/image";
 import { motion, type Variants } from "motion/react";
 import HeadingReveal from "@/components/HeadingReveal";
 import Reveal from "@/components/Reveal";
@@ -20,48 +21,32 @@ const group: Variants = {
   visible: { opacity: 1, y: 0, transition: { duration: 0.4, ease: "easeOut" } },
 };
 
-const marketFlagCodes: Partial<Record<(typeof markets)[number], "EG" | "AE" | "SA">> = {
-  Egypt: "EG",
-  UAE: "AE",
-  "Saudi Arabia": "SA",
+const marketFlags: Record<
+  (typeof markets)[number],
+  { src: string; width: number; height: number }
+> = {
+  Egypt: { src: "https://flagcdn.com/w80/eg.png", width: 30, height: 20 },
+  UAE: { src: "https://flagcdn.com/w80/ae.png", width: 32, height: 16 },
+  "Saudi Arabia": { src: "https://flagcdn.com/w80/sa.png", width: 30, height: 20 },
+  "Wider GCC": {
+    src: "https://upload.wikimedia.org/wikipedia/commons/thumb/a/a6/Flag_of_the_Cooperation_Council_for_the_Arab_States_of_the_Gulf.svg/330px-Flag_of_the_Cooperation_Council_for_the_Arab_States_of_the_Gulf.svg.png",
+    width: 32,
+    height: 16,
+  },
 };
 
-function MarketFlag({ code }: { code: "EG" | "AE" | "SA" }) {
+function MarketFlag({ market }: { market: (typeof markets)[number] }) {
+  const flag = marketFlags[market];
+
   return (
-    <svg
+    <Image
       aria-hidden="true"
-      viewBox="0 0 32 20"
-      className="h-5 w-8 overflow-hidden rounded-[3px] shadow-sm ring-1 ring-black/15"
-    >
-      {code === "EG" && (
-        <>
-          <path fill="#ce1126" d="M0 0h32v6.67H0z" />
-          <path fill="#fff" d="M0 6.67h32v6.66H0z" />
-          <path fill="#000" d="M0 13.33h32V20H0z" />
-          <path
-            fill="#c7a008"
-            d="M16 7.2c-.65 0-1.18.4-1.35.97l-.92-.4.28 1.08-.72.73 1.17.12v2.14l1.54.95 1.54-.95V9.7l1.17-.12-.72-.73.28-1.08-.92.4A1.4 1.4 0 0 0 16 7.2Z"
-          />
-        </>
-      )}
-      {code === "AE" && (
-        <>
-          <path fill="#ff0000" d="M0 0h8v20H0z" />
-          <path fill="#00732f" d="M8 0h24v6.67H8z" />
-          <path fill="#fff" d="M8 6.67h24v6.66H8z" />
-          <path fill="#000" d="M8 13.33h24V20H8z" />
-        </>
-      )}
-      {code === "SA" && (
-        <>
-          <path fill="#006c35" d="M0 0h32v20H0z" />
-          <g fill="#fff">
-            <path d="M9 6.1h14v.85H9zm1.2 1.55h11.6v.75H10.2zm1.35 1.45h8.9v.7h-8.9z" />
-            <path d="M8.3 12.45h14.9v.72H8.3zm13.8-.55h1.6l-1.05.9z" />
-          </g>
-        </>
-      )}
-    </svg>
+      alt=""
+      src={flag.src}
+      width={flag.width}
+      height={flag.height}
+      className="rounded-[3px] shadow-sm ring-1 ring-black/15"
+    />
   );
 }
 
@@ -113,8 +98,6 @@ export default function MarketsIndustries() {
               {markets.map((market, index) => {
                 const isSecondColumn = index % 2 === 1;
                 const isSecondRow = index >= 2;
-                const flagCode = marketFlagCodes[market];
-
                 return (
                   <motion.div
                     key={market}
@@ -125,7 +108,7 @@ export default function MarketsIndustries() {
                   >
                     <div className="flex flex-col items-center gap-3">
                       <div className="flex h-5 items-center justify-center">
-                        {flagCode && <MarketFlag code={flagCode} />}
+                        <MarketFlag market={market} />
                       </div>
                       <span className="font-display text-base uppercase tracking-wide text-ink md:text-lg">
                         {market}

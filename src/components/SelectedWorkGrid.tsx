@@ -20,13 +20,19 @@ export default function SelectedWorkGrid({ className = "" }: { className?: strin
   return (
     <Reveal
       variants={container}
-      className={`grid grid-cols-1 gap-10 md:grid-cols-2 md:gap-8 lg:grid-cols-5 lg:gap-10 ${className}`}
+      className={`grid grid-cols-1 gap-4 md:grid-cols-2 lg:grid-cols-12 ${className}`}
     >
       {publishedProjects.map((project, index) => (
         <motion.div
           key={project.slug}
           variants={item}
-          className={project.featured ? "lg:col-span-3" : "lg:col-span-2"}
+          className={
+            index === 0
+              ? "md:col-span-2 lg:col-span-7"
+              : index === 1
+                ? "md:col-span-1 lg:col-span-5"
+                : "md:col-span-1 lg:col-span-12"
+          }
         >
           <ProjectCard project={project} index={index} />
         </motion.div>
@@ -36,46 +42,82 @@ export default function SelectedWorkGrid({ className = "" }: { className?: strin
 }
 
 function ProjectCard({ project, index }: { project: Project; index: number }) {
+  const cardHeight =
+    index === 0
+      ? "min-h-[31rem] lg:min-h-[38rem]"
+      : index === 1
+        ? "min-h-[27rem] lg:min-h-[38rem]"
+        : "min-h-[27rem] lg:min-h-[29rem]";
+
   return (
     <Link
       href={`/work/${project.slug}`}
       aria-label={`View case study: ${project.title}`}
-      className="group block"
+      className={`group relative isolate flex h-full ${cardHeight} overflow-hidden rounded-[1.5rem] border border-white/10 bg-surface-card shadow-[0_24px_70px_-40px_rgba(0,0,0,0.8)] transition-[transform,border-color,box-shadow] duration-500 hover:-translate-y-1 hover:border-white/25 hover:shadow-[0_32px_90px_-42px_rgba(0,0,0,0.9)]`}
     >
+      <ProjectVisual project={project} index={index} />
+
       <div
-        className={`relative overflow-hidden rounded-xl border border-edge transition-colors duration-300 group-hover:border-ink/25 ${
-          project.featured ? "aspect-[4/3]" : "aspect-[3/4]"
-        }`}
-      >
-        <ProjectVisual project={project} index={index} />
+        aria-hidden="true"
+        className="absolute inset-0 bg-[linear-gradient(180deg,rgba(10,10,10,0.1)_15%,rgba(10,10,10,0.35)_48%,rgba(10,10,10,0.94)_100%)] transition-opacity duration-500 group-hover:opacity-90"
+      />
+      <div
+        aria-hidden="true"
+        className="absolute inset-0 opacity-0 ring-1 ring-inset ring-white/20 transition-opacity duration-500 group-hover:opacity-100"
+      />
 
-        <span
-          aria-hidden="true"
-          className="absolute right-4 top-4 h-2 w-2 scale-0 rounded-sm bg-ink-soft/60 transition-transform duration-300 group-hover:scale-100"
-        />
-
-        <div className="absolute inset-x-0 bottom-0 translate-y-full bg-surface/70 px-4 py-3 backdrop-blur-md transition-transform duration-300 group-hover:translate-y-0">
-          <span className="text-xs uppercase tracking-[0.15em] text-ink-soft">
-            {project.category}
+      <div className="relative z-10 flex w-full flex-col justify-between p-5 text-white sm:p-7">
+        <div className="flex items-start justify-between gap-4">
+          <span className="grid h-11 w-11 place-items-center rounded-full border border-white/25 bg-black/15 font-display text-xs tracking-[0.16em] backdrop-blur-md">
+            {String(index + 1).padStart(2, "0")}
           </span>
+          {project.location ? (
+            <span className="rounded-full border border-white/20 bg-black/15 px-3 py-2 text-[0.65rem] uppercase tracking-[0.14em] text-white/80 backdrop-blur-md">
+              {project.location}
+            </span>
+          ) : null}
+        </div>
+
+        <div>
+          <p className="text-[0.68rem] uppercase tracking-[0.2em] text-white/65">
+            {project.subtitle ?? project.category}
+          </p>
+          <div className="mt-3 flex items-end justify-between gap-5">
+            <div>
+              <h3
+                className={`font-semibold leading-[1.05] tracking-[-0.025em] ${
+                  index === 1 ? "text-3xl sm:text-4xl" : "text-4xl sm:text-5xl"
+                }`}
+              >
+                {project.title}
+              </h3>
+              <p
+                className={`mt-4 max-w-xl text-sm leading-6 text-white/70 ${
+                  index === 1 ? "lg:max-w-sm" : ""
+                }`}
+              >
+                {project.statement}
+              </p>
+              {project.tags?.length ? (
+                <ul className="mt-5 flex flex-wrap gap-2" aria-label={`${project.title} disciplines`}>
+                  {project.tags.slice(0, 3).map((tag) => (
+                    <li
+                      key={tag}
+                      className="rounded-full border border-white/15 bg-white/5 px-3 py-1.5 text-[0.65rem] uppercase tracking-[0.1em] text-white/75 backdrop-blur-sm"
+                    >
+                      {tag}
+                    </li>
+                  ))}
+                </ul>
+              ) : null}
+            </div>
+            <span className="grid h-12 w-12 shrink-0 place-items-center rounded-full bg-white text-xl text-black transition-transform duration-500 group-hover:rotate-[-35deg] group-hover:scale-105">
+              <span aria-hidden="true">↗</span>
+              <span className="sr-only">View case study</span>
+            </span>
+          </div>
         </div>
       </div>
-
-      <div className="mt-4 flex items-baseline justify-between gap-4">
-        <h3 className="text-lg font-medium text-ink md:text-xl">{project.title}</h3>
-        <span className="text-sm text-ink-soft">{project.year}</span>
-      </div>
-      <p className="mt-1 text-sm text-ink-soft">{project.category}</p>
-      <p className="mt-2 max-w-md text-sm text-ink-soft">{project.statement}</p>
-      <span className="mt-3 inline-flex items-center gap-1 text-sm text-ink">
-        View Case Study
-        <span
-          aria-hidden="true"
-          className="inline-block transition-transform duration-200 group-hover:translate-x-1"
-        >
-          →
-        </span>
-      </span>
     </Link>
   );
 }
@@ -87,8 +129,14 @@ function ProjectVisual({ project, index }: { project: Project; index: number }) 
         src={project.image}
         alt={project.imageAlt}
         fill
-        sizes="(min-width: 1024px) 50vw, 100vw"
-        className="object-cover transition-transform duration-500 group-hover:scale-[1.04]"
+        sizes={
+          index === 0
+            ? "(min-width: 1024px) 58vw, 100vw"
+            : index === 1
+              ? "(min-width: 1024px) 42vw, (min-width: 768px) 50vw, 100vw"
+              : "(min-width: 1024px) 100vw, (min-width: 768px) 50vw, 100vw"
+        }
+        className="object-cover transition-transform duration-700 ease-out group-hover:scale-[1.045]"
       />
     );
   }
@@ -96,7 +144,7 @@ function ProjectVisual({ project, index }: { project: Project; index: number }) 
   return (
     <div
       aria-hidden="true"
-      className="absolute inset-0 overflow-hidden transition-transform duration-500 group-hover:scale-[1.04]"
+      className="absolute inset-0 overflow-hidden transition-transform duration-700 group-hover:scale-[1.045]"
     >
       <div
         className="absolute inset-0"
@@ -114,11 +162,7 @@ function ProjectVisual({ project, index }: { project: Project; index: number }) 
         }}
       />
       <div className="absolute inset-0 flex flex-col items-center justify-center gap-3">
-        <span
-          className={`font-display text-ink-soft/25 ${
-            project.featured ? "text-6xl md:text-7xl" : "text-4xl md:text-5xl"
-          }`}
-        >
+        <span className="font-display text-6xl text-ink-soft/25 md:text-7xl">
           {String(index + 1).padStart(2, "0")}
         </span>
         <span className="text-xs uppercase tracking-[0.2em] text-ink-soft/50">

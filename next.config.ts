@@ -5,6 +5,12 @@ const contentSecurityPolicy = "default-src 'self'; script-src 'self' 'unsafe-inl
 
 const nextConfig: NextConfig = {
   poweredByHeader: false,
+  images: {
+    remotePatterns: [
+      new URL("https://flagcdn.com/w80/**"),
+      new URL("https://upload.wikimedia.org/wikipedia/commons/thumb/**"),
+    ],
+  },
   async headers() {
     return [
       {
