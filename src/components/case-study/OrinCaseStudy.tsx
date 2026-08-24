@@ -196,11 +196,38 @@ export default function OrinCaseStudy({ project }: { project: Project }) {
                 preload
               />
             </div>
-            <PhoneFrame
-              src={contactMobile}
-              alt="Orin UAE business consultancy mobile website contact experience with responsive navigation and consultation form."
-              className="relative mx-auto -mt-10 w-[42%] max-w-[14rem] md:absolute md:bottom-7 md:right-6 md:mt-0 md:w-[20%] md:max-w-[14.5rem] lg:bottom-10 lg:right-9"
-            />
+            <div className="orin-hero-phone">
+              <PhoneFrame
+                src={contactMobile}
+                alt="Orin UAE business consultancy mobile website contact experience with responsive navigation and consultation form."
+                className="w-full"
+              />
+            </div>
+            <style>{`
+              .orin-hero-phone {
+                position: relative;
+                width: 66.6667%;
+                max-width: 20rem;
+                margin: -2rem auto 0;
+              }
+
+              @media (min-width: 768px) {
+                .orin-hero-phone {
+                  position: absolute;
+                  right: 1.5rem;
+                  bottom: 1.75rem;
+                  width: 24%;
+                  margin-top: 0;
+                }
+              }
+
+              @media (min-width: 1024px) {
+                .orin-hero-phone {
+                  right: 2.25rem;
+                  bottom: 2.5rem;
+                }
+              }
+            `}</style>
         </Reveal>
 
         <header className="py-14 md:py-20">
@@ -368,15 +395,19 @@ export default function OrinCaseStudy({ project }: { project: Project }) {
 
         <section id="final-showcase" className="border-t border-edge py-16 md:py-24">
           <ChapterHeading label="Showcase" title="Final Showcase" />
-          <Reveal className="relative mt-12 min-h-[36rem] overflow-hidden rounded-[1.5rem] border border-white/10 bg-[#07160f] p-5 sm:min-h-[43rem] sm:p-8 md:mt-16 md:min-h-[50rem] md:p-12">
+          <Reveal className="relative mt-12 overflow-hidden rounded-[1.5rem] border border-white/10 bg-[#07160f] p-5 sm:p-8 md:mt-16 md:p-12">
             <div aria-hidden="true" className="absolute inset-0 [background-image:radial-gradient(circle_at_80%_15%,#4faf8f33,transparent_30%),radial-gradient(circle_at_15%_90%,#e8dfc026,transparent_34%)]" />
-            <div className="relative w-[92%] md:w-[84%]">
-              <BrowserFrame src={homepage} alt="Orin UAE business consultancy desktop website homepage in the final digital design showcase." position="50% 0%" />
+            <div className="relative grid items-center gap-8 md:grid-cols-3 md:gap-10">
+              <div className="space-y-6 md:col-span-2">
+                <BrowserFrame src={homepage} alt="Orin UAE business consultancy desktop website homepage in the final digital design showcase." position="50% 0%" />
+                <div className="w-full overflow-hidden rounded-lg border border-white/15 bg-[#e8dfc0] shadow-2xl">
+                  <Image src={linkedinCover} alt="Orin financial and business consultancy LinkedIn cover integrated into the final project showcase." width={4700} height={796} unoptimized sizes="(min-width: 768px) 720px, 100vw" className="h-auto w-full" />
+                </div>
+              </div>
+              <div className="mx-auto w-full" style={{ maxWidth: "20rem" }}>
+                <PhoneFrame src={aboutMobile} alt="Orin UAE consultancy mobile About page in the final responsive website showcase." className="w-full" />
+              </div>
             </div>
-            <div className="absolute bottom-[22%] left-[7%] w-[72%] overflow-hidden rounded-lg border border-white/15 bg-[#e8dfc0] shadow-2xl md:bottom-[13%] md:left-[12%] md:w-[64%]">
-              <Image src={linkedinCover} alt="Orin financial and business consultancy LinkedIn cover integrated into the final project showcase." width={4700} height={796} unoptimized sizes="(min-width: 768px) 720px, 75vw" className="h-auto w-full" />
-            </div>
-            <PhoneFrame src={aboutMobile} alt="Orin UAE consultancy mobile About page in the final responsive website showcase." className="absolute bottom-5 right-4 w-[29%] max-w-[15rem] sm:bottom-8 sm:right-8 md:bottom-10 md:right-12 md:w-[21%]" />
           </Reveal>
         </section>
 
