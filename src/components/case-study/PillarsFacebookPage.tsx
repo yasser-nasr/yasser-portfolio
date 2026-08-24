@@ -1,6 +1,6 @@
 "use client";
 
-import Image from "next/image";
+import Image from "@/components/case-study/CaseStudyImage";
 import { useEffect, useState } from "react";
 import { createPortal } from "react-dom";
 import { useDialogFocus } from "@/lib/useDialogFocus";
@@ -181,7 +181,7 @@ export default function PillarsFacebookPage() {
                     alt={alt}
                     fill
                     sizes="(min-width: 1024px) 28vw, 50vw"
-                    className="object-cover transition duration-300 group-hover:scale-[1.02] group-hover:brightness-90"
+                    className="object-cover transition duration-300 group-hover:brightness-90"
                   />
                   <span className="absolute inset-0 grid place-items-center bg-black/0 text-sm font-semibold text-white opacity-0 transition group-hover:bg-black/20 group-hover:opacity-100">
                     View image

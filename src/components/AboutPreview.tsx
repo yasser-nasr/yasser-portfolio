@@ -45,7 +45,7 @@ export default function AboutPreview() {
             variants={line}
             className="font-display text-base uppercase tracking-[0.25em] text-ink-soft md:text-lg"
           >
-            About / 06
+            About
           </motion.p>
 
           <motion.h2

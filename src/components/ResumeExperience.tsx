@@ -23,7 +23,7 @@ export default function ResumeExperience() {
   return (
     <div className="mt-24">
       <p className="font-display text-base uppercase tracking-[0.25em] text-ink-soft md:text-lg">
-        Experience / 04
+        Experience
       </p>
 
       <HeadingReveal

@@ -1,6 +1,6 @@
 "use client";
 
-import Image from "next/image";
+import Image from "@/components/case-study/CaseStudyImage";
 import { useState } from "react";
 import SocialMediaGrid, { type SocialMediaGridItem } from "./SocialMediaGrid";
 import VideoPlayer from "./VideoPlayer";
@@ -148,8 +148,9 @@ const socialGridItems: readonly SocialMediaGridItem[] = gridPosts.map((post) => 
     },
   };
 });
-const beforeAfterEdits = [
+const beforeAfterEditsAscending = [
   {
+    number: "4",
     title: "Walk-in wardrobe · Light and perspective",
     before: "x-factor-dubai-walk-in-wardrobe-before-photo-editing.webp",
     after: "x-factor-dubai-walk-in-wardrobe-after-photo-retouching.webp",
@@ -158,6 +159,7 @@ const beforeAfterEdits = [
     description: "Corrected vertical lines, reduced image noise, and balanced the integrated lighting to reveal the wardrobe's symmetry and material detail.",
   },
   {
+    number: "3",
     title: "Luxury living room · Day-to-evening grade",
     before: "x-factor-dubai-luxury-living-room-before-color-grading.webp",
     after: "x-factor-dubai-luxury-living-room-after-evening-color-grading.webp",
@@ -166,6 +168,7 @@ const beforeAfterEdits = [
     description: "Shifted the daylight capture into an evening mood while preserving furniture detail, warm practical lighting, and the view beyond the windows.",
   },
   {
+    number: "2",
     title: "Penthouse bedroom · Skyline enhancement",
     before: "x-factor-dubai-penthouse-bedroom-before-photo-editing.webp",
     after: "x-factor-dubai-penthouse-bedroom-after-sunset-photo-retouching.webp",
@@ -174,6 +177,7 @@ const beforeAfterEdits = [
     description: "Recovered the skyline, refined the sunset colour, and balanced interior highlights to create a stronger vertical image for social media.",
   },
   {
+    number: "1",
     title: "Bedroom detail · Golden-hour finish",
     before: "x-factor-dubai-bedroom-interior-before-color-grading.webp",
     after: "x-factor-dubai-bedroom-interior-after-golden-hour-color-grading.webp",
@@ -182,6 +186,8 @@ const beforeAfterEdits = [
     description: "Introduced a warm golden-hour grade, controlled the window highlights, and enhanced reflections without losing the room's neutral palette.",
   },
 ] as const;
+
+const beforeAfterEdits = [...beforeAfterEditsAscending].reverse();
 
 export default function XFactorSocialMediaShowcase() {
   const [activeEditIndex, setActiveEditIndex] = useState(0);
@@ -216,7 +222,7 @@ export default function XFactorSocialMediaShowcase() {
             onClick={() => setActiveEditIndex(index)}
             aria-pressed={activeEditIndex === index}
             className={`rounded-full border px-3 py-1.5 text-xs font-medium transition ${activeEditIndex === index ? "border-ink bg-ink text-surface" : "border-edge text-ink-soft hover:border-ink-faint hover:text-ink"}`}
-          >{String(index + 1).padStart(2, "0")}</button>)}
+          >{edit.number}</button>)}
         </div>
       </div>
 

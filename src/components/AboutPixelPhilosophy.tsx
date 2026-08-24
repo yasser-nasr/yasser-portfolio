@@ -43,7 +43,7 @@ export default function AboutPixelPhilosophy() {
       <div className="grid items-center gap-12 md:grid-cols-2 md:gap-16">
         <div>
           <p className="font-display text-base uppercase tracking-[0.25em] text-ink-soft md:text-lg">
-            Philosophy / 03
+            Philosophy
           </p>
 
           <HeadingReveal

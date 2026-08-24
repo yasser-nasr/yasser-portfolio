@@ -1,4 +1,4 @@
-import Image from "next/image";
+import Image from "@/components/case-study/CaseStudyImage";
 
 const logoBase = "/projects/x-factor-interior-design/logo";
 

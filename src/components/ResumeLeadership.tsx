@@ -19,7 +19,7 @@ export default function ResumeLeadership() {
   return (
     <div className="mt-24">
       <p className="font-display text-base uppercase tracking-[0.25em] text-ink-soft md:text-lg">
-        Leadership / 05
+        Leadership
       </p>
 
       <HeadingReveal

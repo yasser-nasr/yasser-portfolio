@@ -1,6 +1,6 @@
 "use client";
 
-import Image from "next/image";
+import Image from "@/components/case-study/CaseStudyImage";
 import {
   AnimatePresence,
   motion,
@@ -243,7 +243,7 @@ export default function SocialMediaGrid({
                 alt={item.preview.alt}
                 fill
                 sizes="(min-width: 768px) 24vw, 50vw"
-                className="object-cover transition duration-300 group-hover:scale-[1.03] group-hover:brightness-75"
+                className="object-cover transition duration-300 group-hover:brightness-75"
               />
               {item.slides && item.slides.length > 1 ? (
                 <span className="absolute right-3 top-3 rounded-full bg-black/65 px-2.5 py-1 text-[10px] font-medium text-white">

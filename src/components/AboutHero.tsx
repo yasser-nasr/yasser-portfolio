@@ -43,7 +43,7 @@ export default function AboutHero() {
             variants={line}
             className="font-display text-base uppercase tracking-[0.25em] text-ink-soft md:text-lg"
           >
-            About / 01
+            About
           </motion.p>
 
           <motion.h1

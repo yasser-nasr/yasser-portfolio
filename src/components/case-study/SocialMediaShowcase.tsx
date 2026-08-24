@@ -1,6 +1,6 @@
 "use client";
 
-import Image from "next/image";
+import Image from "@/components/case-study/CaseStudyImage";
 import { useEffect, useState } from "react";
 import { createPortal } from "react-dom";
 import { useDialogFocus } from "@/lib/useDialogFocus";
@@ -47,7 +47,7 @@ export default function SocialMediaShowcase() {
       </div>
       <div className="grid grid-cols-2 gap-[2px] bg-edge sm:grid-cols-3">
         {posts.map((post) => <button key={post[0]} type="button" onClick={() => open(post)} aria-label={`Open post: ${post[1]}`} className="group relative aspect-[3/4] cursor-zoom-in overflow-hidden bg-surface focus-visible:z-10">
-          <Image src={`${base}/${post[0]}`} alt={post[1]} fill sizes="(min-width: 768px) 24vw, 50vw" className="object-cover transition duration-300 group-hover:scale-[1.03] group-hover:brightness-75" />
+          <Image src={`${base}/${post[0]}`} alt={post[1]} fill sizes="(min-width: 768px) 24vw, 50vw" className="object-cover transition duration-300 group-hover:brightness-75" />
           <span className="absolute inset-0 grid place-items-center bg-black/0 text-sm font-semibold text-white opacity-0 transition group-hover:bg-black/20 group-hover:opacity-100">View post</span>
         </button>)}
       </div>

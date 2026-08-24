@@ -20,7 +20,7 @@ export default function CapabilitiesSystem() {
   return (
     <div className="mt-24">
       <p className="font-display text-base uppercase tracking-[0.25em] text-ink-soft md:text-lg">
-        System / 02
+        System
       </p>
 
       <HeadingReveal

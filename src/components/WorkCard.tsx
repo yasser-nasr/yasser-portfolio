@@ -20,6 +20,7 @@ export default function WorkCard({
         className={`relative col-span-7 block aspect-[4/3] min-w-0 overflow-hidden rounded-xl bg-surface-card ${
           imageFirst ? "md:order-1" : "md:order-2"
         }`}
+        style={{ backgroundColor: project.imageBackground }}
       >
         {project.image ? (
           <Image
@@ -27,7 +28,12 @@ export default function WorkCard({
             alt={project.imageAlt}
             fill
             sizes="(min-width: 768px) 58vw, 100vw"
-            className="object-cover transition-transform duration-500 ease-out group-hover:scale-[1.02]"
+            className="transition-transform duration-500 ease-out group-hover:scale-[1.02]"
+            style={{
+              objectFit: project.imageFit ?? "cover",
+              objectPosition: project.imagePosition,
+              padding: project.imageFit === "contain" ? "12%" : undefined,
+            }}
           />
         ) : (
           <div

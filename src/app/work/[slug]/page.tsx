@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { notFound } from "next/navigation";
 import JsonLd from "@/components/JsonLd";
 import PillarsPrCaseStudy from "@/components/case-study/PillarsPrCaseStudy";
+import OrinCaseStudy from "@/components/case-study/OrinCaseStudy";
 import RenovoFixCaseStudy from "@/components/case-study/RenovoFixCaseStudy";
 import XFactorCaseStudy from "@/components/case-study/XFactorCaseStudy";
 import { getPreviewableProject, publishedProjects } from "@/data/projects";
@@ -17,6 +18,8 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const { slug } = await params;
   const project = getPreviewableProject(slug);
   if (!project?.seo) return {};
+  const socialImage = project.seo.image ?? project.image;
+  const socialImageAlt = project.seo.imageAlt ?? project.imageAlt;
 
   return {
     title: { absolute: project.seo.title },
@@ -28,16 +31,16 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
       description: project.seo.openGraphDescription,
       url: project.seo.canonical,
       type: "article",
-      images: project.image ? [{
-        url: project.image,
-        alt: project.imageAlt,
+      images: socialImage ? [{
+        url: socialImage,
+        alt: socialImageAlt,
       }] : undefined,
     },
     twitter: {
       card: "summary_large_image",
       title: project.seo.openGraphTitle,
       description: project.seo.openGraphDescription,
-      images: project.image ? [project.image] : undefined,
+      images: socialImage ? [socialImage] : undefined,
     },
   };
 }
@@ -47,8 +50,10 @@ export default async function WorkCaseStudyPage({ params }: Props) {
   const project = getPreviewableProject(slug);
   if (!project) notFound();
 
-  const caseStudy = project.slug === "renovofix-brand-digital-design"
-    ? <RenovoFixCaseStudy project={project} />
+  const caseStudy = project.slug === "orin"
+    ? <OrinCaseStudy project={project} />
+    : project.slug === "renovofix-brand-digital-design"
+      ? <RenovoFixCaseStudy project={project} />
     : project.slug === "x-factor-interior-design-branding-case-study"
       ? <XFactorCaseStudy project={project} />
       : project.slug === "pillars-pr-brand-communication-design"
@@ -64,14 +69,14 @@ export default async function WorkCaseStudyPage({ params }: Props) {
         name: project.title,
         subtitle: project.subtitle ?? project.category,
         category: project.category,
-        industry: project.location ?? "",
+        industry: project.industry ?? project.location ?? "",
         year: project.year,
         statement: project.statement,
         image: project.image,
         imageAlt: project.imageAlt,
         tags: project.tags ?? [],
         publishable: project.publishable,
-      }, project.image)} /> : null}
+      }, project.seo?.image ?? project.image)} /> : null}
       {caseStudy}
     </>
   );

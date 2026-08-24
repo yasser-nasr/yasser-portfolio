@@ -1,6 +1,6 @@
 "use client";
 
-import Image from "next/image";
+import Image from "@/components/case-study/CaseStudyImage";
 import { useEffect, useState } from "react";
 import { createPortal } from "react-dom";
 import { useDialogFocus } from "@/lib/useDialogFocus";
@@ -45,7 +45,7 @@ export default function XFactorBrandGuidelinesShowcase() {
       <div aria-hidden="true" className="absolute inset-x-[8%] bottom-1 h-10 rounded-[50%] bg-black/25 blur-2xl" />
       <div className="relative overflow-hidden rounded-lg border-[6px] border-[#262522] bg-[#262522] shadow-[0_24px_55px_rgba(0,0,0,0.28),0_6px_12px_rgba(0,0,0,0.2)] [transform:rotateX(2deg)] sm:border-[10px]">
         <button type="button" onClick={() => setIsOpen(true)} aria-label={`Open brand guidelines slide ${activeIndex + 1}`} className="group relative block w-full cursor-zoom-in overflow-hidden bg-[#f3f1ec] focus-visible:outline-2 focus-visible:outline-offset-[-4px] focus-visible:outline-white">
-          <Image key={activeSlide.filename} src={`${base}/${activeSlide.filename}`} alt={activeSlide.alt} width={activeSlide.width} height={activeSlide.height} sizes="(min-width: 1280px) 736px, (min-width: 768px) 64vw, 92vw" className="h-auto w-full transition duration-500 group-hover:scale-[1.008]" />
+          <Image key={activeSlide.filename} src={`${base}/${activeSlide.filename}`} alt={activeSlide.alt} width={activeSlide.width} height={activeSlide.height} sizes="(min-width: 1280px) 736px, (min-width: 768px) 64vw, 92vw" unoptimized className="h-auto w-full" />
           <span className="absolute bottom-3 right-3 rounded-full bg-black/65 px-3 py-1.5 text-[11px] font-medium text-white backdrop-blur-sm">{activeIndex + 1} / {slides.length}</span>
         </button>
         <div className="flex items-center justify-between border-t border-white/10 bg-[#262522] px-3 py-2 text-white sm:px-4">
@@ -63,7 +63,7 @@ export default function XFactorBrandGuidelinesShowcase() {
       <div className="relative flex max-h-[94vh] w-full max-w-7xl flex-col items-center">
         <button type="button" onClick={() => setIsOpen(false)} aria-label="Close brand guidelines presentation" className="absolute right-2 top-2 z-20 grid h-11 w-11 place-items-center rounded-full bg-black/70 text-2xl text-white transition hover:bg-black">×</button>
         <div className="relative w-full overflow-hidden rounded-xl bg-black shadow-2xl">
-          <Image key={activeSlide.filename} src={`${base}/${activeSlide.filename}`} alt={activeSlide.alt} width={activeSlide.width} height={activeSlide.height} sizes="96vw" className="h-auto max-h-[86vh] w-full object-contain" priority />
+          <Image key={activeSlide.filename} src={`${base}/${activeSlide.filename}`} alt={activeSlide.alt} width={activeSlide.width} height={activeSlide.height} sizes="96vw" unoptimized className="h-auto max-h-[86vh] w-full object-contain" priority />
           <button type="button" onClick={previous} aria-label="Show previous brand guidelines slide" className="absolute left-3 top-1/2 grid h-11 w-11 -translate-y-1/2 place-items-center rounded-full bg-black/65 text-xl text-white transition hover:bg-black">←</button>
           <button type="button" onClick={next} aria-label="Show next brand guidelines slide" className="absolute right-3 top-1/2 grid h-11 w-11 -translate-y-1/2 place-items-center rounded-full bg-black/65 text-xl text-white transition hover:bg-black">→</button>
           <span className="absolute bottom-3 left-1/2 -translate-x-1/2 rounded-full bg-black/65 px-4 py-2 text-sm font-medium text-white">{activeIndex + 1} / {slides.length}</span>

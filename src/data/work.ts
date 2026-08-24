@@ -10,6 +10,9 @@ export type WorkProject = {
   statement: string;
   image: string | null;
   imageAlt: string;
+  imagePosition?: string;
+  imageFit?: "cover" | "contain";
+  imageBackground?: string;
   tags: string[];
   publishable: boolean;
 };
@@ -20,11 +23,14 @@ function toWorkProject(project: (typeof projects)[number]): WorkProject {
     name: project.title,
     subtitle: project.subtitle ?? project.category,
     category: project.category,
-    industry: project.location ?? "",
+    industry: project.industry ?? project.location ?? "",
     year: project.year,
     statement: project.statement,
     image: project.image,
     imageAlt: project.imageAlt,
+    imagePosition: project.imagePosition,
+    imageFit: project.imageFit,
+    imageBackground: project.imageBackground,
     tags: project.tags ?? [],
     publishable: project.publishable,
   };

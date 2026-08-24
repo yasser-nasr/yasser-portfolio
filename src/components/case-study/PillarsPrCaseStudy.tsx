@@ -1,4 +1,4 @@
-import Image from "next/image";
+import Image from "@/components/case-study/CaseStudyImage";
 import localFont from "next/font/local";
 import type { Project } from "@/data/projects";
 import { CaseStudyBackLink, CaseStudyClosingCta } from "./CaseStudyLayout";
@@ -603,7 +603,7 @@ export default function PillarsPrCaseStudy({ project }: { project: Project }) {
         </header>
 
         <section id="context" className="border-t border-edge py-16 md:py-24">
-          <Heading eyebrow="01 / Context">Project Context</Heading>
+          <Heading eyebrow="Context">Project Context</Heading>
           <div className="mt-10 grid gap-10 md:grid-cols-2 md:gap-16">
             <div>
               <h3 className="text-lg font-semibold text-ink">Challenge</h3>
@@ -633,7 +633,7 @@ export default function PillarsPrCaseStudy({ project }: { project: Project }) {
           id="brand-idea"
           className="border-t border-edge py-16 md:py-24"
         >
-          <Heading eyebrow="02 / Positioning">
+          <Heading eyebrow="Positioning">
             Legal Expertise.
             <br />
             Modern Communication.
@@ -649,7 +649,7 @@ export default function PillarsPrCaseStudy({ project }: { project: Project }) {
           </div>
         </section>
         <section id="identity" className="border-t border-edge py-16 md:py-24">
-          <Heading eyebrow="03 / Identity">Logo &amp; Identity</Heading>
+          <Heading eyebrow="Identity">Logo &amp; Identity</Heading>
           <div className="mt-10 space-y-12 text-[#0D5899]">
             <div>
               <div className="grid md:grid-cols-[minmax(0,1.15fr)_minmax(18rem,0.85fr)]">
@@ -740,7 +740,7 @@ export default function PillarsPrCaseStudy({ project }: { project: Project }) {
           id="brand-system"
           className="border-t border-edge py-16 md:py-24"
         >
-          <Heading eyebrow="04 / System">Brand System</Heading>
+          <Heading eyebrow="System">Brand System</Heading>
           <div className="mt-12 space-y-16">
             <div>
               <h3 className="text-xl font-semibold text-ink">Color</h3>
@@ -819,7 +819,7 @@ export default function PillarsPrCaseStudy({ project }: { project: Project }) {
           </div>
         </section>
         <section id="corporate" className="border-t border-edge py-16 md:py-24">
-          <Heading eyebrow="05 / Corporate">Corporate Communication</Heading>
+          <Heading eyebrow="Corporate">Corporate Communication</Heading>
           <p className="mt-7 max-w-3xl text-lg leading-8 text-ink-soft">
             The identity was extended into long-form corporate communication,
             creating a consistent system for presenting the company, its
@@ -840,7 +840,7 @@ export default function PillarsPrCaseStudy({ project }: { project: Project }) {
           id="commercial"
           className="border-t border-edge py-16 md:py-24"
         >
-          <Heading eyebrow="06 / Commercial">Commercial Communication</Heading>
+          <Heading eyebrow="Commercial">Commercial Communication</Heading>
           <p className="mt-7 max-w-3xl text-lg leading-8 text-ink-soft">
             A consistent document system organized package structure, service
             hierarchy, and commercial information without making historical
@@ -853,7 +853,7 @@ export default function PillarsPrCaseStudy({ project }: { project: Project }) {
           </div>
         </section>
         <section id="social" className="border-t border-edge py-16 md:py-24">
-          <Heading eyebrow="07 / Social">Social Media System</Heading>
+          <Heading eyebrow="Social">Social Media System</Heading>
           <p className="mt-7 max-w-3xl text-lg leading-8 text-ink-soft">
             The identity was extended into a repeatable social-media system
             designed to communicate legal, professional, educational, and
@@ -890,7 +890,7 @@ export default function PillarsPrCaseStudy({ project }: { project: Project }) {
           <PillarsFacebookPage />
         </section>
         <section id="motion" className="border-t border-edge py-16 md:py-24">
-          <Heading eyebrow="08 / Motion">Motion &amp; Video</Heading>
+          <Heading eyebrow="Motion">Motion &amp; Video</Heading>
           <p className="mt-7 max-w-3xl text-lg leading-8 text-ink-soft">
             Logo animation and selected motion work extended the identity into
             time-based communication while preserving the same structured visual
@@ -916,7 +916,7 @@ export default function PillarsPrCaseStudy({ project }: { project: Project }) {
           </div>
         </section>
         <section id="decisions" className="border-t border-edge py-16 md:py-24">
-          <Heading eyebrow="09 / Rationale">Key Design Decisions</Heading>
+          <Heading eyebrow="Rationale">Key Design Decisions</Heading>
           <div className="mt-10 grid gap-x-12 gap-y-9 sm:grid-cols-2">
             {decisions.map(([title, description], index) => (
               <article key={title} className="border-t border-edge pt-5">
@@ -932,7 +932,7 @@ export default function PillarsPrCaseStudy({ project }: { project: Project }) {
           </div>
         </section>
         <section id="outcome" className="border-t border-edge py-16 md:py-24">
-          <Heading eyebrow="10 / Result">Outcome</Heading>
+          <Heading eyebrow="Result">Outcome</Heading>
           <div className="mt-8 max-w-4xl space-y-4 text-lg leading-8 text-ink-soft">
             <p>
               The result was a connected identity and communication system that
@@ -947,7 +947,7 @@ export default function PillarsPrCaseStudy({ project }: { project: Project }) {
           </div>
         </section>
         <section id="scope" className="border-t border-edge py-16 md:py-24">
-          <Heading eyebrow="11 / Contribution">Project Scope</Heading>
+          <Heading eyebrow="Contribution">Project Scope</Heading>
           <div className="mt-10 grid gap-10 md:grid-cols-3 md:gap-8">
             <div>
               <h3 className="text-xs uppercase tracking-[0.16em] text-ink-faint">

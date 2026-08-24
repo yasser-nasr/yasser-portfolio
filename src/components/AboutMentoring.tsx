@@ -7,7 +7,7 @@ export default function AboutMentoring() {
       <div className="grid items-center gap-12 md:grid-cols-[1.3fr_1fr] md:gap-16">
         <div>
           <p className="font-display text-base uppercase tracking-[0.25em] text-ink-soft md:text-lg">
-            Mentoring / 06
+            Mentoring
           </p>
 
           <HeadingReveal

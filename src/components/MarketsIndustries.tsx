@@ -68,7 +68,7 @@ export default function MarketsIndustries() {
 
       <div className="mx-auto max-w-6xl px-6">
         <p className="font-display text-base uppercase tracking-[0.25em] text-ink-soft md:text-lg">
-          Exposure / 05
+          Exposure
         </p>
 
         <HeadingReveal

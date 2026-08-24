@@ -4,6 +4,8 @@ export type ProjectSeo = {
   canonical: string;
   openGraphTitle: string;
   openGraphDescription: string;
+  image?: string;
+  imageAlt?: string;
 };
 
 export type Project = {
@@ -14,11 +16,16 @@ export type Project = {
   category: string;
   role?: string;
   location?: string;
+  industry?: string;
+  market?: string;
   website?: string;
   year?: string;
   statement: string;
   image: string | null;
   imageAlt: string;
+  imagePosition?: string;
+  imageFit?: "cover" | "contain";
+  imageBackground?: string;
   tags?: string[];
   scope?: string[];
   featured: boolean;
@@ -27,6 +34,52 @@ export type Project = {
 };
 
 export const projects: Project[] = [
+  {
+    title: "Orin",
+    companyName: "Orin",
+    slug: "orin",
+    subtitle: "Digital Website Experience",
+    category: "Digital & Web",
+    role: "UI/UX Designer",
+    location: "Dubai, UAE",
+    website: "https://orin.ae",
+    industry: "Business & Financial Consultancy",
+    market: "UAE",
+    statement:
+      "A clear and structured website experience designed to bring Orin's business setup, financial consultancy, and compliance services into one connected digital system.",
+    image: "/projects/orin/orin-business-consultancy-logo.svg",
+    imageAlt:
+      "Orin UAE business and financial consultancy logo in dark green and warm cream.",
+    imagePosition: "center",
+    imageFit: "contain",
+    imageBackground: "#F7F5EE",
+    tags: [
+      "Website UI/UX Design",
+      "Responsive Web Design",
+      "Digital Visual Communication",
+      "LinkedIn Cover Design",
+    ],
+    scope: [
+      "Website UI/UX Design",
+      "Responsive Web Design",
+      "Digital Visual Communication",
+      "LinkedIn Cover Design",
+    ],
+    featured: false,
+    publishable: true,
+    seo: {
+      title: "Orin Website Design Case Study | Yasser Nasr",
+      description:
+        "A digital design case study for Orin, a UAE business and financial consultancy, covering website UI/UX, responsive design, custom section visuals, and LinkedIn presence.",
+      canonical: "/work/orin",
+      openGraphTitle: "Orin Website Design Case Study | Yasser Nasr",
+      openGraphDescription:
+        "A digital design case study for Orin, a UAE business and financial consultancy, covering website UI/UX, responsive design, custom section visuals, and LinkedIn presence.",
+      image: "/projects/orin/orin-uae-consultancy-website-homepage-desktop.webp",
+      imageAlt:
+        "Orin UAE business and financial consultancy website homepage design on desktop.",
+    },
+  },
   {
     title: "Pillars PR",
     companyName: "Pillars Public Relations",
@@ -196,6 +249,7 @@ export const projects: Project[] = [
 ];
 
 export const publishedProjects = projects.filter((project) => project.publishable);
+export const featuredProjects = publishedProjects.filter((project) => project.featured);
 
 export function getPreviewableProject(slug: string) {
   const project = projects.find((item) => item.slug === slug);

@@ -10,7 +10,7 @@ export default function SelectedWork() {
         <div className="flex flex-wrap items-start justify-between gap-6">
           <div>
             <p className="font-display text-base uppercase tracking-[0.25em] text-ink-soft md:text-lg">
-              Work / 02
+              Work
             </p>
             <HeadingReveal
               as="h2"

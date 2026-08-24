@@ -4,7 +4,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { motion, type Variants } from "motion/react";
 import Reveal from "@/components/Reveal";
-import { publishedProjects, type Project } from "@/data/projects";
+import { featuredProjects, type Project } from "@/data/projects";
 
 const container: Variants = {
   hidden: {},
@@ -22,7 +22,7 @@ export default function SelectedWorkGrid({ className = "" }: { className?: strin
       variants={container}
       className={`grid grid-cols-1 gap-4 md:grid-cols-2 lg:grid-cols-12 ${className}`}
     >
-      {publishedProjects.map((project, index) => (
+      {featuredProjects.map((project, index) => (
         <motion.div
           key={project.slug}
           variants={item}
@@ -71,9 +71,9 @@ function ProjectCard({ project, index }: { project: Project; index: number }) {
           <span className="grid h-11 w-11 place-items-center rounded-full border border-white/25 bg-black/15 font-display text-xs tracking-[0.16em] backdrop-blur-md">
             {String(index + 1).padStart(2, "0")}
           </span>
-          {project.location ? (
+          {project.market ?? project.location ? (
             <span className="rounded-full border border-white/20 bg-black/15 px-3 py-2 text-[0.65rem] uppercase tracking-[0.14em] text-white/80 backdrop-blur-md">
-              {project.location}
+              {project.market ?? project.location}
             </span>
           ) : null}
         </div>
@@ -137,6 +137,12 @@ function ProjectVisual({ project, index }: { project: Project; index: number }) 
               : "(min-width: 1024px) 100vw, (min-width: 768px) 50vw, 100vw"
         }
         className="object-cover transition-transform duration-700 ease-out group-hover:scale-[1.045]"
+        style={{
+          objectFit: project.imageFit ?? "cover",
+          objectPosition: project.imagePosition,
+          backgroundColor: project.imageBackground,
+          padding: project.imageFit === "contain" ? "12%" : undefined,
+        }}
       />
     );
   }

@@ -8,7 +8,7 @@ export default function Capabilities() {
     <section className="py-20 md:py-28">
       <div className="mx-auto max-w-6xl px-6">
         <p className="font-display text-base uppercase tracking-[0.25em] text-ink-soft md:text-lg">
-          Capabilities / 04
+          Capabilities
         </p>
         <HeadingReveal
           as="h2"

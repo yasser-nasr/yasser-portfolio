@@ -6,7 +6,7 @@ export default function ResumeCredentials() {
   return (
     <div className="mt-24">
       <p className="font-display text-base uppercase tracking-[0.25em] text-ink-soft md:text-lg">
-        Credentials / 07
+        Credentials
       </p>
 
       <div className="mt-12 grid gap-12 md:grid-cols-2 md:gap-8">

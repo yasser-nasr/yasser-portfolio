@@ -19,7 +19,7 @@ export default function ResumeSnapshot() {
   return (
     <div className="mt-24">
       <p className="font-display text-base uppercase tracking-[0.25em] text-ink-soft md:text-lg">
-        Snapshot / 02
+        Snapshot
       </p>
 
       <HeadingReveal

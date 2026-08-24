@@ -20,7 +20,7 @@ export default function AboutApproach() {
   return (
     <div className="mt-24">
       <p className="font-display text-base uppercase tracking-[0.25em] text-ink-soft md:text-lg">
-        Approach / 05
+        Approach
       </p>
 
       <HeadingReveal

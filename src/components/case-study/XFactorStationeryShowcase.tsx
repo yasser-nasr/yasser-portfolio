@@ -1,6 +1,6 @@
 "use client";
 
-import Image from "next/image";
+import Image from "@/components/case-study/CaseStudyImage";
 import { useEffect, useState } from "react";
 import { createPortal } from "react-dom";
 import { useDialogFocus } from "@/lib/useDialogFocus";
@@ -83,7 +83,7 @@ export default function XFactorStationeryShowcase() {
             width={item.width}
             height={item.height}
             sizes={index === 0 ? "(min-width: 1280px) 736px, (min-width: 768px) 64vw, 92vw" : "(min-width: 1280px) 356px, (min-width: 768px) 31vw, 92vw"}
-            className="h-auto w-full transition duration-500 group-hover:scale-[1.015]"
+            className="h-auto w-full"
           />
         </button>
         <figcaption className="mt-2 text-sm font-medium text-ink">{item.title}</figcaption>
