@@ -67,13 +67,7 @@ export default function WorkCard({
           imageFirst ? "md:order-2" : "md:order-1"
         }`}
       >
-        {!project.publishable && process.env.NODE_ENV === "development" ? (
-          <span className="text-xs uppercase tracking-[0.15em] text-ink-faint">
-            Preview
-          </span>
-        ) : null}
-
-        <h2 className="mt-5 text-3xl font-semibold leading-tight text-ink md:text-4xl lg:text-5xl">
+        <h2 className="text-3xl font-semibold leading-tight text-ink md:text-4xl lg:text-5xl">
           <Link href={href} className="transition-opacity hover:opacity-75">
             {project.name}
           </Link>

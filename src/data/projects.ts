@@ -35,6 +35,52 @@ export type Project = {
 
 export const projects: Project[] = [
   {
+    title: "Rilam",
+    companyName: "Rilam",
+    slug: "rilam-fashion-campaign-design",
+    subtitle: "Fashion Campaigns & Digital Art Direction",
+    category: "Women's Fashion / Abayas",
+    role: "Senior Graphic Designer / Brand & Digital Designer",
+    location: "Saudi Arabia",
+    industry: "Women's Fashion / Abayas",
+    market: "Saudi Arabia",
+    statement:
+      "Two campaign systems for a Saudi abaya brand, combining art direction, image development, promotional design, and digital advertising across seasonal and commercial objectives.",
+    image: "/projects/rilam/rilam-saudi-abaya-brand-logo.svg",
+    imageAlt:
+      "Rilam Saudi abaya brand logo featuring a stylized gazelle above Arabic and English wordmarks.",
+    imagePosition: "center",
+    imageFit: "contain",
+    imageBackground: "#F4EEE3",
+    tags: [
+      "Campaign Design",
+      "Art Direction",
+      "Digital Design",
+      "Image Manipulation",
+    ],
+    scope: [
+      "Campaign Art Direction",
+      "Digital Campaign Design",
+      "Image Manipulation",
+      "Social Advertising",
+    ],
+    featured: false,
+    publishable: false,
+    seo: {
+      title: "Rilam Fashion Campaign Design Case Study | Yasser Nasr",
+      description:
+        "A campaign design case study for Saudi abaya brand Rilam, covering art direction, image manipulation, AI-assisted visual development, promotional advertising, and digital campaign applications.",
+      canonical:
+        "https://yassernasr.com/work/rilam-fashion-campaign-design",
+      openGraphTitle: "Rilam: Fashion Campaigns & Digital Art Direction",
+      openGraphDescription:
+        "Explore two campaign directions created for Saudi abaya brand Rilam, combining fashion art direction, image development, promotional design, and digital advertising.",
+      image: "/projects/rilam/rilam-burgundy-velvet-abaya-campaign-ad.webp",
+      imageAlt:
+        "Rilam fashion campaign visual featuring a burgundy velvet abaya in a warm interior setting.",
+    },
+  },
+  {
     title: "Orin",
     companyName: "Orin",
     slug: "orin",
