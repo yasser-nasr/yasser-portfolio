@@ -75,9 +75,6 @@ export const projects: Project[] = [
       openGraphTitle: "Rilam: Fashion Campaigns & Digital Art Direction",
       openGraphDescription:
         "Explore two campaign directions created for Saudi abaya brand Rilam, combining fashion art direction, image development, promotional design, and digital advertising.",
-      image: "/projects/rilam/cover/rilam-og.webp",
-      imageAlt:
-        "Rilam Saudi abaya brand logo centered on a warm neutral background.",
     },
   },
   {
@@ -117,13 +114,10 @@ export const projects: Project[] = [
       title: "Orin Website Design Case Study | Yasser Nasr",
       description:
         "A digital design case study for Orin, a UAE business and financial consultancy, covering website UI/UX, responsive design, custom section visuals, and LinkedIn presence.",
-      canonical: "/work/orin",
+      canonical: "https://yassernasr.com/work/orin",
       openGraphTitle: "Orin Website Design Case Study | Yasser Nasr",
       openGraphDescription:
         "A digital design case study for Orin, a UAE business and financial consultancy, covering website UI/UX, responsive design, custom section visuals, and LinkedIn presence.",
-      image: "/projects/orin/orin-uae-consultancy-website-homepage-desktop.webp",
-      imageAlt:
-        "Orin UAE business and financial consultancy website homepage design on desktop.",
     },
   },
   {
