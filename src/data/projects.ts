@@ -75,6 +75,9 @@ export const projects: Project[] = [
       openGraphTitle: "Rilam: Fashion Campaigns & Digital Art Direction",
       openGraphDescription:
         "Explore two campaign directions created for Saudi abaya brand Rilam, combining fashion art direction, image development, promotional design, and digital advertising.",
+      image: "/projects/rilam/cover/rilam-og.webp",
+      imageAlt:
+        "Rilam Saudi abaya brand logo centered on a warm neutral background.",
     },
   },
   {
@@ -118,6 +121,9 @@ export const projects: Project[] = [
       openGraphTitle: "Orin Website Design Case Study | Yasser Nasr",
       openGraphDescription:
         "A digital design case study for Orin, a UAE business and financial consultancy, covering website UI/UX, responsive design, custom section visuals, and LinkedIn presence.",
+      image: "/projects/orin/cover/orin-og.webp",
+      imageAlt:
+        "Orin business and financial consultancy logo centered on a white background.",
     },
   },
   {
@@ -158,6 +164,9 @@ export const projects: Project[] = [
       openGraphTitle: "Pillars PR: Brand Identity & Communication System",
       openGraphDescription:
         "Explore the identity, corporate communication, social media, and motion system created for an Abu Dhabi legal marketing and PR company.",
+      image: "/projects/pillars-pr/cover/pillars-pr-og.webp",
+      imageAlt:
+        "Pillars Public Relations logo centered on a white background.",
     },
   },
   {
@@ -202,6 +211,10 @@ export const projects: Project[] = [
       openGraphTitle: "X Factor Interior Design: A Refined Brand Identity",
       openGraphDescription:
         "Explore the logo, identity system, guidelines, company profile, stationery, and social media design created for a Dubai interior design studio.",
+      image:
+        "/projects/x-factor-interior-design/cover/x-factor-og.webp",
+      imageAlt:
+        "X Factor Interior Design logo centered on a warm neutral background.",
     },
   },
   {
@@ -240,6 +253,9 @@ export const projects: Project[] = [
       openGraphTitle: "RenovoFix: A Connected Brand, Social and Digital System",
       openGraphDescription:
         "Explore the brand identity, social content, website experience, AI-assisted visualizations, and motion system created for RenovoFix Property Maintenance.",
+      image: "/projects/renovofix/cover/renovofix-og.webp",
+      imageAlt:
+        "RenovoFix Property Maintenance logo centered on a white background.",
     },
   },
   {
