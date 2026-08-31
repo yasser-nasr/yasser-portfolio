@@ -4,6 +4,7 @@ import JsonLd from "@/components/JsonLd";
 import PillarsPrCaseStudy from "@/components/case-study/PillarsPrCaseStudy";
 import OrinCaseStudy from "@/components/case-study/OrinCaseStudy";
 import RenovoFixCaseStudy from "@/components/case-study/RenovoFixCaseStudy";
+import RilamCaseStudy from "@/components/case-study/RilamCaseStudy";
 import XFactorCaseStudy from "@/components/case-study/XFactorCaseStudy";
 import { getPreviewableProject, publishedProjects } from "@/data/projects";
 import { projectPageStructuredData } from "@/lib/structuredData";
@@ -52,6 +53,8 @@ export default async function WorkCaseStudyPage({ params }: Props) {
 
   const caseStudy = project.slug === "orin"
     ? <OrinCaseStudy project={project} />
+    : project.slug === "rilam-fashion-campaign-design"
+      ? <RilamCaseStudy project={project} />
     : project.slug === "renovofix-brand-digital-design"
       ? <RenovoFixCaseStudy project={project} />
     : project.slug === "x-factor-interior-design-branding-case-study"
