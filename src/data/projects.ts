@@ -65,7 +65,7 @@ export const projects: Project[] = [
       "Social Advertising",
     ],
     featured: false,
-    publishable: false,
+    publishable: true,
     seo: {
       title: "Rilam Fashion Campaign Design Case Study | Yasser Nasr",
       description:
@@ -75,9 +75,9 @@ export const projects: Project[] = [
       openGraphTitle: "Rilam: Fashion Campaigns & Digital Art Direction",
       openGraphDescription:
         "Explore two campaign directions created for Saudi abaya brand Rilam, combining fashion art direction, image development, promotional design, and digital advertising.",
-      image: "/projects/rilam/rilam-burgundy-velvet-abaya-campaign-ad.webp",
+      image: "/projects/rilam/cover/rilam-og.webp",
       imageAlt:
-        "Rilam fashion campaign visual featuring a burgundy velvet abaya in a warm interior setting.",
+        "Rilam Saudi abaya brand logo centered on a warm neutral background.",
     },
   },
   {
