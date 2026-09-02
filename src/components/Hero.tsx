@@ -86,8 +86,7 @@ export default function Hero() {
 
       <div className="mx-auto grid max-w-6xl items-center gap-12 px-6 md:grid-cols-[1.15fr_0.85fr] md:gap-8">
         <motion.div
-          key={reduceMotion ? "static" : "animated"}
-          initial={reduceMotion ? "visible" : "hidden"}
+          initial="visible"
           animate="visible"
           variants={container}
         >

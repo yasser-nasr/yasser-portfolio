@@ -79,7 +79,7 @@ export const projects: Project[] = [
         "A portfolio case study featuring 3D exhibition, stage, experiential, and branded environment design by Yasser Nasr for live events and GCC projects.",
       canonical:
         "https://yassernasr.com/work/3d-exhibition-experiential-design",
-      openGraphTitle: "3D Exhibition & Experiential Design | Yasser Nasr",
+      openGraphTitle: "3D Exhibition & Experiential Design",
       openGraphDescription:
         "Explore spatial concepts, stage design, branded environments, and 3D visualization created for live events and experiential projects.",
       image:
@@ -135,6 +135,8 @@ export const projects: Project[] = [
       image: "/projects/rilam/cover/rilam-og.webp",
       imageAlt:
         "Rilam Saudi abaya brand logo centered on a warm neutral background.",
+      imageWidth: 1200,
+      imageHeight: 630,
     },
   },
   {
@@ -174,7 +176,7 @@ export const projects: Project[] = [
     seo: {
       title: "Orin Website Design & UI/UX Case Study | Yasser Nasr",
       description:
-        "A digital design case study for Orin, a UAE business and financial consultancy, covering website UI/UX, responsive design, custom section visuals, and LinkedIn presence.",
+        "Explore the website design and UI/UX created for Orin, a UAE business setup and financial consultancy.",
       canonical: "https://yassernasr.com/work/orin",
       openGraphTitle: "Orin: Website Design & UI/UX",
       openGraphDescription:
@@ -182,6 +184,8 @@ export const projects: Project[] = [
       image: "/projects/orin/cover/orin-og.webp",
       imageAlt:
         "Orin business and financial consultancy logo centered on a white background.",
+      imageWidth: 1200,
+      imageHeight: 630,
     },
   },
   {
@@ -226,6 +230,8 @@ export const projects: Project[] = [
       image: "/projects/pillars-pr/cover/pillars-pr-og.webp",
       imageAlt:
         "Pillars Public Relations logo centered on a white background.",
+      imageWidth: 1200,
+      imageHeight: 630,
     },
   },
   {
@@ -275,6 +281,8 @@ export const projects: Project[] = [
         "/projects/x-factor-interior-design/cover/x-factor-og.webp",
       imageAlt:
         "X Factor Interior Design logo centered on a warm neutral background.",
+      imageWidth: 1200,
+      imageHeight: 630,
     },
   },
   {
@@ -317,6 +325,8 @@ export const projects: Project[] = [
       image: "/projects/renovofix/cover/renovofix-og.webp",
       imageAlt:
         "RenovoFix Property Maintenance logo centered on a white background.",
+      imageWidth: 1200,
+      imageHeight: 630,
     },
   },
   {

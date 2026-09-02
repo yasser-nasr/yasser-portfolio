@@ -1,6 +1,6 @@
 "use client";
 
-import Image from "@/components/case-study/CaseStudyImage";
+import Image from "next/image";
 import { useEffect, useState } from "react";
 import { createPortal } from "react-dom";
 import { useDialogFocus } from "@/lib/useDialogFocus";
@@ -65,7 +65,7 @@ export default function ZoomableCaseStudyImage({
             alt={alt}
             width={width}
             height={height}
-            unoptimized
+            quality={100}
             priority={priority}
             sizes={sizes}
             className="block h-auto w-full"
