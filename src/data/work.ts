@@ -1,10 +1,12 @@
 import { projects, publishedProjects } from "@/data/projects";
+import type { ProjectCategory } from "@/data/workCategories";
 
 export type WorkProject = {
   slug: string;
   name: string;
   subtitle: string;
   category: string;
+  categories: ProjectCategory[];
   industry: string;
   year?: string;
   statement: string;
@@ -23,6 +25,7 @@ function toWorkProject(project: (typeof projects)[number]): WorkProject {
     name: project.title,
     subtitle: project.subtitle ?? project.category,
     category: project.category,
+    categories: project.categories,
     industry: project.industry ?? project.location ?? "",
     year: project.year,
     statement: project.statement,

@@ -5,13 +5,26 @@ import { useEffect, useState } from "react";
 import { createPortal } from "react-dom";
 import { useDialogFocus } from "@/lib/useDialogFocus";
 
-export default function ZoomableCaseStudyImage({ src, alt, label, width, height, className = "" }: {
+export default function ZoomableCaseStudyImage({
+  src,
+  alt,
+  label,
+  width,
+  height,
+  className = "",
+  compact = false,
+  priority = false,
+  sizes = "(min-width: 1024px) 520px, (min-width: 640px) 50vw, 100vw",
+}: {
   src: string;
   alt: string;
   label: string;
   width: number;
   height: number;
   className?: string;
+  compact?: boolean;
+  priority?: boolean;
+  sizes?: string;
 }) {
   const [isOpen, setIsOpen] = useState(false);
   const dialogRef = useDialogFocus(isOpen);
@@ -30,18 +43,22 @@ export default function ZoomableCaseStudyImage({ src, alt, label, width, height,
 
   return (
     <>
-      <figure className={`min-w-0 ${className}`} style={{ paddingTop: "4rem" }}>
-        <figcaption
-          className="text-xs uppercase tracking-[0.14em] text-ink-faint"
-          style={{ display: "block", marginBottom: "1rem" }}
-        >
-          {label}
-        </figcaption>
+      <figure className={`min-w-0 ${className}`} style={compact ? undefined : { paddingTop: "4rem" }}>
+        {!compact ? (
+          <figcaption
+            className="text-xs uppercase tracking-[0.14em] text-ink-faint"
+            style={{ display: "block", marginBottom: "1rem" }}
+          >
+            {label}
+          </figcaption>
+        ) : null}
         <button
           type="button"
           onClick={() => setIsOpen(true)}
           aria-label={`Open high-resolution view: ${label}`}
-          className="group relative block w-full cursor-zoom-in overflow-hidden rounded-xl border border-white/10 bg-[#0b2014] text-left focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-ink"
+          className={`group relative block w-full cursor-zoom-in overflow-hidden rounded-xl border text-left focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-ink ${
+            compact ? "border-edge bg-surface-card" : "border-white/10 bg-[#0b2014]"
+          }`}
         >
           <Image
             src={src}
@@ -49,13 +66,19 @@ export default function ZoomableCaseStudyImage({ src, alt, label, width, height,
             width={width}
             height={height}
             unoptimized
-            sizes="(min-width: 1024px) 520px, (min-width: 640px) 50vw, 100vw"
+            priority={priority}
+            sizes={sizes}
             className="block h-auto w-full"
           />
           <span className="absolute bottom-3 right-3 rounded-full border border-white/20 bg-black/60 px-3 py-2 text-[0.65rem] uppercase tracking-[0.12em] text-white opacity-0 backdrop-blur-md transition-opacity group-hover:opacity-100 group-focus-visible:opacity-100">
             View details
           </span>
         </button>
+        {compact ? (
+          <figcaption className="mt-3 text-sm leading-6 text-ink-faint">
+            {label}
+          </figcaption>
+        ) : null}
       </figure>
 
       {isOpen && createPortal(

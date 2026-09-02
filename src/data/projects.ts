@@ -1,3 +1,5 @@
+import type { ProjectCategory } from "@/data/workCategories";
+
 export type ProjectSeo = {
   title: string;
   description: string;
@@ -14,6 +16,7 @@ export type Project = {
   slug: string;
   subtitle?: string;
   category: string;
+  categories: ProjectCategory[];
   role?: string;
   location?: string;
   industry?: string;
@@ -35,11 +38,61 @@ export type Project = {
 
 export const projects: Project[] = [
   {
+    title: "3D Exhibition & Experiential Design",
+    companyName: "RTA Dubai",
+    slug: "3d-exhibition-experiential-design",
+    subtitle: "Spatial Concepts for Live Events & Branded Experiences",
+    category: "3D Exhibition & Experiential Design",
+    categories: ["3d-experiential"],
+    role: "Senior Graphic Designer / Brand & Digital Designer",
+    location: "Dubai, UAE",
+    industry: "Live Events & Branded Experiences",
+    market: "UAE / GCC",
+    statement:
+      "Selected 3D exhibition and experiential design work translating brand identities, event briefs, and functional requirements into spatial concepts, stages, branded environments, and presentation-ready visualizations.",
+    image:
+      "/projects/3d-exhibition/rta/overview/rta-eid-al-etihad-exhibition-overview.webp",
+    imageAlt:
+      "Wide 3D overview of the RTA Eid Al Etihad exhibition showing branded walls, visitor areas, meeting counters, and display screens.",
+    imagePosition: "center",
+    tags: [
+      "3D Exhibition Design",
+      "Experiential Concepts",
+      "Stage Design",
+      "Spatial Visualization",
+    ],
+    scope: [
+      "Exhibition Layout",
+      "Spatial Planning",
+      "Stage Design",
+      "Branded Environments",
+      "Entrance Installations",
+      "3D Visualization",
+    ],
+    featured: false,
+    publishable: true,
+    seo: {
+      title: "3D Exhibition & Experiential Design Case Study | Yasser Nasr",
+      description:
+        "A portfolio case study featuring 3D exhibition, stage, experiential, and branded environment design by Yasser Nasr for live events and GCC projects.",
+      canonical:
+        "https://yassernasr.com/work/3d-exhibition-experiential-design",
+      openGraphTitle: "3D Exhibition & Experiential Design | Yasser Nasr",
+      openGraphDescription:
+        "Explore spatial concepts, stage design, branded environments, and 3D visualization created for live events and experiential projects.",
+      image:
+        "/projects/3d-exhibition/makkah-chamber/makkah-chamber-exhibition-overview.webp",
+      imageAlt:
+        "Wide 3D overview of the Makkah Chamber exhibition environment with a branded reception, visitor lounge, illuminated screens, and an upper-level space.",
+    },
+  },
+  {
     title: "Rilam",
     companyName: "Rilam",
     slug: "rilam-fashion-campaign-design",
     subtitle: "Fashion Campaigns & Digital Art Direction",
     category: "Women's Fashion / Abayas",
+    categories: ["campaigns-social"],
     role: "Senior Graphic Designer / Brand & Digital Designer",
     location: "Saudi Arabia",
     industry: "Women's Fashion / Abayas",
@@ -86,6 +139,7 @@ export const projects: Project[] = [
     slug: "orin",
     subtitle: "Digital Website Experience",
     category: "Digital & Web",
+    categories: ["web-uiux"],
     role: "UI/UX Designer",
     location: "Dubai, UAE",
     website: "https://orin.ae",
@@ -132,6 +186,7 @@ export const projects: Project[] = [
     slug: "pillars-pr-brand-communication-design",
     subtitle: "Brand Identity & Communication System",
     category: "Legal Marketing & Public Relations",
+    categories: ["brand", "campaigns-social", "motion-video", "presentations"],
     role: "Brand & Digital Designer / Graphic & Multimedia Designer",
     location: "Abu Dhabi, UAE",
     statement:
@@ -174,6 +229,7 @@ export const projects: Project[] = [
     slug: "x-factor-interior-design-branding-case-study",
     subtitle: "Brand & Digital Design · Graphic & Multimedia Design",
     category: "Brand & Digital Design · Graphic & Multimedia Design",
+    categories: ["brand", "campaigns-social", "motion-video", "presentations"],
     role: "Brand & Digital Designer / Graphic & Multimedia Designer",
     location: "Dubai, UAE",
     statement:
@@ -223,6 +279,7 @@ export const projects: Project[] = [
     slug: "renovofix-brand-digital-design",
     subtitle: "Brand, Digital & Content System",
     category: "Brand & Digital Design",
+    categories: ["brand", "campaigns-social", "web-uiux", "motion-video"],
     role: "Brand & Digital Designer, UI/UX Designer",
     location: "Dubai, UAE",
     website: "https://renovofix.ae",
@@ -262,6 +319,7 @@ export const projects: Project[] = [
     title: "Project 01",
     slug: "placeholder-01",
     category: "Brand Identity",
+    categories: [],
     year: "2024",
     statement: "One-line value statement will go here once this case study is approved.",
     image: null,
@@ -273,6 +331,7 @@ export const projects: Project[] = [
     title: "Project 02",
     slug: "placeholder-02",
     category: "Digital Design",
+    categories: [],
     year: "2024",
     statement: "One-line value statement will go here once this case study is approved.",
     image: null,
@@ -284,6 +343,7 @@ export const projects: Project[] = [
     title: "Project 03",
     slug: "placeholder-03",
     category: "Campaign & Social",
+    categories: [],
     year: "2023",
     statement: "One-line value statement will go here once this case study is approved.",
     image: null,
@@ -295,6 +355,7 @@ export const projects: Project[] = [
     title: "Project 04",
     slug: "placeholder-04",
     category: "Motion & Presentation",
+    categories: [],
     year: "2023",
     statement: "One-line value statement will go here once this case study is approved.",
     image: null,

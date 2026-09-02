@@ -1,4 +1,4 @@
-import WorkCard from "@/components/WorkCard";
+import WorkFilter from "@/components/WorkFilter";
 import { developmentWorkProjects, publishedWorkProjects } from "@/data/work";
 
 export default function WorkGrid({ className = "" }: { className?: string }) {
@@ -7,11 +7,5 @@ export default function WorkGrid({ className = "" }: { className?: string }) {
       ? developmentWorkProjects
       : publishedWorkProjects;
 
-  return (
-    <div className={`space-y-20 md:space-y-28 ${className}`}>
-      {projects.map((project, index) => (
-        <WorkCard key={project.slug} project={project} index={index} />
-      ))}
-    </div>
-  );
+  return <WorkFilter projects={projects} className={className} />;
 }

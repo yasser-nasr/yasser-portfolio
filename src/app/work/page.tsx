@@ -59,7 +59,7 @@ export default function WorkPage() {
             </p>
           </Reveal>
 
-          <WorkGrid className="mt-20 md:mt-28" />
+          <WorkGrid className="mt-12 md:mt-16" />
 
           <section className="mt-24 border-t border-edge pt-14 md:mt-32 md:flex md:items-center md:justify-between">
             <h2 className="text-2xl font-semibold text-ink md:text-3xl">

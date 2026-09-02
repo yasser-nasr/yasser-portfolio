@@ -6,6 +6,7 @@ import OrinCaseStudy from "@/components/case-study/OrinCaseStudy";
 import RenovoFixCaseStudy from "@/components/case-study/RenovoFixCaseStudy";
 import RilamCaseStudy from "@/components/case-study/RilamCaseStudy";
 import XFactorCaseStudy from "@/components/case-study/XFactorCaseStudy";
+import ThreeDExhibitionCaseStudy from "@/components/case-study/ThreeDExhibitionCaseStudy";
 import { getPreviewableProject, publishedProjects } from "@/data/projects";
 import { projectPageStructuredData } from "@/lib/structuredData";
 
@@ -51,7 +52,9 @@ export default async function WorkCaseStudyPage({ params }: Props) {
   const project = getPreviewableProject(slug);
   if (!project) notFound();
 
-  const caseStudy = project.slug === "orin"
+  const caseStudy = project.slug === "3d-exhibition-experiential-design"
+    ? <ThreeDExhibitionCaseStudy />
+    : project.slug === "orin"
     ? <OrinCaseStudy project={project} />
     : project.slug === "rilam-fashion-campaign-design"
       ? <RilamCaseStudy project={project} />
@@ -72,6 +75,7 @@ export default async function WorkCaseStudyPage({ params }: Props) {
         name: project.title,
         subtitle: project.subtitle ?? project.category,
         category: project.category,
+        categories: project.categories,
         industry: project.industry ?? project.location ?? "",
         year: project.year,
         statement: project.statement,
