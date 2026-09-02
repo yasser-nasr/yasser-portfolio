@@ -81,9 +81,9 @@ export const projects: Project[] = [
       openGraphDescription:
         "Explore spatial concepts, stage design, branded environments, and 3D visualization created for live events and experiential projects.",
       image:
-        "/projects/3d-exhibition/makkah-chamber/makkah-chamber-exhibition-overview.webp",
+        "/projects/3d-exhibition/rta/overview/rta-eid-al-etihad-exhibition-overview.webp",
       imageAlt:
-        "Wide 3D overview of the Makkah Chamber exhibition environment with a branded reception, visitor lounge, illuminated screens, and an upper-level space.",
+        "Wide 3D overview of the RTA Eid Al Etihad exhibition showing branded walls, visitor areas, meeting counters, and display screens.",
     },
   },
   {

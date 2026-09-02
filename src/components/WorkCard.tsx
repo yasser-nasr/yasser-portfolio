@@ -27,6 +27,7 @@ export default function WorkCard({
             src={project.image}
             alt={project.imageAlt}
             fill
+            quality={100}
             sizes="(min-width: 768px) 58vw, 100vw"
             className="transition-transform duration-500 ease-out group-hover:scale-[1.02]"
             style={{
