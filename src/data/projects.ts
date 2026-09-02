@@ -8,6 +8,8 @@ export type ProjectSeo = {
   openGraphDescription: string;
   image?: string;
   imageAlt?: string;
+  imageWidth?: number;
+  imageHeight?: number;
 };
 
 export type Project = {
@@ -81,9 +83,11 @@ export const projects: Project[] = [
       openGraphDescription:
         "Explore spatial concepts, stage design, branded environments, and 3D visualization created for live events and experiential projects.",
       image:
-        "/projects/3d-exhibition/rta/overview/rta-eid-al-etihad-exhibition-overview.webp",
+        "/projects/3d-exhibition/rta/overview/rta-eid-al-etihad-exhibition-og.jpg",
       imageAlt:
         "Wide 3D overview of the RTA Eid Al Etihad exhibition showing branded walls, visitor areas, meeting counters, and display screens.",
+      imageWidth: 1200,
+      imageHeight: 630,
     },
   },
   {
@@ -168,13 +172,13 @@ export const projects: Project[] = [
     featured: false,
     publishable: true,
     seo: {
-      title: "Orin Website Design Case Study | Yasser Nasr",
+      title: "Orin Website Design & UI/UX Case Study | Yasser Nasr",
       description:
         "A digital design case study for Orin, a UAE business and financial consultancy, covering website UI/UX, responsive design, custom section visuals, and LinkedIn presence.",
       canonical: "https://yassernasr.com/work/orin",
-      openGraphTitle: "Orin Website Design Case Study | Yasser Nasr",
+      openGraphTitle: "Orin: Website Design & UI/UX",
       openGraphDescription:
-        "A digital design case study for Orin, a UAE business and financial consultancy, covering website UI/UX, responsive design, custom section visuals, and LinkedIn presence.",
+        "Explore the website design and UI/UX created for Orin, a UAE business setup and financial consultancy.",
       image: "/projects/orin/cover/orin-og.webp",
       imageAlt:
         "Orin business and financial consultancy logo centered on a white background.",

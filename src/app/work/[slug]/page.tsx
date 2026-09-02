@@ -36,6 +36,8 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
       images: socialImage ? [{
         url: socialImage,
         alt: socialImageAlt,
+        width: project.seo.imageWidth,
+        height: project.seo.imageHeight,
       }] : undefined,
     },
     twitter: {
