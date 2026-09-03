@@ -279,11 +279,11 @@ export const projects: Project[] = [
       openGraphTitle: "MENA Law Reporters: Legal Media & Digital Content",
       openGraphDescription:
         "Explore the digital content and social media design system created for MENA Law Reporters, a legal media platform serving professionals across the Middle East and North Africa.",
-      image: "/projects/mena-law-reporters/mena-law-reporters-facebook-profile.webp",
+      image: "/projects/mena-law-reporters/cover/mena-law-reporters-og.webp",
       imageAlt:
         "MENA Law Reporters logo combining a globe with balanced justice scales and the legal media platform wordmark.",
-      imageWidth: 2048,
-      imageHeight: 2048,
+      imageWidth: 1200,
+      imageHeight: 630,
     },
   },
   {
