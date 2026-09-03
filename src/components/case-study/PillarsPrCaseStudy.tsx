@@ -523,7 +523,7 @@ export default function PillarsPrCaseStudy({ project }: { project: Project }) {
     <main id="main-content" tabIndex={-1} className="flex-1 pt-32 md:pt-40">
       <article className="mx-auto max-w-6xl px-6">
         <CaseStudyBackLink />
-        <div className="relative mt-6 aspect-[2553/1080] overflow-hidden bg-white">
+        <div className="relative mt-6 aspect-[2553/1080] overflow-hidden rounded-[1.5rem] bg-white">
           <Image
             src={`${webMediaBase}/facebook/pillars-pr-building-legal-excellence-brand-cover.webp`}
             alt="Pillars PR brand identity cover featuring the Building Legal Excellence message, classical column graphics, and a blue legal-sector visual system."

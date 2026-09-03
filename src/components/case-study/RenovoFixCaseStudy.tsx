@@ -51,7 +51,7 @@ export default function RenovoFixCaseStudy({ project }: { project: Project }) {
   return <main id="main-content" tabIndex={-1} className="flex-1 pt-32 md:pt-40"><article className="mx-auto max-w-6xl px-6">
     <CaseStudyBackLink />
 
-    <div className="relative mt-6 aspect-[16/9] overflow-hidden bg-surface-card">
+    <div className="relative mt-6 aspect-[16/9] overflow-hidden rounded-[1.5rem] bg-surface-card">
       <Image src={`${base}/renovofix-case-study-project-overview.webp`} alt="Overview of the connected RenovoFix identity, maintenance communication, social design, website, and motion system." fill priority sizes="(min-width: 1152px) 1152px, 100vw" className="object-cover" />
     </div>
 

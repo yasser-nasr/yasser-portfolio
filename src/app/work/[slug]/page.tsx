@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { notFound } from "next/navigation";
 import JsonLd from "@/components/JsonLd";
+import MenaLawReportersCaseStudy from "@/components/case-study/MenaLawReportersCaseStudy";
 import PillarsPrCaseStudy from "@/components/case-study/PillarsPrCaseStudy";
 import OrinCaseStudy from "@/components/case-study/OrinCaseStudy";
 import RenovoFixCaseStudy from "@/components/case-study/RenovoFixCaseStudy";
@@ -56,6 +57,8 @@ export default async function WorkCaseStudyPage({ params }: Props) {
 
   const caseStudy = project.slug === "3d-exhibition-experiential-design"
     ? <ThreeDExhibitionCaseStudy />
+    : project.slug === "mena-law-reporters"
+      ? <MenaLawReportersCaseStudy project={project} />
     : project.slug === "orin"
     ? <OrinCaseStudy project={project} />
     : project.slug === "rilam-fashion-campaign-design"

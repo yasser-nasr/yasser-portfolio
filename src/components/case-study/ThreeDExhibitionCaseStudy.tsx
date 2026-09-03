@@ -13,13 +13,14 @@ function SectionHeading({ eyebrow, children }: { eyebrow: string; children: Reac
   );
 }
 
-function Visual({ src, alt, label, width, height, priority = false }: {
+function Visual({ src, alt, label, width, height, priority = false, hero = false }: {
   src: string;
   alt: string;
   label: string;
   width: number;
   height: number;
   priority?: boolean;
+  hero?: boolean;
 }) {
   return (
     <ZoomableCaseStudyImage
@@ -30,6 +31,7 @@ function Visual({ src, alt, label, width, height, priority = false }: {
       height={height}
       priority={priority}
       compact
+      frameRadiusClassName={hero ? "rounded-[1.5rem]" : undefined}
       sizes="(min-width: 1152px) 1152px, 100vw"
     />
   );
@@ -49,6 +51,7 @@ export default function ThreeDExhibitionCaseStudy() {
             width={1920}
             height={1080}
             priority
+            hero
           />
           <header className="py-14 md:py-20">
             <p className="font-display text-sm uppercase tracking-[0.22em] text-ink-faint md:text-base">

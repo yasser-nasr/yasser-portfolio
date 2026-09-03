@@ -235,6 +235,58 @@ export const projects: Project[] = [
     },
   },
   {
+    title: "MENA Law Reporters",
+    companyName: "MENA Law Reporters",
+    slug: "mena-law-reporters",
+    subtitle: "Brand Identity & Digital Content System",
+    category: "Legal Media / Brand & Digital Design",
+    categories: ["brand", "campaigns-social", "motion-video"],
+    role: "Senior Graphic Designer / Brand & Digital Designer",
+    location: "Abu Dhabi, UAE",
+    industry: "Legal Media & Education",
+    market: "Middle East & North Africa",
+    statement:
+      "A connected brand identity and bilingual digital content system bringing legal news, education, professional development, and opportunities into one recognizable presence.",
+    image: "/projects/mena-law-reporters/mena-law-reporters-logo.svg",
+    imageAlt:
+      "MENA Law Reporters logo featuring a globe, scales of justice, and the legal media platform wordmark.",
+    imagePosition: "center",
+    imageFit: "contain",
+    imageBackground: "#FFFFFF",
+    tags: [
+      "Brand Identity",
+      "Logo Design",
+      "Digital Content Design",
+      "Social Media Design",
+    ],
+    scope: [
+      "Brand Identity",
+      "Logo Design",
+      "Color & Typography",
+      "Digital Content Design",
+      "Social Media Design",
+      "Bilingual Editorial Content",
+      "Facebook Page Assets",
+      "Motion Content",
+    ],
+    featured: true,
+    publishable: true,
+    seo: {
+      title: "MENA Law Reporters Digital Content Design Case Study | Yasser Nasr",
+      description:
+        "Explore the digital content and social media design system created for MENA Law Reporters, a legal media platform serving professionals across the Middle East and North Africa.",
+      canonical: "https://yassernasr.com/work/mena-law-reporters",
+      openGraphTitle: "MENA Law Reporters: Legal Media & Digital Content",
+      openGraphDescription:
+        "Explore the digital content and social media design system created for MENA Law Reporters, a legal media platform serving professionals across the Middle East and North Africa.",
+      image: "/projects/mena-law-reporters/mena-law-reporters-facebook-cover.webp",
+      imageAlt:
+        "Facebook cover design for MENA Law Reporters, a legal media platform serving the Middle East and North Africa.",
+      imageWidth: 2553,
+      imageHeight: 1080,
+    },
+  },
+  {
     title: "X Factor Interior Design",
     slug: "x-factor-interior-design-branding-case-study",
     subtitle: "Brand & Digital Design · Graphic & Multimedia Design",

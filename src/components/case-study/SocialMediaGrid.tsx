@@ -99,6 +99,8 @@ export default function SocialMediaGrid({
   items,
   previewAspect = "portrait",
   showProfileHeader = true,
+  showEngagement = true,
+  showEngagementCount = true,
 }: {
   brandName: string;
   username: string;
@@ -113,6 +115,8 @@ export default function SocialMediaGrid({
   items: readonly SocialMediaGridItem[];
   previewAspect?: "portrait" | "square";
   showProfileHeader?: boolean;
+  showEngagement?: boolean;
+  showEngagementCount?: boolean;
 }) {
   const [activeItem, setActiveItem] = useState<SocialMediaGridItem | null>(
     null,
@@ -284,7 +288,13 @@ export default function SocialMediaGrid({
               >
                 ×
               </button>
-              <div className="relative min-h-[55vh] overflow-hidden bg-black md:min-h-[82vh]">
+              <div
+                className={`relative overflow-hidden bg-black ${
+                  previewAspect === "square"
+                    ? "aspect-square min-h-0"
+                    : "min-h-[55vh] md:min-h-[82vh]"
+                }`}
+              >
                 <AnimatePresence initial={false} custom={slideDirection}>
                   <motion.div
                     key={activeSlide.src}
@@ -372,6 +382,7 @@ export default function SocialMediaGrid({
                     {activeSlide.caption}
                   </p>
                 </div>
+                {showEngagement ? (
                 <div className="border-t border-edge p-4">
                   <div className="flex items-center gap-4 text-ink">
                     <button
@@ -390,13 +401,18 @@ export default function SocialMediaGrid({
                       <Send />
                     </span>
                   </div>
-                  <p className="mt-3 text-sm font-semibold text-ink">
-                    {liked ? "1,249" : "1,248"} likes
-                  </p>
-                  <p className="mt-1 text-[11px] uppercase tracking-wide text-ink-faint">
+                  {showEngagementCount ? (
+                    <p className="mt-3 text-sm font-semibold text-ink">
+                      {liked ? "1,249" : "1,248"} likes
+                    </p>
+                  ) : null}
+                  <p
+                    className={`${showEngagementCount ? "mt-1" : "mt-3"} text-[11px] uppercase tracking-wide text-ink-faint`}
+                  >
                     View the visual system
                   </p>
                 </div>
+                ) : null}
               </div>
             </div>
           </div>,

@@ -14,6 +14,7 @@ export default function ZoomableCaseStudyImage({
   className = "",
   compact = false,
   priority = false,
+  frameRadiusClassName = "rounded-xl",
   sizes = "(min-width: 1024px) 520px, (min-width: 640px) 50vw, 100vw",
 }: {
   src: string;
@@ -24,6 +25,7 @@ export default function ZoomableCaseStudyImage({
   className?: string;
   compact?: boolean;
   priority?: boolean;
+  frameRadiusClassName?: string;
   sizes?: string;
 }) {
   const [isOpen, setIsOpen] = useState(false);
@@ -56,7 +58,7 @@ export default function ZoomableCaseStudyImage({
           type="button"
           onClick={() => setIsOpen(true)}
           aria-label={`Open high-resolution view: ${label}`}
-          className={`group relative block w-full cursor-zoom-in overflow-hidden rounded-xl border text-left focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-ink ${
+          className={`group relative block w-full cursor-zoom-in overflow-hidden ${frameRadiusClassName} border text-left focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-ink ${
             compact ? "border-edge bg-surface-card" : "border-white/10 bg-[#0b2014]"
           }`}
         >

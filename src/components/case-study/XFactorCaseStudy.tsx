@@ -32,7 +32,7 @@ export default function XFactorCaseStudy({ project }: { project: Project }) {
   return <main id="main-content" tabIndex={-1} className="flex-1 pt-32 md:pt-40"><article className="mx-auto max-w-6xl px-6">
     <CaseStudyBackLink />
 
-    <div className="relative mt-6 aspect-[4/5] overflow-hidden bg-[#F3F1EC] sm:aspect-[16/9]">
+    <div className="relative mt-6 aspect-[4/5] overflow-hidden rounded-[1.5rem] bg-[#F3F1EC] sm:aspect-[16/9]">
       <Image src={`${base}/x-factor-interior-design-plain-brand-identity-cover.webp`} alt="X Factor Interior Design vertical logo on a refined warm-stone brand identity cover." fill priority sizes="(min-width: 1152px) 1152px, 100vw" className="object-contain" />
     </div>
 

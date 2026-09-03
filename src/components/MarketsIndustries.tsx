@@ -4,7 +4,7 @@ import Image from "next/image";
 import { motion, type Variants } from "motion/react";
 import HeadingReveal from "@/components/HeadingReveal";
 import Reveal from "@/components/Reveal";
-import { industryGroups, markets } from "@/data/markets";
+import { industries, markets } from "@/data/markets";
 
 const container: Variants = {
   hidden: {},
@@ -14,11 +14,6 @@ const container: Variants = {
 const chip: Variants = {
   hidden: { opacity: 0, scale: 0.92 },
   visible: { opacity: 1, scale: 1, transition: { duration: 0.35, ease: "easeOut" } },
-};
-
-const group: Variants = {
-  hidden: { opacity: 0, y: 16 },
-  visible: { opacity: 1, y: 0, transition: { duration: 0.4, ease: "easeOut" } },
 };
 
 const marketFlags: Record<
@@ -125,20 +120,18 @@ export default function MarketsIndustries() {
               Industries
             </p>
 
-            <Reveal variants={container} className="mt-4 space-y-7 border-l border-edge pl-6">
-              {industryGroups.map((industryGroup) => (
-                <motion.div key={industryGroup.category} variants={group} className="group relative">
-                  <span
-                    aria-hidden="true"
-                    className="absolute -left-[1.65rem] top-2 h-1.5 w-1.5 rounded-sm bg-ink-soft/50 transition-transform duration-300 group-hover:scale-150"
-                  />
-                  <p className="font-display text-base uppercase tracking-[0.2em] text-ink-soft transition-colors duration-300 group-hover:text-ink md:text-lg">
-                    {industryGroup.category}
-                  </p>
-                  <p className="mt-2 text-base text-ink md:text-lg">
-                    {industryGroup.items.join(" · ")}
-                  </p>
-                </motion.div>
+            <Reveal
+              variants={container}
+              className="mt-4 flex flex-wrap gap-2.5"
+            >
+              {industries.map((industry) => (
+                <motion.span
+                  key={industry}
+                  variants={chip}
+                  className="rounded-full border border-edge bg-surface-card/20 px-4 py-2.5 text-sm text-ink transition-colors duration-300 hover:bg-surface-card/60 md:text-base"
+                >
+                  {industry}
+                </motion.span>
               ))}
             </Reveal>
           </div>

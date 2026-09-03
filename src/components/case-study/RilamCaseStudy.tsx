@@ -121,7 +121,7 @@ export default function RilamCaseStudy({ project }: { project: Project }) {
       <article className="mx-auto max-w-6xl px-6">
         <CaseStudyBackLink />
 
-        <div className="relative mt-6 grid aspect-[4/5] place-items-center overflow-hidden sm:aspect-[16/9]" style={{ backgroundColor: project.imageBackground }}>
+        <div className="relative mt-6 grid aspect-[4/5] place-items-center overflow-hidden rounded-[1.5rem] sm:aspect-[16/9]" style={{ backgroundColor: project.imageBackground }}>
           <Image src={`${base}/rilam-saudi-abaya-brand-logo.svg`} alt="Rilam Saudi abaya brand logo featuring a stylized gazelle above Arabic and English wordmarks." width={713} height={903} priority sizes="192px" className="block" style={{ width: "clamp(8rem, 16vw, 12rem)", height: "auto" }} />
         </div>
 

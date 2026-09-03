@@ -59,7 +59,7 @@ function ProjectCard({ project, index }: { project: Project; index: number }) {
 
       <div
         aria-hidden="true"
-        className="absolute inset-0 bg-[linear-gradient(180deg,rgba(10,10,10,0.1)_15%,rgba(10,10,10,0.35)_48%,rgba(10,10,10,0.94)_100%)] transition-opacity duration-500 group-hover:opacity-90"
+        className="absolute inset-0 bg-[linear-gradient(180deg,rgba(10,10,10,0.08)_0%,rgba(10,10,10,0.28)_26%,rgba(10,10,10,0.82)_55%,rgba(10,10,10,0.98)_100%)] transition-opacity duration-500 group-hover:opacity-95"
       />
       <div
         aria-hidden="true"
@@ -78,8 +78,8 @@ function ProjectCard({ project, index }: { project: Project; index: number }) {
           ) : null}
         </div>
 
-        <div>
-          <p className="text-[0.68rem] uppercase tracking-[0.2em] text-white/65">
+        <div className="drop-shadow-[0_1px_2px_rgba(0,0,0,0.9)]">
+          <p className="text-[0.68rem] uppercase tracking-[0.2em] text-white/80">
             {project.subtitle ?? project.category}
           </p>
           <div className="mt-3 flex items-end justify-between gap-5">
@@ -92,7 +92,7 @@ function ProjectCard({ project, index }: { project: Project; index: number }) {
                 {project.title}
               </h3>
               <p
-                className={`mt-4 max-w-xl text-sm leading-6 text-white/70 ${
+                className={`mt-4 max-w-xl text-sm leading-6 text-white/85 ${
                   index === 1 ? "lg:max-w-sm" : ""
                 }`}
               >
@@ -103,7 +103,7 @@ function ProjectCard({ project, index }: { project: Project; index: number }) {
                   {project.tags.slice(0, 3).map((tag) => (
                     <li
                       key={tag}
-                      className="rounded-full border border-white/15 bg-white/5 px-3 py-1.5 text-[0.65rem] uppercase tracking-[0.1em] text-white/75 backdrop-blur-sm"
+                      className="rounded-full border border-white/25 bg-black/25 px-3 py-1.5 text-[0.65rem] uppercase tracking-[0.1em] text-white/85 backdrop-blur-sm"
                     >
                       {tag}
                     </li>
