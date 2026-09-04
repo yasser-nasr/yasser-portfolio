@@ -8,6 +8,7 @@ import RenovoFixCaseStudy from "@/components/case-study/RenovoFixCaseStudy";
 import RilamCaseStudy from "@/components/case-study/RilamCaseStudy";
 import XFactorCaseStudy from "@/components/case-study/XFactorCaseStudy";
 import ThreeDExhibitionCaseStudy from "@/components/case-study/ThreeDExhibitionCaseStudy";
+import OrientaCollagenCaseStudy from "@/components/case-study/OrientaCollagenCaseStudy";
 import { getPreviewableProject, publishedProjects } from "@/data/projects";
 import { projectPageStructuredData } from "@/lib/structuredData";
 
@@ -28,7 +29,9 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
     title: { absolute: project.seo.title },
     description: project.seo.description,
     alternates: { canonical: project.seo.canonical },
-    robots: project.publishable ? undefined : { index: false, follow: false },
+    robots: project.publishable
+      ? { index: true, follow: true }
+      : { index: false, follow: false },
     openGraph: {
       title: project.seo.openGraphTitle,
       description: project.seo.openGraphDescription,
@@ -57,6 +60,8 @@ export default async function WorkCaseStudyPage({ params }: Props) {
 
   const caseStudy = project.slug === "3d-exhibition-experiential-design"
     ? <ThreeDExhibitionCaseStudy />
+    : project.slug === "orienta-collagen-packaging-design"
+      ? <OrientaCollagenCaseStudy project={project} />
     : project.slug === "mena-law-reporters"
       ? <MenaLawReportersCaseStudy project={project} />
     : project.slug === "orin"
@@ -88,6 +93,7 @@ export default async function WorkCaseStudyPage({ params }: Props) {
         imageAlt: project.imageAlt,
         tags: project.tags ?? [],
         publishable: project.publishable,
+        structuredData: project.structuredData,
       }, project.seo?.image ?? project.image)} /> : null}
       {caseStudy}
     </>

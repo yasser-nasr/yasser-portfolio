@@ -12,6 +12,12 @@ export type ProjectSeo = {
   imageHeight?: number;
 };
 
+export type ProjectStructuredData = {
+  headline: string;
+  description: string;
+  keywords: string[];
+};
+
 export type Project = {
   title: string;
   companyName?: string;
@@ -36,9 +42,62 @@ export type Project = {
   featured: boolean;
   publishable: boolean;
   seo?: ProjectSeo;
+  structuredData?: ProjectStructuredData;
 };
 
 export const projects: Project[] = [
+  {
+    title: "Orienta Collagen",
+    companyName: "Orienta",
+    slug: "orienta-collagen-packaging-design",
+    subtitle: "Packaging Design for a Nutritional Supplement",
+    category: "Packaging Design / Print Design",
+    categories: ["packaging"],
+    role: "Packaging Designer",
+    industry: "Nutritional Supplements",
+    statement:
+      "A bilingual supplement packaging project exploring visual direction, information hierarchy, and product presentation across multiple packaging panels.",
+    image: "/projects/orienta-collagen/orienta-collagen-alternative-premium-dark.webp",
+    imageAlt:
+      "Perspective mockup of the black and gold Orienta Collagen packaging showing English and Arabic panels.",
+    imagePosition: "center",
+    tags: ["Packaging Design", "Print Design"],
+    scope: [
+      "Packaging Design",
+      "Visual Direction",
+      "Information Hierarchy",
+      "Bilingual Layout",
+      "Product Mockup Presentation",
+    ],
+    featured: false,
+    publishable: true,
+    seo: {
+      title: "Orienta Collagen Packaging Design Case Study | Yasser Nasr",
+      description:
+        "Packaging design case study for Orienta Collagen exploring bilingual layouts, visual directions, information hierarchy, and nutritional supplement packaging.",
+      canonical:
+        "https://yassernasr.com/work/orienta-collagen-packaging-design",
+      openGraphTitle: "Orienta Collagen | Packaging Design Case Study",
+      openGraphDescription:
+        "Explore the packaging design process for Orienta Collagen, including visual exploration, bilingual layout, information hierarchy, and final product presentation.",
+      image: "/projects/orienta-collagen/og/orienta-collagen-packaging-design-og.jpg",
+      imageAlt:
+        "Front view of the selected purple, white, and gold Orienta Collagen nutritional supplement packaging.",
+      imageWidth: 1200,
+      imageHeight: 630,
+    },
+    structuredData: {
+      headline: "Orienta Collagen Packaging Design for a Nutritional Supplement",
+      description:
+        "Packaging design case study exploring visual direction, bilingual information hierarchy, and product presentation for Orienta Collagen.",
+      keywords: [
+        "Packaging Design",
+        "Print Design",
+        "Supplement Packaging",
+        "Bilingual Packaging",
+      ],
+    },
+  },
   {
     title: "3D Exhibition & Experiential Design",
     companyName: "RTA Dubai",

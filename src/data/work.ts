@@ -1,4 +1,4 @@
-import { projects, publishedProjects } from "@/data/projects";
+import { projects, publishedProjects, type ProjectStructuredData } from "@/data/projects";
 import type { ProjectCategory } from "@/data/workCategories";
 
 export type WorkProject = {
@@ -17,6 +17,7 @@ export type WorkProject = {
   imageBackground?: string;
   tags: string[];
   publishable: boolean;
+  structuredData?: ProjectStructuredData;
 };
 
 function toWorkProject(project: (typeof projects)[number]): WorkProject {
@@ -36,6 +37,7 @@ function toWorkProject(project: (typeof projects)[number]): WorkProject {
     imageBackground: project.imageBackground,
     tags: project.tags ?? [],
     publishable: project.publishable,
+    structuredData: project.structuredData,
   };
 }
 

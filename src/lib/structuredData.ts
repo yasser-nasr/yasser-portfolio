@@ -159,7 +159,13 @@ export function projectPageStructuredData(project: WorkProject, image: string | 
     "@type": "CreativeWork",
     "@id": `${url}#creativework`,
     name: project.name,
-    description: project.statement,
+    ...(project.structuredData
+      ? {
+          headline: project.structuredData.headline,
+          description: project.structuredData.description,
+          keywords: project.structuredData.keywords,
+        }
+      : { description: project.statement }),
     url,
     creator: personReference,
     genre: project.category,
