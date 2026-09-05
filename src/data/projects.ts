@@ -47,6 +47,63 @@ export type Project = {
 
 export const projects: Project[] = [
   {
+    "title": "Dolato Gelateria: Warm Winter Marvels",
+    "companyName": "Dolato Gelateria",
+    "slug": "dolato-warm-winter-marvels",
+    "subtitle": "Seasonal Campaign & Brand Activation Concept",
+    "category": "Campaign Design / Illustration / Brand Activation / Environmental Graphics",
+    "categories": [
+      "campaigns-social",
+      "brand",
+      "3d-experiential",
+      "packaging"
+    ],
+    "role": "Graphic Designer & Illustrator",
+    "market": "Egypt",
+    "industry": "Food & Beverage",
+    "year": "2023",
+    "statement": "A winter campaign concept combining illustration, pattern design, packaging, retail graphics, and environmental brand applications for Dolato Gelateria.",
+    "image": "/projects/dolato-warm-winter-marvels/cover/dolato-warm-winter-marvels-hero.webp",
+    "imageAlt": "Stacked Dolato gelato cup mockups featuring the Warm Winter Marvels seasonal pattern and character.",
+    "imageFit": "cover",
+    "tags": [
+      "Campaign Design",
+      "Illustration",
+      "Brand Activation"
+    ],
+    "scope": [
+      "Concept Development",
+      "Illustration",
+      "Pattern Design",
+      "Campaign Applications",
+      "Environmental Graphics"
+    ],
+    "featured": false,
+    "publishable": true,
+    "seo": {
+      "title": "Dolato Warm Winter Marvels Campaign Case Study | Yasser Nasr",
+      "description": "Seasonal campaign and brand activation concept created for the SYNC x Dolato Winter Theme Competition 2023, covering illustration, pattern design, retail applications, packaging, and environmental graphics.",
+      "canonical": "https://yassernasr.com/work/dolato-warm-winter-marvels",
+      "openGraphTitle": "Dolato: Warm Winter Marvels | Campaign Design Case Study",
+      "openGraphDescription": "A seasonal campaign concept for Dolato Gelateria combining illustration, pattern design, packaging, retail graphics, and experiential brand applications.",
+      "image": "/projects/dolato-warm-winter-marvels/og/dolato-warm-winter-marvels-og.jpg",
+      "imageAlt": "Stacked Dolato gelato cup mockups with Warm Winter Marvels illustrations on a warm ochre background.",
+      "imageWidth": 1200,
+      "imageHeight": 630
+    },
+    "structuredData": {
+      "headline": "Warm Winter Marvels Seasonal Campaign & Brand Activation Concept",
+      "description": "Seasonal campaign concept created for the SYNC x Dolato Winter Theme Competition 2023, spanning illustration, pattern design, packaging applications, retail graphics, and environmental brand activation.",
+      "keywords": [
+        "Campaign Design",
+        "Illustration",
+        "Brand Activation",
+        "Environmental Graphics",
+        "Seasonal Campaign"
+      ]
+    }
+  },
+  {
     title: "Orienta Collagen",
     companyName: "Orienta",
     slug: "orienta-collagen-packaging-design",

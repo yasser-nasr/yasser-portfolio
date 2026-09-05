@@ -95,7 +95,7 @@ function VisualFrame({ visual, className = "", eager = false, decorative = false
         height={visual.height}
         loading={eager ? "eager" : "lazy"}
         quality={100}
-        sizes="(min-width: 1280px) 1152px, (min-width: 768px) 92vw, 100vw"
+        sizes="(min-width: 1152px) 1104px, calc(100vw - 48px)"
         className="h-auto w-full"
       />
     </div>
@@ -105,7 +105,7 @@ function VisualFrame({ visual, className = "", eager = false, decorative = false
 export default function OrientaCollagenCaseStudy({ project }: { project: Project }) {
   return (
     <main id="main-content" tabIndex={-1} className="flex-1 pt-32 md:pt-40">
-      <article className="mx-auto max-w-7xl px-6">
+      <article className="mx-auto max-w-6xl px-6">
         <CaseStudyBackLink />
 
         <div className="mt-6">
@@ -122,16 +122,20 @@ export default function OrientaCollagenCaseStudy({ project }: { project: Project
           <p className="mt-6 max-w-3xl text-lg leading-8 text-ink-soft md:text-xl md:leading-9">
             Packaging Design for a Nutritional Supplement
           </p>
-          <dl className="mt-10 grid gap-6 border-t border-edge pt-7 md:grid-cols-[0.8fr_2.2fr]">
+          <dl className="mt-10 border-t border-edge pt-7">
             <div>
               <dt className="text-xs uppercase tracking-[0.16em] text-ink-faint">Role</dt>
               <dd className="mt-2 text-sm leading-6 text-ink">Packaging Designer</dd>
             </div>
-            <div>
-              <dt className="text-xs uppercase tracking-[0.16em] text-ink-faint">Scope</dt>
-              <dd className="mt-2 text-sm leading-6 text-ink">{project.scope?.join(" / ")}</dd>
-            </div>
           </dl>
+          <div className="mt-7">
+            <p id="orienta-scope" className="text-xs uppercase tracking-[0.16em] text-ink-faint">Scope</p>
+            <ul aria-labelledby="orienta-scope" className="mt-3 flex flex-wrap gap-2">
+              {project.scope?.map((item) => (
+                <li key={item} className="rounded-full border border-edge px-3.5 py-2 text-xs text-ink-soft">{item}</li>
+              ))}
+            </ul>
+          </div>
         </header>
 
         <section id="overview" className="border-t border-edge py-16 md:py-24">

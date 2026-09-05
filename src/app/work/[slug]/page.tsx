@@ -9,6 +9,7 @@ import RilamCaseStudy from "@/components/case-study/RilamCaseStudy";
 import XFactorCaseStudy from "@/components/case-study/XFactorCaseStudy";
 import ThreeDExhibitionCaseStudy from "@/components/case-study/ThreeDExhibitionCaseStudy";
 import OrientaCollagenCaseStudy from "@/components/case-study/OrientaCollagenCaseStudy";
+import DolatoCaseStudy from "@/components/case-study/DolatoCaseStudy";
 import { getPreviewableProject, publishedProjects } from "@/data/projects";
 import { projectPageStructuredData } from "@/lib/structuredData";
 
@@ -58,7 +59,9 @@ export default async function WorkCaseStudyPage({ params }: Props) {
   const project = getPreviewableProject(slug);
   if (!project) notFound();
 
-  const caseStudy = project.slug === "3d-exhibition-experiential-design"
+  const caseStudy = project.slug === "dolato-warm-winter-marvels"
+    ? <DolatoCaseStudy project={project} />
+    : project.slug === "3d-exhibition-experiential-design"
     ? <ThreeDExhibitionCaseStudy />
     : project.slug === "orienta-collagen-packaging-design"
       ? <OrientaCollagenCaseStudy project={project} />
