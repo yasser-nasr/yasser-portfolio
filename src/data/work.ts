@@ -23,7 +23,7 @@ export type WorkProject = {
 function toWorkProject(project: (typeof projects)[number]): WorkProject {
   return {
     slug: project.slug,
-    name: project.title,
+    name: project.workTitle ?? project.title,
     subtitle: project.subtitle ?? project.category,
     category: project.category,
     categories: project.categories,

@@ -20,6 +20,7 @@ export type ProjectStructuredData = {
 
 export type Project = {
   title: string;
+  workTitle?: string;
   companyName?: string;
   slug: string;
   subtitle?: string;
@@ -48,6 +49,7 @@ export type Project = {
 export const projects: Project[] = [
   {
     "title": "Dolato Gelateria: Warm Winter Marvels",
+    "workTitle": "Dolato Gelateria",
     "companyName": "Dolato Gelateria",
     "slug": "dolato-warm-winter-marvels",
     "subtitle": "Seasonal Campaign & Brand Activation Concept",

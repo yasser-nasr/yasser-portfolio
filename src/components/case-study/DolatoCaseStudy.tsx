@@ -76,6 +76,54 @@ export default function DolatoCaseStudy({ project }: { project: Project }) {
           </div>
         </CaseStudySection>
 
+        <section id="mood-inspiration" aria-labelledby="mood-inspiration-title" className="border-t border-edge py-16 md:py-24">
+          <h2 id="mood-inspiration-title" className="text-2xl font-semibold text-ink md:text-3xl">Mood &amp; Inspiration</h2>
+          <p className="mt-5 max-w-3xl text-base leading-8 text-ink-soft md:text-lg">Warm Italian atmosphere, winter symbols, Dolato’s product language, and playful forms shaped the visual direction.</p>
+
+          <div className="mt-10 grid items-start gap-4 md:grid-cols-[minmax(0,1.55fr)_minmax(0,1fr)] md:gap-5">
+            <Image
+              src={`${base}/moodboard/dolato-moodboard-italian-warmth.webp`}
+              alt="Warm golden-hour Italian street used as atmosphere inspiration for the Dolato winter campaign."
+              width={854}
+              height={1145}
+              quality={100}
+              sizes="(min-width: 1152px) 669px, (min-width: 768px) 59vw, calc(100vw - 48px)"
+              className="h-auto w-full rounded-2xl"
+            />
+            <div className="grid gap-4 md:gap-5">
+              <Image
+                src={`${base}/moodboard/dolato-moodboard-winter-snowflakes.webp`}
+                alt="Falling snowflakes used as winter visual inspiration for Warm Winter Marvels."
+                width={512}
+                height={512}
+                quality={100}
+                sizes="(min-width: 1152px) 415px, (min-width: 768px) 37vw, calc(100vw - 48px)"
+                className="h-auto w-full rounded-2xl"
+              />
+              <Image
+                src={`${base}/moodboard/dolato-moodboard-minis-reference.webp`}
+                alt="Colorful miniature gelato pieces used as a playful Dolato product-form reference."
+                width={797}
+                height={666}
+                quality={100}
+                sizes="(min-width: 1152px) 415px, (min-width: 768px) 37vw, calc(100vw - 48px)"
+                className="h-auto w-full rounded-2xl"
+              />
+            </div>
+            <Image
+              src={`${base}/moodboard/dolato-moodboard-gelato-scoops.webp`}
+              alt="Assorted gelato scoops used as a product and color reference for the Dolato campaign."
+              width={1254}
+              height={1254}
+              quality={100}
+              sizes={fullSize}
+              className="h-auto w-full rounded-2xl md:col-span-2"
+            />
+          </div>
+
+          <p className="mt-7 text-xs uppercase tracking-[0.16em] text-ink-faint">Warm / Italian / Playful / Winter / Product-led</p>
+        </section>
+
         <CaseStudySection id="concept" title="The Concept">
           <p>The concept reimagines winter through Dolato’s world: an Italian-inspired snow character, warm earthy colors, hand-drawn illustration, and snowflake-like motifs built from Dolato’s signature Minis.</p>
           <p>Instead of treating winter as cold and icy, the system focuses on warmth, gatherings, playfulness, and shared memories.</p>
