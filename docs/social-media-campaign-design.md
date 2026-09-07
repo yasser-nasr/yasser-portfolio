@@ -6,7 +6,7 @@ Production route: https://yassernasr.com/work/social-media-campaign-design
 
 All 48 files supplied in public/projects/New folder are included as optimized, uncropped sRGB WebP assets. No source designs are skipped or renamed. The original source files remain untouched. The existing cover and OG composition remain unchanged.
 
-- Six client Instagram presentations: Sand Circus (4 posts), Memo Travel (14), SBH (8), LAPE (4), El Masrya (4), Cultural Development Fund (3).
+- Six client Instagram presentations: Sand Circus (3 posts, including a two-slide Arabic/English Talent x Brand carousel), Memo Travel (14), SBH (8), LAPE (4), El Masrya (4), Cultural Development Fund (3).
 - One mixed Instagram gallery: 9 additional designs, including both Saudi National Day portraits, Beyond, Madina, Alsallal, SkyTrack, both engineering invitations, and the clearly labeled Moeen design exercise.
 - Facebook profile presentation: LAPE cover and avatar, completing all 48 source designs.
 - Uses the existing SocialMediaGrid component with profile headers, three-column grids on mobile and desktop, and the existing post dialog, keyboard dismissal, and full-image view.

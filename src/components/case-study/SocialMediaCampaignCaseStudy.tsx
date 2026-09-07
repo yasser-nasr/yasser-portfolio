@@ -7,7 +7,7 @@ import SocialMediaGrid from "./SocialMediaGrid";
 type AssetKey = keyof typeof assets;
 
 const campaigns: { name: string; direction: string; images: AssetKey[] }[] = [
-  { name: "Sand Circus", direction: "Bilingual brand storytelling, talent, and cultural moments.", images: ["sand-circus-national-day", "sand-circus-talent-brand", "sand-circus-talent-brand-english", "sand-circus-next-step"] },
+  { name: "Sand Circus", direction: "Bilingual brand storytelling, talent, and cultural moments.", images: ["sand-circus-national-day", "sand-circus-talent-brand", "sand-circus-next-step"] },
   { name: "Memo Travel", direction: "Destination stories, coastal escapes, and travel packages.", images: ["memo-travel-honeymoon", "memo-travel-hurghada", "memo-travel-dahab", "memo-travel-dahab-coast", "memo-travel-sharm", "memo-travel-istanbul", "memo-travel-istanbul-evening", "memo-travel-saint-catherine", "memo-travel-snorkeling", "memo-travel-nuweiba", "memo-travel-sinai", "memo-travel-umrah-seven-days", "memo-travel-umrah-ten-days", "memo-travel-umrah-fifteen-days"] },
   { name: "SBH", direction: "A bilingual real estate services carousel, from introduction to consultation.", images: ["sbh-real-estate-services", "sbh-property-management", "sbh-leasing-services", "sbh-property-buying", "sbh-property-sales", "sbh-client-groups", "sbh-service-values", "sbh-consultation"] },
   { name: "LAPE", direction: "Environmental awareness and events through a connected green identity.", images: ["lape-climate-initiative", "lape-cop28-goals", "lape-climate-action", "lape-carbon-border-webinar"] },
@@ -28,7 +28,19 @@ const selected: { name: string; asset: AssetKey }[] = [
 ];
 
 function post(asset: AssetKey, name: string) {
-  return { id: asset, preview: { src: assets[asset].src, alt: assets[asset].alt, caption: name } };
+  const preview = { src: assets[asset].src, alt: assets[asset].alt, caption: name };
+  if (asset === "sand-circus-talent-brand") {
+    const english = assets["sand-circus-talent-brand-english"];
+    return {
+      id: asset,
+      preview,
+      slides: [
+        { ...preview, caption: "Sand Circus / Talent x Brand / Arabic" },
+        { src: english.src, alt: english.alt, caption: "Sand Circus / Talent x Brand / English" },
+      ],
+    };
+  }
+  return { id: asset, preview };
 }
 
 export default function SocialMediaCampaignCaseStudy({ project }: { project: Project }) {
