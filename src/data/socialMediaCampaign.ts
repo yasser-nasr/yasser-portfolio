@@ -1,4 +1,4 @@
-// Curated from supplied artwork; dimensions match the optimized files.
+// Every supplied design; dimensions match the optimized files.
 export const socialCampaignAssets = {
   "sand-circus-national-day": {
     "src": "/projects/social-media-campaign-design/featured/sand-circus/sand-circus-national-day.webp",
@@ -149,5 +149,143 @@ export const socialCampaignAssets = {
     "width": 1080,
     "height": 1080,
     "alt": "LAPE circular green identity with a leaf, legal pillars, and the alliance name."
+  },
+  "lape-carbon-border-webinar": {
+    "src": "/projects/social-media-campaign-design/featured/lape/lape-carbon-border-webinar.webp",
+    "width": 1080,
+    "height": 1080,
+    "alt": "LAPE webinar announcement about the EU Carbon Border Adjustment Mechanism, with industrial chimneys and a carbon dioxide symbol."
+  },
+  "el-masrya-handle-200": {
+    "src": "/projects/social-media-campaign-design/featured/el-masrya/el-masrya-handle-200.webp",
+    "width": 1080,
+    "height": 1080,
+    "alt": "El Masrya product design showing a long black cookware handle marked code 200 on a display plinth."
+  },
+  "el-masrya-handle-203": {
+    "src": "/projects/social-media-campaign-design/featured/el-masrya/el-masrya-handle-203.webp",
+    "width": 1080,
+    "height": 1080,
+    "alt": "El Masrya product design showing a slim black cookware handle marked code 203 against a pale blue background."
+  },
+  "el-masrya-knob-302": {
+    "src": "/projects/social-media-campaign-design/featured/el-masrya/el-masrya-knob-302.webp",
+    "width": 1080,
+    "height": 1080,
+    "alt": "El Masrya product design showing a faceted black cookware knob marked code 302."
+  },
+  "memo-travel-dahab-coast": {
+    "src": "/projects/social-media-campaign-design/featured/memo-travel/memo-travel-dahab-coast.webp",
+    "width": 1080,
+    "height": 1350,
+    "alt": "Memo Travel Dahab destination design showing waterfront buildings and orange Arabic typography."
+  },
+  "memo-travel-sharm": {
+    "src": "/projects/social-media-campaign-design/featured/memo-travel/memo-travel-sharm.webp",
+    "width": 1080,
+    "height": 1350,
+    "alt": "Memo Travel Sharm El Sheikh design showing a mosque beneath a blue sky with Arabic destination lettering."
+  },
+  "saudi-national-day-belonging": {
+    "src": "/projects/social-media-campaign-design/selected/saudi-national-day-belonging.webp",
+    "width": 1080,
+    "height": 1350,
+    "alt": "Saudi National Day design with an S monogram, a person wrapped in the Saudi flag, and a bilingual story of belonging headline."
+  },
+  "saudi-national-day-portrait": {
+    "src": "/projects/social-media-campaign-design/selected/saudi-national-day-portrait.webp",
+    "width": 1080,
+    "height": 1350,
+    "alt": "Saudi National Day portrait design with an S monogram and a man wearing a red checked headscarf and Saudi flag."
+  },
+  "memo-travel-istanbul-evening": {
+    "src": "/projects/social-media-campaign-design/featured/memo-travel/memo-travel-istanbul-evening.webp",
+    "width": 1080,
+    "height": 1080,
+    "alt": "Memo Travel Istanbul design showing an illuminated mosque reflected in water at dusk."
+  },
+  "memo-travel-saint-catherine": {
+    "src": "/projects/social-media-campaign-design/featured/memo-travel/memo-travel-saint-catherine.webp",
+    "width": 1080,
+    "height": 1080,
+    "alt": "Memo Travel Saint Catherine design with snow-covered mountains and orange Arabic destination lettering."
+  },
+  "memo-travel-nuweiba": {
+    "src": "/projects/social-media-campaign-design/featured/memo-travel/memo-travel-nuweiba.webp",
+    "width": 1080,
+    "height": 1080,
+    "alt": "Memo Travel Nuweiba design showing a campfire on the beach at sunset."
+  },
+  "memo-travel-umrah-ten-days": {
+    "src": "/projects/social-media-campaign-design/featured/memo-travel/memo-travel-umrah-ten-days.webp",
+    "width": 1080,
+    "height": 1350,
+    "alt": "Memo Travel ten-day Umrah package comparison with an Arabic pricing table and orange headings."
+  },
+  "memo-travel-umrah-fifteen-days": {
+    "src": "/projects/social-media-campaign-design/featured/memo-travel/memo-travel-umrah-fifteen-days.webp",
+    "width": 1080,
+    "height": 1350,
+    "alt": "Memo Travel fifteen-day Umrah package comparison with Arabic accommodation and pricing details."
+  },
+  "memo-travel-umrah-seven-days": {
+    "src": "/projects/social-media-campaign-design/featured/memo-travel/memo-travel-umrah-seven-days.webp",
+    "width": 1080,
+    "height": 1350,
+    "alt": "Memo Travel seven-day Umrah package comparison with an Arabic pricing table on a patterned background."
+  },
+  "cultural-development-fund-financing": {
+    "src": "/projects/social-media-campaign-design/featured/cultural-development-fund/cultural-development-fund-financing.webp",
+    "width": 1080,
+    "height": 1350,
+    "alt": "Cultural Development Fund design showing craft materials and Arabic copy about flexible financing."
+  },
+  "moeen-design-exercise": {
+    "src": "/projects/social-media-campaign-design/selected/moeen-design-exercise.webp",
+    "width": 1080,
+    "height": 1350,
+    "alt": "Moeen technical design exercise showing two men holding a support box with Arabic community support messaging."
+  },
+  "beyond-national-day": {
+    "src": "/projects/social-media-campaign-design/selected/beyond-national-day.webp",
+    "width": 1080,
+    "height": 1350,
+    "alt": "Beyond Saudi National Day design showing a desert interior, palm trees, and a bilingual Our Pride Our Roots headline."
+  },
+  "sbh-property-buying": {
+    "src": "/projects/social-media-campaign-design/featured/sbh/sbh-property-buying.webp",
+    "width": 1080,
+    "height": 1350,
+    "alt": "SBH property buying carousel slide with Arabic and English service copy beside a white architectural facade."
+  },
+  "sbh-client-groups": {
+    "src": "/projects/social-media-campaign-design/featured/sbh/sbh-client-groups.webp",
+    "width": 1080,
+    "height": 1350,
+    "alt": "SBH carousel slide listing property owners, investors, buyers, and developers on a blue and white background."
+  },
+  "sbh-service-values": {
+    "src": "/projects/social-media-campaign-design/featured/sbh/sbh-service-values.webp",
+    "width": 1080,
+    "height": 1350,
+    "alt": "SBH carousel slide with bilingual structured, transparent, and results-driven messaging."
+  },
+  "sbh-consultation": {
+    "src": "/projects/social-media-campaign-design/featured/sbh/sbh-consultation.webp",
+    "width": 1080,
+    "height": 1350,
+    "alt": "SBH carousel closing slide inviting a free consultation in Arabic and English."
+  },
+  "saudi-council-of-engineers-arabic": {
+    "src": "/projects/social-media-campaign-design/selected/saudi-council-of-engineers-arabic.webp",
+    "width": 1080,
+    "height": 1920,
+    "alt": "Arabic Saudi Council of Engineers World Engineers Day invitation with a historic mud-brick fort under a blue sky."
+  },
+  "sand-circus-talent-brand-english": {
+    "src": "/projects/social-media-campaign-design/featured/sand-circus/sand-circus-talent-brand-english.webp",
+    "width": 1080,
+    "height": 1350,
+    "alt": "English Sand Circus Talent x Brand design showing a man beside a flowing ribbon on a deep purple background."
   }
 } as const;

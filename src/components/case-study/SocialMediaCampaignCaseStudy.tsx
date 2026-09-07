@@ -2,42 +2,34 @@ import Image from "next/image";
 import type { Project } from "@/data/projects";
 import { socialCampaignAssets as assets } from "@/data/socialMediaCampaign";
 import { CaseStudyBackLink, CaseStudyClosingCta } from "./CaseStudyLayout";
-import ZoomableCaseStudyImage from "./ZoomableCaseStudyImage";
+import SocialMediaGrid from "./SocialMediaGrid";
 
 type AssetKey = keyof typeof assets;
 
-function Artwork({ asset, sizes = "(min-width: 1152px) 350px, (min-width: 640px) 31vw, 90vw" }: {
-  asset: AssetKey;
-  sizes?: string;
-}) {
-  const image = assets[asset];
-  return <ZoomableCaseStudyImage {...image} label={image.alt} compact sizes={sizes} frameRadiusClassName="rounded-none" />;
-}
-
-function CampaignHeading({ name, direction, format = "Instagram / Selected posts" }: {
-  name: string;
-  direction: string;
-  format?: string;
-}) {
-  return (
-    <header className="mb-7 flex flex-wrap items-end justify-between gap-4 border-b border-edge pb-6">
-      <div className="min-w-0">
-        <h3 className="text-2xl font-semibold text-ink md:text-3xl">{name}</h3>
-        <p className="mt-2 max-w-2xl text-base leading-7 text-ink-soft">{direction}</p>
-      </div>
-      <span className="text-sm text-ink-faint">{format}</span>
-    </header>
-  );
-}
-
-const selected: { name: string; images: AssetKey[]; className: string }[] = [
-  { name: "Cultural Development Fund", images: ["cultural-development-fund-craft", "cultural-development-fund-culinary"], className: "md:col-span-7" },
-  { name: "Madina Women's Hospital", images: ["madina-womens-hospital"], className: "md:col-span-5 md:pt-24" },
-  { name: "Alsallal", images: ["alsallal-property-launch"], className: "md:col-span-5" },
-  { name: "El Masrya", images: ["el-masrya-cookware-handle"], className: "md:col-span-7 md:px-12 md:pt-24" },
-  { name: "SkyTrack", images: ["skytrack-cargo-tracking"], className: "md:col-span-7 md:pr-12" },
-  { name: "Saudi Council of Engineers", images: ["saudi-council-of-engineers"], className: "md:col-span-5 md:pt-24" },
+const campaigns: { name: string; direction: string; images: AssetKey[] }[] = [
+  { name: "Sand Circus", direction: "Bilingual brand storytelling, talent, and cultural moments.", images: ["sand-circus-national-day", "sand-circus-talent-brand", "sand-circus-talent-brand-english", "sand-circus-next-step"] },
+  { name: "Memo Travel", direction: "Destination stories, coastal escapes, and travel packages.", images: ["memo-travel-honeymoon", "memo-travel-hurghada", "memo-travel-dahab", "memo-travel-dahab-coast", "memo-travel-sharm", "memo-travel-istanbul", "memo-travel-istanbul-evening", "memo-travel-saint-catherine", "memo-travel-snorkeling", "memo-travel-nuweiba", "memo-travel-sinai", "memo-travel-umrah-seven-days", "memo-travel-umrah-ten-days", "memo-travel-umrah-fifteen-days"] },
+  { name: "SBH", direction: "A bilingual real estate services carousel, from introduction to consultation.", images: ["sbh-real-estate-services", "sbh-property-management", "sbh-leasing-services", "sbh-property-buying", "sbh-property-sales", "sbh-client-groups", "sbh-service-values", "sbh-consultation"] },
+  { name: "LAPE", direction: "Environmental awareness and events through a connected green identity.", images: ["lape-climate-initiative", "lape-cop28-goals", "lape-climate-action", "lape-carbon-border-webinar"] },
+  { name: "El Masrya", direction: "A consistent product presentation for cookware handles and accessories.", images: ["el-masrya-cookware-handle", "el-masrya-handle-200", "el-masrya-handle-203", "el-masrya-knob-302"] },
+  { name: "Cultural Development Fund", direction: "Craft, culinary arts, and cultural financing.", images: ["cultural-development-fund-craft", "cultural-development-fund-culinary", "cultural-development-fund-financing"] },
 ];
+
+const selected: { name: string; asset: AssetKey }[] = [
+  { name: "Saudi National Day", asset: "saudi-national-day-belonging" },
+  { name: "Saudi National Day", asset: "saudi-national-day-portrait" },
+  { name: "Beyond", asset: "beyond-national-day" },
+  { name: "Madina Women's Hospital", asset: "madina-womens-hospital" },
+  { name: "Alsallal", asset: "alsallal-property-launch" },
+  { name: "SkyTrack", asset: "skytrack-cargo-tracking" },
+  { name: "Saudi Council of Engineers", asset: "saudi-council-of-engineers-arabic" },
+  { name: "Saudi Council of Engineers", asset: "saudi-council-of-engineers" },
+  { name: "Moeen / Design exercise", asset: "moeen-design-exercise" },
+];
+
+function post(asset: AssetKey, name: string) {
+  return { id: asset, preview: { src: assets[asset].src, alt: assets[asset].alt, caption: name } };
+}
 
 export default function SocialMediaCampaignCaseStudy({ project }: { project: Project }) {
   const cover = assets["lape-facebook-cover"];
@@ -56,55 +48,41 @@ export default function SocialMediaCampaignCaseStudy({ project }: { project: Pro
 
         <section aria-labelledby="featured-campaigns" className="border-t border-edge py-16 md:py-24">
           <h2 id="featured-campaigns" className="mb-12 text-3xl font-semibold text-ink md:mb-16 md:text-4xl">Featured Campaign Systems</h2>
-          <div className="space-y-20 md:space-y-28">
-            <article>
-              <CampaignHeading name="Sand Circus" direction="Bilingual brand storytelling, talent, and cultural moments." />
-              <div className="grid grid-cols-1 items-start gap-3 sm:grid-cols-3">
-                <Artwork asset="sand-circus-national-day" />
-                <Artwork asset="sand-circus-talent-brand" />
-                <Artwork asset="sand-circus-next-step" />
-              </div>
-            </article>
-
-            <article>
-              <CampaignHeading name="Memo Travel" direction="Destination-led travel stories, from coastal escapes to city breaks." />
-              <div className="grid grid-cols-3 items-start gap-2 sm:gap-3">
-                {(["memo-travel-honeymoon", "memo-travel-hurghada", "memo-travel-dahab", "memo-travel-istanbul", "memo-travel-snorkeling", "memo-travel-sinai"] as const).map((asset) => <Artwork key={asset} asset={asset} />)}
-              </div>
-            </article>
-
-            <article>
-              <CampaignHeading name="SBH" direction="A bilingual carousel introducing real estate services." format="Carousel / Selected slides" />
-              <div className="grid items-start gap-6 md:grid-cols-2">
-                <Artwork asset="sbh-real-estate-services" sizes="(min-width: 1152px) 560px, (min-width: 768px) 47vw, 90vw" />
-                <div className="grid grid-cols-3 items-start gap-2 md:pt-16">
-                  {(["sbh-property-management", "sbh-leasing-services", "sbh-property-sales"] as const).map((asset) => <Artwork key={asset} asset={asset} sizes="(min-width: 1152px) 180px, (min-width: 768px) 15vw, 29vw" />)}
-                </div>
-              </div>
-            </article>
-
-            <article>
-              <CampaignHeading name="LAPE" direction="Environmental awareness through a connected green visual identity." />
-              <div className="grid grid-cols-1 items-start gap-3 sm:grid-cols-3">
-                <Artwork asset="lape-climate-initiative" />
-                <Artwork asset="lape-cop28-goals" />
-                <Artwork asset="lape-climate-action" />
-              </div>
-            </article>
+          <div className="mx-auto max-w-4xl space-y-16 md:space-y-24">
+            {campaigns.map((campaign) => (
+              <article key={campaign.name} aria-label={campaign.name}>
+                <SocialMediaGrid
+                  brandName={campaign.name}
+                  username={campaign.name}
+                  subtitle={campaign.direction}
+                  logo={campaign.name === "LAPE" ? avatar.src : assets[campaign.images[0]].src}
+                  logoAlt=""
+                  logoClassName={campaign.name === "LAPE" ? "object-contain p-1" : "object-cover"}
+                  items={campaign.images.map((asset) => post(asset, campaign.name))}
+                  previewFit="contain"
+                  mobileColumns={3}
+                  showEngagementCount={false}
+                />
+              </article>
+            ))}
           </div>
         </section>
 
         <section aria-labelledby="selected-social" className="border-t border-edge py-16 md:py-24">
           <h2 id="selected-social" className="mb-12 text-3xl font-semibold text-ink md:mb-16 md:text-4xl">Selected Social Designs</h2>
-          <div className="grid items-start gap-x-8 gap-y-14 md:grid-cols-12 md:gap-y-20">
-            {selected.map((client) => (
-              <div key={client.name} className={`min-w-0 ${client.className}`}>
-                <p className="mb-4 text-sm font-medium text-ink-soft">{client.name}</p>
-                <div className={`grid items-start gap-3 ${client.images.length > 1 ? "grid-cols-2" : "grid-cols-1"}`}>
-                  {client.images.map((asset) => <Artwork key={asset} asset={asset} sizes={client.images.length > 1 ? "(min-width: 1152px) 320px, (min-width: 768px) 28vw, 44vw" : "(min-width: 1152px) 600px, (min-width: 768px) 50vw, 90vw"} />)}
-                </div>
-              </div>
-            ))}
+          <div className="mx-auto max-w-4xl">
+            <SocialMediaGrid
+              brandName="Yasser Nasr"
+              username="Yasser Nasr"
+              subtitle="Social designs across brands, plus a Moeen design exercise."
+              logo="/brand/yasser-nasr-portrait.webp"
+              logoAlt="Yasser Nasr"
+              logoClassName="object-cover"
+              items={selected.map(({ asset, name }) => post(asset, name))}
+              previewFit="contain"
+              mobileColumns={3}
+              showEngagementCount={false}
+            />
           </div>
         </section>
 

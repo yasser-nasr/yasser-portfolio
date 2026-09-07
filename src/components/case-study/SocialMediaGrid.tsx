@@ -101,6 +101,8 @@ export default function SocialMediaGrid({
   showProfileHeader = true,
   showEngagement = true,
   showEngagementCount = true,
+  previewFit = "cover",
+  mobileColumns = 2,
 }: {
   brandName: string;
   username: string;
@@ -117,6 +119,8 @@ export default function SocialMediaGrid({
   showProfileHeader?: boolean;
   showEngagement?: boolean;
   showEngagementCount?: boolean;
+  previewFit?: "cover" | "contain";
+  mobileColumns?: 2 | 3;
 }) {
   const [activeItem, setActiveItem] = useState<SocialMediaGridItem | null>(
     null,
@@ -233,7 +237,7 @@ export default function SocialMediaGrid({
           </div>
         ) : null}
 
-        <div className="grid grid-cols-2 gap-[2px] bg-edge sm:grid-cols-3">
+        <div className={`grid gap-[2px] bg-edge ${mobileColumns === 3 ? "grid-cols-3" : "grid-cols-2 sm:grid-cols-3"}`}>
           {items.map((item) => (
             <button
               key={item.id}
@@ -247,7 +251,7 @@ export default function SocialMediaGrid({
                 alt={item.preview.alt}
                 fill
                 sizes="(min-width: 768px) 24vw, 50vw"
-                className="object-cover transition duration-300 group-hover:brightness-75"
+                className={`${previewFit === "contain" ? "object-contain" : "object-cover"} transition duration-300 group-hover:brightness-75`}
               />
               {item.slides && item.slides.length > 1 ? (
                 <span className="absolute right-3 top-3 rounded-full bg-black/65 px-2.5 py-1 text-[10px] font-medium text-white">
