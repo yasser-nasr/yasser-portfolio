@@ -48,6 +48,36 @@ export type Project = {
 
 export const projects: Project[] = [
   {
+    title: "Social Media & Campaign Design",
+    slug: "social-media-campaign-design",
+    subtitle: "Selected campaign systems, social content, and profile branding.",
+    category: "Social Media Design · Campaign Design · Digital Content",
+    categories: ["campaigns-social"],
+    industry: "Selected brands and industries",
+    statement: "A curated collection of social media campaigns, digital content, and profile branding created across multiple brands and industries.",
+    image: "/projects/social-media-campaign-design/cover/social-media-campaign-design-cover.webp",
+    imageAlt: "Social campaign designs for Sand Circus, Memo Travel, and LAPE arranged together on a dark background.",
+    tags: ["Social Media Design", "Campaign Design", "Digital Content"],
+    featured: false,
+    publishable: true,
+    seo: {
+      title: "Social Media & Campaign Design Portfolio | Yasser Nasr",
+      description: "Selected social media and campaign design work by Yasser Nasr, including campaign systems, digital content, Instagram layouts, Facebook branding, and social profile covers.",
+      canonical: "https://yassernasr.com/work/social-media-campaign-design",
+      openGraphTitle: "Social Media & Campaign Design | Yasser Nasr",
+      openGraphDescription: "A curated collection of social media campaigns, digital content systems, and profile branding across multiple brands and industries.",
+      image: "/projects/social-media-campaign-design/og/social-media-campaign-design-og.jpg",
+      imageAlt: "Selected Sand Circus, Memo Travel, and LAPE social campaign artwork.",
+      imageWidth: 1200,
+      imageHeight: 630,
+    },
+    structuredData: {
+      headline: "Selected Social Media & Campaign Design Work",
+      description: "A curated collection of social media campaign systems, digital content, Instagram layouts, profile branding, and social cover design created across multiple brands and industries.",
+      keywords: ["Social Media Design", "Campaign Design", "Digital Content", "Instagram Design", "Facebook Branding", "LinkedIn Cover Design"],
+    },
+  },
+  {
     "title": "Dolato Gelateria: Warm Winter Marvels",
     "workTitle": "Dolato Gelateria",
     "companyName": "Dolato Gelateria",
