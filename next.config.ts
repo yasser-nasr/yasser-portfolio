@@ -6,6 +6,15 @@ const contentSecurityPolicy = "default-src 'self'; script-src 'self' 'unsafe-inl
 const nextConfig: NextConfig = {
   async redirects() {
     return [{
+      source: "/index.php",
+      destination: "https://yassernasr.com/",
+      permanent: true,
+    }, {
+      source: "/:path*",
+      has: [{ type: "host", value: "www.yassernasr.com" }],
+      destination: "https://yassernasr.com/:path*",
+      permanent: true,
+    }, {
       source: "/work/dolato-winter-theme-competition-2023",
       destination: "/work/dolato-warm-winter-marvels",
       permanent: true,

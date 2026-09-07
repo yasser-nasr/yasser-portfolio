@@ -1,5 +1,5 @@
 import type { MetadataRoute } from "next";
-import { siteUrl } from "@/lib/site";
+import { productionSiteUrl } from "@/lib/site";
 import { publishedWorkProjects } from "@/data/work";
 
 export default function sitemap(): MetadataRoute.Sitemap {
@@ -7,10 +7,10 @@ export default function sitemap(): MetadataRoute.Sitemap {
 
   return [
     ...staticRoutes.map((route) => ({
-      url: `${siteUrl}${route}`,
+      url: `${productionSiteUrl}${route}`,
     })),
     ...publishedWorkProjects.map((project) => ({
-      url: `${siteUrl}/work/${project.slug}`,
+      url: `${productionSiteUrl}/work/${project.slug}`,
     })),
   ];
 }

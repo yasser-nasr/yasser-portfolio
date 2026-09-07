@@ -14,11 +14,12 @@ Portfolio and case-study website built with Next.js, React, TypeScript, Tailwind
 - `RESEND_API_KEY`: Resend API key used by the contact route.
 - `CONTACT_TO_EMAIL`: Inbox that receives contact submissions.
 - `CONTACT_FROM_EMAIL`: Verified Resend sender address.
-- `NEXT_PUBLIC_SITE_URL`: Canonical production origin; defaults to `https://yassernasr.com`.
 - `NEXT_PUBLIC_GA_ID`: Optional Google Analytics measurement ID.
 - `NEXT_PUBLIC_CLARITY_ID`: Optional Microsoft Clarity project ID.
 
 The contact form will return a configuration error until all three email variables are set.
+
+Canonical metadata, sitemap URLs, and the robots sitemap reference use the fixed production origin `https://yassernasr.com` in `src/lib/site.ts`. `NEXT_PUBLIC_SITE_URL` is no longer used.
 
 ## Validation
 

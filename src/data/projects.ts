@@ -524,18 +524,6 @@ export const projects: Project[] = [
     publishable: false,
   },
   {
-    title: "Project 03",
-    slug: "placeholder-03",
-    category: "Campaign & Social",
-    categories: [],
-    year: "2023",
-    statement: "One-line value statement will go here once this case study is approved.",
-    image: null,
-    imageAlt: "Temporary — update when the project image is approved.",
-    featured: false,
-    publishable: false,
-  },
-  {
     title: "Project 04",
     slug: "placeholder-04",
     category: "Motion & Presentation",
