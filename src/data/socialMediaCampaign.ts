@@ -244,7 +244,7 @@ export const socialCampaignAssets = {
     "src": "/projects/social-media-campaign-design/selected/moeen-design-exercise.webp",
     "width": 1080,
     "height": 1350,
-    "alt": "Moeen technical design exercise showing two men holding a support box with Arabic community support messaging."
+    "alt": "Moeen social media design showing two men holding a support box with Arabic community support messaging."
   },
   "beyond-national-day": {
     "src": "/projects/social-media-campaign-design/selected/beyond-national-day.webp",

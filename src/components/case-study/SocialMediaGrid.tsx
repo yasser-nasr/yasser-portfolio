@@ -19,6 +19,7 @@ export type SocialMediaSlide = {
 
 export type SocialMediaGridItem = {
   id: string;
+  profileName?: string;
   preview: SocialMediaSlide;
   slides?: readonly SocialMediaSlide[];
 };
@@ -94,11 +95,14 @@ export default function SocialMediaGrid({
   logoBackground = "#FFFFFF",
   logoRingClassName = "from-ink-faint via-edge to-white",
   logoClassName = "object-contain p-2",
+  followButtonClassName,
+  verificationClassName,
   accentColor = "#8A7A63",
   stats,
   items,
   previewAspect = "portrait",
   showProfileHeader = true,
+  showProfileImage = true,
   showEngagement = true,
   showEngagementCount = true,
   previewFit = "cover",
@@ -112,11 +116,14 @@ export default function SocialMediaGrid({
   logoBackground?: string;
   logoRingClassName?: string;
   logoClassName?: string;
+  followButtonClassName?: string;
+  verificationClassName?: string;
   accentColor?: string;
   stats?: readonly [string, string, string];
   items: readonly SocialMediaGridItem[];
   previewAspect?: "portrait" | "square";
   showProfileHeader?: boolean;
+  showProfileImage?: boolean;
   showEngagement?: boolean;
   showEngagementCount?: boolean;
   previewFit?: "cover" | "contain";
@@ -136,6 +143,7 @@ export default function SocialMediaGrid({
       ? [activeItem.preview]
       : [];
   const activeSlide = activeSlides[activeSlideIndex];
+  const activeProfileName = activeItem?.profileName ?? username;
 
   useEffect(() => {
     if (!activeItem) return;
@@ -189,31 +197,34 @@ export default function SocialMediaGrid({
       <div className="mt-10 overflow-hidden rounded-[1.5rem] border border-edge bg-surface-card/45 shadow-2xl shadow-black/10">
         {showProfileHeader ? (
           <div className="flex items-center gap-4 border-b border-edge px-5 py-5 sm:px-8">
-            <div
-              className={`rounded-full bg-gradient-to-tr p-[2px] ${logoRingClassName}`}
-            >
+            {showProfileImage ? (
               <div
-                className="relative h-14 w-14 overflow-hidden rounded-full border-2 border-surface"
-                style={{ backgroundColor: logoBackground }}
+                className={`rounded-full bg-gradient-to-tr p-[2px] ${logoRingClassName}`}
               >
-                <Image
-                  src={logo}
-                  alt={logoAlt}
-                  fill
-                  sizes="56px"
-                  className={logoClassName}
-                />
+                <div
+                  className="relative h-14 w-14 overflow-hidden rounded-full border-2 border-surface"
+                  style={{ backgroundColor: logoBackground }}
+                >
+                  <Image
+                    src={logo}
+                    alt={logoAlt}
+                    fill
+                    sizes="56px"
+                    className={logoClassName}
+                  />
+                </div>
               </div>
-            </div>
+            ) : null}
             <div className="min-w-0 flex-1">
               <h3 className="text-base font-semibold text-ink sm:text-lg">
-                {username} <span style={{ color: accentColor }}>●</span>
+                {username}{" "}
+                <span className={verificationClassName} style={verificationClassName ? undefined : { color: accentColor }}>●</span>
               </h3>
               <p className="text-sm leading-6 text-ink-soft">{subtitle}</p>
             </div>
             <span
-              className="hidden rounded-lg px-5 py-2 text-sm font-semibold text-white sm:inline-flex"
-              style={{ backgroundColor: accentColor }}
+              className={`hidden px-5 py-2 text-sm font-semibold sm:inline-flex ${followButtonClassName ?? "rounded-lg text-white"}`}
+              style={followButtonClassName ? undefined : { backgroundColor: accentColor }}
             >
               Follow
             </span>
@@ -244,7 +255,7 @@ export default function SocialMediaGrid({
               type="button"
               onClick={() => openItem(item)}
               aria-label={`Open design: ${item.preview.alt}`}
-              className={`group relative cursor-zoom-in overflow-hidden bg-surface focus-visible:z-10 ${previewAspect === "square" ? "aspect-square" : "aspect-[3/4]"}`}
+              className={`group relative cursor-zoom-in overflow-hidden bg-surface focus-visible:z-10 ${previewAspect === "square" ? "aspect-square" : "aspect-[4/5]"}`}
             >
               <Image
                 src={item.preview.src}
@@ -277,7 +288,7 @@ export default function SocialMediaGrid({
             tabIndex={-1}
             role="dialog"
             aria-modal="true"
-            aria-label={`${brandName} social media design`}
+            aria-label={`${activeItem.profileName ?? brandName} social media design`}
             className="fixed inset-0 z-[100] grid place-items-center bg-black/80 p-3 backdrop-blur-sm sm:p-6"
             onMouseDown={(event) =>
               event.target === event.currentTarget && setActiveItem(null)
@@ -296,7 +307,7 @@ export default function SocialMediaGrid({
                 className={`relative overflow-hidden bg-black ${
                   previewAspect === "square"
                     ? "aspect-square min-h-0"
-                    : "min-h-[55vh] md:min-h-[82vh]"
+                    : "aspect-[4/5] min-h-0"
                 }`}
               >
                 <AnimatePresence initial={false} custom={slideDirection}>
@@ -361,28 +372,31 @@ export default function SocialMediaGrid({
               </div>
               <div className="flex min-h-0 flex-col">
                 <div className="flex items-center gap-3 border-b border-edge p-4">
-                  <div
-                    className="relative h-10 w-10 overflow-hidden rounded-full border border-edge"
-                    style={{ backgroundColor: logoBackground }}
-                  >
-                    <Image
-                      src={logo}
-                      alt=""
-                      fill
-                      sizes="40px"
-                  className={logoClassName}
-                    />
-                  </div>
+                  {showProfileImage ? (
+                    <div
+                      className="relative h-10 w-10 overflow-hidden rounded-full border border-edge"
+                      style={{ backgroundColor: logoBackground }}
+                    >
+                      <Image
+                        src={logo}
+                        alt=""
+                        fill
+                        sizes="40px"
+                        className={logoClassName}
+                      />
+                    </div>
+                  ) : null}
                   <div>
                     <p className="text-sm font-semibold text-ink">
-                      {username} <span style={{ color: accentColor }}>●</span>
+                      {activeProfileName}{" "}
+                      <span className={verificationClassName} style={verificationClassName ? undefined : { color: accentColor }}>●</span>
                     </p>
-                    <p className="text-xs text-ink-soft">{subtitle}</p>
+                    <p className="text-xs text-ink-soft">{activeItem.profileName ? "Social media design" : subtitle}</p>
                   </div>
                 </div>
                 <div className="flex-1 p-4">
                   <p className="text-sm leading-6 text-ink-soft">
-                    <strong className="mr-2 text-ink">{username}</strong>
+                    <strong className="mr-2 text-ink">{activeProfileName}</strong>
                     {activeSlide.caption}
                   </p>
                 </div>
