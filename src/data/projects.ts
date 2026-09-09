@@ -55,7 +55,7 @@ export const projects: Project[] = [
     categories: ["campaigns-social"],
     industry: "Selected brands and industries",
     statement: "A curated collection of social media campaigns, digital content, and profile branding created across multiple brands and industries.",
-    image: "/projects/social-media-campaign-design/cover/social-media-campaign-design-cover.webp",
+    image: "/projects/social-media-campaign-design/cover/social-media-campaign-design-cover.png",
     imageAlt: "Social campaign designs for Sand Circus, Memo Travel, and LAPE arranged together on a dark background.",
     tags: ["Social Media Design", "Campaign Design", "Digital Content"],
     featured: false,

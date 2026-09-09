@@ -11,6 +11,8 @@ const posts = [
 
 const instagramItems = posts.map((post, index) => ({
   id: `lape-instagram-${index + 1}`,
+  profileName: "LAPE",
+  profileSubtitle: "Environmental communication content",
   preview: {
     src: post.src,
     alt: post.alt,

@@ -20,6 +20,7 @@ export type SocialMediaSlide = {
 export type SocialMediaGridItem = {
   id: string;
   profileName?: string;
+  profileSubtitle?: string;
   preview: SocialMediaSlide;
   slides?: readonly SocialMediaSlide[];
 };
@@ -144,6 +145,7 @@ export default function SocialMediaGrid({
       : [];
   const activeSlide = activeSlides[activeSlideIndex];
   const activeProfileName = activeItem?.profileName ?? username;
+  const activeProfileSubtitle = activeItem?.profileSubtitle ?? subtitle;
 
   useEffect(() => {
     if (!activeItem) return;
@@ -391,7 +393,7 @@ export default function SocialMediaGrid({
                       {activeProfileName}{" "}
                       <span className={verificationClassName} style={verificationClassName ? undefined : { color: accentColor }}>●</span>
                     </p>
-                    <p className="text-xs text-ink-soft">{activeItem.profileName ? "Social media design" : subtitle}</p>
+                    <p className="text-xs text-ink-soft">{activeProfileSubtitle}</p>
                   </div>
                 </div>
                 <div className="flex-1 p-4">
