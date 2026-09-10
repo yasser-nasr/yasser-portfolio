@@ -1,7 +1,7 @@
 "use client";
 
 import Image from "next/image";
-import { useEffect, useState } from "react";
+import { useState } from "react";
 
 type Story = { src: string; alt: string };
 
@@ -10,19 +10,19 @@ export default function SnapchatStoryViewer({ stories }: { stories: readonly Sto
   const previous = () => setActiveIndex((index) => Math.max(0, index - 1));
   const next = () => setActiveIndex((index) => Math.min(stories.length - 1, index + 1));
 
-  useEffect(() => {
-    const onKeyDown = (event: KeyboardEvent) => {
-      if (event.key === "ArrowLeft") previous();
-      if (event.key === "ArrowRight") next();
-    };
-    window.addEventListener("keydown", onKeyDown);
-    return () => window.removeEventListener("keydown", onKeyDown);
-  }, [stories.length]);
-
   const story = stories[activeIndex];
 
   return (
-    <div className="mt-10">
+    <div
+      className="mt-10"
+      role="region"
+      aria-label="Snapchat story viewer"
+      tabIndex={0}
+      onKeyDown={(event) => {
+        if (event.key === "ArrowLeft") previous();
+        if (event.key === "ArrowRight") next();
+      }}
+    >
       <div className="relative mx-auto aspect-[9/16] w-full max-w-[23rem] overflow-hidden rounded-[1.75rem] bg-black shadow-2xl shadow-black/35 ring-1 ring-black/20">
         <Image src={story.src} alt={story.alt} fill priority sizes="(min-width: 640px) 368px, calc(100vw - 72px)" className="object-cover" />
 

@@ -112,7 +112,7 @@ export const socialCampaignAssets = {
     "src": "/projects/social-media-campaign-design/selected/madina-womens-hospital.webp",
     "width": 1080,
     "height": 1080,
-    "alt": "Madina Womens Hospital fertility treatment design with a baby and capsule forms on a pink background."
+    "alt": "Madina Women's Hospital fertility treatment social media design with a baby and capsule forms on a pink background."
   },
   "alsallal-property-launch": {
     "src": "/projects/social-media-campaign-design/selected/alsallal-property-launch.webp",

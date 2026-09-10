@@ -30,6 +30,10 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   return {
     title: { absolute: project.seo.title },
     description: project.seo.description,
+    keywords: project.structuredData?.keywords,
+    category: project.category,
+    creator: "Yasser Nasr",
+    authors: [{ name: "Yasser Nasr", url: "https://yassernasr.com" }],
     alternates: { canonical: project.seo.canonical },
     robots: project.publishable
       ? { index: true, follow: true }
@@ -38,6 +42,8 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
       title: project.seo.openGraphTitle,
       description: project.seo.openGraphDescription,
       url: project.seo.canonical,
+      siteName: "Yasser Nasr",
+      locale: "en_US",
       type: "article",
       images: socialImage ? [{
         url: socialImage,
@@ -50,7 +56,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
       card: "summary_large_image",
       title: project.seo.openGraphTitle,
       description: project.seo.openGraphDescription,
-      images: socialImage ? [socialImage] : undefined,
+      images: socialImage ? [{ url: socialImage, alt: socialImageAlt }] : undefined,
     },
   };
 }

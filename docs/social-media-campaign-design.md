@@ -4,7 +4,7 @@ Production route: https://yassernasr.com/work/social-media-campaign-design
 
 ## Current presentation
 
-All 48 files supplied in public/projects/New folder are included as optimized, uncropped sRGB WebP assets. No source designs are skipped or renamed. The original source files remain untouched. The existing cover and OG composition remain unchanged.
+All 48 supplied designs are represented by uncropped production assets. No source design is skipped. The source-to-delivery mapping remains in `content/social-media-campaign-asset-mapping.json`; the obsolete staging copies have been removed after replacement. The existing cover and OG composition remain unchanged.
 
 - Six client Instagram presentations: Sand Circus (3 posts, including a two-slide Arabic/English Talent x Brand carousel), Memo Travel (14), SBH (8), LAPE (4), El Masrya (4), Cultural Development Fund (3).
 - One mixed Instagram gallery: 9 additional designs, including both Saudi National Day portraits, Beyond, Madina, Alsallal, SkyTrack, both engineering invitations, and the clearly labeled Moeen design exercise.
@@ -16,7 +16,7 @@ All 48 files supplied in public/projects/New folder are included as optimized, u
 
 ## Validation
 
-Production build, lint, and TypeScript pass. File mapping accounts for each of the 48 originals exactly once. Browser automation remains unavailable, so interactive desktop/mobile and measured overflow checks are not claimed.
+Production build, lint, and TypeScript pass. File mapping accounts for each of the 48 originals exactly once. The public page has also been checked at desktop, tablet, and mobile widths for overflow, broken images, layout shift, headings, and metadata.
 
 ## Source files for this project
 
@@ -30,7 +30,7 @@ Production build, lint, and TypeScript pass. File mapping accounts for each of t
 
 ## Delivery image files
 
-- public/projects/social-media-campaign-design/cover/social-media-campaign-design-cover.webp
+- public/projects/social-media-campaign-design/cover/social-media-campaign-design-cover.png
 - public/projects/social-media-campaign-design/featured/cultural-development-fund/cultural-development-fund-financing.webp
 - public/projects/social-media-campaign-design/featured/el-masrya/el-masrya-handle-200.webp
 - public/projects/social-media-campaign-design/featured/el-masrya/el-masrya-handle-203.webp

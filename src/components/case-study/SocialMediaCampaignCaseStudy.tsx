@@ -58,24 +58,28 @@ const relatedBrandWork = [
     name: "PPR",
     description: "Legal marketing and public relations content.",
     image: "/projects/pillars-pr/social-media/static/pillars-pr-active-social-media-for-lawyers.webp",
+    alt: "Pillars PR social media design about building an active digital presence for lawyers.",
     href: "/work/pillars-pr-brand-communication-design",
   },
   {
     name: "MENA Law Reporters",
     description: "Bilingual legal media and professional content.",
     image: "/projects/mena-law-reporters/social-media/mena-law-reporters-legal-news-awareness-post.webp",
+    alt: "MENA Law Reporters bilingual social media design for legal news and professional awareness.",
     href: "/work/mena-law-reporters",
   },
   {
     name: "X Factor Interior Design",
     description: "Luxury interior design and property content.",
     image: "/projects/x-factor-interior-design/social-media/x-factor-interior-design-dubai-bespoke-interiors.webp",
+    alt: "X Factor Interior Design social media post presenting bespoke luxury interiors in Dubai.",
     href: "/work/x-factor-interior-design-branding-case-study",
   },
   {
     name: "RenovoFix",
     description: "Property maintenance and home-services content.",
     image: "/projects/renovofix/social-media/renovofix-responsive-maintenance-social-post.webp",
+    alt: "RenovoFix social media design promoting responsive property maintenance services in Dubai.",
     href: "/work/renovofix-brand-digital-design",
   },
 ] as const;
@@ -254,7 +258,7 @@ export default function SocialMediaCampaignCaseStudy({ project }: { project: Pro
                   <div className="relative aspect-square overflow-hidden bg-surface">
                     <Image
                       src={brand.image}
-                      alt={`${brand.name} social media design`}
+                      alt={brand.alt}
                       fill
                       sizes="(min-width: 1024px) 288px, (min-width: 640px) 50vw, 100vw"
                       className="object-cover transition-transform duration-500 ease-out group-hover:scale-[1.025]"

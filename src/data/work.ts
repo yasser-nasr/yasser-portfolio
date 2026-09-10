@@ -41,7 +41,6 @@ function toWorkProject(project: (typeof projects)[number]): WorkProject {
   };
 }
 
-export const workProjects = projects.map(toWorkProject);
 export const publishedWorkProjects = publishedProjects.map(toWorkProject);
 export const developmentWorkProjects = projects
   .filter((project) => project.publishable || Boolean(project.seo))

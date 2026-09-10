@@ -16,20 +16,6 @@ export const resumeHero = {
   ],
 };
 
-// Retained for the reusable ResumeSnapshot component, which is not rendered
-// on the CV-aligned Resume page.
-export type SnapshotStat = {
-  title: string;
-  description: string;
-};
-
-export const snapshotStats: SnapshotStat[] = [
-  { title: "6+ Years", description: "Design experience across branding, digital, campaigns, motion, and visual communication." },
-  { title: "GCC Market", description: "Remote experience with businesses, agencies, and organizations across UAE and Saudi Arabia." },
-  { title: "Brand Systems", description: "Building visual identities, design systems, websites, campaigns, presentations, and digital assets." },
-  { title: "150+ Students", description: "Mentored students through graphic design programs, portfolio development, and practical design training." },
-];
-
 export const resumeProfile = {
   heading: "Professional Summary",
   paragraphs: professionalSummary,
