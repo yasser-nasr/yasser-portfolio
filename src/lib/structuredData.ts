@@ -12,6 +12,7 @@ export const structuredDataIds = {
   homePage: `${productionSiteUrl}/#webpage`,
   aboutPage: `${productionSiteUrl}/about#webpage`,
   contactPage: `${productionSiteUrl}/contact#webpage`,
+  motionVideoPage: `${productionSiteUrl}/motion-video#webpage`,
 } as const;
 
 const websiteEntity = {
@@ -138,6 +139,43 @@ export function contactPageStructuredData(description: string) {
         description,
         isPartOf: websiteReference,
         mainEntity: personReference,
+        breadcrumb: { "@id": breadcrumb["@id"] },
+      },
+      breadcrumb,
+    ],
+  };
+}
+
+export function motionVideoPageStructuredData(description: string) {
+  const url = `${productionSiteUrl}/motion-video`;
+  const breadcrumb = breadcrumbEntity(
+    [
+      { name: "Home", url: productionSiteUrl },
+      { name: "Motion & Video", url },
+    ],
+    url,
+  );
+
+  return {
+    "@context": schemaContext,
+    "@graph": [
+      {
+        "@type": "CollectionPage",
+        "@id": structuredDataIds.motionVideoPage,
+        name: "Motion & Video",
+        url,
+        description,
+        isPartOf: websiteReference,
+        about: personReference,
+        keywords: [
+          "motion graphics",
+          "reels",
+          "short-form content",
+          "video editing",
+          "campaign video",
+          "branded content",
+          "multimedia",
+        ],
         breadcrumb: { "@id": breadcrumb["@id"] },
       },
       breadcrumb,

@@ -1,4 +1,4 @@
-export const markets = ["Egypt", "UAE", "Saudi Arabia", "Wider GCC"];
+export const markets = ["Egypt", "UAE", "Saudi Arabia", "Wider GCC", "United States"] as const;
 
 export const industries = [
   "Real Estate & Development",
@@ -18,6 +18,7 @@ export const industries = [
   "Agriculture",
   "Environment & Sustainability",
   "Government & Public Sector",
+  "Nonprofit & Community Services",
   "Culture & Community Development",
   "Manufacturing & Consumer Products",
 ] as const;

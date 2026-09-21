@@ -23,6 +23,7 @@ const marketFlags: Record<
   Egypt: { src: "https://flagcdn.com/w80/eg.png", width: 30, height: 20 },
   UAE: { src: "https://flagcdn.com/w80/ae.png", width: 32, height: 16 },
   "Saudi Arabia": { src: "https://flagcdn.com/w80/sa.png", width: 30, height: 20 },
+  "United States": { src: "https://flagcdn.com/w80/us.png", width: 32, height: 17 },
   "Wider GCC": {
     src: "https://upload.wikimedia.org/wikipedia/commons/thumb/a/a6/Flag_of_the_Cooperation_Council_for_the_Arab_States_of_the_Gulf.svg/330px-Flag_of_the_Cooperation_Council_for_the_Arab_States_of_the_Gulf.svg.png",
     width: 32,
@@ -88,7 +89,7 @@ export default function MarketsIndustries() {
 
             <Reveal
               variants={container}
-              className="mt-4 grid grid-cols-2 overflow-hidden rounded-2xl border border-edge sm:grid-cols-4"
+              className="mt-4 grid grid-cols-2 overflow-hidden rounded-2xl border border-edge sm:grid-cols-5"
             >
               {markets.map((market, index) => {
                 const isSecondColumn = index % 2 === 1;

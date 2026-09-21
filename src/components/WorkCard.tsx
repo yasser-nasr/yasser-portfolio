@@ -10,13 +10,14 @@ export default function WorkCard({
   index: number;
 }) {
   const imageFirst = index % 2 === 0;
-  const href = `/work/${project.slug}`;
+  const href = project.href ?? `/work/${project.slug}`;
+  const linkLabel = project.linkLabel ?? "View Case Study";
 
   return (
     <article className="group grid min-w-0 grid-cols-1 items-center gap-8 md:grid-cols-12 md:gap-10 lg:gap-16">
       <Link
         href={href}
-        aria-label={`View ${project.name} case study`}
+        aria-label={`${linkLabel}: ${project.name}`}
         className={`relative col-span-7 block aspect-[4/3] min-w-0 overflow-hidden rounded-xl bg-surface-card ${
           imageFirst ? "md:order-1" : "md:order-2"
         }`}
@@ -92,7 +93,7 @@ export default function WorkCard({
           href={href}
           className="mt-8 inline-flex min-h-11 items-center gap-2 py-2 text-sm font-medium text-ink"
         >
-          View Case Study
+          {linkLabel}
           <span aria-hidden="true" className="transition-transform duration-300 group-hover:translate-x-1">
             →
           </span>
