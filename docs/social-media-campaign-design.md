@@ -4,11 +4,11 @@ Production route: https://yassernasr.com/work/social-media-campaign-design
 
 ## Current presentation
 
-All 48 supplied designs are represented by uncropped production assets. No source design is skipped. The source-to-delivery mapping remains in `content/social-media-campaign-asset-mapping.json`; the obsolete staging copies have been removed after replacement. The existing cover and OG composition remain unchanged.
+All 49 supplied designs are represented by uncropped production assets. No source design is skipped. The source-to-delivery mapping remains in `content/social-media-campaign-asset-mapping.json`; the obsolete staging copies have been removed after replacement. The existing cover and OG composition remain unchanged.
 
 - Six client Instagram presentations: Sand Circus (3 posts, including a two-slide Arabic/English Talent x Brand carousel), Memo Travel (14), SBH (8), LAPE (4), El Masrya (4), Cultural Development Fund (3).
-- One mixed Instagram gallery: 9 additional designs, including both Saudi National Day portraits, Beyond, Madina, Alsallal, SkyTrack, both engineering invitations, and the clearly labeled Moeen design exercise.
-- Facebook profile presentation: LAPE cover and avatar, completing all 48 source designs.
+- One mixed Instagram gallery: 10 additional designs, including both Saudi National Day portraits, Beyond, Madina, Edrak Academy, Alsallal, SkyTrack, both engineering invitations, and the clearly labeled Moeen design exercise.
+- Facebook profile presentation: LAPE cover and avatar, completing all 49 source designs.
 - Uses the existing SocialMediaGrid component with profile headers, three-column grids on mobile and desktop, and the existing post dialog, keyboard dismissal, and full-image view.
 - Optional previewFit=contain and mobileColumns=3 props preserve full artwork and supply the requested grid on this page. Defaults remain unchanged for existing projects.
 - Brand profiles use supplied artwork thumbnails, with LAPE's actual supplied avatar; no client logos or social follower numbers are fabricated.
@@ -73,6 +73,7 @@ Production build, lint, and TypeScript pass. File mapping accounts for each of t
 - public/projects/social-media-campaign-design/selected/cultural-development-fund-craft.webp
 - public/projects/social-media-campaign-design/selected/cultural-development-fund-culinary.webp
 - public/projects/social-media-campaign-design/selected/el-masrya-cookware-handle.webp
+- public/projects/social-media-campaign-design/selected/edrak-academy-self-development-course.webp
 - public/projects/social-media-campaign-design/selected/madina-womens-hospital.webp
 - public/projects/social-media-campaign-design/selected/moeen-design-exercise.webp
 - public/projects/social-media-campaign-design/selected/saudi-council-of-engineers-arabic.webp

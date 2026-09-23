@@ -48,9 +48,10 @@ const selected: { name: string; asset: AssetKey }[] = [
   { name: "Moeen", asset: "moeen-design-exercise" },
 ];
 
-const madinaAndElMasrya: { name: string; asset: AssetKey }[] = [
+const selectedSquare: { name: string; asset: AssetKey }[] = [
   { name: "Madina Women's Hospital", asset: "madina-womens-hospital" },
   { name: "El Masrya", asset: "el-masrya-cookware-handle" },
+  { name: "Edrak Academy", asset: "edrak-academy-self-development-course" },
 ];
 
 const relatedBrandWork = [
@@ -95,6 +96,7 @@ const profileSubtitles: Record<string, string> = {
   Moeen: "Community support content",
   "Madina Women's Hospital": "Healthcare communication",
   "El Masrya": "Cookware product design",
+  "Edrak Academy": "Training and development content",
 };
 
 function post(asset: AssetKey, name: string) {
@@ -224,26 +226,21 @@ export default function SocialMediaCampaignCaseStudy({ project }: { project: Pro
               mobileColumns={3}
               showEngagementCount={false}
             />
+            <SocialMediaGrid
+              brandName="Selected Social Designs"
+              username="Selected Social Designs"
+              subtitle="Square social designs across brands"
+              logo="/brand/yasser-nasr-portrait.webp"
+              logoAlt=""
+              items={selectedSquare.map(({ asset, name }) => post(asset, name))}
+              previewAspect="square"
+              previewFit="cover"
+              showProfileHeader={false}
+              showProfileImage={false}
+              mobileColumns={2}
+              showEngagementCount={false}
+            />
           </div>
-        </section>
-
-        <section aria-labelledby="madina-el-masrya" className="border-t border-edge py-16 md:py-24">
-          <h2 id="madina-el-masrya" className="mb-12 text-3xl font-semibold text-ink md:mb-16 md:text-4xl">Madina &amp; El Masrya</h2>
-          <SocialMediaGrid
-            brandName="Madina & El Masrya"
-            username="Madina & El Masrya"
-            subtitle="Healthcare and product design"
-            logo="/brand/yasser-nasr-portrait.webp"
-            logoAlt=""
-            items={madinaAndElMasrya.map(({ asset, name }) => post(asset, name))}
-            previewAspect="square"
-            previewFit="cover"
-            showProfileImage={false}
-            followButtonClassName="rounded-full bg-ink text-surface transition-opacity hover:opacity-80"
-            verificationClassName="text-ink-soft"
-            mobileColumns={2}
-            showEngagementCount={false}
-          />
         </section>
 
         <section aria-labelledby="more-brand-work" className="border-t border-edge py-16 md:py-24">

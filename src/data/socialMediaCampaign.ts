@@ -114,6 +114,12 @@ export const socialCampaignAssets = {
     "height": 1080,
     "alt": "Madina Women's Hospital fertility treatment social media design with a baby and capsule forms on a pink background."
   },
+  "edrak-academy-self-development-course": {
+    "src": "/projects/social-media-campaign-design/selected/edrak-academy-self-development-course.webp",
+    "width": 1080,
+    "height": 1080,
+    "alt": "Edrak Academy Arabic social media design promoting a self-development training course with an illustrated man climbing steps toward a lightbulb."
+  },
   "alsallal-property-launch": {
     "src": "/projects/social-media-campaign-design/selected/alsallal-property-launch.webp",
     "width": 1080,
