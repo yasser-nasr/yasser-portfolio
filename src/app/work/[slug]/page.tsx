@@ -11,6 +11,7 @@ import ThreeDExhibitionCaseStudy from "@/components/case-study/ThreeDExhibitionC
 import OrientaCollagenCaseStudy from "@/components/case-study/OrientaCollagenCaseStudy";
 import DolatoCaseStudy from "@/components/case-study/DolatoCaseStudy";
 import SocialMediaCampaignCaseStudy from "@/components/case-study/SocialMediaCampaignCaseStudy";
+import PrintDesignCaseStudy from "@/components/case-study/PrintDesignCaseStudy";
 import { getPreviewableProject, publishedProjects } from "@/data/projects";
 import { projectPageStructuredData } from "@/lib/structuredData";
 
@@ -66,7 +67,9 @@ export default async function WorkCaseStudyPage({ params }: Props) {
   const project = getPreviewableProject(slug);
   if (!project) notFound();
 
-  const caseStudy = project.slug === "social-media-campaign-design"
+  const caseStudy = project.slug === "print-editorial-design"
+    ? <PrintDesignCaseStudy project={project} />
+    : project.slug === "social-media-campaign-design"
     ? <SocialMediaCampaignCaseStudy project={project} />
     : project.slug === "dolato-warm-winter-marvels"
     ? <DolatoCaseStudy project={project} />

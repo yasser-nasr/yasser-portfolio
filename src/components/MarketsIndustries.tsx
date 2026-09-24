@@ -23,6 +23,7 @@ const marketFlags: Record<
   Egypt: { src: "https://flagcdn.com/w80/eg.png", width: 30, height: 20 },
   UAE: { src: "https://flagcdn.com/w80/ae.png", width: 32, height: 16 },
   "Saudi Arabia": { src: "https://flagcdn.com/w80/sa.png", width: 30, height: 20 },
+  Vienna: { src: "https://flagcdn.com/w80/at.png", width: 30, height: 20 },
   "United States": { src: "https://flagcdn.com/w80/us.png", width: 32, height: 17 },
   "Wider GCC": {
     src: "https://upload.wikimedia.org/wikipedia/commons/thumb/a/a6/Flag_of_the_Cooperation_Council_for_the_Arab_States_of_the_Gulf.svg/330px-Flag_of_the_Cooperation_Council_for_the_Arab_States_of_the_Gulf.svg.png",
@@ -89,18 +90,14 @@ export default function MarketsIndustries() {
 
             <Reveal
               variants={container}
-              className="mt-4 grid grid-cols-2 overflow-hidden rounded-2xl border border-edge sm:grid-cols-5"
+              className="mt-4 grid grid-cols-2 gap-px overflow-hidden rounded-2xl border border-edge bg-edge sm:grid-cols-3 lg:grid-cols-6"
             >
-              {markets.map((market, index) => {
-                const isSecondColumn = index % 2 === 1;
-                const isSecondRow = index >= 2;
+              {markets.map((market) => {
                 return (
                   <motion.div
                     key={market}
                     variants={chip}
-                    className={`px-4 py-6 text-center transition-colors duration-300 hover:bg-surface-card/45 ${
-                      isSecondColumn ? "border-l" : ""
-                    } ${isSecondRow ? "border-t sm:border-t-0 sm:border-l" : ""} border-edge bg-surface-card/20`}
+                    className="bg-background px-4 py-6 text-center transition-colors duration-300 hover:bg-surface-card/45"
                   >
                     <div className="flex flex-col items-center gap-3">
                       <div className="flex h-5 items-center justify-center">

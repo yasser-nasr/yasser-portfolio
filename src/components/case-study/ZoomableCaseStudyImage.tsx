@@ -14,6 +14,7 @@ export default function ZoomableCaseStudyImage({
   className = "",
   compact = false,
   priority = false,
+  showLabel = true,
   frameRadiusClassName = "rounded-xl",
   sizes = "(min-width: 1024px) 520px, (min-width: 640px) 50vw, 100vw",
 }: {
@@ -25,6 +26,7 @@ export default function ZoomableCaseStudyImage({
   className?: string;
   compact?: boolean;
   priority?: boolean;
+  showLabel?: boolean;
   frameRadiusClassName?: string;
   sizes?: string;
 }) {
@@ -46,7 +48,7 @@ export default function ZoomableCaseStudyImage({
   return (
     <>
       <figure className={`min-w-0 ${className}`} style={compact ? undefined : { paddingTop: "4rem" }}>
-        {!compact ? (
+        {!compact && showLabel ? (
           <figcaption
             className="text-xs uppercase tracking-[0.14em] text-ink-faint"
             style={{ display: "block", marginBottom: "1rem" }}
@@ -76,7 +78,7 @@ export default function ZoomableCaseStudyImage({
             View details
           </span>
         </button>
-        {compact ? (
+        {compact && showLabel ? (
           <figcaption className="mt-3 text-sm leading-6 text-ink-faint">
             {label}
           </figcaption>
