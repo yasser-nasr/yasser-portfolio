@@ -12,6 +12,7 @@ import OrientaCollagenCaseStudy from "@/components/case-study/OrientaCollagenCas
 import DolatoCaseStudy from "@/components/case-study/DolatoCaseStudy";
 import SocialMediaCampaignCaseStudy from "@/components/case-study/SocialMediaCampaignCaseStudy";
 import PrintDesignCaseStudy from "@/components/case-study/PrintDesignCaseStudy";
+import AlsallalDevelopmentsCaseStudy from "@/components/case-study/AlsallalDevelopmentsCaseStudy";
 import { getPreviewableProject, publishedProjects } from "@/data/projects";
 import { projectPageStructuredData } from "@/lib/structuredData";
 
@@ -71,6 +72,8 @@ export default async function WorkCaseStudyPage({ params }: Props) {
     ? <PrintDesignCaseStudy project={project} />
     : project.slug === "social-media-campaign-design"
     ? <SocialMediaCampaignCaseStudy project={project} />
+    : project.slug === "alsallal-developments-brand-applications"
+    ? <AlsallalDevelopmentsCaseStudy project={project} />
     : project.slug === "dolato-warm-winter-marvels"
     ? <DolatoCaseStudy project={project} />
     : project.slug === "3d-exhibition-experiential-design"

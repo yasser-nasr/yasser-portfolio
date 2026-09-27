@@ -15,7 +15,7 @@ const openGraphDescription =
   "Selected reels, motion graphics, video editing, campaign content, and multimedia work by Yasser Nasr.";
 const url = `${productionSiteUrl}/motion-video`;
 const mediaBase = "/projects/videos-reels";
-const socialImage = `${mediaBase}/yasser-nasr-motion-video-portfolio-og.jpg`;
+const socialImage = `${mediaBase}/yasser-nasr-motion-video-portfolio-og.webp`;
 
 export const metadata: Metadata = {
   title: { absolute: title },

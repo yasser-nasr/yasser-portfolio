@@ -114,6 +114,12 @@ export const socialCampaignAssets = {
     "height": 1080,
     "alt": "Madina Women's Hospital fertility treatment social media design with a baby and capsule forms on a pink background."
   },
+  "macan-real-estate": {
+    "src": "/projects/social-media-campaign-design/selected/macan-real-estate-new-cairo-apartment-social-media-design.webp",
+    "width": 1080,
+    "height": 1080,
+    "alt": "Macan Real Estate New Cairo apartment social media advertisement featuring a modern ready-to-move three-bedroom home at sunset."
+  },
   "edrak-academy-self-development-course": {
     "src": "/projects/social-media-campaign-design/selected/edrak-academy-self-development-course.webp",
     "width": 1080,

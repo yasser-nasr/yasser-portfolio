@@ -18,6 +18,10 @@ const nextConfig: NextConfig = {
       source: "/work/dolato-winter-theme-competition-2023",
       destination: "/work/dolato-warm-winter-marvels",
       permanent: true,
+    }, {
+      source: "/work/alsallal-developments-brand-identity",
+      destination: "/work/alsallal-developments-brand-applications",
+      permanent: true,
     }];
   },
   poweredByHeader: false,

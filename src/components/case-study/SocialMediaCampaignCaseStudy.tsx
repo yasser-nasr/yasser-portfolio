@@ -49,9 +49,10 @@ const selected: { name: string; asset: AssetKey }[] = [
 ];
 
 const selectedSquare: { name: string; asset: AssetKey }[] = [
-  { name: "Madina Women's Hospital", asset: "madina-womens-hospital" },
-  { name: "El Masrya", asset: "el-masrya-cookware-handle" },
+  { name: "Macan Real Estate", asset: "macan-real-estate" },
   { name: "Edrak Academy", asset: "edrak-academy-self-development-course" },
+  { name: "El Masrya", asset: "el-masrya-cookware-handle" },
+  { name: "Madina Women's Hospital", asset: "madina-womens-hospital" },
 ];
 
 const relatedBrandWork = [
@@ -94,6 +95,7 @@ const profileSubtitles: Record<string, string> = {
   Alsallal: "Real estate development",
   SkyTrack: "Logistics and cargo tracking",
   Moeen: "Community support content",
+  "Macan Real Estate": "New Cairo property marketing",
   "Madina Women's Hospital": "Healthcare communication",
   "El Masrya": "Cookware product design",
   "Edrak Academy": "Training and development content",

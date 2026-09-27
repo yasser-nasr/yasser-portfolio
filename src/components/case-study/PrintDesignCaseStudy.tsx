@@ -42,42 +42,42 @@ const karawiaPages: Visual[] = [
 
 const referenceBooklet: Visual[] = [
   {
-    src: `${base}/reference/reference-medical-training-booklet-standing-cover.jpg`,
+    src: `${base}/reference/reference-medical-training-booklet-standing-cover.webp`,
     alt: "Standing mockup of the Reference Arabic health-education booklet with its anniversary identity on the white cover.",
     label: "Standing cover",
     width: 4500,
     height: 3000,
   },
   {
-    src: `${base}/reference/reference-medical-training-booklet-flat-cover.jpg`,
+    src: `${base}/reference/reference-medical-training-booklet-flat-cover.webp`,
     alt: "Flat-lay mockup of the Reference Arabic health-education booklet cover.",
     label: "Cover detail",
     width: 4500,
     height: 3000,
   },
   {
-    src: `${base}/reference/reference-medical-training-booklet-interior-spread-01.jpg`,
+    src: `${base}/reference/reference-medical-training-booklet-interior-spread-01.webp`,
     alt: "Open Reference booklet spread with Arabic health guidance, blue editorial shapes, red highlights, and medical imagery.",
     label: "Editorial spread 01",
     width: 4500,
     height: 3000,
   },
   {
-    src: `${base}/reference/reference-medical-training-booklet-interior-spread-02.jpg`,
+    src: `${base}/reference/reference-medical-training-booklet-interior-spread-02.webp`,
     alt: "Open Reference booklet spread showing structured Arabic health information with blue dividers and red section headings.",
     label: "Editorial spread 02",
     width: 4500,
     height: 3000,
   },
   {
-    src: `${base}/reference/reference-medical-training-booklet-interior-spread-03.jpg`,
+    src: `${base}/reference/reference-medical-training-booklet-interior-spread-03.webp`,
     alt: "Open Reference booklet spread combining Arabic health content, medical staff photography, icons, and contact information.",
     label: "Editorial spread 03",
     width: 4500,
     height: 3000,
   },
   {
-    src: `${base}/reference/reference-medical-training-booklet-open-cover.jpg`,
+    src: `${base}/reference/reference-medical-training-booklet-open-cover.webp`,
     alt: "Open-cover mockup of the Reference Arabic health-education booklet showing the front and back cover system.",
     label: "Front and back cover",
     width: 4500,
@@ -202,7 +202,7 @@ export default function PrintDesignCaseStudy({ project }: { project: Project }) 
           </HeadingReveal>
           <Reveal>
             <p className="mt-7 max-w-3xl text-lg leading-8 text-ink-soft">
-              Selected work across posters, publications, technical literature, display graphics, and information-led print communication.
+              Selected work across posters, publications, corporate stationery, technical literature, display graphics, and information-led print communication.
             </p>
             <ul aria-label="Print and editorial design capabilities" className="mt-6 flex flex-wrap gap-x-5 gap-y-2 text-sm text-ink-faint">
               {project.scope?.map((item) => <li key={item}>{item}</li>)}
@@ -249,6 +249,25 @@ export default function PrintDesignCaseStudy({ project }: { project: Project }) 
           </div>
         </section>
 
+        <section id="a1-investments" aria-labelledby="a1-investments-heading" className="mt-20 border-t border-edge pt-12 md:mt-28 md:pt-16">
+          <SectionHeader
+            id="a1-investments-heading"
+            eyebrow="Corporate Stationery / Business Card Design"
+            title="A1 Investments"
+            metaLabel="Location"
+            metaValue="Dubai, UAE"
+          >
+            A premium business card system for a Dubai investment company, combining deep green stock, restrained gold detailing, geometric brand forms, and a scannable contact experience.
+          </SectionHeader>
+          <VisualCard visual={{
+            src: `${base}/a1-investments/a1-investments-dubai-business-card-mockup.webp`,
+            alt: "A1 Investments Dubai business card mockup featuring dark green cards, gold geometric branding, employee contact details, and a QR code.",
+            label: "A1 Investments corporate business card design",
+            width: 4000,
+            height: 3000,
+          }} />
+        </section>
+
         <section id="nestle-sustainability" aria-labelledby="nestle-sustainability-heading" className="mt-20 border-t border-edge pt-12 md:mt-28 md:pt-16">
           <SectionHeader
             id="nestle-sustainability-heading"
@@ -262,7 +281,7 @@ export default function PrintDesignCaseStudy({ project }: { project: Project }) 
           <div className="grid gap-5 md:grid-cols-[1.35fr_0.65fr] md:items-start">
             <VisualCard visual={hero} />
             <VisualCard visual={{
-              src: `${base}/nestle-green-poster-design/nestle-reducing-consumption-waste-poster.png`,
+              src: `${base}/nestle-green-poster-design/nestle-reducing-consumption-waste-poster.webp`,
               alt: "Green Nestlé sustainability poster with a light switch above a globe and the message Don't Let Our Future Be Grey.",
               label: "Final poster artwork",
               width: 1080,
@@ -283,14 +302,14 @@ export default function PrintDesignCaseStudy({ project }: { project: Project }) 
           </SectionHeader>
           <div className="grid gap-5 md:grid-cols-2 md:items-start">
             <VisualCard visual={{
-              src: `${base}/ezz-elite/ezz-elite-equusline-roll-up-banner-front.jpg`,
+              src: `${base}/ezz-elite/ezz-elite-equusline-roll-up-banner-front.webp`,
               alt: "Front mockup of an Ezz Elite bilingual EquusLine horse nutrition roll-up banner with product packs and a championship trophy.",
               label: "Front presentation",
               width: 3000,
               height: 2500,
             }} />
             <VisualCard visual={{
-              src: `${base}/ezz-elite/ezz-elite-equusline-roll-up-banner-perspective.jpg`,
+              src: `${base}/ezz-elite/ezz-elite-equusline-roll-up-banner-perspective.webp`,
               alt: "Perspective mockup of the Ezz Elite EquusLine roll-up banner for premium horse nutrition products.",
               label: "Perspective presentation",
               width: 3000,
