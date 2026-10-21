@@ -49,6 +49,7 @@ export default function PrintDocumentSlides({ slides, ariaLabel, spread = false,
     const previousOverflow = document.body.style.overflow;
     document.body.style.overflow = "hidden";
     const onKeyDown = (event: KeyboardEvent) => {
+      if (["ArrowLeft", "ArrowRight"].includes(event.key)) event.preventDefault();
       if (event.key === "Escape") setIsOpen(false);
       if (event.key === "ArrowLeft") previous();
       if (event.key === "ArrowRight") next();
@@ -77,6 +78,8 @@ export default function PrintDocumentSlides({ slides, ariaLabel, spread = false,
         aria-label={ariaLabel}
         tabIndex={0}
         onKeyDown={(event) => {
+          if (isOpen) return;
+          if (["ArrowLeft", "ArrowRight"].includes(event.key)) event.preventDefault();
           if (event.key === "ArrowLeft") previous();
           if (event.key === "ArrowRight") next();
         }}

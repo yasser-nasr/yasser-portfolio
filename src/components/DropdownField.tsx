@@ -122,7 +122,7 @@ export default function DropdownField<T>({
   function handleNavigationKey(event: React.KeyboardEvent) {
     if (event.key === "ArrowDown") {
       event.preventDefault();
-      setActiveIndex((i) => Math.min(i + 1, visibleOptions.length - 1));
+      setActiveIndex((i) => Math.max(0, Math.min(i + 1, visibleOptions.length - 1)));
     } else if (event.key === "ArrowUp") {
       event.preventDefault();
       setActiveIndex((i) => Math.max(i - 1, 0));
@@ -162,6 +162,7 @@ export default function DropdownField<T>({
         type="button"
         aria-haspopup="listbox"
         aria-expanded={open}
+        aria-invalid={invalid || undefined}
         aria-controls={open ? listboxId : undefined}
         aria-describedby={invalid ? `${id}-error` : undefined}
         onClick={() => {

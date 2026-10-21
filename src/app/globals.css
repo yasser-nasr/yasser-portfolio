@@ -11,7 +11,7 @@ html[data-theme="dark"] {
   --border: #3A3A38;
   --text-main: #F2F0EA;
   --text-secondary: #B8B8B2;
-  --text-muted: #7A7A76;
+  --text-muted: #A09F99;
   color-scheme: dark;
 }
 
@@ -22,7 +22,7 @@ html[data-theme="light"] {
   --border: #C8C3B8;
   --text-main: #151515;
   --text-secondary: #4A4A46;
-  --text-muted: #77736B;
+  --text-muted: #625E56;
   color-scheme: light;
 }
 

@@ -11,8 +11,6 @@ const slideDetails = [
   { page: "04", title: "The Big Opportunity", alt: "Investor pitch slide contrasting Dubai's development opportunity with land sourcing and delivery challenges.", width: 4027, height: 2265 },
   { page: "05", title: "Our Solution", alt: "Three-step real estate development framework covering sourcing, launch, tender, execution, and procurement.", width: 4027, height: 2265 },
   { page: "06", title: "Step 1: Plot Sourcing", alt: "Process slide explaining plot sourcing and feasibility study activities for real estate development.", width: 4427, height: 2490 },
-  { page: "07", title: "Step 2: Design and Launch", alt: "Process slide covering the design and launch package alongside sales strategy and launch planning.", width: 4427, height: 2490 },
-  { page: "08", title: "Step 3: Tender and Execution", alt: "Process slide outlining tender, execution, procurement, and project management activities.", width: 4427, height: 2490 },
   { page: "09", title: "Why We Win", alt: "Competitive advantage slide presenting Alsallal Developments' structured, data-driven, transparent delivery model.", width: 6640, height: 3735 },
   { page: "10", title: "Case Study Teaser", alt: "Case study teaser slide mapping analysis, feasibility, design workflow, cost control, and value creation.", width: 6640, height: 3735 },
   { page: "11", title: "What We're Raising", alt: "Investor funding slide presenting a pledged property option and cash injection structure.", width: 6640, height: 3735 },
@@ -300,31 +298,29 @@ export default function PresentationsCaseStudy({ project }: { project: Project }
         <CaseStudyBackLink />
 
         <header className="py-14 md:py-20">
-          <p className="font-display text-sm uppercase tracking-[0.22em] text-ink-faint md:text-base">Presentation Design / Pitch Decks / Reports</p>
+          <p className="font-display text-sm uppercase tracking-[0.22em] text-ink-faint md:text-base">Presentation / Layout / Information Design</p>
           <h1 className="mt-5 max-w-5xl break-words text-4xl font-semibold leading-tight text-ink md:text-7xl">Presentations, Pitch Decks &amp; Reports</h1>
-          <p className="mt-6 max-w-3xl text-lg leading-8 text-ink-soft md:text-xl md:leading-9">A growing collection of narrative-led presentation and information design, spanning investment memoranda, company profiles, board-level decision support, practical user guidance, and project planning for real estate audiences.</p>
+          <p className="mt-6 max-w-3xl text-lg leading-8 text-ink-soft md:text-xl md:leading-9">Presentation and layout design that gives complex information a clear structure. Explore selected pitch decks, company profiles, reports, user guides, and project schedules designed for clear communication and confident decision-making.</p>
           <dl className="mt-10 grid gap-6 border-t border-edge pt-7 sm:grid-cols-3">
             <div><dt className="text-xs uppercase tracking-[0.16em] text-ink-faint">Formats</dt><dd className="mt-2 text-sm leading-6 text-ink">Pitch decks, memoranda, company profiles, and reports</dd></div>
-            <div><dt className="text-xs uppercase tracking-[0.16em] text-ink-faint">Market</dt><dd className="mt-2 text-sm leading-6 text-ink">{project.market}</dd></div>
+            <div><dt className="text-xs uppercase tracking-[0.16em] text-ink-faint">Focus</dt><dd className="mt-2 text-sm leading-6 text-ink">Layout, typography, and information hierarchy</dd></div>
             <div><dt className="text-xs uppercase tracking-[0.16em] text-ink-faint">Role</dt><dd className="mt-2 text-sm leading-6 text-ink">{project.role}</dd></div>
           </dl>
         </header>
 
-        <section aria-labelledby="alsallal-deck-heading" className="border-t border-edge py-16 md:py-24">
+        <section id="alsallal-deck" aria-labelledby="alsallal-deck-heading" className="scroll-mt-28 border-t border-edge py-16 md:py-24">
           <Reveal>
-            <p className="font-display text-sm uppercase tracking-[0.2em] text-ink-faint">Featured Deck 01</p>
-            <h2 id="alsallal-deck-heading" className="mt-4 max-w-4xl text-3xl font-semibold leading-tight text-ink md:text-5xl">Alsallal Developments Investor Pitch</h2>
-            <p className="mt-6 max-w-3xl text-base leading-8 text-ink-soft md:text-lg">A concise investment narrative that moves from market opportunity and delivery challenges to a three-step development framework, competitive advantages, funding needs, and clear next steps.</p>
+            <h2 id="alsallal-deck-heading" className="max-w-4xl text-3xl font-semibold leading-tight text-ink md:text-5xl">Alsallal Developments Investor Pitch</h2>
+            <p className="mt-6 max-w-3xl text-base leading-8 text-ink-soft md:text-lg">An 11-slide selection presenting the market opportunity, development framework, competitive strengths, and funding needs. Architectural imagery and a consistent slide layout guide the investment story.</p>
           </Reveal>
           <div className="mt-10 md:mt-14">
-            <PresentationDeckViewer slides={slides} ariaLabel="Alsallal Developments investor pitch deck" />
+            <PresentationDeckViewer slides={slides} ariaLabel="Alsallal Developments investor pitch deck" prioritizeCover />
           </div>
         </section>
 
-        <section aria-labelledby="happy-tenant-guide-heading" className="border-t border-edge py-16 md:py-24">
+        <section id="happy-tenant-guide" aria-labelledby="happy-tenant-guide-heading" className="scroll-mt-28 border-t border-edge py-16 md:py-24">
           <Reveal>
-            <p className="font-display text-sm uppercase tracking-[0.2em] text-ink-faint">User Guide 02</p>
-            <h2 id="happy-tenant-guide-heading" className="mt-4 max-w-4xl text-3xl font-semibold leading-tight text-ink md:text-5xl">Happy Tenant Maintenance Request Guide</h2>
+            <h2 id="happy-tenant-guide-heading" className="max-w-4xl text-3xl font-semibold leading-tight text-ink md:text-5xl">Happy Tenant Maintenance Request Guide</h2>
             <p className="mt-6 max-w-3xl text-base leading-8 text-ink-soft md:text-lg">A three-page mobile application guide created for SBH tenants. The vertical format combines concise instructions with annotated interface screens to explain installation, login, Help Desk access, category selection, and maintenance request submission.</p>
           </Reveal>
           <div className="mt-10 md:mt-14">
@@ -335,10 +331,9 @@ export default function PresentationsCaseStudy({ project }: { project: Project }
           </div>
         </section>
 
-        <section aria-labelledby="apartment-refurbishment-heading" className="border-t border-edge py-16 md:py-24">
+        <section id="apartment-refurbishment" aria-labelledby="apartment-refurbishment-heading" className="scroll-mt-28 border-t border-edge py-16 md:py-24">
           <Reveal>
-            <p className="font-display text-sm uppercase tracking-[0.2em] text-ink-faint">Project Schedule 03</p>
-            <h2 id="apartment-refurbishment-heading" className="mt-4 max-w-4xl text-3xl font-semibold leading-tight text-ink md:text-5xl">Apartment Refurbishment: Timeline &amp; Payment Schedule</h2>
+            <h2 id="apartment-refurbishment-heading" className="max-w-4xl text-3xl font-semibold leading-tight text-ink md:text-5xl">Apartment Refurbishment: Timeline &amp; Payment Schedule</h2>
             <p className="mt-6 max-w-3xl text-base leading-8 text-ink-soft md:text-lg">A three-page project document for an apartment refurbishment at Al Mass Tower in Dubai. The layout turns a six-week delivery plan, payment milestones, cost summaries, work phases, and team responsibilities into a clear client-facing reference.</p>
           </Reveal>
           <div className="mt-10 md:mt-14">
@@ -349,11 +344,10 @@ export default function PresentationsCaseStudy({ project }: { project: Project }
           </div>
         </section>
 
-        <section aria-labelledby="board-summary-heading" className="border-t border-edge py-16 md:py-24">
+        <section id="board-summary" aria-labelledby="board-summary-heading" className="scroll-mt-28 border-t border-edge py-16 md:py-24">
           <Reveal>
-            <p className="font-display text-sm uppercase tracking-[0.2em] text-ink-faint">Board Presentation 04</p>
-            <h2 id="board-summary-heading" className="mt-4 max-w-4xl text-3xl font-semibold leading-tight text-ink md:text-5xl">EPC vs PMC: Dubai Project Board Summary</h2>
-            <p className="mt-6 max-w-3xl text-base leading-8 text-ink-soft md:text-lg">A nine-slide executive presentation for A1 Investments comparing a full EPC contract with a project management consultant and owner-led delivery model. The sequence moves from the project snapshot through cost and risk implications to the final board recommendation.</p>
+            <h2 id="board-summary-heading" className="max-w-4xl text-3xl font-semibold leading-tight text-ink md:text-5xl">EPC vs PMC: Dubai Project Board Summary</h2>
+            <p className="mt-6 max-w-3xl text-base leading-8 text-ink-soft md:text-lg">Nine selected slides for A1 Investments comparing engineering, procurement, and construction (EPC) with a project management consultant (PMC) delivery model. Comparison layouts organize the project context, cost implications, and board recommendation.</p>
           </Reveal>
           <div className="mt-10 md:mt-14">
             <PresentationDeckViewer
@@ -363,10 +357,9 @@ export default function PresentationsCaseStudy({ project }: { project: Project }
           </div>
         </section>
 
-        <section aria-labelledby="sbh-company-profile-heading" className="border-t border-edge py-16 md:py-24">
+        <section id="sbh-company-profile" aria-labelledby="sbh-company-profile-heading" className="scroll-mt-28 border-t border-edge py-16 md:py-24">
           <Reveal>
-            <p className="font-display text-sm uppercase tracking-[0.2em] text-ink-faint">Company Profile 05</p>
-            <h2 id="sbh-company-profile-heading" className="mt-4 max-w-4xl text-3xl font-semibold leading-tight text-ink md:text-5xl">SBH Company Profile</h2>
+            <h2 id="sbh-company-profile-heading" className="max-w-4xl text-3xl font-semibold leading-tight text-ink md:text-5xl">SBH Company Profile</h2>
             <p className="mt-6 max-w-3xl text-base leading-8 text-ink-soft md:text-lg">A five-slide company profile for SBH, presenting its property management and real estate brokerage services in Dubai. The profile combines a restrained corporate visual system with a clear overview of compliance, service capabilities, operating strengths, management process, and client commitment.</p>
           </Reveal>
           <div className="mt-10 md:mt-14">
@@ -377,10 +370,9 @@ export default function PresentationsCaseStudy({ project }: { project: Project }
           </div>
         </section>
 
-        <section aria-labelledby="meydan-memorandum-heading" className="border-t border-edge py-16 md:py-24">
+        <section id="meydan-memorandum" aria-labelledby="meydan-memorandum-heading" className="scroll-mt-28 border-t border-edge py-16 md:py-24">
           <Reveal>
-            <p className="font-display text-sm uppercase tracking-[0.2em] text-ink-faint">Investment Memorandum 06</p>
-            <h2 id="meydan-memorandum-heading" className="mt-4 max-w-4xl text-3xl font-semibold leading-tight text-ink md:text-5xl">Meydan Avenue Investment Memorandum</h2>
+            <h2 id="meydan-memorandum-heading" className="max-w-4xl text-3xl font-semibold leading-tight text-ink md:text-5xl">Meydan Avenue Investment Memorandum</h2>
             <p className="mt-6 max-w-3xl text-base leading-8 text-ink-soft md:text-lg">A 15-slide investment memorandum for Alsallal Developments, organizing a Meydan Avenue opportunity into site context, market evidence, comparable development performance, a property case study, the proposed off-plan strategy, financial assumptions, and supporting disclosures.</p>
           </Reveal>
           <div className="mt-10 md:mt-14">
@@ -395,18 +387,18 @@ export default function PresentationsCaseStudy({ project }: { project: Project }
           <div className="grid gap-10 md:grid-cols-[0.75fr_1.25fr] md:gap-16">
             <Reveal>
               <p className="font-display text-sm uppercase tracking-[0.2em] text-ink-faint">Design Approach</p>
-              <h2 id="design-approach-heading" className="mt-4 text-3xl font-semibold text-ink md:text-5xl">Built to guide the room</h2>
+              <h2 id="design-approach-heading" className="mt-4 text-3xl font-semibold text-ink md:text-5xl">Layout that makes information clear</h2>
             </Reveal>
             <Reveal className="space-y-5 text-base leading-8 text-ink-soft md:text-lg">
-              <p>Each project uses a format suited to its audience. Pitch decks, investment memoranda, board summaries, and company profiles control pacing through one message per slide, while guides and schedules connect instructions, dates, costs, and responsibilities to the relevant visual reference.</p>
-              <p>Clear hierarchy, focused copy, and consistent visual systems make investment evidence, company information, executive decisions, and project planning easy to follow.</p>
+              <p>My focus is the presentation and document layout: typography, spacing, image placement, diagrams, and the hierarchy between headings, figures, and supporting detail.</p>
+              <p>Slide layouts establish a clear reading order for live presentations. Document layouts keep tables, instructions, and financial information easy to navigate when the audience reads independently.</p>
             </Reveal>
           </div>
         </section>
 
         <CaseStudyClosingCta
           title="Need a presentation that makes complex information clear?"
-          body="I design pitch decks, reports, and executive presentations with a strong narrative, clear information hierarchy, and a visual system built for the audience."
+          body="I design presentation layouts, pitch decks, company profiles, and reports that help your audience understand the information and follow the story."
         />
       </article>
     </main>

@@ -16,6 +16,7 @@ export default function Navbar() {
   const [lastPathname, setLastPathname] = useState(pathname);
   const prefersReducedMotion = useReducedMotion();
   const menuButtonRef = useRef<HTMLButtonElement>(null);
+  const isActive = (href: string) => pathname === href || pathname.startsWith(`${href}/`);
 
   if (pathname !== lastPathname) {
     setLastPathname(pathname);
@@ -69,8 +70,9 @@ export default function Navbar() {
               <Link
                 key={link.href}
                 href={link.href}
+                aria-current={isActive(link.href) ? "page" : undefined}
                 className={`text-sm transition-colors hover:text-ink ${
-                  pathname === link.href ? "text-ink" : "text-ink-soft"
+                  isActive(link.href) ? "text-ink" : "text-ink-soft"
                 }`}
               >
                 {link.label}
@@ -91,7 +93,7 @@ export default function Navbar() {
           <button
             ref={menuButtonRef}
             type="button"
-            className="inline-flex items-center justify-center rounded-full border border-edge p-2 text-ink lg:hidden"
+            className="inline-flex min-h-11 min-w-11 items-center justify-center rounded-full border border-edge p-2 text-ink lg:hidden"
             aria-expanded={isMenuOpen}
             aria-controls="mobile-menu"
             aria-label={isMenuOpen ? "Close menu" : "Open menu"}
@@ -134,7 +136,8 @@ export default function Navbar() {
                 <li key={link.href}>
                   <Link
                     href={link.href}
-                    className={`block py-2.5 text-lg ${pathname === link.href ? "text-ink" : "text-ink-soft"}`}
+                    aria-current={isActive(link.href) ? "page" : undefined}
+                    className={`block py-2.5 text-lg ${isActive(link.href) ? "text-ink" : "text-ink-soft"}`}
                   >
                     {link.label}
                   </Link>

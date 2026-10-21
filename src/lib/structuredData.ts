@@ -207,7 +207,7 @@ export function projectPageStructuredData(project: WorkProject, image: string | 
     url,
     creator: personReference,
     genre: project.category,
-    about: project.industry,
+    ...(project.industry ? { about: project.industry } : {}),
     ...(image ? { image: new URL(image, `${productionSiteUrl}/`).toString() } : {}),
   };
 

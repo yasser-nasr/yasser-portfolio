@@ -32,9 +32,10 @@ function SlideImage({ slide, priority = false, sizes }: {
   );
 }
 
-export default function PresentationDeckViewer({ slides, ariaLabel }: {
+export default function PresentationDeckViewer({ slides, ariaLabel, prioritizeCover = false }: {
   slides: readonly PresentationSlide[];
   ariaLabel: string;
+  prioritizeCover?: boolean;
 }) {
   const [activeIndex, setActiveIndex] = useState(0);
   const [isOpen, setIsOpen] = useState(false);
@@ -54,8 +55,8 @@ export default function PresentationDeckViewer({ slides, ariaLabel }: {
     const thumbnail = thumbnailRefs.current[activeIndex];
     if (!rail || !thumbnail) return;
     rail.scrollTo({
-      left: thumbnail.offsetLeft - (rail.clientWidth - thumbnail.clientWidth) / 2,
-      behavior: "smooth",
+      left: rail.scrollLeft + thumbnail.getBoundingClientRect().left - rail.getBoundingClientRect().left - (rail.clientWidth - thumbnail.clientWidth) / 2,
+      behavior: window.matchMedia("(prefers-reduced-motion: reduce)").matches ? "instant" : "smooth",
     });
   }, [activeIndex]);
 
@@ -64,6 +65,7 @@ export default function PresentationDeckViewer({ slides, ariaLabel }: {
     const previousOverflow = document.body.style.overflow;
     document.body.style.overflow = "hidden";
     const onKeyDown = (event: KeyboardEvent) => {
+      if (["ArrowLeft", "ArrowRight", "Home", "End"].includes(event.key)) event.preventDefault();
       if (event.key === "Escape") setIsOpen(false);
       if (event.key === "ArrowLeft") previous();
       if (event.key === "ArrowRight") next();
@@ -101,6 +103,8 @@ export default function PresentationDeckViewer({ slides, ariaLabel }: {
         aria-label={ariaLabel}
         tabIndex={0}
         onKeyDown={(event) => {
+          if (isOpen) return;
+          if (["ArrowLeft", "ArrowRight", "Home", "End"].includes(event.key)) event.preventDefault();
           if (event.key === "ArrowLeft") previous();
           if (event.key === "ArrowRight") next();
           if (event.key === "Home") showSlide(0);
@@ -127,7 +131,7 @@ export default function PresentationDeckViewer({ slides, ariaLabel }: {
               className="group relative block w-full cursor-zoom-in overflow-hidden bg-[#0a0a0a] shadow-[0_18px_50px_rgba(0,0,0,0.45)] focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-white"
               style={{ aspectRatio: `${activeSlide.width} / ${activeSlide.height}` }}
             >
-              <SlideImage slide={activeSlide} priority={activeIndex === 0} sizes={stageSizes} />
+              <SlideImage slide={activeSlide} priority={prioritizeCover && activeIndex === 0} sizes={stageSizes} />
               <span className="pointer-events-none absolute bottom-3 right-3 rounded-full bg-black/70 px-3 py-1.5 text-[0.65rem] text-white opacity-0 backdrop-blur-sm transition-opacity group-hover:opacity-100 group-focus-visible:opacity-100 sm:text-xs">
                 Full-screen view
               </span>
@@ -162,7 +166,7 @@ export default function PresentationDeckViewer({ slides, ariaLabel }: {
                   className={`relative shrink-0 overflow-hidden rounded-md border-2 bg-black transition ${thumbnailWidth} ${activeIndex === index ? "border-[#aa8abe] opacity-100" : "border-transparent opacity-45 hover:opacity-80"}`}
                   style={{ aspectRatio: `${slide.width} / ${slide.height}` }}
                 >
-                  <Image src={slide.src} alt="" fill sizes="144px" quality={80} className="object-cover" />
+                  <Image src={slide.src} alt="" fill sizes={thumbnailAspectRatio < 1 ? "96px" : "144px"} quality={75} className="object-contain" />
                   <span className="absolute bottom-1 right-1 rounded bg-black/70 px-1.5 py-0.5 font-mono text-[0.58rem] text-white">{String(index + 1).padStart(2, "0")}</span>
                 </button>
               );
@@ -199,7 +203,7 @@ export default function PresentationDeckViewer({ slides, ariaLabel }: {
             <button type="button" onClick={next} aria-label="Show next slide" className="absolute right-2 top-1/2 grid h-11 w-11 -translate-y-1/2 place-items-center rounded-full bg-black/70 text-xl text-white transition hover:bg-black sm:right-4">
               &#8594;
             </button>
-            <span className="absolute bottom-3 left-1/2 -translate-x-1/2 rounded-full bg-black/75 px-4 py-2 font-mono text-xs text-white sm:bottom-5 sm:text-sm">{counter}</span>
+            <span aria-live="polite" aria-atomic="true" className="absolute bottom-3 left-1/2 -translate-x-1/2 rounded-full bg-black/75 px-4 py-2 font-mono text-xs text-white sm:bottom-5 sm:text-sm"><span className="sr-only">{activeSlide.title}, slide </span>{counter}</span>
           </div>
         </div>,
         document.body,
