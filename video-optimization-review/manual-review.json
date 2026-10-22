@@ -1,0 +1,228 @@
+[
+  {
+    "originalFilename": "public/projects/mena-law-reporters/social-media/mena-law-reporters-cop28-highlights-video.mp4",
+    "optimizedFilename": "public/videos-optimized/mena-law-reporters/social-media/mena-law-reporters-cop28-highlights-video.mp4",
+    "concerns": [
+      "Visual review pending: check fine text, gradients, texture, motion, audio sync, and joins. VMAF is a screening proxy, not perceptual certification."
+    ],
+    "quality": {
+      "mean": 97.085808,
+      "p5": 94.396449,
+      "minimum": 92.172378,
+      "framesMeasured": 114,
+      "log": "metrics/01-h264-18.json"
+    }
+  },
+  {
+    "originalFilename": "public/projects/pillars-pr/social-media/web/videos/pillars-pr-logo-animation-intro.mp4",
+    "optimizedFilename": "public/videos-optimized/pillars-pr/social-media/web/videos/pillars-pr-logo-animation-intro.mp4",
+    "concerns": [
+      "Visual review pending: check fine text, gradients, texture, motion, audio sync, and joins. VMAF is a screening proxy, not perceptual certification.",
+      "Already efficient or no smaller candidate passed screening: encoded video/audio streams retained without generation loss; MP4 remux only."
+    ],
+    "quality": null
+  },
+  {
+    "originalFilename": "public/projects/pillars-pr/social-media/web/videos/pillars-pr-online-presence-video.mp4",
+    "optimizedFilename": "public/videos-optimized/pillars-pr/social-media/web/videos/pillars-pr-online-presence-video-high-quality.mp4",
+    "concerns": [
+      "Visual review pending: check fine text, gradients, texture, motion, audio sync, and joins. VMAF is a screening proxy, not perceptual certification.",
+      "CRF 14 selected for text/graphic contour retention after a representative CRF 18 still-frame showed roughness. Original CRF 18 copy retained as a separately selectable standard candidate. Review animation edges and gradients in motion; higher-quality copy is not visual certification."
+    ],
+    "quality": {
+      "mean": 97.880896,
+      "p5": 97.151034,
+      "minimum": 96.828252,
+      "framesMeasured": 432,
+      "log": "metrics/pillars-pr-online-presence-video-high-quality-vmaf.json"
+    }
+  },
+  {
+    "originalFilename": "public/projects/pillars-pr/social-media/web/videos/pillars-pr-uses-of-public-relations-video.mp4",
+    "optimizedFilename": "public/videos-optimized/pillars-pr/social-media/web/videos/pillars-pr-uses-of-public-relations-video-high-quality.mp4",
+    "concerns": [
+      "Visual review pending: check fine text, gradients, texture, motion, audio sync, and joins. VMAF is a screening proxy, not perceptual certification.",
+      "CRF 14 selected for text/graphic contour retention after a representative CRF 18 still-frame showed roughness. Original CRF 18 copy retained as a separately selectable standard candidate. Review animation edges and gradients in motion; higher-quality copy is not visual certification."
+    ],
+    "quality": {
+      "mean": 97.76474,
+      "p5": 96.992401,
+      "minimum": 95.319397,
+      "framesMeasured": 350,
+      "log": "metrics/pillars-pr-uses-of-public-relations-video-high-quality-vmaf.json"
+    }
+  },
+  {
+    "originalFilename": "public/projects/renovofix/before-after/renovofix-ai-renovation-transformation-01.mp4",
+    "optimizedFilename": "public/videos-optimized/renovofix/before-after/renovofix-ai-renovation-transformation-01.mp4",
+    "concerns": [
+      "Visual review pending: check fine text, gradients, texture, motion, audio sync, and joins. VMAF is a screening proxy, not perceptual certification."
+    ],
+    "quality": {
+      "mean": 97.653414,
+      "p5": 95.883723,
+      "minimum": 95.089328,
+      "framesMeasured": 25,
+      "log": "metrics/05-h264-18.json"
+    }
+  },
+  {
+    "originalFilename": "public/projects/renovofix/before-after/renovofix-ai-renovation-transformation-02.mp4",
+    "optimizedFilename": "public/videos-optimized/renovofix/before-after/renovofix-ai-renovation-transformation-02.mp4",
+    "concerns": [
+      "Visual review pending: check fine text, gradients, texture, motion, audio sync, and joins. VMAF is a screening proxy, not perceptual certification."
+    ],
+    "quality": {
+      "mean": 97.787619,
+      "p5": 95.533421,
+      "minimum": 95.533421,
+      "framesMeasured": 20,
+      "log": "metrics/06-h264-18.json"
+    }
+  },
+  {
+    "originalFilename": "public/projects/renovofix/before-after/renovofix-ai-renovation-transformation-03.mp4",
+    "optimizedFilename": "public/videos-optimized/renovofix/before-after/renovofix-ai-renovation-transformation-03.mp4",
+    "concerns": [
+      "Visual review pending: check fine text, gradients, texture, motion, audio sync, and joins. VMAF is a screening proxy, not perceptual certification.",
+      "Marginal byte saving (<5%): this re-encode may not justify any generation loss. Prefer the original unless visual review supports using the copy."
+    ],
+    "quality": {
+      "mean": 97.136836,
+      "p5": 95.52309,
+      "minimum": 95.52309,
+      "framesMeasured": 20,
+      "log": "metrics/07-h264-16.json"
+    }
+  },
+  {
+    "originalFilename": "public/projects/renovofix/before-after/renovofix-ai-renovation-transformation-04.mp4",
+    "optimizedFilename": "public/videos-optimized/renovofix/before-after/renovofix-ai-renovation-transformation-04.mp4",
+    "concerns": [
+      "Visual review pending: check fine text, gradients, texture, motion, audio sync, and joins. VMAF is a screening proxy, not perceptual certification."
+    ],
+    "quality": {
+      "mean": 97.125861,
+      "p5": 95.122445,
+      "minimum": 95.122445,
+      "framesMeasured": 20,
+      "log": "metrics/08-h264-18.json"
+    }
+  },
+  {
+    "originalFilename": "public/projects/renovofix/reels/renovofix-bathroom-educational-reel.mp4",
+    "optimizedFilename": "public/videos-optimized/renovofix/reels/renovofix-bathroom-educational-reel.mp4",
+    "concerns": [
+      "Visual review pending: check fine text, gradients, texture, motion, audio sync, and joins. VMAF is a screening proxy, not perceptual certification."
+    ],
+    "quality": {
+      "mean": 97.79073,
+      "p5": 96.393197,
+      "minimum": 96.026343,
+      "framesMeasured": 72,
+      "log": "metrics/09-h264-18.json"
+    }
+  },
+  {
+    "originalFilename": "public/projects/renovofix/reels/renovofix-ceiling-educational-reel.mp4",
+    "optimizedFilename": "public/videos-optimized/renovofix/reels/renovofix-ceiling-educational-reel.mp4",
+    "concerns": [
+      "Visual review pending: check fine text, gradients, texture, motion, audio sync, and joins. VMAF is a screening proxy, not perceptual certification."
+    ],
+    "quality": {
+      "mean": 97.285648,
+      "p5": 96.235835,
+      "minimum": 95.990541,
+      "framesMeasured": 72,
+      "log": "metrics/10-h264-16.json"
+    }
+  },
+  {
+    "originalFilename": "public/projects/renovofix/reels/renovofix-flooring-educational-reel.mp4",
+    "optimizedFilename": "public/videos-optimized/renovofix/reels/renovofix-flooring-educational-reel.mp4",
+    "concerns": [
+      "Visual review pending: check fine text, gradients, texture, motion, audio sync, and joins. VMAF is a screening proxy, not perceptual certification."
+    ],
+    "quality": {
+      "mean": 97.280754,
+      "p5": 96.125506,
+      "minimum": 95.693468,
+      "framesMeasured": 68,
+      "log": "metrics/11-h264-18.json"
+    }
+  },
+  {
+    "originalFilename": "public/projects/renovofix/reels/renovofix-lighting-educational-reel.mp4",
+    "optimizedFilename": "public/videos-optimized/renovofix/reels/renovofix-lighting-educational-reel.mp4",
+    "concerns": [
+      "Visual review pending: check fine text, gradients, texture, motion, audio sync, and joins. VMAF is a screening proxy, not perceptual certification."
+    ],
+    "quality": {
+      "mean": 98.546776,
+      "p5": 95.802947,
+      "minimum": 95.594306,
+      "framesMeasured": 73,
+      "log": "metrics/12-h264-18.json"
+    }
+  },
+  {
+    "originalFilename": "public/projects/videos-reels/memo-travel-dahab-short-form-reel.mp4",
+    "optimizedFilename": "public/videos-optimized/videos-reels/memo-travel-dahab-short-form-reel.mp4",
+    "concerns": [
+      "Visual review pending: check fine text, gradients, texture, motion, audio sync, and joins. VMAF is a screening proxy, not perceptual certification.",
+      "Already efficient or no smaller candidate passed screening: encoded video/audio streams retained without generation loss; MP4 remux only."
+    ],
+    "quality": null
+  },
+  {
+    "originalFilename": "public/projects/videos-reels/memo-travel-sinai-short-form-reel.mp4",
+    "optimizedFilename": "public/videos-optimized/videos-reels/memo-travel-sinai-short-form-reel.mp4",
+    "concerns": [
+      "Visual review pending: check fine text, gradients, texture, motion, audio sync, and joins. VMAF is a screening proxy, not perceptual certification."
+    ],
+    "quality": {
+      "mean": 98.736474,
+      "p5": 96.507595,
+      "minimum": 94.331383,
+      "framesMeasured": 354,
+      "log": "metrics/14-h264-18.json"
+    }
+  },
+  {
+    "originalFilename": "public/projects/videos-reels/memo-travel-umrah-short-form-reel.mp4",
+    "optimizedFilename": "public/videos-optimized/videos-reels/memo-travel-umrah-short-form-reel.mp4",
+    "concerns": [
+      "Visual review pending: check fine text, gradients, texture, motion, audio sync, and joins. VMAF is a screening proxy, not perceptual certification.",
+      "Already efficient or no smaller candidate passed screening: encoded video/audio streams retained without generation loss; MP4 remux only."
+    ],
+    "quality": null
+  },
+  {
+    "originalFilename": "public/projects/videos-reels/multicultural-center-takeya-kitchen-houston-community-meals-campaign-video.mp4",
+    "optimizedFilename": "public/videos-optimized/videos-reels/multicultural-center-takeya-kitchen-houston-community-meals-campaign-video.mp4",
+    "concerns": [
+      "Visual review pending: check fine text, gradients, texture, motion, audio sync, and joins. VMAF is a screening proxy, not perceptual certification."
+    ],
+    "quality": {
+      "mean": 97.062388,
+      "p5": 94.954153,
+      "minimum": 86.096634,
+      "framesMeasured": 492,
+      "log": "metrics/16-h264-18.json"
+    }
+  },
+  {
+    "originalFilename": "public/projects/x-factor-interior-design/social-media/x-factor-interior-design-dubai-residential-reel.mp4",
+    "optimizedFilename": "public/videos-optimized/x-factor-interior-design/social-media/x-factor-interior-design-dubai-residential-reel.mp4",
+    "concerns": [
+      "Visual review pending: check fine text, gradients, texture, motion, audio sync, and joins. VMAF is a screening proxy, not perceptual certification."
+    ],
+    "quality": {
+      "mean": 97.167312,
+      "p5": 94.487048,
+      "minimum": 93.299796,
+      "framesMeasured": 241,
+      "log": "metrics/17-h264-18.json"
+    }
+  }
+]

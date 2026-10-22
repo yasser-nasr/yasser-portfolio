@@ -1,6 +1,6 @@
 "use client";
 
-import Image from "next/image";
+import Image from "@/components/OptimizedImage";
 import { useState } from "react";
 
 type Story = { src: string; alt: string };
@@ -24,7 +24,7 @@ export default function SnapchatStoryViewer({ stories }: { stories: readonly Sto
       }}
     >
       <div className="relative mx-auto aspect-[9/16] w-full max-w-[23rem] overflow-hidden rounded-[1.75rem] bg-black shadow-2xl shadow-black/35 ring-1 ring-black/20">
-        <Image src={story.src} alt={story.alt} fill priority sizes="(min-width: 640px) 368px, calc(100vw - 72px)" className="object-cover" />
+        <Image src={story.src} alt={story.alt} fill loading="lazy" sizes="(min-width: 640px) 368px, calc(100vw - 72px)" className="object-cover" />
 
         <div className="absolute inset-x-0 top-0 z-20 px-3 pt-3 text-white">
           <div className="flex gap-1" aria-label={`Story ${activeIndex + 1} of ${stories.length}`}>

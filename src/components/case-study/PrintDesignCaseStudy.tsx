@@ -1,4 +1,4 @@
-import Image from "next/image";
+import Image from "@/components/OptimizedImage";
 import HeadingReveal from "@/components/HeadingReveal";
 import Reveal from "@/components/Reveal";
 import type { Project } from "@/data/projects";

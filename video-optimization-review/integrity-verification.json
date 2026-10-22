@@ -1,0 +1,108 @@
+{
+  "verifiedAt": "2026-10-22T18:24:28.299Z",
+  "protectedFiles": 1259,
+  "changed": [],
+  "originalVideos": 17,
+  "outputFiles": 19,
+  "allPrimaryMp4Faststart": true,
+  "audioChecks": [
+    {
+      "video": "public/projects/mena-law-reporters/social-media/mena-law-reporters-cop28-highlights-video.mp4",
+      "originalAudioHash": "SHA256=07cb9a39f30a86b829926f60814282e0bf1429df6ccf182ffdaaadf74e6aeb6d",
+      "optimizedAudioHash": "SHA256=07cb9a39f30a86b829926f60814282e0bf1429df6ccf182ffdaaadf74e6aeb6d",
+      "identical": true
+    },
+    {
+      "video": "public/projects/pillars-pr/social-media/web/videos/pillars-pr-online-presence-video.mp4",
+      "originalAudioHash": "SHA256=a7925d6b75609bb98336237c3f183554f1f04d5749f6fc75a559a31cb5859f62",
+      "optimizedAudioHash": "SHA256=a7925d6b75609bb98336237c3f183554f1f04d5749f6fc75a559a31cb5859f62",
+      "identical": true
+    },
+    {
+      "video": "public/projects/pillars-pr/social-media/web/videos/pillars-pr-uses-of-public-relations-video.mp4",
+      "originalAudioHash": "SHA256=e54774b5e60a603a91d51e4de61b9b7ead6627aa97073c13420657210b752864",
+      "optimizedAudioHash": "SHA256=e54774b5e60a603a91d51e4de61b9b7ead6627aa97073c13420657210b752864",
+      "identical": true
+    },
+    {
+      "video": "public/projects/renovofix/before-after/renovofix-ai-renovation-transformation-01.mp4",
+      "originalAudioHash": "SHA256=c58469b8b426018541a7e2f7665f9d9fdb5154cdd0f398736ee54df183b2d7ff",
+      "optimizedAudioHash": "SHA256=c58469b8b426018541a7e2f7665f9d9fdb5154cdd0f398736ee54df183b2d7ff",
+      "identical": true
+    },
+    {
+      "video": "public/projects/renovofix/reels/renovofix-bathroom-educational-reel.mp4",
+      "originalAudioHash": "SHA256=299daa99c7897ba49977d24bab38cf097461dba784ad27abdeb5c2546a6cf0f2",
+      "optimizedAudioHash": "SHA256=299daa99c7897ba49977d24bab38cf097461dba784ad27abdeb5c2546a6cf0f2",
+      "identical": true
+    },
+    {
+      "video": "public/projects/renovofix/reels/renovofix-ceiling-educational-reel.mp4",
+      "originalAudioHash": "SHA256=0696c2b238aad873c4cc0d52f40e0c75cb0ff24c448741348b5bfd1721959458",
+      "optimizedAudioHash": "SHA256=0696c2b238aad873c4cc0d52f40e0c75cb0ff24c448741348b5bfd1721959458",
+      "identical": true
+    },
+    {
+      "video": "public/projects/renovofix/reels/renovofix-flooring-educational-reel.mp4",
+      "originalAudioHash": "SHA256=1e75ffe791e53805eb4acd963776229cbe4e80a4beb4634aa8a82ff55fa28891",
+      "optimizedAudioHash": "SHA256=1e75ffe791e53805eb4acd963776229cbe4e80a4beb4634aa8a82ff55fa28891",
+      "identical": true
+    },
+    {
+      "video": "public/projects/renovofix/reels/renovofix-lighting-educational-reel.mp4",
+      "originalAudioHash": "SHA256=92bdc9062196fc84dba6fa6da4583a95ac036d107d1557869d0b7f03faa74c3a",
+      "optimizedAudioHash": "SHA256=92bdc9062196fc84dba6fa6da4583a95ac036d107d1557869d0b7f03faa74c3a",
+      "identical": true
+    },
+    {
+      "video": "public/projects/videos-reels/memo-travel-dahab-short-form-reel.mp4",
+      "originalAudioHash": "SHA256=96bcf37c94eb3474c9a16e802bfa24d2a59e1d373ff482d0537dd247e62e67ad",
+      "optimizedAudioHash": "SHA256=96bcf37c94eb3474c9a16e802bfa24d2a59e1d373ff482d0537dd247e62e67ad",
+      "identical": true
+    },
+    {
+      "video": "public/projects/videos-reels/memo-travel-sinai-short-form-reel.mp4",
+      "originalAudioHash": "SHA256=3b6402cda9a671e6acb8a4199333b6673d39d6d524a7b63816c6788ce01cfae9",
+      "optimizedAudioHash": "SHA256=3b6402cda9a671e6acb8a4199333b6673d39d6d524a7b63816c6788ce01cfae9",
+      "identical": true
+    },
+    {
+      "video": "public/projects/videos-reels/memo-travel-umrah-short-form-reel.mp4",
+      "originalAudioHash": "SHA256=8f6c371dac6359a3bac4ff86dd400adfdda8887f82f58c2675ba7bff9e26b1bf",
+      "optimizedAudioHash": "SHA256=8f6c371dac6359a3bac4ff86dd400adfdda8887f82f58c2675ba7bff9e26b1bf",
+      "identical": true
+    },
+    {
+      "video": "public/projects/videos-reels/multicultural-center-takeya-kitchen-houston-community-meals-campaign-video.mp4",
+      "originalAudioHash": "SHA256=c8bddc448c574694e83bf7d989466eb26edc34135e7da41cef96b4a33df0eeeb",
+      "optimizedAudioHash": "SHA256=c8bddc448c574694e83bf7d989466eb26edc34135e7da41cef96b4a33df0eeeb",
+      "identical": true
+    },
+    {
+      "video": "public/projects/x-factor-interior-design/social-media/x-factor-interior-design-dubai-residential-reel.mp4",
+      "originalAudioHash": "SHA256=6d00433f327254139be62434b9714fc94465af5bf742a4097a0d7b58c1cb5a30",
+      "optimizedAudioHash": "SHA256=6d00433f327254139be62434b9714fc94465af5bf742a4097a0d7b58c1cb5a30",
+      "identical": true
+    }
+  ],
+  "losslessVideoChecks": [
+    {
+      "video": "public/projects/pillars-pr/social-media/web/videos/pillars-pr-logo-animation-intro.mp4",
+      "originalVideoHash": "SHA256=343dc1524b19409211cc0809dd5a5263addcdaec0115587296304986e5390a06",
+      "optimizedVideoHash": "SHA256=343dc1524b19409211cc0809dd5a5263addcdaec0115587296304986e5390a06",
+      "identical": true
+    },
+    {
+      "video": "public/projects/videos-reels/memo-travel-dahab-short-form-reel.mp4",
+      "originalVideoHash": "SHA256=340c0bfab0039f7894e1dae0485634e7f977ab9910696a40c5025e6c537f8b95",
+      "optimizedVideoHash": "SHA256=340c0bfab0039f7894e1dae0485634e7f977ab9910696a40c5025e6c537f8b95",
+      "identical": true
+    },
+    {
+      "video": "public/projects/videos-reels/memo-travel-umrah-short-form-reel.mp4",
+      "originalVideoHash": "SHA256=c4877cb5ebbd259bf450fbebd1e92907cf4fe2f9a8bbf14ffbce0b440335964e",
+      "optimizedVideoHash": "SHA256=c4877cb5ebbd259bf450fbebd1e92907cf4fe2f9a8bbf14ffbce0b440335964e",
+      "identical": true
+    }
+  ]
+}

@@ -1,4 +1,4 @@
-import Image from "next/image";
+import Image from "@/components/OptimizedImage";
 import { socialCampaignAssets as assets } from "@/data/socialMediaCampaign";
 import SocialMediaGrid from "./SocialMediaGrid";
 

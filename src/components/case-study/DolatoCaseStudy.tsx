@@ -1,4 +1,4 @@
-﻿import Image from "next/image";
+﻿import Image from "@/components/OptimizedImage";
 import type { ReactNode } from "react";
 import type { Project } from "@/data/projects";
 import Reveal from "@/components/Reveal";
@@ -15,7 +15,7 @@ const visuals = {
   apron: { file: "applications/dolato-winter-apron.webp", width: 4000, height: 4000, alt: "Cream Dolato Gelateria apron mockup featuring Warm Winter Marvels lettering and an Italian-inspired snow character illustration." },
   apronBurgundy: { file: "applications/dolato-winter-apron-burgundy.webp", width: 4000, height: 4000, alt: "Burgundy Dolato Gelateria apron mockup featuring the Warm Winter Marvels theme mark and Italian-inspired winter illustration." },
   chocolate: { file: "applications/dolato-hot-chocolate-cup.webp", width: 3000, height: 2800, alt: "Two hands holding burgundy Dolato hot chocolate cups featuring the Warm Winter Marvels winter pattern." },
-  gelato: { file: "applications/dolato-gelato-cup.webp", width: 3500, height: 2336, alt: "Three stacked cream Dolato gelato cup mockups with seasonal illustrations, a snow character, and campaign lettering." },
+  gelato: { file: "cover/dolato-warm-winter-marvels-hero.webp", width: 3500, height: 2336, alt: "Three stacked cream Dolato gelato cup mockups with seasonal illustrations, a snow character, and campaign lettering." },
   backdrop: { file: "environmental/dolato-photo-backdrop.webp", width: 5601, height: 4001, alt: "Dolato photo backdrop concept featuring a chocolate-colored snow character above the Colosseum, beside the campaign theme mark." },
   cart: { file: "environmental/dolato-winter-events-cart.webp", width: 2200, height: 1572, alt: "Dolato event cart mockup with a striped canopy and Warm Winter Marvels seasonal artwork wrapped around its body." },
   technical: { file: "environmental/dolato-events-cart-technical-application.webp", width: 5601, height: 4001, alt: "Dimensioned front, side, and top views showing the proposed Warm Winter Marvels artwork on a Dolato events cart." },

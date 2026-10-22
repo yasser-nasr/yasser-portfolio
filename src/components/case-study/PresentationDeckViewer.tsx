@@ -1,6 +1,6 @@
 "use client";
 
-import Image from "next/image";
+import Image from "@/components/OptimizedImage";
 import { useCallback, useEffect, useRef, useState } from "react";
 import { createPortal } from "react-dom";
 import { useDialogFocus } from "@/lib/useDialogFocus";
@@ -149,6 +149,7 @@ export default function PresentationDeckViewer({ slides, ariaLabel, prioritizeCo
           <div ref={thumbnailRailRef} className="flex gap-2.5 overflow-x-auto pb-1" aria-label="Choose a slide">
             {slides.map((slide, index) => {
               const thumbnailAspectRatio = slide.width / slide.height;
+              const thumbnailImageWidth = thumbnailAspectRatio < 1 ? 96 : 144;
               const thumbnailWidth = thumbnailAspectRatio <= 0.62
                 ? "w-16 sm:w-20"
                 : thumbnailAspectRatio < 1
@@ -166,7 +167,14 @@ export default function PresentationDeckViewer({ slides, ariaLabel, prioritizeCo
                   className={`relative shrink-0 overflow-hidden rounded-md border-2 bg-black transition ${thumbnailWidth} ${activeIndex === index ? "border-[#aa8abe] opacity-100" : "border-transparent opacity-45 hover:opacity-80"}`}
                   style={{ aspectRatio: `${slide.width} / ${slide.height}` }}
                 >
-                  <Image src={slide.src} alt="" fill sizes={thumbnailAspectRatio < 1 ? "96px" : "144px"} quality={75} className="object-contain" />
+                  <Image
+                    src={slide.src}
+                    alt=""
+                    width={thumbnailImageWidth}
+                    height={Math.round(thumbnailImageWidth / thumbnailAspectRatio)}
+                    quality={75}
+                    className="h-full w-full object-contain"
+                  />
                   <span className="absolute bottom-1 right-1 rounded bg-black/70 px-1.5 py-0.5 font-mono text-[0.58rem] text-white">{String(index + 1).padStart(2, "0")}</span>
                 </button>
               );

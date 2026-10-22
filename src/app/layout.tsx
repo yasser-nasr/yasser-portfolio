@@ -92,16 +92,13 @@ export const viewport: Viewport = {
   initialScale: 1,
 };
 
-// Runs before paint to set the theme attribute from a saved preference or
-// system setting, avoiding a flash of the wrong theme. Kept tiny and inline
+// Runs before paint to start every fresh page load with the system theme,
+// avoiding a flash of the wrong theme. Kept tiny and inline
 // rather than pulling in next-themes for a single attribute toggle.
 const themeInitScript = `
 (function () {
   try {
-    var stored = localStorage.getItem("theme");
-    var theme = stored === "light" || stored === "dark"
-      ? stored
-      : (window.matchMedia("(prefers-color-scheme: light)").matches ? "light" : "dark");
+    var theme = window.matchMedia("(prefers-color-scheme: light)").matches ? "light" : "dark";
     document.documentElement.setAttribute("data-theme", theme);
   } catch (e) {}
 })();

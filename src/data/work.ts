@@ -1,5 +1,6 @@
 import { projects, publishedProjects, type ProjectStructuredData } from "@/data/projects";
 import type { ProjectCategory } from "@/data/workCategories";
+import { optimizedMediaSrc } from "@/lib/optimized-media";
 
 export type WorkProject = {
   slug: string;
@@ -33,7 +34,7 @@ const motionVideoWorkProject: WorkProject = {
   industry: "Selected brands and formats",
   statement:
     "Selected work across reels, motion graphics, video editing, campaign content, and multimedia storytelling.",
-  image: "/projects/videos-reels/yasser-nasr-motion-video-portfolio-cover.webp",
+  image: optimizedMediaSrc("/projects/videos-reels/yasser-nasr-motion-video-portfolio-cover.webp"),
   imageAlt:
     "Yasser Nasr motion and video portfolio cover featuring Memo Travel reels for Dahab, Umrah, and Sinai with a Takeya Kitchen campaign video frame.",
   imagePosition: "center",

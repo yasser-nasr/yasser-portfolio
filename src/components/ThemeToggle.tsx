@@ -8,22 +8,33 @@ const listeners = new Set<() => void>();
 
 function subscribe(listener: () => void) {
   listeners.add(listener);
-  return () => listeners.delete(listener);
+  const systemTheme = window.matchMedia("(prefers-color-scheme: light)");
+  const syncSystemTheme = () => {
+    if (document.documentElement.getAttribute("data-theme-preference") === "manual") return;
+    document.documentElement.setAttribute("data-theme", systemTheme.matches ? "light" : "dark");
+    listeners.forEach((notify) => notify());
+  };
+  systemTheme.addEventListener("change", syncSystemTheme);
+  syncSystemTheme();
+  return () => {
+    listeners.delete(listener);
+    systemTheme.removeEventListener("change", syncSystemTheme);
+  };
 }
 
 function getSnapshot(): Theme {
   return document.documentElement.getAttribute("data-theme") === "light" ? "light" : "dark";
 }
 
-// Matches the dark-first default rendered on the server, before the
-// no-flash script (layout.tsx) and this hook can read the real value.
+// The server cannot read the device preference; the pre-paint script and
+// CSS media query apply it before hydration.
 function getServerSnapshot(): Theme {
   return "dark";
 }
 
 function setTheme(theme: Theme) {
   document.documentElement.setAttribute("data-theme", theme);
-  window.localStorage.setItem("theme", theme);
+  document.documentElement.setAttribute("data-theme-preference", "manual");
   listeners.forEach((listener) => listener());
 }
 

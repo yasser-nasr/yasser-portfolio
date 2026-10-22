@@ -1,8 +1,7 @@
 @import "tailwindcss";
 
-/* Dark is the default brand identity (also the no-JS / pre-hydration
-   fallback). Light is an optional, equally refined alternate — never pure
-   white, never pure black. */
+/* Both themes follow the device preference by default. Explicit attributes
+   allow the existing toggle to override the theme for the current visit. */
 :root,
 html[data-theme="dark"] {
   --bg-main: #1D1D1B;
@@ -24,6 +23,19 @@ html[data-theme="light"] {
   --text-secondary: #4A4A46;
   --text-muted: #625E56;
   color-scheme: light;
+}
+
+@media (prefers-color-scheme: light) {
+  html:not([data-theme]) {
+    --bg-main: #E8E5DD;
+    --bg-deep: #DEDAD0;
+    --bg-card: #F2F0EA;
+    --border: #C8C3B8;
+    --text-main: #151515;
+    --text-secondary: #4A4A46;
+    --text-muted: #625E56;
+    color-scheme: light;
+  }
 }
 
 @theme inline {
@@ -65,6 +77,12 @@ body {
 
 html[data-theme="light"] .brand-mark {
   filter: invert(1);
+}
+
+@media (prefers-color-scheme: light) {
+  html:not([data-theme]) .brand-mark {
+    filter: invert(1);
+  }
 }
 
 ::selection {

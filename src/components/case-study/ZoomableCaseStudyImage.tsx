@@ -1,9 +1,10 @@
 "use client";
 
-import Image from "next/image";
+import Image from "@/components/OptimizedImage";
 import { useEffect, useState } from "react";
 import { createPortal } from "react-dom";
 import { useDialogFocus } from "@/lib/useDialogFocus";
+import { optimizedMediaSrc } from "@/lib/optimized-media";
 
 export default function ZoomableCaseStudyImage({
   src,
@@ -109,7 +110,7 @@ export default function ZoomableCaseStudyImage({
           >
             {/* eslint-disable-next-line @next/next/no-img-element */}
             <img
-              src={src}
+              src={optimizedMediaSrc(src)}
               alt={alt}
               width={width}
               height={height}

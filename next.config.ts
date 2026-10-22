@@ -27,6 +27,7 @@ const nextConfig: NextConfig = {
   poweredByHeader: false,
   images: {
     qualities: [75, 100],
+    deviceSizes: [640, 750, 828, 1080, 1200, 1280, 1536, 1920, 2048, 2560, 3840],
     remotePatterns: [
       new URL("https://flagcdn.com/w80/**"),
       new URL("https://upload.wikimedia.org/wikipedia/commons/thumb/**"),
@@ -34,6 +35,24 @@ const nextConfig: NextConfig = {
   },
   async headers() {
     return [
+      {
+        source: "/projects/:path*",
+        headers: [
+          { key: "Cache-Control", value: "public, max-age=3600, must-revalidate" },
+        ],
+      },
+      {
+        source: "/projects-optimized/:path*",
+        headers: [
+          { key: "Cache-Control", value: "public, max-age=3600, must-revalidate" },
+        ],
+      },
+      {
+        source: "/videos-optimized/:path*",
+        headers: [
+          { key: "Cache-Control", value: "public, max-age=3600, must-revalidate" },
+        ],
+      },
       {
         source: "/:path*",
         headers: [

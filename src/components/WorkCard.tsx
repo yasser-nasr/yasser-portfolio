@@ -1,4 +1,4 @@
-import Image from "next/image";
+import Image from "@/components/OptimizedImage";
 import Link from "next/link";
 import type { WorkProject } from "@/data/work";
 
@@ -29,7 +29,9 @@ export default function WorkCard({
             alt={project.imageAlt}
             fill
             quality={100}
-            sizes="(min-width: 768px) 58vw, 100vw"
+            loading={index === 0 ? "eager" : "lazy"}
+            fetchPriority={index === 0 ? "high" : undefined}
+            sizes="(min-width: 1152px) 618px, (min-width: 1024px) calc((100vw + 16px) * 0.5833 - 64px), (min-width: 768px) calc((100vw - 8px) * 0.5833 - 40px), calc(100vw - 48px)"
             className="transition-transform duration-500 ease-out group-hover:scale-[1.02]"
             style={{
               objectFit: project.imageFit ?? "cover",

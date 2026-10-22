@@ -42,7 +42,7 @@ function WebsiteScreenshot({ file, title, width, height, mobile = false }: { fil
   return <figure className={mobile ? "mx-auto w-full max-w-[18rem]" : "min-w-0"}>
     <div className={`overflow-hidden border border-edge bg-surface-card shadow-xl shadow-black/10 ${mobile ? "rounded-[2rem] border-[5px] border-[#1E2A38]" : "rounded-xl"}`}>
       {mobile ? <div className="relative z-10 mx-auto h-5 w-24 rounded-b-xl bg-[#1E2A38]" aria-hidden="true" /> : <div className="flex h-10 items-center gap-2 border-b border-edge bg-surface-deep px-4" aria-hidden="true"><span className="h-2.5 w-2.5 rounded-full bg-ink-faint/45" /><span className="h-2.5 w-2.5 rounded-full bg-ink-faint/45" /><span className="h-2.5 w-2.5 rounded-full bg-ink-faint/45" /><span className="ml-3 h-5 flex-1 rounded-full bg-surface-card" /></div>}
-      <div className={`overflow-y-auto overscroll-contain bg-white ${mobile ? "h-[32rem]" : "h-[30rem] md:h-[42rem]"}`} tabIndex={0} aria-label={`Scrollable ${title} website screenshot`}><Image src={`${base}/website/${file}`} alt={`RenovoFix ${title} website design.`} width={width} height={height} sizes={mobile ? "288px" : "(min-width: 1152px) 1152px, 100vw"} unoptimized className="h-auto w-full" /></div>
+      <div className={`overflow-y-auto overscroll-contain bg-white ${mobile ? "h-[32rem]" : "h-[30rem] md:h-[42rem]"}`} tabIndex={0} aria-label={`Scrollable ${title} website screenshot`}><Image src={`${base}/website/${file}`} alt={`RenovoFix ${title} website design.`} width={width} height={height} sizes={mobile ? "288px" : "(min-width: 1152px) 1104px, calc(100vw - 48px)"} className="h-auto w-full" /></div>
     </div><figcaption className="mt-3 text-sm text-ink-faint">{title} · Scroll to explore</figcaption>
   </figure>;
 }

@@ -6,6 +6,7 @@ import Reveal from "@/components/Reveal";
 import VideoPlayer from "@/components/case-study/VideoPlayer";
 import { productionSiteUrl } from "@/lib/site";
 import { motionVideoPageStructuredData } from "@/lib/structuredData";
+import { optimizedMediaSrc } from "@/lib/optimized-media";
 
 const title = "Motion & Video Design Portfolio | Yasser Nasr";
 const description =
@@ -15,7 +16,7 @@ const openGraphDescription =
   "Selected reels, motion graphics, video editing, campaign content, and multimedia work by Yasser Nasr.";
 const url = `${productionSiteUrl}/motion-video`;
 const mediaBase = "/projects/videos-reels";
-const socialImage = `${mediaBase}/yasser-nasr-motion-video-portfolio-og.webp`;
+const socialImage = optimizedMediaSrc(`${mediaBase}/yasser-nasr-motion-video-portfolio-og.webp`);
 
 export const metadata: Metadata = {
   title: { absolute: title },

@@ -1,6 +1,7 @@
 "use client";
 
 import { useRef, useState } from "react";
+import { optimizedMediaSrc } from "@/lib/optimized-media";
 
 export default function VideoPlayer({ src, poster, label }: { src: string; poster?: string; label: string }) {
   const videoRef = useRef<HTMLVideoElement>(null);
@@ -30,14 +31,14 @@ export default function VideoPlayer({ src, poster, label }: { src: string; poste
         controls
         playsInline
         preload="none"
-        poster={poster}
+        poster={optimizedMediaSrc(poster)}
         aria-label={label}
         onLoadedMetadata={prepareSound}
         onPlay={prepareSound}
         onVolumeChange={(event) => setMuted(event.currentTarget.muted)}
         className="h-full w-full object-contain"
       >
-        <source src={src} type="video/mp4" />
+        <source src={optimizedMediaSrc(src)} type="video/mp4" />
         Your browser does not support embedded video.
       </video>
       <button

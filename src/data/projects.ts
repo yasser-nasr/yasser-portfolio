@@ -1,4 +1,5 @@
 import type { ProjectCategory } from "@/data/workCategories";
+import { optimizedMediaSrc } from "@/lib/optimized-media";
 
 export type ProjectSeo = {
   title: string;
@@ -636,6 +637,12 @@ export const projects: Project[] = [
     },
   },
 ];
+
+// Resolve shared cover/SEO data as well as rendering-time gallery sources.
+for (const project of projects) {
+  project.image = optimizedMediaSrc(project.image);
+  if (project.seo?.image) project.seo.image = optimizedMediaSrc(project.seo.image);
+}
 
 export const publishedProjects = projects.filter((project) => project.publishable);
 export const featuredProjects = publishedProjects.filter((project) => project.featured);

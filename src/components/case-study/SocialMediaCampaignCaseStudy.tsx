@@ -1,4 +1,4 @@
-import Image from "next/image";
+import Image from "@/components/OptimizedImage";
 import Link from "next/link";
 import type { Project } from "@/data/projects";
 import { socialCampaignAssets as assets } from "@/data/socialMediaCampaign";

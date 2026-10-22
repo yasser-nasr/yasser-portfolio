@@ -110,7 +110,6 @@ function BrowserFrame({ src, alt, position = "50% 0%", preload = false, classNam
           src={src}
           alt={alt}
           fill
-          unoptimized
           preload={preload}
           sizes="(min-width: 1152px) 1050px, (min-width: 768px) 88vw, 100vw"
           className="object-cover"
@@ -135,7 +134,6 @@ function PhoneFrame({ src, alt, position = "50% 0%", className = "" }: {
           src={src}
           alt={alt}
           fill
-          unoptimized
           sizes="(min-width: 768px) 280px, 44vw"
           className="object-cover"
           style={{ objectPosition: position }}
@@ -173,7 +171,7 @@ function ScrollablePage({ src, alt, width, height, label }: {
           <span className="ml-3 h-5 flex-1 rounded-full bg-surface-card" />
         </div>
         <div className="h-[30rem] overflow-y-auto overscroll-contain bg-[#07160f] md:h-[44rem]" tabIndex={0} aria-label={`Scrollable ${label} screenshot`}>
-          <Image src={src} alt={alt} width={width} height={height} unoptimized sizes="(min-width: 1152px) 1152px, 100vw" className="h-auto w-full" />
+          <Image src={src} alt={alt} width={width} height={height} sizes="(min-width: 1152px) 1104px, calc(100vw - 48px)" className="h-auto w-full" />
         </div>
       </div>
       <figcaption className="mt-3 text-sm text-ink-faint">{label} · Scroll to explore</figcaption>
@@ -356,11 +354,11 @@ export default function OrinCaseStudy({ project }: { project: Project }) {
           <Reveal className="mt-12 overflow-hidden rounded-2xl border border-edge bg-[#e9e5db] p-4 shadow-xl shadow-black/10 sm:p-7 md:mt-16 md:p-10">
             <div className="overflow-hidden rounded-lg bg-white shadow-[0_20px_60px_-35px_rgba(20,40,30,0.45)]">
               <div className="relative aspect-[5.9/1] overflow-hidden bg-[#e8dfc0]">
-                <Image src={linkedinCover} alt="Orin UAE financial and business consultancy LinkedIn cover reading Your business, in safe hands." fill unoptimized sizes="(min-width: 1152px) 1050px, 100vw" className="object-cover" />
+                <Image src={linkedinCover} alt="Orin UAE financial and business consultancy LinkedIn cover reading Your business, in safe hands." fill sizes="(min-width: 1152px) 1050px, 100vw" className="object-cover" />
               </div>
               <div className="relative px-5 pb-7 pt-12 sm:px-8 sm:pb-9 sm:pt-16">
                 <div className="absolute -top-8 left-5 h-16 w-16 overflow-hidden rounded-lg border-4 border-white bg-white shadow-md sm:-top-12 sm:left-8 sm:h-24 sm:w-24">
-                  <Image src={profilePicture} alt="Orin business consultancy logo used as the LinkedIn profile image." fill unoptimized sizes="96px" className="object-cover" />
+                  <Image src={profilePicture} alt="Orin business consultancy logo used as the LinkedIn profile image." fill sizes="96px" className="object-cover" />
                 </div>
                 <p className="text-xl font-semibold text-[#1c3e2c] sm:text-2xl">Orin</p>
                 <p className="mt-1 text-sm text-[#2b2b2b]/65">Financial & Business Partner</p>
@@ -368,7 +366,7 @@ export default function OrinCaseStudy({ project }: { project: Project }) {
             </div>
           </Reveal>
           <Reveal className="mt-5 overflow-hidden rounded-xl border border-edge bg-[#e8dfc0]">
-            <Image src={linkedinCover} alt="Full Orin financial consultancy LinkedIn cover design in cream, dark green, and muted sage." width={4700} height={796} unoptimized sizes="(min-width: 1152px) 1152px, 100vw" className="h-auto w-full" />
+            <Image src={linkedinCover} alt="Full Orin financial consultancy LinkedIn cover design in cream, dark green, and muted sage." width={4700} height={796} sizes="(min-width: 1152px) 1104px, calc(100vw - 48px)" className="h-auto w-full" />
           </Reveal>
         </section>
 
@@ -401,7 +399,7 @@ export default function OrinCaseStudy({ project }: { project: Project }) {
               <div className="space-y-6 md:col-span-2">
                 <BrowserFrame src={homepage} alt="Orin UAE business consultancy desktop website homepage in the final digital design showcase." position="50% 0%" />
                 <div className="w-full overflow-hidden rounded-lg border border-white/15 bg-[#e8dfc0] shadow-2xl">
-                  <Image src={linkedinCover} alt="Orin financial and business consultancy LinkedIn cover integrated into the final project showcase." width={4700} height={796} unoptimized sizes="(min-width: 768px) 720px, 100vw" className="h-auto w-full" />
+                  <Image src={linkedinCover} alt="Orin financial and business consultancy LinkedIn cover integrated into the final project showcase." width={4700} height={796} sizes="(min-width: 768px) 720px, 100vw" className="h-auto w-full" />
                 </div>
               </div>
               <div className="mx-auto w-full" style={{ maxWidth: "20rem" }}>

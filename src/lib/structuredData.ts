@@ -1,6 +1,7 @@
 import { profile } from "@/data/profile";
 import type { WorkProject } from "@/data/work";
 import { productionSiteUrl } from "@/lib/site";
+import { optimizedMediaSrc } from "@/lib/optimized-media";
 
 const schemaContext = "https://schema.org";
 const websiteDescription =
@@ -208,7 +209,7 @@ export function projectPageStructuredData(project: WorkProject, image: string | 
     creator: personReference,
     genre: project.category,
     ...(project.industry ? { about: project.industry } : {}),
-    ...(image ? { image: new URL(image, `${productionSiteUrl}/`).toString() } : {}),
+    ...(image ? { image: new URL(optimizedMediaSrc(image), `${productionSiteUrl}/`).toString() } : {}),
   };
 
   return {
