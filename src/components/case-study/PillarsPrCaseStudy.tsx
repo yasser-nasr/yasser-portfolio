@@ -1,4 +1,4 @@
-import Image from "@/components/case-study/CaseStudyImage";
+import Image from "@/components/media/CaseStudyImage";
 import localFont from "next/font/local";
 import type { Project } from "@/data/projects";
 import { CaseStudyBackLink, CaseStudyClosingCta } from "./CaseStudyLayout";
@@ -6,20 +6,22 @@ import PillarsFacebookPage from "./PillarsFacebookPage";
 import SocialMediaGrid, {
   type SocialMediaGridItem,
   type SocialMediaSlide,
-} from "./SocialMediaGrid";
-import VideoPlayer from "./VideoPlayer";
+} from "../galleries/SocialMediaGrid";
+import VideoPlayer from "../media/VideoPlayer";
 
 const base = "/projects/pillars-pr";
 const mediaBase = `${base}/social-media`;
 const webMediaBase = `${mediaBase}/web`;
 
 const faustina = localFont({
+  preload: false,
   src: "../../../public/projects/pillars-pr/fonts/Faustina-VariableFont_wght.ttf",
   display: "swap",
   weight: "300 800",
 });
 
 const notoNaskhArabic = localFont({
+  preload: false,
   src: "../../../public/projects/pillars-pr/fonts/NotoNaskhArabic-VariableFont_wght.ttf",
   display: "swap",
   weight: "400 700",

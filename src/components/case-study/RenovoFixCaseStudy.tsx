@@ -1,6 +1,6 @@
-import Image from "@/components/case-study/CaseStudyImage";
-import SocialMediaShowcase from "@/components/case-study/SocialMediaShowcase";
-import VideoPlayer from "@/components/case-study/VideoPlayer";
+import Image from "@/components/media/CaseStudyImage";
+import SocialMediaShowcase from "@/components/galleries/SocialMediaShowcase";
+import VideoPlayer from "@/components/media/VideoPlayer";
 import RenovoFixTypographySpecimen from "@/components/case-study/RenovoFixTypographySpecimen";
 import RenovoFixLogoBreakdown from "@/components/case-study/RenovoFixLogoBreakdown";
 import type { Project } from "@/data/projects";

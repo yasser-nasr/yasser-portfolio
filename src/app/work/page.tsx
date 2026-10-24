@@ -1,8 +1,8 @@
 import type { Metadata } from "next";
-import HeadingReveal from "@/components/HeadingReveal";
-import Reveal from "@/components/Reveal";
-import WorkGrid from "@/components/WorkGrid";
-import JsonLd from "@/components/JsonLd";
+import HeadingReveal from "@/components/animation/HeadingReveal";
+import Reveal from "@/components/animation/Reveal";
+import WorkGrid from "@/components/work/WorkGrid";
+import JsonLd from "@/components/seo/JsonLd";
 import { productionSiteUrl, socialImageUrl } from "@/lib/site";
 import { breadcrumbStructuredData } from "@/lib/structuredData";
 

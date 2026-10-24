@@ -1,7 +1,7 @@
-﻿import Image from "@/components/OptimizedImage";
+﻿import Image from "@/components/media/OptimizedImage";
 import type { ReactNode } from "react";
 import type { Project } from "@/data/projects";
-import Reveal from "@/components/Reveal";
+import Reveal from "@/components/animation/Reveal";
 import { CaseStudyBackLink, CaseStudyClosingCta, CaseStudySection } from "./CaseStudyLayout";
 
 const base = "/projects/dolato-warm-winter-marvels";

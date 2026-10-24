@@ -1,10 +1,10 @@
-import Image from "@/components/OptimizedImage";
+import Image from "@/components/media/OptimizedImage";
 import Link from "next/link";
 import type { Project } from "@/data/projects";
 import { socialCampaignAssets as assets } from "@/data/socialMediaCampaign";
 import { CaseStudyBackLink, CaseStudyClosingCta } from "./CaseStudyLayout";
-import SocialMediaGrid from "./SocialMediaGrid";
-import SnapchatStoryViewer from "./SnapchatStoryViewer";
+import SocialMediaGrid from "../galleries/SocialMediaGrid";
+import SnapchatStoryViewer from "../galleries/SnapchatStoryViewer";
 import LapeFacebookPage from "./LapeFacebookPage";
 
 type AssetKey = keyof typeof assets;

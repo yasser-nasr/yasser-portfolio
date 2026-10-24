@@ -1,4 +1,4 @@
-// Generated from verified optimization reports by media-switch-review/prepare-manifest.mjs.
+// Verified optimized-media allowlist under the consolidated /projects root.
 // Exact availability allowlist: unknown/new media stays on its original URL.
 export const optimizedImagePaths = new Set([
   "3d-exhibition/makkah-chamber/makkah-chamber-exhibition-overview.webp",
@@ -491,21 +491,21 @@ export const optimizedImageOverrides: Readonly<Record<string, string>> = {
 
 // Select report-approved primary MP4s, including the two higher-quality Pillars copies.
 export const optimizedVideoPaths: Readonly<Record<string, string>> = {
-  "/projects/mena-law-reporters/social-media/mena-law-reporters-cop28-highlights-video.mp4": "/videos-optimized/mena-law-reporters/social-media/mena-law-reporters-cop28-highlights-video.mp4",
-  "/projects/pillars-pr/social-media/web/videos/pillars-pr-logo-animation-intro.mp4": "/videos-optimized/pillars-pr/social-media/web/videos/pillars-pr-logo-animation-intro.mp4",
-  "/projects/pillars-pr/social-media/web/videos/pillars-pr-online-presence-video.mp4": "/videos-optimized/pillars-pr/social-media/web/videos/pillars-pr-online-presence-video-high-quality.mp4",
-  "/projects/pillars-pr/social-media/web/videos/pillars-pr-uses-of-public-relations-video.mp4": "/videos-optimized/pillars-pr/social-media/web/videos/pillars-pr-uses-of-public-relations-video-high-quality.mp4",
-  "/projects/renovofix/before-after/renovofix-ai-renovation-transformation-01.mp4": "/videos-optimized/renovofix/before-after/renovofix-ai-renovation-transformation-01.mp4",
-  "/projects/renovofix/before-after/renovofix-ai-renovation-transformation-02.mp4": "/videos-optimized/renovofix/before-after/renovofix-ai-renovation-transformation-02.mp4",
-  "/projects/renovofix/before-after/renovofix-ai-renovation-transformation-03.mp4": "/videos-optimized/renovofix/before-after/renovofix-ai-renovation-transformation-03.mp4",
-  "/projects/renovofix/before-after/renovofix-ai-renovation-transformation-04.mp4": "/videos-optimized/renovofix/before-after/renovofix-ai-renovation-transformation-04.mp4",
-  "/projects/renovofix/reels/renovofix-bathroom-educational-reel.mp4": "/videos-optimized/renovofix/reels/renovofix-bathroom-educational-reel.mp4",
-  "/projects/renovofix/reels/renovofix-ceiling-educational-reel.mp4": "/videos-optimized/renovofix/reels/renovofix-ceiling-educational-reel.mp4",
-  "/projects/renovofix/reels/renovofix-flooring-educational-reel.mp4": "/videos-optimized/renovofix/reels/renovofix-flooring-educational-reel.mp4",
-  "/projects/renovofix/reels/renovofix-lighting-educational-reel.mp4": "/videos-optimized/renovofix/reels/renovofix-lighting-educational-reel.mp4",
-  "/projects/videos-reels/memo-travel-dahab-short-form-reel.mp4": "/videos-optimized/videos-reels/memo-travel-dahab-short-form-reel.mp4",
-  "/projects/videos-reels/memo-travel-sinai-short-form-reel.mp4": "/videos-optimized/videos-reels/memo-travel-sinai-short-form-reel.mp4",
-  "/projects/videos-reels/memo-travel-umrah-short-form-reel.mp4": "/videos-optimized/videos-reels/memo-travel-umrah-short-form-reel.mp4",
-  "/projects/videos-reels/multicultural-center-takeya-kitchen-houston-community-meals-campaign-video.mp4": "/videos-optimized/videos-reels/multicultural-center-takeya-kitchen-houston-community-meals-campaign-video.mp4",
-  "/projects/x-factor-interior-design/social-media/x-factor-interior-design-dubai-residential-reel.mp4": "/videos-optimized/x-factor-interior-design/social-media/x-factor-interior-design-dubai-residential-reel.mp4"
+  "/projects/mena-law-reporters/social-media/mena-law-reporters-cop28-highlights-video.mp4": "/projects/mena-law-reporters/social-media/mena-law-reporters-cop28-highlights-video.mp4",
+  "/projects/pillars-pr/social-media/web/videos/pillars-pr-logo-animation-intro.mp4": "/projects/pillars-pr/social-media/web/videos/pillars-pr-logo-animation-intro.mp4",
+  "/projects/pillars-pr/social-media/web/videos/pillars-pr-online-presence-video.mp4": "/projects/pillars-pr/social-media/web/videos/pillars-pr-online-presence-video-high-quality.mp4",
+  "/projects/pillars-pr/social-media/web/videos/pillars-pr-uses-of-public-relations-video.mp4": "/projects/pillars-pr/social-media/web/videos/pillars-pr-uses-of-public-relations-video-high-quality.mp4",
+  "/projects/renovofix/before-after/renovofix-ai-renovation-transformation-01.mp4": "/projects/renovofix/before-after/renovofix-ai-renovation-transformation-01.mp4",
+  "/projects/renovofix/before-after/renovofix-ai-renovation-transformation-02.mp4": "/projects/renovofix/before-after/renovofix-ai-renovation-transformation-02.mp4",
+  "/projects/renovofix/before-after/renovofix-ai-renovation-transformation-03.mp4": "/projects/renovofix/before-after/renovofix-ai-renovation-transformation-03.mp4",
+  "/projects/renovofix/before-after/renovofix-ai-renovation-transformation-04.mp4": "/projects/renovofix/before-after/renovofix-ai-renovation-transformation-04.mp4",
+  "/projects/renovofix/reels/renovofix-bathroom-educational-reel.mp4": "/projects/renovofix/reels/renovofix-bathroom-educational-reel.mp4",
+  "/projects/renovofix/reels/renovofix-ceiling-educational-reel.mp4": "/projects/renovofix/reels/renovofix-ceiling-educational-reel.mp4",
+  "/projects/renovofix/reels/renovofix-flooring-educational-reel.mp4": "/projects/renovofix/reels/renovofix-flooring-educational-reel.mp4",
+  "/projects/renovofix/reels/renovofix-lighting-educational-reel.mp4": "/projects/renovofix/reels/renovofix-lighting-educational-reel.mp4",
+  "/projects/videos-reels/memo-travel-dahab-short-form-reel.mp4": "/projects/videos-reels/memo-travel-dahab-short-form-reel.mp4",
+  "/projects/videos-reels/memo-travel-sinai-short-form-reel.mp4": "/projects/videos-reels/memo-travel-sinai-short-form-reel.mp4",
+  "/projects/videos-reels/memo-travel-umrah-short-form-reel.mp4": "/projects/videos-reels/memo-travel-umrah-short-form-reel.mp4",
+  "/projects/videos-reels/multicultural-center-takeya-kitchen-houston-community-meals-campaign-video.mp4": "/projects/videos-reels/multicultural-center-takeya-kitchen-houston-community-meals-campaign-video.mp4",
+  "/projects/x-factor-interior-design/social-media/x-factor-interior-design-dubai-residential-reel.mp4": "/projects/x-factor-interior-design/social-media/x-factor-interior-design-dubai-residential-reel.mp4"
 };

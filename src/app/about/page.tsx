@@ -1,12 +1,12 @@
 import type { Metadata } from "next";
-import AboutHero from "@/components/AboutHero";
-import AboutPrinciples from "@/components/AboutPrinciples";
-import AboutPixelPhilosophy from "@/components/AboutPixelPhilosophy";
-import AboutCareerJourney from "@/components/AboutCareerJourney";
-import AboutApproach from "@/components/AboutApproach";
-import AboutMentoring from "@/components/AboutMentoring";
-import AboutFinalCta from "@/components/AboutFinalCta";
-import JsonLd from "@/components/JsonLd";
+import AboutHero from "@/components/about/AboutHero";
+import AboutPrinciples from "@/components/about/AboutPrinciples";
+import AboutPixelPhilosophy from "@/components/about/AboutPixelPhilosophy";
+import AboutCareerJourney from "@/components/about/AboutCareerJourney";
+import AboutApproach from "@/components/about/AboutApproach";
+import AboutMentoring from "@/components/about/AboutMentoring";
+import AboutFinalCta from "@/components/about/AboutFinalCta";
+import JsonLd from "@/components/seo/JsonLd";
 import { productionSiteUrl, socialImageUrl } from "@/lib/site";
 import { aboutPageStructuredData } from "@/lib/structuredData";
 

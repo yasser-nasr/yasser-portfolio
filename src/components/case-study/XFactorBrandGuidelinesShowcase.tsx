@@ -1,9 +1,9 @@
 "use client";
 
-import Image from "@/components/case-study/CaseStudyImage";
+import Image from "@/components/media/CaseStudyImage";
 import { useEffect, useState } from "react";
 import { createPortal } from "react-dom";
-import { useDialogFocus } from "@/lib/useDialogFocus";
+import { useDialogFocus } from "@/hooks/useDialogFocus";
 
 const base = "/projects/x-factor-interior-design";
 const slides = [

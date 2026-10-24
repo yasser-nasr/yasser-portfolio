@@ -1,13 +1,13 @@
 import type { Metadata } from "next";
-import ResumeHero from "@/components/ResumeHero";
-import ResumeProfile from "@/components/ResumeProfile";
-import ResumeExpertise from "@/components/ResumeExpertise";
-import ResumeExperience from "@/components/ResumeExperience";
-import ResumeLeadership from "@/components/ResumeLeadership";
-import ResumeAwards from "@/components/ResumeAwards";
-import ResumeCredentials from "@/components/ResumeCredentials";
-import ResumeFinalCta from "@/components/ResumeFinalCta";
-import JsonLd from "@/components/JsonLd";
+import ResumeHero from "@/components/resume/ResumeHero";
+import ResumeProfile from "@/components/resume/ResumeProfile";
+import ResumeExpertise from "@/components/resume/ResumeExpertise";
+import ResumeExperience from "@/components/resume/ResumeExperience";
+import ResumeLeadership from "@/components/resume/ResumeLeadership";
+import ResumeAwards from "@/components/resume/ResumeAwards";
+import ResumeCredentials from "@/components/resume/ResumeCredentials";
+import ResumeFinalCta from "@/components/resume/ResumeFinalCta";
+import JsonLd from "@/components/seo/JsonLd";
 import { productionSiteUrl, socialImageUrl } from "@/lib/site";
 import { breadcrumbStructuredData } from "@/lib/structuredData";
 

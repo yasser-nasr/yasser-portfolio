@@ -1,0 +1,12 @@
+# Local-only reports and authoring/tooling material; no runtime imports depend on these.
+/reports/
+/performance-reports/
+/performance-review/
+/cleanup-review/
+/docs/
+/content/
+/scripts/
+/.claude/
+/.next/
+/tsconfig.tsbuildinfo
+*.log

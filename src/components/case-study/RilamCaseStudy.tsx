@@ -1,4 +1,4 @@
-import Image from "@/components/OptimizedImage";
+import Image from "@/components/media/OptimizedImage";
 import type { Project } from "@/data/projects";
 import { CaseStudyBackLink, CaseStudyClosingCta } from "./CaseStudyLayout";
 

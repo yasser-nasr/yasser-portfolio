@@ -1,9 +1,9 @@
 "use client";
 
-import Image from "@/components/case-study/CaseStudyImage";
+import Image from "@/components/media/CaseStudyImage";
 import { useState } from "react";
-import SocialMediaGrid, { type SocialMediaGridItem } from "./SocialMediaGrid";
-import VideoPlayer from "./VideoPlayer";
+import SocialMediaGrid, { type SocialMediaGridItem } from "../galleries/SocialMediaGrid";
+import VideoPlayer from "../media/VideoPlayer";
 
 const base = "/projects/x-factor-interior-design/social-media";
 const logo = "/projects/x-factor-interior-design/logo/x-factor-interior-design-icon-logo.svg";

@@ -24,6 +24,14 @@ const nextConfig: NextConfig = {
       permanent: true,
     }];
   },
+  async rewrites() {
+    // Preserve existing media URLs (including cached Next Image requests)
+    // after physically consolidating the media under public/projects.
+    return [
+      { source: "/projects-optimized/:path*", destination: "/projects/:path*" },
+      { source: "/videos-optimized/:path*", destination: "/projects/:path*" },
+    ];
+  },
   poweredByHeader: false,
   images: {
     qualities: [75, 100],
@@ -34,6 +42,7 @@ const nextConfig: NextConfig = {
     ],
   },
   async headers() {
+    // Legacy-prefix rules apply to the compatibility aliases, not extra folders.
     return [
       {
         source: "/projects/:path*",

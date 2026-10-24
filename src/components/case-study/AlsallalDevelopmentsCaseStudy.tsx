@@ -1,9 +1,9 @@
-import Image from "@/components/OptimizedImage";
+import Image from "@/components/media/OptimizedImage";
 import type { ReactNode } from "react";
-import Reveal from "@/components/Reveal";
+import Reveal from "@/components/animation/Reveal";
 import type { Project } from "@/data/projects";
 import { CaseStudyBackLink, CaseStudyClosingCta } from "./CaseStudyLayout";
-import ZoomableCaseStudyImage from "./ZoomableCaseStudyImage";
+import ZoomableCaseStudyImage from "../media/ZoomableCaseStudyImage";
 
 const base = "/projects/alsallal-developments";
 const fullSize = "(min-width: 1152px) 1104px, calc(100vw - 48px)";

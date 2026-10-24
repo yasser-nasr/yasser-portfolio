@@ -5,12 +5,14 @@ import {
 } from "./optimized-media-manifest";
 
 function optimizedPath(pathname: string) {
+  // Accept old saved URLs, but emit the single canonical media root.
+  pathname = pathname.replace(/^\/(?:projects-optimized|videos-optimized)\//, "/projects/");
   const video = optimizedVideoPaths[pathname];
   if (video) return video;
   if (!pathname.startsWith("/projects/")) return pathname;
   const relative = pathname.slice("/projects/".length);
   return optimizedImagePaths.has(relative)
-    ? `/projects-optimized/${optimizedImageOverrides[relative] ?? relative}`
+    ? `/projects/${optimizedImageOverrides[relative] ?? relative}`
     : pathname;
 }
 

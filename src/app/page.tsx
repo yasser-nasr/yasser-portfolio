@@ -1,14 +1,14 @@
 import type { Metadata } from "next";
-import Hero from "@/components/Hero";
-import ProofStrip from "@/components/ProofStrip";
-import SelectedWork from "@/components/SelectedWork";
-import Positioning from "@/components/Positioning";
-import Capabilities from "@/components/Capabilities";
-import MarketsIndustries from "@/components/MarketsIndustries";
-import AboutPreview from "@/components/AboutPreview";
-import PixelPhilosophy from "@/components/PixelPhilosophy";
-import FinalCta from "@/components/FinalCta";
-import JsonLd from "@/components/JsonLd";
+import Hero from "@/components/home/Hero";
+import ProofStrip from "@/components/home/ProofStrip";
+import SelectedWork from "@/components/home/SelectedWork";
+import Positioning from "@/components/home/Positioning";
+import Capabilities from "@/components/home/Capabilities";
+import MarketsIndustries from "@/components/home/MarketsIndustries";
+import AboutPreview from "@/components/home/AboutPreview";
+import PixelPhilosophy from "@/components/home/PixelPhilosophy";
+import FinalCta from "@/components/home/FinalCta";
+import JsonLd from "@/components/seo/JsonLd";
 import { productionSiteUrl, socialImageUrl } from "@/lib/site";
 import { homeStructuredData } from "@/lib/structuredData";
 

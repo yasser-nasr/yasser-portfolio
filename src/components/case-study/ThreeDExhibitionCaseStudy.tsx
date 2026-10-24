@@ -1,5 +1,5 @@
 import type { ReactNode } from "react";
-import ZoomableCaseStudyImage from "@/components/case-study/ZoomableCaseStudyImage";
+import ZoomableCaseStudyImage from "@/components/media/ZoomableCaseStudyImage";
 import { CaseStudyBackLink, CaseStudyClosingCta } from "./CaseStudyLayout";
 
 const base = "/projects/3d-exhibition";

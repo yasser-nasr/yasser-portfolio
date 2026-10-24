@@ -1,6 +1,6 @@
-import Image from "@/components/case-study/CaseStudyImage";
-import Reveal from "@/components/Reveal";
-import ZoomableCaseStudyImage from "@/components/case-study/ZoomableCaseStudyImage";
+import Image from "@/components/media/CaseStudyImage";
+import Reveal from "@/components/animation/Reveal";
+import ZoomableCaseStudyImage from "@/components/media/ZoomableCaseStudyImage";
 import type { Project } from "@/data/projects";
 import { CaseStudyBackLink, CaseStudyClosingCta } from "./CaseStudyLayout";
 

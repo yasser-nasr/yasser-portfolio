@@ -1,9 +1,9 @@
 import type { Metadata } from "next";
 import Image from "next/image";
-import HeadingReveal from "@/components/HeadingReveal";
-import Reveal from "@/components/Reveal";
-import ContactForm from "@/components/ContactForm";
-import JsonLd from "@/components/JsonLd";
+import HeadingReveal from "@/components/animation/HeadingReveal";
+import Reveal from "@/components/animation/Reveal";
+import ContactForm from "@/components/contact/ContactForm";
+import JsonLd from "@/components/seo/JsonLd";
 import { profile } from "@/data/profile";
 import { productionSiteUrl, socialImageUrl } from "@/lib/site";
 import { contactPageStructuredData } from "@/lib/structuredData";

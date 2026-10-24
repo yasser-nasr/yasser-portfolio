@@ -1,7 +1,7 @@
-import Reveal from "@/components/Reveal";
+import Reveal from "@/components/animation/Reveal";
 import type { Project } from "@/data/projects";
 import { CaseStudyBackLink, CaseStudyClosingCta } from "./CaseStudyLayout";
-import PresentationDeckViewer, { type PresentationSlide } from "./PresentationDeckViewer";
+import PresentationDeckViewer, { type PresentationSlide } from "../galleries/PresentationDeckViewer";
 
 const base = "/projects/presentations/alsallal-pitch-deck/slides";
 const slideDetails = [
@@ -314,7 +314,7 @@ export default function PresentationsCaseStudy({ project }: { project: Project }
             <p className="mt-6 max-w-3xl text-base leading-8 text-ink-soft md:text-lg">An 11-slide selection presenting the market opportunity, development framework, competitive strengths, and funding needs. Architectural imagery and a consistent slide layout guide the investment story.</p>
           </Reveal>
           <div className="mt-10 md:mt-14">
-            <PresentationDeckViewer slides={slides} ariaLabel="Alsallal Developments investor pitch deck" prioritizeCover />
+            <PresentationDeckViewer slides={slides} ariaLabel="Alsallal Developments investor pitch deck" />
           </div>
         </section>
 

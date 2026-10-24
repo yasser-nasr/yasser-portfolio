@@ -1,6 +1,6 @@
 import type { ReactNode } from "react";
 import Link from "next/link";
-import Reveal from "@/components/Reveal";
+import Reveal from "@/components/animation/Reveal";
 
 export function CaseStudyBackLink() {
   return (

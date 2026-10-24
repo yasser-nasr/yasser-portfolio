@@ -1,4 +1,4 @@
-import Image from "@/components/case-study/CaseStudyImage";
+import Image from "@/components/media/CaseStudyImage";
 
 function HomeIcon() {
   return (

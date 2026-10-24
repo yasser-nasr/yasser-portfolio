@@ -1,9 +1,11 @@
-import Image from "@/components/case-study/CaseStudyImage";
+import Image from "@/components/media/CaseStudyImage";
 import localFont from "next/font/local";
 
 const base = "/projects/mena-law-reporters";
 
 const zillaSlab = localFont({
+  // Specimen fonts must not compete with site typography on unrelated case studies.
+  preload: false,
   src: [
     {
       path: "../../../public/projects/mena-law-reporters/fonts/ZillaSlab-Light.ttf",
@@ -35,6 +37,7 @@ const zillaSlab = localFont({
 });
 
 const cairo = localFont({
+  preload: false,
   src: "../../../public/projects/mena-law-reporters/fonts/Cairo-VariableFont_slnt,wght.ttf",
   display: "swap",
   weight: "200 1000",

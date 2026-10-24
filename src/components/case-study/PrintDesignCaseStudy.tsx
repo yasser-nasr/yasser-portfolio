@@ -1,9 +1,9 @@
-import Image from "@/components/OptimizedImage";
-import HeadingReveal from "@/components/HeadingReveal";
-import Reveal from "@/components/Reveal";
+import Image from "@/components/media/OptimizedImage";
+import HeadingReveal from "@/components/animation/HeadingReveal";
+import Reveal from "@/components/animation/Reveal";
 import type { Project } from "@/data/projects";
-import ZoomableCaseStudyImage from "./ZoomableCaseStudyImage";
-import PrintDocumentSlides from "./PrintDocumentSlides";
+import ZoomableCaseStudyImage from "../media/ZoomableCaseStudyImage";
+import PrintDocumentSlides from "../galleries/PrintDocumentSlides";
 import { CaseStudyBackLink, CaseStudyClosingCta } from "./CaseStudyLayout";
 
 const base = "/projects/print";

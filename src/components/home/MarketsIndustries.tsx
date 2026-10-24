@@ -1,0 +1,140 @@
+"use client";
+
+import Image from "next/image";
+import { motion, type Variants } from "motion/react";
+import HeadingReveal from "@/components/animation/HeadingReveal";
+import Reveal from "@/components/animation/Reveal";
+import { industries, markets } from "@/data/markets";
+
+const container: Variants = {
+  hidden: {},
+  visible: { transition: { staggerChildren: 0.06 } },
+};
+
+const chip: Variants = {
+  hidden: { opacity: 0, scale: 0.92 },
+  visible: { opacity: 1, scale: 1, transition: { duration: 0.35, ease: "easeOut" } },
+};
+
+const marketFlags: Record<
+  (typeof markets)[number],
+  { src: string; width: number; height: number }
+> = {
+  Egypt: { src: "https://flagcdn.com/w80/eg.png", width: 30, height: 20 },
+  UAE: { src: "https://flagcdn.com/w80/ae.png", width: 32, height: 16 },
+  "Saudi Arabia": { src: "https://flagcdn.com/w80/sa.png", width: 30, height: 20 },
+  Vienna: { src: "https://flagcdn.com/w80/at.png", width: 30, height: 20 },
+  "United States": { src: "https://flagcdn.com/w80/us.png", width: 32, height: 17 },
+  "Wider GCC": {
+    src: "https://upload.wikimedia.org/wikipedia/commons/thumb/a/a6/Flag_of_the_Cooperation_Council_for_the_Arab_States_of_the_Gulf.svg/330px-Flag_of_the_Cooperation_Council_for_the_Arab_States_of_the_Gulf.svg.png",
+    width: 32,
+    height: 16,
+  },
+};
+
+function MarketFlag({ market }: { market: (typeof markets)[number] }) {
+  const flag = marketFlags[market];
+
+  return (
+    <Image
+      aria-hidden="true"
+      alt=""
+      src={flag.src}
+      width={flag.width}
+      height={flag.height}
+      className="rounded-[3px] shadow-sm ring-1 ring-black/15"
+    />
+  );
+}
+
+export default function MarketsIndustries() {
+  return (
+    <section className="relative overflow-hidden py-20 md:py-28">
+      <div
+        aria-hidden="true"
+        className="absolute inset-0 -z-10 opacity-[0.04]"
+        style={{
+          backgroundImage:
+            "linear-gradient(var(--border) 1px, transparent 1px), linear-gradient(90deg, var(--border) 1px, transparent 1px)",
+          backgroundSize: "36px 36px",
+        }}
+      />
+      <div aria-hidden="true" className="absolute inset-0 -z-10 flex items-center justify-center">
+        <div className="h-72 w-72 rounded-full bg-surface-card opacity-30 blur-3xl" />
+      </div>
+
+      <div className="mx-auto max-w-6xl px-6">
+        <p className="font-display text-base uppercase tracking-[0.25em] text-ink-soft md:text-lg">
+          Exposure
+        </p>
+
+        <HeadingReveal
+          as="h2"
+          className="mt-6 text-3xl font-semibold leading-tight text-ink md:text-4xl"
+        >
+          Markets &amp; Industries
+        </HeadingReveal>
+
+        <Reveal>
+          <p className="mt-6 max-w-xl text-lg leading-relaxed text-ink-soft">
+            Experience shaped by working across different markets, business
+            environments, audiences, and communication needs.
+          </p>
+        </Reveal>
+
+        <div className="mt-14 grid gap-12 md:grid-cols-2 md:gap-16">
+          <div>
+            <p className="font-display text-base uppercase tracking-[0.2em] text-ink-soft md:text-lg">
+              Markets
+            </p>
+
+            <Reveal
+              variants={container}
+              className="mt-4 grid grid-cols-2 gap-px overflow-hidden rounded-2xl border border-edge bg-edge sm:grid-cols-3 lg:grid-cols-6"
+            >
+              {markets.map((market) => {
+                return (
+                  <motion.div
+                    key={market}
+                    variants={chip}
+                    className="bg-background px-4 py-6 text-center transition-colors duration-300 hover:bg-surface-card/45"
+                  >
+                    <div className="flex flex-col items-center gap-3">
+                      <div className="flex h-5 items-center justify-center">
+                        <MarketFlag market={market} />
+                      </div>
+                      <span className="font-display text-base uppercase tracking-wide text-ink md:text-lg">
+                        {market}
+                      </span>
+                    </div>
+                  </motion.div>
+                );
+              })}
+            </Reveal>
+          </div>
+
+          <div>
+            <p className="font-display text-base uppercase tracking-[0.2em] text-ink-soft md:text-lg">
+              Industries
+            </p>
+
+            <Reveal
+              variants={container}
+              className="mt-4 flex flex-wrap gap-2.5"
+            >
+              {industries.map((industry) => (
+                <motion.span
+                  key={industry}
+                  variants={chip}
+                  className="rounded-full border border-edge bg-surface-card/20 px-4 py-2.5 text-sm text-ink transition-colors duration-300 hover:bg-surface-card/60 md:text-base"
+                >
+                  {industry}
+                </motion.span>
+              ))}
+            </Reveal>
+          </div>
+        </div>
+      </div>
+    </section>
+  );
+}

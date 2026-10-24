@@ -1,9 +1,9 @@
 import type { Metadata, Viewport } from "next";
 import { Poppins } from "next/font/google";
 import localFont from "next/font/local";
-import Navbar from "@/components/Navbar";
-import Footer from "@/components/Footer";
-import Analytics from "@/components/Analytics";
+import Navbar from "@/components/layout/Navbar";
+import Footer from "@/components/layout/Footer";
+import Analytics from "@/components/seo/Analytics";
 import { productionSiteUrl, socialImageUrl } from "@/lib/site";
 import { profile } from "@/data/profile";
 import "./globals.css";

@@ -1,6 +1,6 @@
-import Image from "@/components/OptimizedImage";
+import Image from "@/components/media/OptimizedImage";
 import { socialCampaignAssets as assets } from "@/data/socialMediaCampaign";
-import SocialMediaGrid from "./SocialMediaGrid";
+import SocialMediaGrid from "../galleries/SocialMediaGrid";
 
 const posts = [
   assets["lape-climate-initiative"],

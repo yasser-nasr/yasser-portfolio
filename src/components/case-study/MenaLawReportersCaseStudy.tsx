@@ -1,5 +1,5 @@
-import Image from "@/components/case-study/CaseStudyImage";
-import Reveal from "@/components/Reveal";
+import Image from "@/components/media/CaseStudyImage";
+import Reveal from "@/components/animation/Reveal";
 import type { Project } from "@/data/projects";
 import { CaseStudyBackLink, CaseStudyClosingCta } from "./CaseStudyLayout";
 import MenaLawReportersFacebookPage from "./MenaLawReportersFacebookPage";
@@ -7,8 +7,8 @@ import MenaLawReportersIdentity from "./MenaLawReportersIdentity";
 import SocialMediaGrid, {
   type SocialMediaGridItem,
   type SocialMediaSlide,
-} from "./SocialMediaGrid";
-import VideoPlayer from "./VideoPlayer";
+} from "../galleries/SocialMediaGrid";
+import VideoPlayer from "../media/VideoPlayer";
 
 const base = "/projects/mena-law-reporters";
 const socialBase = `${base}/social-media`;

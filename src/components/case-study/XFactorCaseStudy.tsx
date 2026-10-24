@@ -1,4 +1,4 @@
-import Image from "@/components/case-study/CaseStudyImage";
+import Image from "@/components/media/CaseStudyImage";
 import { Montserrat, Playfair_Display } from "next/font/google";
 import type { Project } from "@/data/projects";
 import { CaseStudyBackLink, CaseStudyClosingCta } from "./CaseStudyLayout";
@@ -8,8 +8,8 @@ import XFactorCompanyProfileShowcase from "./XFactorCompanyProfileShowcase";
 import XFactorBrandGuidelinesShowcase from "./XFactorBrandGuidelinesShowcase";
 import XFactorLogoShowcase from "./XFactorLogoShowcase";
 
-const playfair = Playfair_Display({ subsets: ["latin"], weight: ["500", "700"] });
-const montserrat = Montserrat({ subsets: ["latin"], weight: ["400", "500"] });
+const playfair = Playfair_Display({ subsets: ["latin"], weight: ["500", "700"], preload: false });
+const montserrat = Montserrat({ subsets: ["latin"], weight: ["400", "500"], preload: false });
 const base = "/projects/x-factor-interior-design";
 const colors = [
   ["Charcoal", "#1C1C1C"],

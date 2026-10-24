@@ -1,10 +1,10 @@
 # Claude Code Project Instructions — Yasser Nasr Portfolio
 
 ## Mandatory context
-Before planning, coding, or changing the visual direction, read these files in the repository root:
+Before planning, coding, or changing the visual direction, read these documentation files:
 
-1. `Yasser_Nasr_Personal_Brand_Context.md`
-2. `WEBSITE-BRIEF.md`
+1. `docs/brand/personal-brand-context.md`
+2. `docs/website-brief.md`
 
 Treat both documents as the source of truth. Do not replace brand decisions with generic portfolio conventions.
 

@@ -9,8 +9,10 @@ export default function sitemap(): MetadataRoute.Sitemap {
     ...staticRoutes.map((route) => ({
       url: `${productionSiteUrl}${route}`,
     })),
-    ...publishedWorkProjects.map((project) => ({
-      url: `${productionSiteUrl}/work/${project.slug}`,
-    })),
+    ...publishedWorkProjects
+      .filter((project) => !project.href || !staticRoutes.includes(project.href))
+      .map((project) => ({
+        url: new URL(project.href ?? `/work/${project.slug}`, productionSiteUrl).toString(),
+      })),
   ];
 }

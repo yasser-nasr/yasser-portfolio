@@ -40,3 +40,9 @@ yarn-error.log*
 # typescript
 *.tsbuildinfo
 next-env.d.ts
+
+# Local audit datasets, recovery records and generated performance outputs
+/reports/
+/performance-reports/
+/performance-review/
+/cleanup-review/

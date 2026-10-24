@@ -1,9 +1,9 @@
 import type { Metadata } from "next";
-import FinalCta from "@/components/FinalCta";
-import HeadingReveal from "@/components/HeadingReveal";
-import JsonLd from "@/components/JsonLd";
-import Reveal from "@/components/Reveal";
-import VideoPlayer from "@/components/case-study/VideoPlayer";
+import FinalCta from "@/components/home/FinalCta";
+import HeadingReveal from "@/components/animation/HeadingReveal";
+import JsonLd from "@/components/seo/JsonLd";
+import Reveal from "@/components/animation/Reveal";
+import VideoPlayer from "@/components/media/VideoPlayer";
 import { productionSiteUrl } from "@/lib/site";
 import { motionVideoPageStructuredData } from "@/lib/structuredData";
 import { optimizedMediaSrc } from "@/lib/optimized-media";

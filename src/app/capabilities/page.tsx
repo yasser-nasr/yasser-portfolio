@@ -1,11 +1,11 @@
 import type { Metadata } from "next";
-import HeadingReveal from "@/components/HeadingReveal";
-import Reveal from "@/components/Reveal";
-import CapabilitiesDetailList from "@/components/CapabilitiesDetailList";
-import CapabilitiesSystem from "@/components/CapabilitiesSystem";
-import CapabilitiesContribution from "@/components/CapabilitiesContribution";
-import CapabilitiesFinalCta from "@/components/CapabilitiesFinalCta";
-import JsonLd from "@/components/JsonLd";
+import HeadingReveal from "@/components/animation/HeadingReveal";
+import Reveal from "@/components/animation/Reveal";
+import CapabilitiesDetailList from "@/components/capabilities/CapabilitiesDetailList";
+import CapabilitiesSystem from "@/components/capabilities/CapabilitiesSystem";
+import CapabilitiesContribution from "@/components/capabilities/CapabilitiesContribution";
+import CapabilitiesFinalCta from "@/components/capabilities/CapabilitiesFinalCta";
+import JsonLd from "@/components/seo/JsonLd";
 import { productionSiteUrl, socialImageUrl } from "@/lib/site";
 import { breadcrumbStructuredData } from "@/lib/structuredData";
 
