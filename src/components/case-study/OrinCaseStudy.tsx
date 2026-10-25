@@ -120,11 +120,12 @@ function BrowserFrame({ src, alt, position = "50% 0%", preload = false, classNam
   );
 }
 
-function PhoneFrame({ src, alt, position = "50% 0%", className = "" }: {
+function PhoneFrame({ src, alt, position = "50% 0%", className = "", priority = false }: {
   src: string;
   alt: string;
   position?: string;
   className?: string;
+  priority?: boolean;
 }) {
   return (
     <div className={`overflow-hidden rounded-[2rem] border-[5px] border-[#14271d] bg-[#07160f] shadow-[0_32px_70px_-28px_rgba(0,0,0,0.9)] ${className}`}>
@@ -134,6 +135,7 @@ function PhoneFrame({ src, alt, position = "50% 0%", className = "" }: {
           src={src}
           alt={alt}
           fill
+          priority={priority}
           sizes="(min-width: 768px) 280px, 44vw"
           className="object-cover"
           style={{ objectPosition: position }}
@@ -185,7 +187,7 @@ export default function OrinCaseStudy({ project }: { project: Project }) {
       <article className="mx-auto max-w-6xl px-6">
         <CaseStudyBackLink />
 
-        <Reveal className="relative mt-6 overflow-hidden rounded-[1.5rem] border border-white/10 bg-[#0a2115] px-4 pb-5 pt-7 shadow-[0_40px_100px_-45px_rgba(0,0,0,0.9)] sm:px-7 sm:pb-8 md:px-10 md:pb-12 md:pt-12">
+        <Reveal immediate className="relative mt-6 overflow-hidden rounded-[1.5rem] border border-white/10 bg-[#0a2115] px-4 pb-5 pt-7 shadow-[0_40px_100px_-45px_rgba(0,0,0,0.9)] sm:px-7 sm:pb-8 md:px-10 md:pb-12 md:pt-12">
             <div aria-hidden="true" className="absolute inset-0 opacity-40 [background-image:radial-gradient(circle_at_16%_18%,#4faf8f33,transparent_27%),radial-gradient(circle_at_90%_80%,#e8dfc022,transparent_28%)]" />
             <div className="relative pr-0 md:pr-28 lg:pr-36">
               <BrowserFrame
@@ -199,6 +201,7 @@ export default function OrinCaseStudy({ project }: { project: Project }) {
                 src={contactMobile}
                 alt="Orin UAE business consultancy mobile website contact experience with responsive navigation and consultation form."
                 className="w-full"
+                priority
               />
             </div>
             <style>{`
@@ -229,7 +232,7 @@ export default function OrinCaseStudy({ project }: { project: Project }) {
         </Reveal>
 
         <header className="py-14 md:py-20">
-          <Reveal>
+          <Reveal immediate>
             <p className="font-display text-sm uppercase tracking-[0.22em] text-ink-faint md:text-base">
               {project.subtitle}
             </p>

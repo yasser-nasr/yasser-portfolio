@@ -1,5 +1,20 @@
 @import "tailwindcss";
 
+/* Same center-out pixel entrance, without 96 hydrated Motion elements. */
+@keyframes pixel-reveal {
+  from { opacity: 1; transform: scale(1); }
+  to { opacity: 0; transform: scale(0); }
+}
+.pixel-reveal-cell {
+  animation: pixel-reveal 0.35s ease-in var(--pixel-delay) both;
+}
+@media (min-width: 1024px) and (min-height: 768px) {
+  [data-critical-desktop] { opacity: 1 !important; transform: none !important; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .pixel-reveal-grid { display: none; }
+}
+
 /* Both themes follow the device preference by default. Explicit attributes
    allow the existing toggle to override the theme for the current visit. */
 :root,

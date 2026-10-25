@@ -52,7 +52,7 @@ export default function WorkPage() {
           <HeadingReveal as="h1" className="mt-5 max-w-4xl text-4xl font-semibold leading-tight text-ink md:text-6xl">
             Projects built as connected visual systems.
           </HeadingReveal>
-          <Reveal>
+          <Reveal immediate>
             <p className="mt-7 max-w-2xl text-lg leading-8 text-ink-soft">
               Selected work across brand identity, digital design, websites,
               campaigns, social content, and multimedia.

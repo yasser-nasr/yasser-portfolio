@@ -17,21 +17,23 @@ export default function Reveal({
   children,
   className,
   variants = defaultVariants,
+  immediate = false,
   ...rest
 }: {
   children: React.ReactNode;
   className?: string;
   variants?: Variants;
+  immediate?: boolean;
 } & ReuseDivProps) {
   const prefersReducedMotion = useSafeReducedMotion();
-  const skip = prefersReducedMotion === true;
+  const skip = immediate || prefersReducedMotion === true;
 
   return (
     <motion.div
       key={skip ? "static" : "animated"}
       className={className}
       initial={skip ? "visible" : "hidden"}
-      whileInView="visible"
+      whileInView={skip ? undefined : "visible"}
       viewport={{ once: true, margin: "-10% 0px" }}
       variants={variants}
       {...rest}

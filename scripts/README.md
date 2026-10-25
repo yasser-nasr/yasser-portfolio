@@ -1,6 +1,6 @@
 # Development tools
 
-Run tools from the application root. None runs automatically during startup or deployment. Results belong in ignored `reports/`, not `public/`.
+Run tools from the application root. None runs automatically during startup or deployment. Results belong in ignored `reports/` or `performance-reports/`, not `public/`.
 
 ## Audit
 
@@ -15,6 +15,9 @@ Run tools from the application root. None runs automatically during startup or d
 
 ## Performance and Lighthouse
 
+- `npm run audit:site`: local Chrome/Lighthouse audits of every verified live public URL, three mobile and three desktop runs each. JSON, HTML, CSV and analysis are saved under `performance-reports/`. See [Windows instructions](performance/README.md).
+- `scripts/performance/compare-local-production.mjs`: explicit before/after fixture measurements for the 24 October optimization review; requires the documented production servers. Keeps this experiment separate from the live audit command.
+- `scripts/performance/{verify-performance-changes,check-critical-visibility,summarize-performance-fixes}.mjs`: focused browser/HTML checks and comparison reporting for the same review. Inputs, ports and output scope are declared in those scripts; do not treat historical measurements as current live-site results.
 - `scripts/performance/measure-site-performance.mjs`: opt-in snapshot, local declarations, live HTTP/resource or selected-image diagnostics, using its explicit flags.
 - `scripts/performance/profile-production-payloads.mjs --before` / `--after`: compare a separately running production server on port 3010. These do not measure browser paints or CWV.
 - `scripts/performance/profile-presentations-lighthouse.mjs --analyze`: analyze the original Lighthouse JSON under `reports/lighthouse/`. Its optional local comparison modes expect port 3011.

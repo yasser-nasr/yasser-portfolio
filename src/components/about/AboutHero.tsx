@@ -1,21 +1,7 @@
-"use client";
-
 import Image from "next/image";
-import { motion, type Variants } from "motion/react";
 import PixelReveal from "@/components/animation/PixelReveal";
-import { useSafeReducedMotion } from "@/hooks/useSafeReducedMotion";
 import { profile } from "@/data/profile";
 import { heroContent } from "@/data/hero";
-
-const container: Variants = {
-  hidden: {},
-  visible: { transition: { staggerChildren: 0.12, delayChildren: 0.1 } },
-};
-
-const line: Variants = {
-  hidden: { opacity: 0, y: 16 },
-  visible: { opacity: 1, y: 0, transition: { duration: 0.5, ease: "easeOut" } },
-};
 
 // Minimal, subtle pixel fragments scattered around the mascot — decorative
 // only, hidden on the smallest screens to keep mobile simple.
@@ -27,33 +13,23 @@ const PIXEL_FRAGMENTS = [
 ];
 
 export default function AboutHero() {
-  const prefersReducedMotion = useSafeReducedMotion();
-  const reduceMotion = prefersReducedMotion === true;
-
   return (
     <div>
       <div className="grid items-center gap-12 md:grid-cols-[3fr_2fr] md:gap-16">
-        <motion.div
-          key={reduceMotion ? "static" : "animated"}
-          initial={reduceMotion ? "visible" : "hidden"}
-          animate="visible"
-          variants={container}
-        >
-          <motion.p
-            variants={line}
+        <div>
+          <p
             className="font-display text-base uppercase tracking-[0.25em] text-ink-soft md:text-lg"
           >
             About
-          </motion.p>
+          </p>
 
-          <motion.h1
-            variants={line}
+          <h1
             className="mt-6 text-4xl font-semibold leading-tight text-ink md:text-5xl"
           >
             The Designer Behind the Pixels
-          </motion.h1>
+          </h1>
 
-          <motion.div variants={line} className="mt-8 max-w-xl space-y-5">
+          <div className="mt-8 max-w-xl space-y-5">
             <p className="text-lg leading-relaxed text-ink-soft">
               I&rsquo;m {profile.name}, a {profile.primaryTitle}. {heroContent.statement}
             </p>
@@ -62,8 +38,8 @@ export default function AboutHero() {
               multidisciplinary execution to turn ideas into clear,
               consistent, and memorable visual experiences.
             </p>
-          </motion.div>
-        </motion.div>
+          </div>
+        </div>
 
         <div className="relative mx-auto w-48 sm:w-56 md:w-full md:max-w-sm md:-translate-x-[10%]">
           {/* Restrained radial light field behind the mascot */}
@@ -108,6 +84,8 @@ export default function AboutHero() {
             <PixelReveal className="p-5 md:p-7">
               <Image
                 src="/brand/mascot.svg"
+                loading="eager"
+                fetchPriority="high"
                 alt=""
                 aria-hidden="true"
                 width={160}

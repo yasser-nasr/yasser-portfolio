@@ -1,6 +1,8 @@
 "use client";
 
 import Image from "@/components/media/CaseStudyImage";
+import ViewportImage from "@/components/media/ViewportImage";
+import { warmImage } from "@/lib/media-preload";
 import {
   AnimatePresence,
   motion,
@@ -256,10 +258,12 @@ export default function SocialMediaGrid({
               key={item.id}
               type="button"
               onClick={() => openItem(item)}
+              onPointerEnter={() => warmImage(item.slides?.[0]?.src ?? item.preview.src, "(min-width: 768px) 65vw, 100vw", 100, "high")}
+              onFocus={() => warmImage(item.slides?.[0]?.src ?? item.preview.src, "(min-width: 768px) 65vw, 100vw", 100, "high")}
               aria-label={`Open design: ${item.preview.alt}`}
               className={`group relative cursor-zoom-in overflow-hidden bg-surface focus-visible:z-10 ${previewAspect === "square" ? "aspect-square" : "aspect-[4/5]"}`}
             >
-              <Image
+              <ViewportImage
                 src={item.preview.src}
                 alt={item.preview.alt}
                 fill
@@ -339,6 +343,7 @@ export default function SocialMediaGrid({
                   >
                     <Image
                       src={activeSlide.src}
+                      onLoad={() => { if (activeSlides.length > 1) warmImage(activeSlides[(activeSlideIndex + 1) % activeSlides.length].src, "(min-width: 768px) 65vw, 100vw"); }}
                       alt={activeSlide.alt}
                       fill
                       sizes="(min-width: 768px) 65vw, 100vw"

@@ -3,6 +3,7 @@
   "version": "0.1.0",
   "private": true,
   "scripts": {
+    "audit:site": "powershell.exe -NoProfile -ExecutionPolicy Bypass -File scripts/performance/audit-site.ps1",
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
@@ -21,9 +22,12 @@
     "@types/node": "^20",
     "@types/react": "^19",
     "@types/react-dom": "^19",
+    "chrome-launcher": "1.2.2",
     "eslint": "^9",
     "eslint-config-next": "16.3.5",
+    "lighthouse": "13.5.0",
     "tailwindcss": "^4",
+    "tsx": "4.23.15",
     "typescript": "^5"
   }
 }

@@ -96,7 +96,7 @@ export default function ContactPage() {
             Let&rsquo;s turn your next idea into a clear visual experience.
           </HeadingReveal>
 
-          <Reveal>
+          <Reveal immediate>
             <p className="mt-6 max-w-md text-lg text-ink-soft">
               Whether it&rsquo;s a role, project, collaboration, or creative
               conversation, feel free to reach out.

@@ -56,7 +56,7 @@ export default function CapabilitiesPage() {
         <HeadingReveal as="h1" className="mt-6 text-4xl font-semibold text-ink md:text-5xl">
           Connected Capabilities
         </HeadingReveal>
-        <Reveal>
+        <Reveal immediate>
           <p className="mt-6 max-w-xl text-lg text-ink-soft">
             I work across brand, digital, campaigns, and multimedia—connecting
             every touchpoint into one clear and consistent visual experience.

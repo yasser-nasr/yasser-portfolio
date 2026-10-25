@@ -3,9 +3,9 @@ import localFont from "next/font/local";
 export const renovofixPoppins = localFont({
   preload: false,
   src: [
-    { path: "./Poppins-Regular.ttf", weight: "400", style: "normal" },
-    { path: "./Poppins-Medium.ttf", weight: "500", style: "normal" },
-    { path: "./Poppins-Bold.ttf", weight: "700", style: "normal" },
+    { path: "./Poppins-Regular.woff2", weight: "400", style: "normal" },
+    { path: "./Poppins-Medium.woff2", weight: "500", style: "normal" },
+    { path: "./Poppins-Bold.woff2", weight: "700", style: "normal" },
   ],
   display: "swap",
 });

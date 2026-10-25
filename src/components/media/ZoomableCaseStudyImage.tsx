@@ -5,6 +5,7 @@ import { useEffect, useState } from "react";
 import { createPortal } from "react-dom";
 import { useDialogFocus } from "@/hooks/useDialogFocus";
 import { optimizedMediaSrc } from "@/lib/optimized-media";
+import { warmOriginalImage } from "@/lib/media-preload";
 
 export default function ZoomableCaseStudyImage({
   src,
@@ -60,6 +61,8 @@ export default function ZoomableCaseStudyImage({
         <button
           type="button"
           onClick={() => setIsOpen(true)}
+          onPointerEnter={() => warmOriginalImage(src)}
+          onFocus={() => warmOriginalImage(src)}
           aria-label={`Open high-resolution view: ${label}`}
           className={`group relative block w-full cursor-zoom-in overflow-hidden ${frameRadiusClassName} border text-left focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-ink ${
             compact ? "border-edge bg-surface-card" : "border-white/10 bg-[#0b2014]"

@@ -21,13 +21,15 @@ export default function HeadingReveal({
   children,
   as = "h2",
   className = "",
+  immediate = as === "h1",
 }: {
   children: React.ReactNode;
   as?: HeadingTag;
   className?: string;
+  immediate?: boolean;
 }) {
   const prefersReducedMotion = useSafeReducedMotion();
-  const skip = prefersReducedMotion === true;
+  const skip = immediate || prefersReducedMotion === true;
   const Component = as === "h1" ? motion.h1 : as === "h3" ? motion.h3 : motion.h2;
 
   return (
@@ -35,7 +37,7 @@ export default function HeadingReveal({
       key={skip ? "static" : "animated"}
       className={className}
       initial={skip ? "visible" : "hidden"}
-      whileInView="visible"
+      whileInView={skip ? undefined : "visible"}
       viewport={{ once: true, margin: "-10% 0px" }}
       variants={maskVariants}
     >

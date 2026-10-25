@@ -17,7 +17,7 @@ export default function ResumeHero() {
         {resumeHero.headline}
       </HeadingReveal>
 
-      <Reveal>
+      <Reveal immediate>
         <p className="mt-6 max-w-2xl text-lg leading-relaxed text-ink-soft">
           {resumeHero.supportingText}
         </p>

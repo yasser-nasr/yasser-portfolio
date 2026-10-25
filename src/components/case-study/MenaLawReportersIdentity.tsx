@@ -8,27 +8,27 @@ const zillaSlab = localFont({
   preload: false,
   src: [
     {
-      path: "../../../public/projects/mena-law-reporters/fonts/ZillaSlab-Light.ttf",
+      path: "../../../public/projects/mena-law-reporters/fonts/ZillaSlab-Light.woff2",
       weight: "300",
       style: "normal",
     },
     {
-      path: "../../../public/projects/mena-law-reporters/fonts/ZillaSlab-Regular.ttf",
+      path: "../../../public/projects/mena-law-reporters/fonts/ZillaSlab-Regular.woff2",
       weight: "400",
       style: "normal",
     },
     {
-      path: "../../../public/projects/mena-law-reporters/fonts/ZillaSlab-Medium.ttf",
+      path: "../../../public/projects/mena-law-reporters/fonts/ZillaSlab-Medium.woff2",
       weight: "500",
       style: "normal",
     },
     {
-      path: "../../../public/projects/mena-law-reporters/fonts/ZillaSlab-SemiBold.ttf",
+      path: "../../../public/projects/mena-law-reporters/fonts/ZillaSlab-SemiBold.woff2",
       weight: "600",
       style: "normal",
     },
     {
-      path: "../../../public/projects/mena-law-reporters/fonts/ZillaSlab-Bold.ttf",
+      path: "../../../public/projects/mena-law-reporters/fonts/ZillaSlab-Bold.woff2",
       weight: "700",
       style: "normal",
     },
@@ -38,7 +38,7 @@ const zillaSlab = localFont({
 
 const cairo = localFont({
   preload: false,
-  src: "../../../public/projects/mena-law-reporters/fonts/Cairo-VariableFont_slnt,wght.ttf",
+  src: "../../../public/projects/mena-law-reporters/fonts/Cairo-VariableFont_slnt,wght.woff2",
   display: "swap",
   weight: "200 1000",
 });

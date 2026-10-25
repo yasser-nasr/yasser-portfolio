@@ -163,6 +163,7 @@ function ShowcaseVideo({
 export default function MotionVideoPage() {
   return (
     <>
+      <link rel="preload" as="image" href={optimizedMediaSrc(`${mediaBase}/multicultural-center-takeya-kitchen-houston-campaign-video-poster.webp`)} fetchPriority="high" media="(min-width: 1024px) and (min-height: 768px)" />
       <JsonLd data={motionVideoPageStructuredData(description)} />
       <main id="main-content" tabIndex={-1} className="flex-1 pt-36 md:pt-44">
         <div className="mx-auto max-w-6xl px-6">
@@ -175,7 +176,7 @@ export default function MotionVideoPage() {
           >
             Motion &amp; Video
           </HeadingReveal>
-          <Reveal>
+          <Reveal immediate>
             <p className="mt-7 max-w-3xl text-lg leading-8 text-ink-soft">
               Selected work across short-form content, motion graphics, video
               editing, and multimedia storytelling.
@@ -194,7 +195,8 @@ export default function MotionVideoPage() {
           </Reveal>
 
           <section aria-labelledby="campaign-video-heading" className="mt-16 border-t border-edge pt-12 md:mt-20 md:pt-16">
-            <Reveal>
+            {/* This poster is a desktop LCP candidate; retain the mobile scroll entrance. */}
+            <Reveal data-critical-desktop="">
               <div className="mb-6 flex flex-col gap-2 sm:flex-row sm:items-end sm:justify-between">
                 <div>
                   <p className="text-xs uppercase tracking-[0.18em] text-ink-faint">

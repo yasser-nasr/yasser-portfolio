@@ -15,14 +15,14 @@ const webMediaBase = `${mediaBase}/web`;
 
 const faustina = localFont({
   preload: false,
-  src: "../../../public/projects/pillars-pr/fonts/Faustina-VariableFont_wght.ttf",
+  src: "../../../public/projects/pillars-pr/fonts/Faustina-VariableFont_wght.woff2",
   display: "swap",
   weight: "300 800",
 });
 
 const notoNaskhArabic = localFont({
   preload: false,
-  src: "../../../public/projects/pillars-pr/fonts/NotoNaskhArabic-VariableFont_wght.ttf",
+  src: "../../../public/projects/pillars-pr/fonts/NotoNaskhArabic-VariableFont_wght.woff2",
   display: "swap",
   weight: "400 700",
 });

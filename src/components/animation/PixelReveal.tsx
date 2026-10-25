@@ -1,7 +1,4 @@
-"use client";
-
-import { motion } from "motion/react";
-import { useSafeReducedMotion } from "@/hooks/useSafeReducedMotion";
+import type { CSSProperties } from "react";
 
 const COLUMNS = 8;
 const ROWS = 12;
@@ -23,32 +20,22 @@ export default function PixelReveal({
   children: React.ReactNode;
   className?: string;
 }) {
-  const prefersReducedMotion = useSafeReducedMotion();
-
   return (
     <div className={`relative ${className}`}>
       {children}
-      {!prefersReducedMotion && (
         <div
           aria-hidden="true"
-          className="absolute inset-0 grid"
+          className="pixel-reveal-grid pointer-events-none absolute inset-0 grid"
           style={{ gridTemplateColumns: `repeat(${COLUMNS}, 1fr)` }}
         >
           {Array.from({ length: CELL_COUNT }).map((_, index) => (
-            <motion.span
+            <span
               key={index}
-              className="bg-surface"
-              initial={{ opacity: 1, scale: 1 }}
-              animate={{ opacity: 0, scale: 0 }}
-              transition={{
-                duration: 0.35,
-                delay: 0.15 + staggerDelay(index),
-                ease: "easeIn",
-              }}
+              className="pixel-reveal-cell bg-surface"
+              style={{ "--pixel-delay": `${0.15 + staggerDelay(index)}s` } as CSSProperties}
             />
           ))}
         </div>
-      )}
     </div>
   );
 }

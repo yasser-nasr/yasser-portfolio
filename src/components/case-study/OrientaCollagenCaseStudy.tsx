@@ -94,6 +94,7 @@ function VisualFrame({ visual, className = "", eager = false, decorative = false
         width={visual.width}
         height={visual.height}
         loading={eager ? "eager" : "lazy"}
+        fetchPriority={eager ? "high" : undefined}
         quality={100}
         sizes="(min-width: 1152px) 1104px, calc(100vw - 48px)"
         className="h-auto w-full"
@@ -139,7 +140,7 @@ export default function OrientaCollagenCaseStudy({ project }: { project: Project
         </header>
 
         <section id="overview" className="border-t border-edge py-16 md:py-24">
-          <Reveal className="grid items-center gap-10 lg:grid-cols-[0.8fr_1.2fr] lg:gap-16">
+          <Reveal immediate className="grid items-center gap-10 lg:grid-cols-[0.8fr_1.2fr] lg:gap-16">
             <div>
               <h2 className="text-3xl font-semibold text-ink md:text-5xl">Project Overview</h2>
               <p className="mt-6 text-base leading-8 text-ink-soft md:text-lg">

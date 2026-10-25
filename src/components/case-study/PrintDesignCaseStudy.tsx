@@ -200,7 +200,7 @@ export default function PrintDesignCaseStudy({ project }: { project: Project }) 
           >
             Print &amp; Editorial Design
           </HeadingReveal>
-          <Reveal>
+          <Reveal immediate>
             <p className="mt-7 max-w-3xl text-lg leading-8 text-ink-soft">
               Selected work across posters, publications, corporate stationery, technical literature, display graphics, and information-led print communication.
             </p>

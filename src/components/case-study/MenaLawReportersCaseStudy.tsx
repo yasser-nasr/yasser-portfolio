@@ -308,7 +308,7 @@ export default function MenaLawReportersCaseStudy({ project }: { project: Projec
       <article className="mx-auto max-w-6xl px-6">
         <CaseStudyBackLink />
 
-        <Reveal className="relative mt-6 overflow-hidden rounded-[1.5rem] border border-edge bg-[#e8e6e3] shadow-2xl shadow-black/10">
+        <Reveal immediate className="relative mt-6 overflow-hidden rounded-[1.5rem] border border-edge bg-[#e8e6e3] shadow-2xl shadow-black/10">
           <Image
             src={`${base}/mena-law-reporters-facebook-cover.webp`}
             alt="Facebook cover design for MENA Law Reporters, a legal media platform serving the Middle East and North Africa."
@@ -321,7 +321,7 @@ export default function MenaLawReportersCaseStudy({ project }: { project: Projec
         </Reveal>
 
         <header className="py-14 md:py-20">
-          <Reveal>
+          <Reveal immediate>
             <p className="font-display text-sm uppercase tracking-[0.22em] text-ink-faint md:text-base">
               {project.subtitle}
             </p>
