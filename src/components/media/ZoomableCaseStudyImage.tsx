@@ -1,11 +1,12 @@
 "use client";
 
 import Image from "@/components/media/OptimizedImage";
-import { useEffect, useState } from "react";
+import ViewportImage from "@/components/media/ViewportImage";
+import { useEffect, useRef, useState, type CSSProperties } from "react";
 import { createPortal } from "react-dom";
 import { useDialogFocus } from "@/hooks/useDialogFocus";
 import { optimizedMediaSrc } from "@/lib/optimized-media";
-import { warmOriginalImage } from "@/lib/media-preload";
+import { warmImage, warmOriginalImage } from "@/lib/media-preload";
 
 export default function ZoomableCaseStudyImage({
   src,
@@ -16,6 +17,8 @@ export default function ZoomableCaseStudyImage({
   className = "",
   compact = false,
   priority = false,
+  viewportOnly = false,
+  responsiveLightbox = false,
   showLabel = true,
   frameRadiusClassName = "rounded-xl",
   sizes = "(min-width: 1024px) 520px, (min-width: 640px) 50vw, 100vw",
@@ -28,12 +31,31 @@ export default function ZoomableCaseStudyImage({
   className?: string;
   compact?: boolean;
   priority?: boolean;
+  viewportOnly?: boolean;
+  responsiveLightbox?: boolean;
   showLabel?: boolean;
   frameRadiusClassName?: string;
   sizes?: string;
 }) {
   const [isOpen, setIsOpen] = useState(false);
   const dialogRef = useDialogFocus(isOpen);
+  const PreviewImage = viewportOnly && !priority ? ViewportImage : Image;
+  const hoverTimer = useRef<ReturnType<typeof setTimeout> | undefined>(undefined);
+  const lightboxSizes = `min(${width}px, calc(100vw - 3rem), calc((100vh - 3rem) * ${width / height}))`;
+  const lightboxStyle: CSSProperties = {
+    display: "block",
+    width: responsiveLightbox ? lightboxSizes : "auto",
+    height: "auto",
+    aspectRatio: responsiveLightbox ? `${width} / ${height}` : undefined,
+    maxWidth: "calc(100vw - 3rem)",
+    maxHeight: "calc(100vh - 3rem)",
+    objectFit: "contain",
+  };
+  const warmLightbox = () => {
+    if (responsiveLightbox) warmImage(src, lightboxSizes, 100, "high");
+    else warmOriginalImage(src);
+  };
+  useEffect(() => () => clearTimeout(hoverTimer.current), []);
 
   useEffect(() => {
     if (!isOpen) return;
@@ -61,14 +83,20 @@ export default function ZoomableCaseStudyImage({
         <button
           type="button"
           onClick={() => setIsOpen(true)}
-          onPointerEnter={() => warmOriginalImage(src)}
-          onFocus={() => warmOriginalImage(src)}
+          onPointerEnter={() => {
+            clearTimeout(hoverTimer.current);
+            if (responsiveLightbox) hoverTimer.current = setTimeout(warmLightbox, 180);
+            else warmLightbox();
+          }}
+          onPointerLeave={() => clearTimeout(hoverTimer.current)}
+          onPointerDown={responsiveLightbox ? warmLightbox : undefined}
+          onFocus={warmLightbox}
           aria-label={`Open high-resolution view: ${label}`}
           className={`group relative block w-full cursor-zoom-in overflow-hidden ${frameRadiusClassName} border text-left focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-ink ${
             compact ? "border-edge bg-surface-card" : "border-white/10 bg-[#0b2014]"
           }`}
         >
-          <Image
+          <PreviewImage
             src={src}
             alt={alt}
             width={width}
@@ -111,22 +139,28 @@ export default function ZoomableCaseStudyImage({
             className="mx-auto flex max-h-[calc(100vh-3rem)] max-w-[calc(100vw-3rem)] items-center justify-center"
             onMouseDown={(event) => event.stopPropagation()}
           >
-            {/* eslint-disable-next-line @next/next/no-img-element */}
+            {responsiveLightbox ? <Image
+              src={src}
+              alt={alt}
+              width={width}
+              height={height}
+              quality={100}
+              sizes={lightboxSizes}
+              loading="eager"
+              fetchPriority="high"
+              style={lightboxStyle}
+              className="rounded-xl shadow-2xl"
+            /> : (
+            // Existing original-file viewers retain their source and behaviour.
+            // eslint-disable-next-line @next/next/no-img-element
             <img
               src={optimizedMediaSrc(src)}
               alt={alt}
               width={width}
               height={height}
-              style={{
-                display: "block",
-                width: "auto",
-                height: "auto",
-                maxWidth: "calc(100vw - 3rem)",
-                maxHeight: "calc(100vh - 3rem)",
-                objectFit: "contain",
-              }}
+              style={lightboxStyle}
               className="rounded-xl shadow-2xl"
-            />
+            />)}
           </div>
         </div>,
         document.body,

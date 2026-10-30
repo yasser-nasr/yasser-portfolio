@@ -1,5 +1,6 @@
 import type { ProjectCategory } from "@/data/workCategories";
 import { optimizedMediaSrc } from "@/lib/optimized-media";
+import { a1DatesCover, a1DatesPublicationReady } from "@/data/a1Dates";
 
 export type ProjectSeo = {
   title: string;
@@ -634,6 +635,43 @@ export const projects: Project[] = [
         "RenovoFix Property Maintenance logo centered on a white background.",
       imageWidth: 1200,
       imageHeight: 630,
+    },
+  },
+  {
+    title: "A1 Dates — Brand Identity & Packaging Design",
+    workTitle: "A1 Dates",
+    companyName: "A1 Dates",
+    slug: "a1-dates",
+    subtitle: "Brand Identity & Packaging Design",
+    category: "Brand Identity / Packaging Design",
+    categories: ["brand", "packaging"],
+    role: "Brand Identity & Packaging Designer",
+    industry: "Food & Beverage",
+    market: "Saudi Arabia / United Kingdom",
+    statement: "A brand-development journey from premium and Gen Z concepts to a natural, accessible Saudi dates identity and packaging direction for UK retail.",
+    image: a1DatesCover.src,
+    imageAlt: a1DatesCover.alt,
+    imagePosition: "center",
+    imageFit: "cover",
+    tags: ["Brand Identity Design", "Logo Design", "Visual Identity System", "Packaging Design", "Packaging Variations", "Retail Visual Communication"],
+    scope: ["Brand Positioning", "Brand Naming", "Brand Identity Design", "Logo Design", "Visual Identity System", "Packaging Design", "Packaging Variations", "Retail Visual Communication"],
+    featured: false,
+    publishable: a1DatesPublicationReady,
+    seo: {
+      title: "A1 Dates Branding & Packaging Design | Yasser Nasr",
+      description: "Explore the A1 Dates brand identity and packaging design case study by Yasser Nasr, developed for a Saudi dates brand targeting the UK retail market.",
+      canonical: "https://yassernasr.com/work/a1-dates",
+      openGraphTitle: "A1 Dates Branding & Packaging Design | Yasser Nasr",
+      openGraphDescription: "The A1 Dates brand-development story: premium heritage concepts, Gen Z snack identities and a refined, accessible packaging direction for UK retail.",
+      image: a1DatesCover.src,
+      imageAlt: a1DatesCover.alt,
+      imageWidth: a1DatesCover.width,
+      imageHeight: a1DatesCover.height,
+    },
+    structuredData: {
+      headline: "A1 Dates — Brand Identity & Packaging Design",
+      description: "The development of A1 Dates through premium and Gen Z brand concepts, naming, positioning and packaging refinement for a broader UK retail audience.",
+      keywords: ["A1 Dates", "Brand Development", "Brand Positioning", "Brand Naming", "Brand Identity Design", "Logo Design", "Packaging Design", "Dates Packaging", "Food & Beverage Branding", "Saudi Dates", "UK Retail Packaging"],
     },
   },
 ];

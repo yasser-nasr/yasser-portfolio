@@ -34,6 +34,11 @@ function observeImage(image: Element, activate: () => void) {
 export default function ViewportImage(props: ImageProps) {
   const ref = useRef<HTMLImageElement>(null);
   const [nearby, setNearby] = useState(false);
+  // The loaded 1x1 placeholder otherwise overrides width/height attributes and
+  // makes intrinsic artwork square until its real source arrives.
+  const reservedStyle = !props.fill && props.width && props.height
+    ? { aspectRatio: `${props.width} / ${props.height}`, ...props.style }
+    : props.style;
   useEffect(() => {
     const image = ref.current;
     if (!image) return;
@@ -42,7 +47,7 @@ export default function ViewportImage(props: ImageProps) {
   }, []);
 
   return <>
-    <Image {...props} ref={ref} data-viewport-image="" src={nearby ? props.src : emptyPixel} unoptimized={nearby ? props.unoptimized : true} loading="lazy" />
+    <Image {...props} style={reservedStyle} ref={ref} data-viewport-image="" src={nearby ? props.src : emptyPixel} unoptimized={nearby ? props.unoptimized : true} loading="lazy" />
     <noscript>
       <style>{"img[data-viewport-image] { display: none; }"}</style>
       <Image {...props} loading="lazy" />
