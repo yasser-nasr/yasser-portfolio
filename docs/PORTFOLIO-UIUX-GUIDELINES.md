@@ -35,3 +35,4 @@
 - Every page has correct canonical, metadata, OG data, structured data, one H1, meaningful image alt text (or an intentionally empty alt for decorative/repeated images), valid internal links, and working assets.
 - Verify desktop, tablet, and mobile layouts for overflow, cropping, spacing, layout shift, keyboard access, focus behavior, and reduced motion.
 - Keep unpublished work out of public grids, static params, metadata, structured data, and the sitemap.
+- Assign each new Work entry its supported industry tags in `src/data/workIndustries.ts`, using the shared names in `src/data/markets.ts`. Tag collections with the industries actually represented; do not infer industries from a location or a design capability. The Work industry and capability filters combine, and only industries with published work should appear as choices.

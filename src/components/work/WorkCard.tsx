@@ -21,7 +21,7 @@ export default function WorkCard({
         className={`relative col-span-7 block aspect-[4/3] min-w-0 overflow-hidden rounded-xl bg-surface-card ${
           imageFirst ? "md:order-1" : "md:order-2"
         }`}
-        style={{ backgroundColor: project.imageBackground }}
+        style={{ backgroundColor: project.imageBackground, aspectRatio: project.imageAspectRatio }}
       >
         {project.image ? (
           <Image

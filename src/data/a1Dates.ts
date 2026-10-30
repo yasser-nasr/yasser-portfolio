@@ -36,7 +36,7 @@ export const a1DatesDirections = {
       ["Colour & contrast", "Orange, pink and turquoise shapes sit against a cream background. Black outlines and small marks connect the different pack sizes."],
       ["Graphic elements", "Irregular shapes, scattered marks and a clear product window create a recognisable set of elements across cartons and the pouch."],
     ],
-    hero: visual("a1-dates-colourful-1kg-box-packaging-mockup", "A1 Dates 1kg box with turquoise outlined lettering, orange and pink graphics, and a window showing the dates."),
+    hero: visual("a1-dates-colourful-medium-box-packaging-mockup", "A1 Dates medium windowed carton using orange, pink and turquoise packaging graphics."),
     applications: [
       visual("a1-dates-colourful-medium-box-packaging-mockup", "A1 Dates medium windowed carton using orange, pink and turquoise packaging graphics."),
       visual("a1-dates-colourful-small-box-packaging-mockup", "A1 Dates small retail carton with bold product lettering and a clear rectangular product window."),

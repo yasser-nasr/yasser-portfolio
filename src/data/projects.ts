@@ -40,6 +40,7 @@ export type Project = {
   imagePosition?: string;
   imageFit?: "cover" | "contain";
   imageBackground?: string;
+  imageAspectRatio?: string;
   tags?: string[];
   scope?: string[];
   featured: boolean;
@@ -57,8 +58,8 @@ export const projects: Project[] = [
     categories: ["presentations"],
     role: "Presentation, Layout & Information Designer",
     statement: "Selected presentation and layout design, from investor pitch decks and company profiles to investment memoranda, user guides, and project schedules.",
-    image: "/projects/presentations/cover/presentation-layout-design-collection-cover.webp",
-    imageAlt: "Abstract presentation slides and report pages with editorial layouts and a chart, arranged on a dark charcoal background.",
+    image: "/projects/presentations/cover/presentation-layout-design-work-collage-cover.webp",
+    imageAlt: "Collage of Alsallal investor presentations, an A1 Investments board summary, SBH company profile, Happy Tenant guide and apartment refurbishment schedule.",
     imagePosition: "center",
     imageFit: "cover",
     imageBackground: "#151514",
@@ -72,8 +73,8 @@ export const projects: Project[] = [
       canonical: "https://yassernasr.com/work/presentations-pitch-decks-reports",
       openGraphTitle: "Presentation & Layout Design | Yasser Nasr",
       openGraphDescription: "Explore six presentation and layout design projects, including investor pitch decks, company profiles, board summaries, user guides, and project schedules.",
-      image: "/projects/presentations/cover/presentation-layout-design-collection-og.webp",
-      imageAlt: "Abstract slides and report layouts representing Yasser Nasr's presentation, pitch deck, and report design portfolio.",
+      image: "/projects/presentations/cover/presentation-layout-design-work-collage-og.webp",
+      imageAlt: "Presentation and report design collage featuring investor decks, a board summary, a company profile, a tenant guide and a project schedule by Yasser Nasr.",
       imageWidth: 1200,
       imageHeight: 630,
     },
@@ -126,6 +127,7 @@ export const projects: Project[] = [
     industry: "Selected brands and industries",
     statement: "A curated collection of social media campaigns, digital content, and profile branding created across multiple brands and industries.",
     image: "/projects/social-media-campaign-design/cover/social-media-campaign-design-cover.webp",
+    imageAspectRatio: "1586 / 992",
     imageAlt: "Social media campaign designs for Sand Circus, Memo Travel, LAPE, and SBH arranged in an editorial collage.",
     tags: ["Social Media Design", "Campaign Design", "Digital Content"],
     featured: false,

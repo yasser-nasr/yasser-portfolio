@@ -25,6 +25,7 @@ const marketFlags: Record<
   "Saudi Arabia": { src: "https://flagcdn.com/w80/sa.png", width: 30, height: 20 },
   Vienna: { src: "https://flagcdn.com/w80/at.png", width: 30, height: 20 },
   "United States": { src: "https://flagcdn.com/w80/us.png", width: 32, height: 17 },
+  "United Kingdom": { src: "https://flagcdn.com/w80/gb.png", width: 32, height: 16 },
   "Wider GCC": {
     src: "https://upload.wikimedia.org/wikipedia/commons/thumb/a/a6/Flag_of_the_Cooperation_Council_for_the_Arab_States_of_the_Gulf.svg/330px-Flag_of_the_Cooperation_Council_for_the_Arab_States_of_the_Gulf.svg.png",
     width: 32,
@@ -90,7 +91,7 @@ export default function MarketsIndustries() {
 
             <Reveal
               variants={container}
-              className="mt-4 grid grid-cols-2 gap-px overflow-hidden rounded-2xl border border-edge bg-edge sm:grid-cols-3 lg:grid-cols-6"
+              className="mt-4 grid grid-cols-2 gap-px overflow-hidden rounded-2xl border border-edge bg-edge sm:grid-cols-3 lg:grid-cols-4"
             >
               {markets.map((market) => {
                 return (

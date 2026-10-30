@@ -22,7 +22,7 @@ const conceptNotes: Record<string, string> = {
 };
 
 function Artwork({ visual, sizes = fullSizes }: { visual: A1DatesVisual; sizes?: string }) {
-  return <ProjectArtwork {...visual} sizes={sizes} />;
+  return <ProjectArtwork {...visual} sizes={sizes} preloadDistance={1800} />;
 }
 
 function ConceptGallery({ visuals }: { visuals: readonly A1DatesVisual[] }) {

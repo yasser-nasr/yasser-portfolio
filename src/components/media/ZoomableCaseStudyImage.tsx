@@ -18,6 +18,7 @@ export default function ZoomableCaseStudyImage({
   compact = false,
   priority = false,
   viewportOnly = false,
+  preloadDistance = 600,
   responsiveLightbox = false,
   showLabel = true,
   frameRadiusClassName = "rounded-xl",
@@ -32,6 +33,7 @@ export default function ZoomableCaseStudyImage({
   compact?: boolean;
   priority?: boolean;
   viewportOnly?: boolean;
+  preloadDistance?: number;
   responsiveLightbox?: boolean;
   showLabel?: boolean;
   frameRadiusClassName?: string;
@@ -97,6 +99,7 @@ export default function ZoomableCaseStudyImage({
           }`}
         >
           <PreviewImage
+            {...(viewportOnly && !priority ? { preloadDistance } : {})}
             src={src}
             alt={alt}
             width={width}

@@ -74,6 +74,17 @@ export default function DropdownField<T>({
 
   useEffect(() => () => clearTimeout(typeaheadTimer.current ?? undefined), []);
 
+  // Keep the selected/keyboard-active option visible without scrolling the page.
+  useEffect(() => {
+    const list = listRef.current;
+    const option = list?.querySelector<HTMLElement>(`[id="${id}-option-${activeIndex}"]`);
+    if (!open || !list || !option) return;
+    const bounds = list.getBoundingClientRect();
+    const item = option.getBoundingClientRect();
+    if (item.top < bounds.top) list.scrollTop -= bounds.top - item.top;
+    else if (item.bottom > bounds.bottom) list.scrollTop += item.bottom - bounds.bottom;
+  }, [open, activeIndex, visibleOptions.length, id]);
+
   // Closes the dropdown and clears the search box, so it starts fresh next time it opens.
   function closeDropdown() {
     setOpen(false);
