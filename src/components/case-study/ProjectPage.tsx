@@ -3,6 +3,7 @@ import type { ReactNode } from "react";
 import { notFound } from "next/navigation";
 import JsonLd from "@/components/seo/JsonLd";
 import { getPreviewableProject, type Project } from "@/data/projects";
+import { workIndustries } from "@/data/workIndustries";
 import { projectPageStructuredData } from "@/lib/structuredData";
 
 // Route entry points import only their own case study. Keep the existing shared
@@ -63,6 +64,7 @@ export default function ProjectPage({ project, children }: { project: Project; c
         category: project.category,
         categories: project.categories,
         industry: project.industry ?? project.location ?? "",
+        industries: workIndustries[project.slug] ?? [],
         year: project.year,
         statement: project.statement,
         image: project.image,
