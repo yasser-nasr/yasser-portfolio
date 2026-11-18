@@ -7,6 +7,7 @@ All active project media was consolidated under `public/projects/` on 24 October
 | Personal identity, portrait, mascot and CV | `public/brand/` |
 | App/touch icons | `public/icons/` |
 | Active optimized project images and videos | `public/projects/<project>/` |
+| Generated responsive artwork and portrait sizes | `public/responsive/` |
 | Required vectors, specimen fonts, identity/OG endpoints and retained source documents | Their existing project subfolders under `public/projects/` |
 | RenovoFix local specimen fonts | `src/fonts/renovofix/` |
 | Main display font | `src/app/fonts/` |
@@ -19,7 +20,7 @@ Motion collections now use the corresponding folder inside `public/projects/`: `
 
 `src/lib/optimized-media-manifest.ts` is the exact mapping of logical originals to 478 image and 17 video targets, including AVIF overrides. `src/lib/optimized-media.ts` resolves those IDs. Shared wrappers are now in `src/components/media/`; galleries are in `src/components/galleries/`.
 
-The media resolver now emits `/projects/` URLs. Compatibility rewrites keep old `/projects-optimized/` and `/videos-optimized/` links, cached Next Image requests and video range requests working. Do not remove those rewrites just because the former directories hold no files.
+The media resolver emits canonical `/projects/` URLs. Compatibility rewrites preserve the old public media prefixes. The shared image component uses `src/data/responsive-images.json` to add smaller static candidates. Run `npm run images:generate` locally after changing artwork. SEO images and full-resolution originals retain their public URLs.
 
 Nineteen identical collision copies and two different older versions were preserved outside the app at `D:\Personal\Branding\yasser-portfolio-organization-archive-2026-10-24\media-merge-2026-10-24`. The optimized versions previously used by the website remain active. No original was silently overwritten. The two former source directory trees are empty but remain present because their removal command was blocked.
 

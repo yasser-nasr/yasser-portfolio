@@ -1,6 +1,6 @@
 "use client";
 
-import Image from "next/image";
+import Image from "@/components/media/OptimizedImage";
 import { motion, useMotionValue, useSpring } from "motion/react";
 import PixelReveal from "@/components/animation/PixelReveal";
 import { useSafeReducedMotion } from "@/hooks/useSafeReducedMotion";
@@ -71,11 +71,11 @@ export default function HeroPortrait() {
             <PixelReveal className="p-4 md:p-6">
               <Image
                 src="/brand/yasser-nasr-portrait.webp"
-                alt={`${profile.name}, Graphic and Multimedia Designer`}
+                alt={`Portrait of ${profile.name}, graphic and multimedia designer`}
                 width={1254}
                 height={1254}
                 priority
-                sizes="(min-width: 1024px) 320px, (min-width: 768px) 224px, 176px"
+                sizes="(min-width: 1024px) 272px, (min-width: 768px) 176px, 144px"
                 className="h-auto w-full rounded-xl"
               />
             </PixelReveal>

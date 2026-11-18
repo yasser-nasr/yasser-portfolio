@@ -1,4 +1,4 @@
-import Image from "next/image";
+import Image from "@/components/media/OptimizedImage";
 import { optimizedMediaSrc } from "@/lib/optimized-media";
 import Link from "next/link";
 import type { Project } from "@/data/projects";
@@ -184,7 +184,7 @@ export default function SocialMediaCampaignCaseStudy({ project }: { project: Pro
           <p className="mt-5 max-w-3xl text-base leading-8 text-ink-soft">A curated collection of social media design, campaign systems, and digital brand applications created across different clients and industries.</p>
           {/* Retain the early responsive hint: applied-throttle checks regressed without it.
               Next forwards high priority to this one preload; its srcSet matches the img. */}
-          <Image src={optimizedMediaSrc(project.image!)} alt={project.imageAlt} width={1600} height={1000} sizes="(min-width: 1200px) 1152px, calc(100vw - 48px)" preload fetchPriority="high" quality={100} className="mt-10 h-auto w-full rounded-xl" />
+          <Image src={optimizedMediaSrc(project.image!)} alt={project.imageAlt} width={1600} height={1000} sizes="(min-width: 1152px) 1104px, calc(100vw - 48px)" preload fetchPriority="high" quality={100} className="mt-10 h-auto w-full rounded-xl" />
         </header>
 
         <section aria-labelledby="featured-campaigns" className="border-t border-edge py-16 md:py-24">

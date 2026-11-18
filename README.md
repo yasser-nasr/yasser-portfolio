@@ -34,6 +34,21 @@ npm audit --omit=dev
 
 ## Production
 
+### Responsive portfolio images
+
+After adding or replacing artwork in `public/`, run `npm run images:generate` locally.
+Review the generated `public/responsive/` files together with `src/data/responsive-images.json`.
+Include both in the same release. The build serves these files directly, so generation
+does not need to run on Vercel. Existing source URLs supply the original resolution
+and the fallback for artwork without smaller candidates.
+
+Use the shared `OptimizedImage` or `CaseStudyImage` component with accurate `alt`,
+intrinsic dimensions (or a reserved fill container), and a `sizes` value matching
+the layout. Keep social preview URLs on their existing images. The generator
+preserves source artwork and writes versioned WebP files only for smaller, useful
+widths. Changed artwork gets new URLs. After release, keep previously published
+variants available for visitors with cached pages.
+
 Configure the environment variables in the deployment platform before building. Static project assets are served from `public/`, while the contact form is handled by `/api/contact`.
 
 ## Project organization

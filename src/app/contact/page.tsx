@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import Image from "next/image";
+import Image from "@/components/media/OptimizedImage";
 import HeadingReveal from "@/components/animation/HeadingReveal";
 import Reveal from "@/components/animation/Reveal";
 import ContactForm from "@/components/contact/ContactForm";

@@ -1,4 +1,5 @@
 ﻿import Image from "@/components/media/OptimizedImage";
+import ViewportImage from "@/components/media/ViewportImage";
 import type { ReactNode } from "react";
 import type { Project } from "@/data/projects";
 import Reveal from "@/components/animation/Reveal";
@@ -81,7 +82,7 @@ export default function DolatoCaseStudy({ project }: { project: Project }) {
           <p className="mt-5 max-w-3xl text-base leading-8 text-ink-soft md:text-lg">Warm Italian atmosphere, winter symbols, Dolato’s product language, and playful forms shaped the visual direction.</p>
 
           <div className="mt-10 grid gap-4 md:grid-cols-12 md:gap-5">
-            <Image
+            <ViewportImage preloadDistance={400}
               src={`${base}/moodboard/dolato-moodboard-italian-warmth.webp`}
               alt="Warm golden-hour Italian street used as atmosphere inspiration for the Dolato winter campaign."
               width={854}
@@ -90,7 +91,7 @@ export default function DolatoCaseStudy({ project }: { project: Project }) {
               sizes="(min-width: 1152px) 634px, (min-width: 768px) 57vw, calc(100vw - 48px)"
               className="h-auto w-full rounded-2xl md:col-span-7 md:row-span-2 md:aspect-square md:h-full md:object-cover"
             />
-            <Image
+            <ViewportImage preloadDistance={400}
               src={`${base}/moodboard/dolato-moodboard-winter-snowflakes.webp`}
               alt="Falling snowflakes used as winter visual inspiration for Warm Winter Marvels."
               width={512}
@@ -99,7 +100,7 @@ export default function DolatoCaseStudy({ project }: { project: Project }) {
               sizes="(min-width: 1152px) 450px, (min-width: 768px) 40vw, calc(100vw - 48px)"
               className="h-auto w-full rounded-2xl md:col-span-5 md:aspect-[3/2] md:h-full md:object-cover"
             />
-            <Image
+            <ViewportImage preloadDistance={400}
               src={`${base}/moodboard/dolato-moodboard-minis-reference.webp`}
               alt="Colorful miniature gelato pieces used as a playful Dolato product-form reference."
               width={797}
@@ -108,7 +109,7 @@ export default function DolatoCaseStudy({ project }: { project: Project }) {
               sizes="(min-width: 1152px) 450px, (min-width: 768px) 40vw, calc(100vw - 48px)"
               className="h-auto w-full rounded-2xl md:col-span-5 md:aspect-[3/2] md:h-full md:object-cover"
             />
-            <Image
+            <ViewportImage preloadDistance={400}
               src={`${base}/moodboard/dolato-moodboard-gelato-scoops.webp`}
               alt="Assorted gelato scoops used as a product and color reference for the Dolato campaign."
               width={1254}

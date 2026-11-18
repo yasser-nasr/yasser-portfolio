@@ -25,25 +25,33 @@ const nextConfig: NextConfig = {
     }];
   },
   async rewrites() {
-    // Preserve existing media URLs (including cached Next Image requests)
-    // after physically consolidating the media under public/projects.
-    return [
-      { source: "/projects-optimized/:path*", destination: "/projects/:path*" },
-      { source: "/videos-optimized/:path*", destination: "/projects/:path*" },
-    ];
+    // Preserve the public media URLs used before consolidation under public/projects.
+    return {
+      beforeFiles: [
+        {
+          // Serve old indexed local-image links directly from disk.
+          source: "/_next/image",
+          has: [{
+            type: "query",
+            key: "url",
+            value: "/(?<asset>(?:projects|projects-optimized|brand|icons)/[A-Za-z0-9_/-]+[.](?:webp|avif|png|jpg|jpeg|svg))",
+          }],
+          destination: "/:asset",
+        },
+        { source: "/projects-optimized/:path*", destination: "/projects/:path*" },
+        { source: "/videos-optimized/:path*", destination: "/projects/:path*" },
+      ],
+    };
   },
   poweredByHeader: false,
-  images: {
-    qualities: [75, 100],
-    deviceSizes: [640, 750, 828, 1080, 1200, 1280, 1536, 1920, 2048, 2560, 3840],
-    remotePatterns: [
-      new URL("https://flagcdn.com/w80/**"),
-      new URL("https://upload.wikimedia.org/wikipedia/commons/thumb/**"),
-    ],
-  },
+  images: { unoptimized: true },
   async headers() {
     // Legacy-prefix rules apply to the compatibility aliases, not extra folders.
     return [
+      {
+        source: "/responsive/:path*",
+        headers: [{ key: "Cache-Control", value: "public, max-age=31536000, immutable" }],
+      },
       {
         source: "/projects/:path*",
         headers: [

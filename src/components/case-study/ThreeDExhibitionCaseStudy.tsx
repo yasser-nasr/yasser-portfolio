@@ -32,7 +32,7 @@ function Visual({ src, alt, label, width, height, priority = false, hero = false
       priority={priority}
       compact
       frameRadiusClassName={hero ? "rounded-[1.5rem]" : undefined}
-      sizes="(min-width: 1152px) 1152px, 100vw"
+      sizes="(min-width: 1152px) 1104px, calc(100vw - 48px)"
     />
   );
 }

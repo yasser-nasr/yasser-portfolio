@@ -1,4 +1,5 @@
-import { getImageProps, type ImageProps } from "next/image";
+import type { ImageProps } from "next/image";
+import { imageCandidates } from "@/lib/responsive-images";
 import { optimizedMediaSrc } from "@/lib/optimized-media";
 
 type Connection = { saveData?: boolean; effectiveType?: string };
@@ -26,13 +27,9 @@ function warm(props: { src: string; srcSet?: string; sizes?: string }, priority:
 }
 
 /** Warm exactly the responsive variant the viewer will use, at unchanged quality. */
-export function warmImage(src: ImageProps["src"], sizes: string, quality = 100, priority: "low" | "high" = "low") {
+export function warmImage(src: ImageProps["src"], sizes: string, _quality = 100, priority: "low" | "high" = "low") {
   if (typeof window === "undefined" || !canWarmMedia()) return;
-  const { props } = getImageProps({ src: optimizedMediaSrc(src), alt: "", fill: true, sizes, quality });
-  warm(props, priority);
-}
-
-/** For the existing lightboxes that deliberately render the original optimized file. */
-export function warmOriginalImage(src: string) {
-  warm({ src: optimizedMediaSrc(src) }, "high");
+  if (typeof src !== "string") return;
+  const url = optimizedMediaSrc(src);
+  warm({ src: url, srcSet: imageCandidates(url), sizes }, priority);
 }

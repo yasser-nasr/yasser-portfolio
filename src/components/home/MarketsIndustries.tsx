@@ -1,6 +1,6 @@
 "use client";
 
-import Image from "next/image";
+import Image from "@/components/media/OptimizedImage";
 import { motion, type Variants } from "motion/react";
 import HeadingReveal from "@/components/animation/HeadingReveal";
 import Reveal from "@/components/animation/Reveal";
@@ -20,14 +20,14 @@ const marketFlags: Record<
   (typeof markets)[number],
   { src: string; width: number; height: number }
 > = {
-  Egypt: { src: "https://flagcdn.com/w80/eg.png", width: 30, height: 20 },
-  UAE: { src: "https://flagcdn.com/w80/ae.png", width: 32, height: 16 },
-  "Saudi Arabia": { src: "https://flagcdn.com/w80/sa.png", width: 30, height: 20 },
-  Vienna: { src: "https://flagcdn.com/w80/at.png", width: 30, height: 20 },
-  "United States": { src: "https://flagcdn.com/w80/us.png", width: 32, height: 17 },
-  "United Kingdom": { src: "https://flagcdn.com/w80/gb.png", width: 32, height: 16 },
+  Egypt: { src: "/brand/flags/eg.png", width: 30, height: 20 },
+  UAE: { src: "/brand/flags/ae.png", width: 32, height: 16 },
+  "Saudi Arabia": { src: "/brand/flags/sa.png", width: 30, height: 20 },
+  Vienna: { src: "/brand/flags/at.png", width: 30, height: 20 },
+  "United States": { src: "/brand/flags/us.png", width: 32, height: 17 },
+  "United Kingdom": { src: "/brand/flags/gb.png", width: 32, height: 16 },
   "Wider GCC": {
-    src: "https://upload.wikimedia.org/wikipedia/commons/thumb/a/a6/Flag_of_the_Cooperation_Council_for_the_Arab_States_of_the_Gulf.svg/330px-Flag_of_the_Cooperation_Council_for_the_Arab_States_of_the_Gulf.svg.png",
+    src: "/brand/flags/gcc.png",
     width: 32,
     height: 16,
   },

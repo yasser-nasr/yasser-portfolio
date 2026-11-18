@@ -73,7 +73,7 @@ export default function PillarsFacebookPage() {
             src={`${webMediaBase}/facebook/pillars-pr-building-legal-excellence-brand-cover.webp`}
             alt="Pillars PR Facebook page cover featuring the Building Legal Excellence message and blue classical columns."
             fill
-            sizes="(min-width: 1152px) 1152px, 100vw"
+            sizes="(min-width: 1152px) 1104px, calc(100vw - 48px)"
             className="object-cover"
           />
         </div>

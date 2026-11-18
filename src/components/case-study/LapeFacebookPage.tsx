@@ -28,7 +28,7 @@ export default function LapeFacebookPage() {
     <div className="mt-16 w-full space-y-10">
     <div className="overflow-hidden rounded-[1.5rem] border border-edge bg-surface-deep text-ink shadow-2xl shadow-black/10">
       <div className="relative aspect-[1600/677] bg-surface-card">
-        <Image src={cover.src} alt={cover.alt} fill sizes="(min-width: 1152px) 1152px, 100vw" className="object-cover" />
+        <Image src={cover.src} alt={cover.alt} fill sizes="(min-width: 1152px) 1104px, calc(100vw - 48px)" className="object-cover" />
       </div>
       <div className="border-b border-edge bg-surface-card px-5 pb-5 sm:px-8">
         <div className="flex flex-col gap-4 sm:flex-row sm:items-end sm:justify-between">

@@ -2,6 +2,7 @@
 
 import { useCallback, useEffect, useRef, useState } from "react";
 import { optimizedMediaSrc } from "@/lib/optimized-media";
+import { posterImage } from "@/lib/responsive-images";
 import { canWarmMedia } from "@/lib/media-preload";
 
 let warmingVideo: HTMLVideoElement | undefined;
@@ -67,7 +68,7 @@ export default function VideoPlayer({ src, poster, label }: { src: string; poste
         controls
         playsInline
         preload="none"
-        poster={optimizedMediaSrc(poster)}
+        poster={posterImage(optimizedMediaSrc(poster))}
         onPointerEnter={() => warmMetadata(true)}
         onFocus={() => warmMetadata(true)}
         onPointerDown={() => warmMetadata(true)}

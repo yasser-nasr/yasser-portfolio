@@ -115,7 +115,7 @@ export default function MenaLawReportersFacebookPage() {
             src={`${base}/mena-law-reporters-facebook-cover.webp`}
             alt="Facebook cover design for MENA Law Reporters featuring legal publications, a red doorway, and scales of justice."
             fill
-            sizes="(min-width: 1152px) 1152px, 100vw"
+            sizes="(min-width: 1152px) 1104px, calc(100vw - 48px)"
             className="object-cover"
           />
         </div>

@@ -2,11 +2,10 @@
 
 import Image from "@/components/media/OptimizedImage";
 import ViewportImage from "@/components/media/ViewportImage";
-import { useEffect, useRef, useState, type CSSProperties } from "react";
+import { useEffect, useState, type CSSProperties } from "react";
 import { createPortal } from "react-dom";
 import { useDialogFocus } from "@/hooks/useDialogFocus";
 import { optimizedMediaSrc } from "@/lib/optimized-media";
-import { warmImage, warmOriginalImage } from "@/lib/media-preload";
 
 export default function ZoomableCaseStudyImage({
   src,
@@ -42,7 +41,6 @@ export default function ZoomableCaseStudyImage({
   const [isOpen, setIsOpen] = useState(false);
   const dialogRef = useDialogFocus(isOpen);
   const PreviewImage = viewportOnly && !priority ? ViewportImage : Image;
-  const hoverTimer = useRef<ReturnType<typeof setTimeout> | undefined>(undefined);
   const lightboxSizes = `min(${width}px, calc(100vw - 3rem), calc((100vh - 3rem) * ${width / height}))`;
   const lightboxStyle: CSSProperties = {
     display: "block",
@@ -53,12 +51,6 @@ export default function ZoomableCaseStudyImage({
     maxHeight: "calc(100vh - 3rem)",
     objectFit: "contain",
   };
-  const warmLightbox = () => {
-    if (responsiveLightbox) warmImage(src, lightboxSizes, 100, "high");
-    else warmOriginalImage(src);
-  };
-  useEffect(() => () => clearTimeout(hoverTimer.current), []);
-
   useEffect(() => {
     if (!isOpen) return;
     const previousOverflow = document.body.style.overflow;
@@ -85,14 +77,6 @@ export default function ZoomableCaseStudyImage({
         <button
           type="button"
           onClick={() => setIsOpen(true)}
-          onPointerEnter={() => {
-            clearTimeout(hoverTimer.current);
-            if (responsiveLightbox) hoverTimer.current = setTimeout(warmLightbox, 180);
-            else warmLightbox();
-          }}
-          onPointerLeave={() => clearTimeout(hoverTimer.current)}
-          onPointerDown={responsiveLightbox ? warmLightbox : undefined}
-          onFocus={warmLightbox}
           aria-label={`Open high-resolution view: ${label}`}
           className={`group relative block w-full cursor-zoom-in overflow-hidden ${frameRadiusClassName} border text-left focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-ink ${
             compact ? "border-edge bg-surface-card" : "border-white/10 bg-[#0b2014]"

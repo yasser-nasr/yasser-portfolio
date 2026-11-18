@@ -188,7 +188,7 @@ Actions: Start a Conversation / Connect on LinkedIn
 - Motion for React
 - CSS variables for tokens
 - Server components by default; client components only when interaction requires them
-- `next/image` for image optimization
+- Shared responsive image components with locally generated static candidates
 - Poppins via `next/font/google`
 - Alpharush via `next/font/local` after licensed font file is placed in the project
 - Avoid large UI libraries at launch

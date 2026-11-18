@@ -80,11 +80,15 @@ function SectionHeading({ title, children }: { title: string; children?: ReactNo
   );
 }
 
-function VisualFrame({ visual, className = "", eager = false, decorative = false }: {
+const halfSizes = "(min-width: 1152px) 544px, (min-width: 768px) calc((100vw - 64px) / 2), calc(100vw - 48px)";
+const thirdSizes = "(min-width: 1152px) 358px, (min-width: 768px) calc((100vw - 80px) / 3), calc(100vw - 48px)";
+
+function VisualFrame({ visual, className = "", eager = false, decorative = false, sizes = "(min-width: 1152px) 1104px, calc(100vw - 48px)" }: {
   visual: Visual;
   className?: string;
   eager?: boolean;
   decorative?: boolean;
+  sizes?: string;
 }) {
   return (
     <div className={`overflow-hidden rounded-[1.25rem] border border-white/10 bg-[#d5d5d3] ${className}`}>
@@ -96,7 +100,7 @@ function VisualFrame({ visual, className = "", eager = false, decorative = false
         loading={eager ? "eager" : "lazy"}
         fetchPriority={eager ? "high" : undefined}
         quality={100}
-        sizes="(min-width: 1152px) 1104px, calc(100vw - 48px)"
+        sizes={sizes}
         className="h-auto w-full"
       />
     </div>
@@ -150,7 +154,7 @@ export default function OrientaCollagenCaseStudy({ project }: { project: Project
                 The packaging organizes product information across the front, side, and back panels while maintaining clear hierarchy across Arabic and English content.
               </p>
             </div>
-            <VisualFrame visual={selectedHero} />
+            <VisualFrame visual={selectedHero} sizes="(min-width: 1152px) 624px, (min-width: 1024px) 56vw, calc(100vw - 48px)" />
           </Reveal>
         </section>
 
@@ -165,7 +169,7 @@ export default function OrientaCollagenCaseStudy({ project }: { project: Project
               <div className="grid gap-4 md:grid-cols-3">
                 {directions.slice(0, 3).map(({ title, visual }) => (
                   <div key={title} className="min-w-0">
-                    <VisualFrame visual={visual} decorative />
+                    <VisualFrame visual={visual} sizes={thirdSizes} decorative />
                     <p className="mt-3 text-xs uppercase tracking-[0.14em] text-ink-faint">{title}</p>
                   </div>
                 ))}
@@ -183,7 +187,7 @@ export default function OrientaCollagenCaseStudy({ project }: { project: Project
             <div className="mt-10 grid gap-x-5 gap-y-12 md:grid-cols-2 md:gap-y-16">
               {directions.map(({ number, title, description, visual }) => (
                 <figure key={number} className="min-w-0">
-                  <VisualFrame visual={visual} decorative={number === "04"} />
+                  <VisualFrame visual={visual} sizes={halfSizes} decorative={number === "04"} />
                   <figcaption className="mt-5 grid grid-cols-[2.5rem_minmax(0,1fr)] gap-3">
                     <span className="font-display text-sm text-ink-faint">{number}</span>
                     <div>
@@ -220,7 +224,7 @@ export default function OrientaCollagenCaseStudy({ project }: { project: Project
                 { label: "Product Information", src: `${base}/orienta-collagen-selected-product-information-panel.webp`, alt: "Selected Orienta Collagen packaging showing the Arabic front and bilingual product information panel." },
               ].map((item) => (
                 <figure key={item.label} className="min-w-0">
-                  <VisualFrame visual={{ ...item, width: 1225, height: 837 }} decorative={item.label === "Front Panel"} />
+                  <VisualFrame visual={{ ...item, width: 1225, height: 837 }} sizes={thirdSizes} decorative={item.label === "Front Panel"} />
                   <figcaption className="mt-3 text-xs uppercase tracking-[0.14em] text-ink-faint">{item.label}</figcaption>
                 </figure>
               ))}
@@ -257,8 +261,8 @@ export default function OrientaCollagenCaseStudy({ project }: { project: Project
               <p>Arabic and English content are distributed by panel and reading priority, keeping dense regulatory information separate from the product story.</p>
             </SectionHeading>
             <div className="mt-10 grid gap-4 md:grid-cols-2">
-              <VisualFrame visual={{ src: `${base}/orienta-collagen-selected-arabic-perspective.webp`, alt: "Selected Orienta Collagen packaging showing the Arabic front beside the English nutrition panel.", width: 1225, height: 837 }} />
-              <VisualFrame visual={{ src: `${base}/orienta-collagen-selected-english-perspective.webp`, alt: "Selected Orienta Collagen packaging showing the English front beside the nutrition panel.", width: 1225, height: 837 }} decorative />
+              <VisualFrame sizes={halfSizes} visual={{ src: `${base}/orienta-collagen-selected-arabic-perspective.webp`, alt: "Selected Orienta Collagen packaging showing the Arabic front beside the English nutrition panel.", width: 1225, height: 837 }} />
+              <VisualFrame sizes={halfSizes} visual={{ src: `${base}/orienta-collagen-selected-english-perspective.webp`, alt: "Selected Orienta Collagen packaging showing the English front beside the nutrition panel.", width: 1225, height: 837 }} decorative />
             </div>
           </Reveal>
         </section>
@@ -267,8 +271,8 @@ export default function OrientaCollagenCaseStudy({ project }: { project: Project
           <Reveal>
             <SectionHeading title="Final Mockups" />
             <div className="mt-10 grid gap-4 md:grid-cols-2">
-              <VisualFrame visual={{ src: `${base}/orienta-collagen-selected-product-information-panel.webp`, alt: "Front and side perspective mockup of the selected purple Orienta Collagen packaging.", width: 1225, height: 837 }} decorative />
-              <VisualFrame visual={{ src: `${base}/orienta-collagen-selected-top-perspective.webp`, alt: "Elevated perspective mockup showing the top, front, and side panels of the selected Orienta Collagen packaging.", width: 1225, height: 837 }} />
+              <VisualFrame sizes={halfSizes} visual={{ src: `${base}/orienta-collagen-selected-product-information-panel.webp`, alt: "Front and side perspective mockup of the selected purple Orienta Collagen packaging.", width: 1225, height: 837 }} decorative />
+              <VisualFrame sizes={halfSizes} visual={{ src: `${base}/orienta-collagen-selected-top-perspective.webp`, alt: "Elevated perspective mockup showing the top, front, and side panels of the selected Orienta Collagen packaging.", width: 1225, height: 837 }} />
               <VisualFrame visual={{ src: `${base}/orienta-collagen-selected-low-perspective.webp`, alt: "Low perspective mockup showing the front, side, and base panels of the selected Orienta Collagen packaging.", width: 1225, height: 837 }} className="md:col-span-2" />
             </div>
           </Reveal>

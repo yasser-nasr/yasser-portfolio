@@ -1,4 +1,5 @@
 import Image from "@/components/media/OptimizedImage";
+import ViewportImage from "@/components/media/ViewportImage";
 import type { Project } from "@/data/projects";
 import { CaseStudyBackLink, CaseStudyClosingCta } from "./CaseStudyLayout";
 
@@ -102,7 +103,7 @@ function BeforeAfter({ transformation }: { transformation: Transformation }) {
               <span className="mt-2 block text-sm uppercase tracking-[0.1em] text-ink-soft md:text-base">{image.label}</span>
             </figcaption>
             <div className="overflow-hidden rounded-xl border border-white/10 bg-[#1a120f]">
-              <Image src={image.src} alt={image.alt} width={1080} height={1920} sizes="(min-width: 1024px) 520px, (min-width: 768px) 46vw, 100vw" className="h-auto w-full" />
+              <ViewportImage preloadDistance={400} src={image.src} alt={image.alt} width={1080} height={1920} sizes="(min-width: 1152px) 536px, (min-width: 768px) calc((100vw - 80px) / 2), calc(100vw - 48px)" className="h-auto w-full" />
             </div>
           </figure>
         ))}

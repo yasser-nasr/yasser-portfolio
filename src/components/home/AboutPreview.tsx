@@ -1,6 +1,6 @@
 "use client";
 
-import Image from "next/image";
+import Image from "@/components/media/OptimizedImage";
 import Link from "next/link";
 import { motion, type Variants } from "motion/react";
 import PixelReveal from "@/components/animation/PixelReveal";

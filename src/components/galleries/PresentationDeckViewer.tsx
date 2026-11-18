@@ -1,6 +1,7 @@
 "use client";
 
 import Image from "@/components/media/OptimizedImage";
+import ViewportImage from "@/components/media/ViewportImage";
 import { useCallback, useEffect, useRef, useState } from "react";
 import { createPortal } from "react-dom";
 import { useDialogFocus } from "@/hooks/useDialogFocus";
@@ -23,14 +24,20 @@ function stageImageSizes(slide: PresentationSlide) {
       : "(min-width: 1152px) 1056px, calc(100vw - 64px)";
 }
 
+function fullscreenSizes(slide: PresentationSlide) {
+  return `min(94vw, ${(88 * slide.width / slide.height).toFixed(2)}vh, 1600px)`;
+}
+
 function SlideImage({ slide, priority = false, sizes, onLoad }: {
   slide: PresentationSlide;
   priority?: boolean;
   sizes: string;
   onLoad?: () => void;
 }) {
+  const Artwork = priority ? Image : ViewportImage;
   return (
-    <Image
+    <Artwork
+      {...(!priority && { preloadDistance: 400 })}
       src={slide.src}
       alt={slide.alt}
       width={slide.width}
@@ -103,10 +110,10 @@ export default function PresentationDeckViewer({ slides, ariaLabel, prioritizeCo
       ? "42rem"
       : undefined;
   const stageSizes = stageImageSizes(activeSlide);
-  const modalWidth = `min(94vw, ${(88 * activeAspectRatio).toFixed(2)}vh, 1600px)`;
+  const modalWidth = fullscreenSizes(activeSlide);
   const warmSlide = (index: number) => {
     const slide = slides[(index + slides.length) % slides.length];
-    warmImage(slide.src, isOpen ? "94vw" : stageImageSizes(slide));
+    warmImage(slide.src, isOpen ? fullscreenSizes(slide) : stageImageSizes(slide));
   };
   const warmNext = () => {
     if (hasNavigated.current || isOpen) warmSlide(activeIndex + 1);
@@ -144,8 +151,6 @@ export default function PresentationDeckViewer({ slides, ariaLabel, prioritizeCo
             <button
               type="button"
               onClick={() => setIsOpen(true)}
-              onPointerEnter={() => warmImage(activeSlide.src, "94vw")}
-              onFocus={() => warmImage(activeSlide.src, "94vw")}
               aria-label={`Open slide ${activeIndex + 1} in full-screen view: ${activeSlide.title}`}
               className="group relative block w-full cursor-zoom-in overflow-hidden bg-[#0a0a0a] shadow-[0_18px_50px_rgba(0,0,0,0.45)] focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-white"
               style={{ aspectRatio: `${activeSlide.width} / ${activeSlide.height}` }}
@@ -196,7 +201,8 @@ export default function PresentationDeckViewer({ slides, ariaLabel, prioritizeCo
                   className={`relative shrink-0 overflow-hidden rounded-md border-2 bg-black transition ${thumbnailWidth} ${activeIndex === index ? "border-[#aa8abe] opacity-100" : "border-transparent opacity-45 hover:opacity-80"}`}
                   style={{ aspectRatio: `${slide.width} / ${slide.height}` }}
                 >
-                  <Image
+                  <ViewportImage
+                    preloadDistance={250}
                     src={slide.src}
                     alt=""
                     width={thumbnailImageWidth}
@@ -231,7 +237,7 @@ export default function PresentationDeckViewer({ slides, ariaLabel, prioritizeCo
               width: modalWidth,
             }}
           >
-            <SlideImage slide={activeSlide} priority sizes="94vw" onLoad={warmNext} />
+            <SlideImage slide={activeSlide} priority sizes={modalWidth} onLoad={warmNext} />
             <button type="button" onClick={() => setIsOpen(false)} aria-label="Close full-screen presentation" className="fixed right-4 top-4 z-10 grid h-11 w-11 place-items-center rounded-full border border-white/20 bg-black/75 text-2xl text-white transition hover:bg-black sm:right-6 sm:top-6">
               &times;
             </button>

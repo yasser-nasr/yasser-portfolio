@@ -258,8 +258,6 @@ export default function SocialMediaGrid({
               key={item.id}
               type="button"
               onClick={() => openItem(item)}
-              onPointerEnter={() => warmImage(item.slides?.[0]?.src ?? item.preview.src, "(min-width: 768px) 65vw, 100vw", 100, "high")}
-              onFocus={() => warmImage(item.slides?.[0]?.src ?? item.preview.src, "(min-width: 768px) 65vw, 100vw", 100, "high")}
               aria-label={`Open design: ${item.preview.alt}`}
               className={`group relative cursor-zoom-in overflow-hidden bg-surface focus-visible:z-10 ${previewAspect === "square" ? "aspect-square" : "aspect-[4/5]"}`}
             >

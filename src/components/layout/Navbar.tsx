@@ -1,7 +1,7 @@
 "use client";
 
 import { useEffect, useRef, useState } from "react";
-import Image from "next/image";
+import Image from "@/components/media/OptimizedImage";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { AnimatePresence, motion, useReducedMotion } from "motion/react";
@@ -59,7 +59,7 @@ export default function Navbar() {
             alt={profile.name}
             width={132}
             height={11}
-            priority
+            loading="eager"
             className="brand-mark"
           />
         </Link>

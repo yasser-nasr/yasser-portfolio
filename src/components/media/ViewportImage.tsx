@@ -42,29 +42,21 @@ function observeImage(image: Element, activate: () => void, preloadDistance: num
 export default function ViewportImage({ preloadDistance = 600, ...props }: ImageProps & { preloadDistance?: number }) {
   const ref = useRef<HTMLImageElement>(null);
   const [nearby, setNearby] = useState(false);
-  const [visible, setVisible] = useState(false);
-  // The loaded 1x1 placeholder otherwise overrides width/height attributes and
-  // makes intrinsic artwork square until its real source arrives.
-  const reservedStyle = !props.fill && props.width && props.height
-    ? { aspectRatio: `${props.width} / ${props.height}`, ...props.style }
-    : props.style;
+  // Match the artwork's intrinsic ratio without overriding responsive CSS crops.
+  const placeholder = !props.fill && props.width && props.height
+    ? `data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='${Number(props.width)}' height='${Number(props.height)}'/%3E`
+    : emptyPixel;
   useEffect(() => {
     const image = ref.current;
     if (!image) return;
     if (!("IntersectionObserver" in window)) { setNearby(true); return; }
     return observeImage(image, () => setNearby(true), preloadDistance);
   }, [preloadDistance]);
-  useEffect(() => {
-    if (preloadDistance === 600 || !ref.current || !("IntersectionObserver" in window)) return;
-    const observer = new IntersectionObserver(entries => setVisible(entries.some(entry => entry.isIntersecting)));
-    observer.observe(ref.current);
-    return () => observer.disconnect();
-  }, [preloadDistance]);
 
   return <>
     {/* IntersectionObserver has already deferred the request. Opt-in galleries
         should not be gated a second time by browser-native lazy loading. */}
-    <Image {...props} style={reservedStyle} ref={ref} data-viewport-image="" src={nearby ? props.src : emptyPixel} unoptimized={nearby ? props.unoptimized : true} loading={nearby && preloadDistance !== 600 ? "eager" : "lazy"} fetchPriority={preloadDistance === 600 ? props.fetchPriority : visible ? "high" : "low"} />
+    <Image {...props} ref={ref} data-viewport-image="" src={nearby ? props.src : placeholder} unoptimized={nearby ? props.unoptimized : true} loading={nearby && preloadDistance !== 600 ? "eager" : "lazy"} fetchPriority={preloadDistance === 600 ? props.fetchPriority : "auto"} />
     <noscript>
       <style>{"img[data-viewport-image] { display: none; }"}</style>
       <Image {...props} loading="lazy" />

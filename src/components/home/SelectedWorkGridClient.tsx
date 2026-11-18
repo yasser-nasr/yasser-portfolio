@@ -1,6 +1,6 @@
 "use client";
 
-import Image from "@/components/media/OptimizedImage";
+import ViewportImage from "@/components/media/ViewportImage";
 import Link from "next/link";
 import { motion, type Variants } from "motion/react";
 import Reveal from "@/components/animation/Reveal";
@@ -130,7 +130,8 @@ function ProjectCard({ project, index }: { project: FeaturedProject; index: numb
 function ProjectVisual({ project, index }: { project: FeaturedProject; index: number }) {
   if (project.image) {
     return (
-      <Image
+      <ViewportImage
+        preloadDistance={350}
         src={project.image}
         alt={project.imageAlt}
         fill

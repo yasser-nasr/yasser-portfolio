@@ -315,7 +315,7 @@ export default function MenaLawReportersCaseStudy({ project }: { project: Projec
             width={2553}
             height={1080}
             priority
-            sizes="(min-width: 1152px) 1152px, 100vw"
+            sizes="(min-width: 1152px) 1104px, calc(100vw - 48px)"
             className="h-auto w-full"
           />
         </Reveal>

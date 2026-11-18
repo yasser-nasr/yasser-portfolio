@@ -531,7 +531,7 @@ export default function PillarsPrCaseStudy({ project }: { project: Project }) {
             alt="Pillars PR brand identity cover featuring the Building Legal Excellence message, classical column graphics, and a blue legal-sector visual system."
             fill
             priority
-            sizes="(min-width: 1152px) 1152px, 100vw"
+            sizes="(min-width: 1152px) 1104px, calc(100vw - 48px)"
             className="object-cover"
           />
         </div>
@@ -833,7 +833,7 @@ export default function PillarsPrCaseStudy({ project }: { project: Project }) {
               alt="Pillars PR digital company profile displayed across mobile mockups, presenting the legal marketing agency's mission, vision, services, expertise, and contact information."
               width={2400}
               height={1600}
-              sizes="(min-width: 1152px) 1152px, 100vw"
+              sizes="(min-width: 1152px) 1104px, calc(100vw - 48px)"
               className="h-auto w-full"
             />
           </figure>

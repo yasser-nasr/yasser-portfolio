@@ -1,4 +1,4 @@
-import Image from "next/image";
+import Image from "@/components/media/OptimizedImage";
 import Link from "next/link";
 import HeadingReveal from "@/components/animation/HeadingReveal";
 import Reveal from "@/components/animation/Reveal";

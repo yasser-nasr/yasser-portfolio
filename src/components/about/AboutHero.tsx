@@ -1,4 +1,4 @@
-import Image from "next/image";
+import Image from "@/components/media/OptimizedImage";
 import PixelReveal from "@/components/animation/PixelReveal";
 import { profile } from "@/data/profile";
 import { heroContent } from "@/data/hero";
